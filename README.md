@@ -99,7 +99,7 @@ japanese-menuインストール済が前提<br>
     </li>
 </ul>
 
-<h4>ver1.0.3</h4>
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_1.0.3">ver_1.0.3</a></h4>
 <ul>
     <li>
         コメント文の整理と追記
