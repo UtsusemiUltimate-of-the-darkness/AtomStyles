@@ -9,10 +9,10 @@
  * http://lesscss.org
 */
 /**
- * ファイル名: AtomStyle_ver1.0.2.less
+ * ファイル名: AtomStyle_ver1.0.3.less
  * 作成者: 命を燃やせない死んでない闇の空蝉ultimate
- * 最終更新日: 2018/06/11
- * バージョン: 1.0.2
+ * 最終更新日: 2018/06/13
+ * バージョン: 1.0.3
  *
  * Atom.App スタイルシート
  * テキストエディタの見た目(デザイン)の設定
@@ -32,8 +32,11 @@
  *     Atomターミナル背景と背景画像の設定
  *     Atomターミナルの文字サイズ変更(設定画面)
  *     記述法追記
- *   2018/06/12(1.0.2)
+ *   2018/06/12(ver1.0.2)
  *     背景の透明度の変更
+ *   2018/06/13(ver1.0.3)
+ *     文字フォント(Menlo-Italic, SourceHanCodeJP-LightIt)の追加
+ *     コメント文の整形
  */
 
 
@@ -50,8 +53,7 @@
 @backgound-color-gutter: rgba(0, 0, 0, 0.5);
 // @terminal-background-transparency: rgba(0, 0, 0, 0.17);
 
-@font-family: "Apple-Chancery";  // 文字フォント
-// @font-family: "menlo";
+@font-family: "Apple-Chancery", "Menlo-Italic", "SourceHanCodeJP-LightIt";  // 文字フォント
 
 // 自作色
 @lapis-lazuli: #02173C;
@@ -211,28 +213,27 @@ atom-workspace {
 
     // Atomにターミナル機能を追加するプラグイン"platformio-ide-terminal"
     .platformio-ide-terminal .xterm {
-        background-color: @lapis-lazuli;         // 背景色
-        // background-color: rgba(255, 255, 255, 1);
-        background: @terminal-background-image;  // 背景
-        background-repeat: no-repeat;            // 背景のリピート
-        background-size: cover;                  // 背景画像の大きさ
-        margin: 0 0 0 0;                         // 上右下左の外側の余白
-        padding: 0 0 0 0;                        // 上右下左の内側の余白
+        background-color: @lapis-lazuli;             // 背景色
+        background: @terminal-background-image;      // 背景
+        background-repeat: no-repeat;                // 背景のリピート
+        background-size: cover;                      // 背景画像の大きさ
+        margin: 0 0 0 0;                             // 上右下左の外側の余白
+        padding: 0 0 0 0;                            // 上右下左の内側の余白
 
-        color: @gold;                            // 文字色
-        border: solid 1px @sayaka;               // ターミナル部分の外枠線
-        font-style: italic;                      // 字体
+        color: @gold;                                // 文字色
+        border: solid 1px @sayaka;                   // ターミナル部分の外枠線
+        font-style: italic;                          // 字体
 
         // 選択部分
         ::selection {
-            background-color: @madoka-off;  // 背景色
+            background-color: @madoka-off;           // 背景色
         }
 
         // カーソル
         .terminal-cursor {
-            background-color: transparent;  // 背景色
-            // border-bottom: solid 3px @mami-vibrant;               // カーソルをアンダーバーにする
-            border-left: solid 2px @mami-vibrant;                 // カーソルを縦棒にする
+            background-color: transparent;           // 背景色
+            // border-bottom: solid 3px @mami-vibrant;  // カーソルをアンダーバーにする
+            border-left: solid 2px @mami-vibrant;    // カーソルを縦棒にする
 
         }
     }
