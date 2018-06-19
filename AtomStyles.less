@@ -1,0 +1,370 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+*/
+/**
+ * ファイル名: AtomStyle_ver1.0.0.less
+ * 作成者: 命を燃やせない死んでない闇の空蝉ultimate
+ * 最終更新日: 2018/06/11
+ * バージョン: 1.0.0
+ *
+ * Atom.App スタイルシート
+ * テキストエディタの見た目(デザイン)の設定
+ *
+ * 記述法
+ *   複数行にわたるコメントは上に記述し対象コードの最後行と次のコードの間を1行開ける
+ *   コード1行のコメントは同じ行の右側に記述
+ * 更新履歴
+ *   2018/06/11(ver1.0.0)
+ *     記述法の設定
+ *     これまでのコードの最適化と追加
+ *       コードを階層構造にして解読性の向上
+ *     コメントの追記や整理
+ *     一部パッケージのスタイル変更
+ */
+
+
+// 背景画像のフルパス
+@background-image:url("/Users/ユーザー名/Pictures/");
+
+// 背景の色と透過率
+@backgound-color-editor: rgba(0, 0, 0, 0.1);
+@backgound-color-frame: rgba(0, 0, 0, 0.8);
+@backgound-color-gutter: rgba(0, 0, 0, 0.5);
+
+@font-family: "Apple-Chancery";  // 文字フォント
+
+// 自作色
+@lapis-lazuli: #02173C;
+@gold: #E5B217;
+
+// 魔法少女シンタックステーマ色
+@very-light-gray: #c5c8c6;
+@very-light-gray: #EBEAE8;
+@light-gray: #9D95A0;
+@gray: #66606A;
+@dark-gray: #5D5D55;
+// @very-dark-gray: #3B363D;
+@very-dark-gray: #1a1a1a;
+
+@madoka-vibrant: hsl(338, 80%, 62%);
+@homura-vibrant: hsl(271, 81%, 67%);
+@sayaka-vibrant: hsl(227, 100%, 74%);
+@mami-vibrant:   hsl(50, 74%, 61%);
+@kyouko-vibrant: hsl(351, 90%, 52%);
+
+@sayaka-off: @sayaka-vibrant;
+@madoka-off: #FBD6DE;
+
+@madoka: #FF628D;
+@homura: @homura-vibrant;
+@sayaka: @sayaka-vibrant;
+@mami:   #FFDD79;
+@kyouko: #FF1B3E;
+@nagisa: #F2EDF3;
+
+
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+
+// style the background color of the tree view
+
+
+// Atom.app全体
+atom-workspace {
+    // background-color: @lapis-lazuli;  // 背景色
+    background: @background-image;    // 背景
+    background-repeat: no-repeat;     // 背景のリピート
+    // background-repeat: repeat-y;
+    background-size: cover;           // 背景画像の大きさ
+    // 背景画像の位置
+    // background-position: top;
+    // background-position: left;
+    margin: 0 0 0 0;                  // 上右下左の外側の余白
+    padding: 0 0 0 0;                 // 上右下左の内側の余白
+    font-family: @font-family;        // 文字フォント
+    color: @gold;                     // 文字色
+
+    // ツールパネル全体
+    .tool-panel {
+        background-color: @lapis-lazuli;  // 背景色
+        // display: none;                 // 画面一番下のバーが
+        font-size: 16px;                  // 文字サイズ
+        color: @gold;                     // 文字色
+
+        // ツリービュー(左側のプロジェクトファイル表示欄)
+        .tree-view {
+            // background-color: @lapis-lazuli;  // 背景色
+            // color: @gold;                     // 文字色
+            // font-family: @font-family;        // 文字フォント
+        }
+    }
+
+    // タブバーからエディタ部分
+    atom-pane {
+        background-color: transparent;  // 背景
+
+        // タブバー全体
+        .tab-bar {
+            background-color: @lapis-lazuli;  // 背景
+
+            // タブそのもの
+            .tab {
+                color: @gold;  // 文字色
+            }
+        }
+
+        // テキストエディタ部分
+        atom-text-editor {
+            // background-color: @backgound-color-editor;  // 背景色
+        }
+
+        // テキストエディタ部分
+        atom-text-editor::shadow {
+            background-color: @backgound-color-editor;  // 背景色
+
+            // 行番号の設定
+            .gutter {
+                background-color: @lapis-lazuli;  // 背景色
+                color: @gold;                     // 文字色
+                width: auto;                      // 横幅
+                // left: 0px;
+                // height: auto;
+                text-align: center;               // 中央揃え
+                font-family: @font-family;        // 文字フォン
+
+                // 選択中の行番号
+                .cursor-line {
+                    // background-color: ;                // 背景
+                    // border-bottom: solid 1px @kyouko;  // アンダーライン
+                    font-size: 18px;                      // 文字サイズ
+                }
+            }
+
+            // 入力中の行
+            .line.cursor-line {
+                border-bottom: solid 1px @homura;  // アンダーライン
+            }
+
+            // カーソルの設定
+            .cursor {
+                border-color: @gold;           // テキストエディタ内のカーソルの色
+                border-left: solid 1px @gold;  // カーソル太さ
+            }
+
+            // 半角空白
+            .trailing-whitespace {
+                // background-color: @nagisa;  // 背景
+            }
+
+            // ハイライト
+            .highlights {
+
+                // 全角スペースの見た目
+                .ideographic-space {
+
+                    // 選択した要素の後ろに擬似要素を追加
+                    .region:after {
+                        background-color: @nagisa;  // 背景色
+                        color: @kyouko;             // 文字色
+                        content: "全";              // 追加する文字列
+                    }
+                }
+
+                // 検索結果の設定
+                .find-result {
+
+                    // 見つけた文字列
+                    .region {
+                        border: solid 2px @gold;  // 枠線
+                    }
+                }
+            }
+
+            // コメントの設定
+            .comment {
+                color: #198002;  // 文字色
+            }
+        }
+    }
+
+    // Atomにターミナル機能を追加するプラグイン"platformio-ide-terminal"
+    .platformio-ide-terminal .xterm {
+        background-color: @lapis-lazuli;  // 背景色
+        color: @gold;                     // 文字色
+        border: solid 1px @sayaka;        // ターミナル部分の外枠線
+        font-style: italic;               // 字体
+
+        // 選択部分
+        ::selection {
+            background-color: @madoka-off;  // 背景色
+        }
+
+        // カーソル
+        .terminal-cursor {
+            background-color: @mami-vibrant;  // 背景色
+
+        }
+    }
+
+}
+
+
+// To style other content in the text editor's shadow DOM, use the ::shadow expression
+// atom-text-editor::shadow {
+//     // 入力中の行
+//     .line.cursor-line {
+//         border-bottom: solid 1px @homura;  // アンダーライン
+//     }
+//     // 半角空白
+//     .trailing-whitespace {
+//         // background-color: @nagisa;  // 背景
+//     }
+//     // カーソルの設定
+//     .cursor {
+//         // テキストエディタ内のカーソルの色
+//         border-color: @gold;
+//     }
+//     // 行番号の設定
+//     .gutter {
+//         // 背景色
+//         background-color: @lapis-lazuli;
+//         // 文字色
+//         color: @gold;
+//         width: auto;  // 横幅
+//         // left: 0px;
+//         // height: auto;
+//         text-align: center;
+//         font-family: @font-family;  // 行番号フォント
+//
+//         // 選択中の行番号
+//         .cursor-line{
+//             // background-color: ;
+//             // border-bottom: solid 1px @kyouko;
+//         }
+//     }
+//     // ハイライトの設定
+//     .highlights {
+//         // 全角スペースの見た目
+//         .ideographic-space {
+//             // 選択した要素の後ろに擬似要素を追加
+//             .region:after {
+//                 background-color: @nagisa;  // 背景色
+//                 color: @kyouko;  // 文字色
+//                 content: "全";  // 追加する文字列
+//             }
+//         }
+//         // 検索結果の設定
+//         .find-result {
+//             .region {
+//                 // background-color: ;
+//                 border: solid 2px @gold;  // 枠
+//                 // font-weight: 200;
+//             }
+//         }
+//     }
+//     // コメントの設定
+//     .comment{
+//         color: #198002;  // 文字色
+//     }
+// }
+
+
+// style the background and foreground colors on the atom-text-editor-element itself
+// atom-text-editor {
+    // テキストエディタ内の文字色
+    // color: @gold;
+    // background-color: @lapis-lazuli;
+// }
+
+// atom-text-editor.editor {
+//     // カーソルの設定
+//     .cursor {
+//         // テキストエディタ内のカーソルの色
+//         border-color: @gold;
+//     }
+//     // 行番号の設定
+//     .gutter {
+//         // 背景色
+//         background-color: @lapis-lazuli;
+//         // 文字色
+//         color: @gold;
+//         width: auto;
+//         // left: 0px;
+//         // height: auto;
+//         text-align: center;
+//     }
+//     // 全角スペースの見た目
+//     .highlight.ideographic-space {
+//         .region:after {
+//             background-color: #DDDDDD;
+//             color: #770000;
+//             content: "全";
+//         }
+//
+//     .comment{
+//         color: #FF0000;
+//     }
+// }
+
+/*
+atom-text-editor::shadow{
+    // テキストエディタ内のカーソルについて
+    .cursor {
+        // テキストエディタ内のカーソルの色
+        border-color: @gold;
+    }
+    // 行番号周辺に関して
+    .gutter{
+        // 背景色
+        background-color: @lapis-lazuli;
+        // 文字色
+        color: @gold;
+    }
+    // 全角スペースの見た目
+    .highlight.ideographic-space {
+        .region:after {
+            background-color: #DDDDDD;
+            color: #770000;
+            content: "全";
+        }
+    }
+}
+
+// To style other content in the text editor's shadow DOM, use the ::shadow expression
+atom-text-editor, atom-text-editor.editor{
+    // // テキストエディタ内のカーソルについて
+    // .cursor {
+    //     // テキストエディタ内のカーソルの色
+    //     border-color: @gold;
+    // }
+    // // 行番号周辺に関して
+    // .gutter{
+    //     // 背景色
+    //     background-color: @lapis-lazuli;
+    //     // 文字色
+    //     color: @gold;
+    //     //
+    //     width: auto;
+    //     left: 0px;
+    //     height: 0px;
+    //     text-align: center;
+    // }
+    // 全角スペースの見た目
+    .highlight.ideographic-space {
+        .region:after {
+            background-color: #DDDDDD;
+            color: #770000;
+            content: "全";
+        }
+    }
+}
+*/
