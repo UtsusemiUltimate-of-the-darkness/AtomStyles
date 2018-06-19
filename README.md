@@ -72,7 +72,7 @@ japanese-menuインストール済が前提<br>
 </ul>
 
 <h3>バージョン情報</h3>
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver1.0.0">ver_1.0.0</a></h4>
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver1.0.0">ver1.0.0</a></h4>
 <ul>
     <li>
         とりあえず書いていたものの最適化と整理
