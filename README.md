@@ -91,3 +91,10 @@ japanese-menuインストール済が前提<br>
         ターミナル追加パッケージの背景と文字サイズの変更
     </li>
 </ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_1.0.2">ver_1.0.2</a></h4>
+<ul>
+    <li>
+        背景透明度の変更
+    </li>
+</ul>
