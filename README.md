@@ -81,3 +81,13 @@ japanese-menuインストール済が前提<br>
         コメント等の追記や修正
     </li>
 </ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_1.0.1">ver_1.0.1</a></h4>
+<ul>
+    <li>
+        コメント文の整理と追記
+    </li>
+    <li>
+        ターミナル追加パッケージの背景と文字サイズの変更
+    </li>
+</ul>

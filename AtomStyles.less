@@ -9,17 +9,18 @@
  * http://lesscss.org
 */
 /**
- * ファイル名: AtomStyle_ver1.0.0.less
+ * ファイル名: AtomStyle_ver1.0.1.less
  * 作成者: 命を燃やせない死んでない闇の空蝉ultimate
  * 最終更新日: 2018/06/11
- * バージョン: 1.0.0
+ * バージョン: 1.0.1
  *
  * Atom.App スタイルシート
  * テキストエディタの見た目(デザイン)の設定
  *
  * 記述法
- *   複数行にわたるコメントは上に記述し対象コードの最後行と次のコードの間を1行開ける
+ *   複数行にわたるコメントは上に記述し対象コードの最後行と次のコードの間を1行開ける．
  *   コード1行のコメントは同じ行の右側に記述
+ *   ユーザー名などの情報はgithubに上げる前にテキトーに変更する
  * 更新履歴
  *   2018/06/11(ver1.0.0)
  *     記述法の設定
@@ -27,11 +28,19 @@
  *       コードを階層構造にして解読性の向上
  *     コメントの追記や整理
  *     一部パッケージのスタイル変更
+ *   2018/06/11(ver1.0.1)
+ *     Atomターミナル背景と背景画像の設定
+ *     Atomターミナルの文字サイズ変更(設定画面)
+ *     記述法追記
  */
 
 
 // 背景画像のフルパス
-@background-image:url("/Users/ユーザー名/Pictures/");
+@background-image: url("/Users/ユーザー名/Pictures/");
+
+// ターミナル背景
+// @terminal-background-image: url("/Users/ユーザー名/Pictures/");
+@terminal-background-image: @background-image;
 
 // 背景の色と透過率
 @backgound-color-editor: rgba(0, 0, 0, 0.1);
@@ -198,10 +207,16 @@ atom-workspace {
 
     // Atomにターミナル機能を追加するプラグイン"platformio-ide-terminal"
     .platformio-ide-terminal .xterm {
-        background-color: @lapis-lazuli;  // 背景色
-        color: @gold;                     // 文字色
-        border: solid 1px @sayaka;        // ターミナル部分の外枠線
-        font-style: italic;               // 字体
+        background-color: @lapis-lazuli;         // 背景色
+        background: @terminal-background-image;  // 背景
+        background-repeat: no-repeat;            // 背景のリピート
+        background-size: cover;                  // 背景画像の大きさ
+        margin: 0 0 0 0;                         // 上右下左の外側の余白
+        padding: 0 0 0 0;                        // 上右下左の内側の余白
+
+        color: @gold;                            // 文字色
+        border: solid 1px @sayaka;               // ターミナル部分の外枠線
+        font-style: italic;                      // 字体
 
         // 選択部分
         ::selection {
@@ -210,7 +225,8 @@ atom-workspace {
 
         // カーソル
         .terminal-cursor {
-            background-color: @mami-vibrant;  // 背景色
+            background-color: transparent;           // 背景色
+            border-bottom: solid 3px @mami-vibrant;  // カーソルをアンダーバーにする
 
         }
     }
