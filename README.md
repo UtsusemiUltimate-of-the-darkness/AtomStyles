@@ -72,7 +72,7 @@ japanese-menuインストール済が前提<br>
 </ul>
 
 <h3>バージョン情報</h3>
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_1.0.0">ver_1.0.0</a></h4>
+<h4>ver1.0.0</h4>
 <ul>
     <li>
         とりあえず書いていたものの最適化と整理
@@ -82,42 +82,12 @@ japanese-menuインストール済が前提<br>
     </li>
 </ul>
 
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_1.0.1">ver_1.0.1</a></h4>
+<h4>ver1.0.1</h4>
 <ul>
     <li>
         コメント文の整理と追記
     </li>
     <li>
         ターミナル追加パッケージの背景と文字サイズの変更
-    </li>
-</ul>
-
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_1.0.2">ver_1.0.2</a></h4>
-<ul>
-    <li>
-        背景透明度の変更
-    </li>
-</ul>
-
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_1.0.3">ver_1.0.3</a></h4>
-<ul>
-    <li>
-        コメント文の整理と追記
-    </li>
-    <li>
-        文字フォントの追加(日本語文字フォントの設定)
-    </li>
-</ul>
-
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_1.0.4">ver_1.0.4</a></h4>
-<ul>
-    <li>
-        背景色と透過率の変更
-    </li>
-    <li>
-        タブの背景透過と文字サイズの変更
-    </li>
-    <li>
-        "highlight-selected"プラグインの枠線，背景の変更
     </li>
 </ul>
