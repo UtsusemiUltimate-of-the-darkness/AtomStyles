@@ -9,10 +9,10 @@
  * http://lesscss.org
 */
 /**
- * ファイル名: AtomStyle_ver1.0.3.less
+ * ファイル名: AtomStyles_ver1.0.4.less
  * 作成者: 命を燃やせない死んでない闇の空蝉ultimate
- * 最終更新日: 2018/06/13
- * バージョン: 1.0.3
+ * 最終更新日: 2018/06/26
+ * バージョン: 1.0.4
  *
  * Atom.App スタイルシート
  * テキストエディタの見た目(デザイン)の設定
@@ -37,6 +37,14 @@
  *   2018/06/13(ver1.0.3)
  *     文字フォント(Menlo-Italic, SourceHanCodeJP-LightIt)の追加
  *     コメント文の整形
+ *   2018/06/26(ver 1.0.4)
+ *     背景色と透過率の変更
+ *     選択中の行番号の文字サイズ変更
+ *     アクティブタブの文字色変更
+ *     タブの文字サイズ変更
+ *     タブの背景透過
+ *     "highlight-selected"プラグイン枠線の色の変更
+ *     "highlight-selected"プラグイン背景の変更
  */
 
 
@@ -45,18 +53,19 @@
 
 // ターミナル背景
 // @terminal-background-image: url("/Users/ユーザー名/Pictures/");
-@terminal-background-image: @background-image;
+@background-image-terminal: @background-image;
 
 // 背景の色と透過率
-@backgound-color-editor: rgba(0, 0, 0, 0.17);
-@backgound-color-frame: rgba(0, 0, 0, 0.8);
-@backgound-color-gutter: rgba(0, 0, 0, 0.5);
-// @terminal-background-transparency: rgba(0, 0, 0, 0.17);
+@backgound-color-editor: rgba(02, 17, 80, 0.17);
+@backgound-color-frame: rgba(0, 0, 0, 0.80);
+@backgound-color-gutter: rgba(0, 0, 0, 0.217);
+@background-color-terminal: rgba(02, 17, 80, 0.17);
+@selection-color: #FFFFFF;
 
 @font-family: "Apple-Chancery", "Menlo-Italic", "SourceHanCodeJP-LightIt";  // 文字フォント
 
 // 自作色
-@lapis-lazuli: #02173C;
+@lazurite: #02173C;
 @gold: #E5B217;
 
 // 魔法少女シンタックステーマ色
@@ -92,34 +101,31 @@
 
 // style the background color of the tree view
 
-
 // Atom.app全体
 atom-workspace {
-    // background-color: @lapis-lazuli;  // 背景色
-    background: @background-image;    // 背景
-    background-repeat: no-repeat;     // 背景のリピート
-    // background-repeat: repeat-y;
-    background-size: cover;           // 背景画像の大きさ
-    // 背景画像の位置
-    // background-position: top;
-    // background-position: left;
-    margin: 0 0 0 0;                  // 上右下左の外側の余白
-    padding: 0 0 0 0;                 // 上右下左の内側の余白
-    font-family: @font-family;        // 文字フォント
-    color: @gold;                     // 文字色
+    // background-color: @lazurite;     // 背景色
+    background: @background-image;   // 背景
+    background-repeat: no-repeat;    // 背景のリピート
+    background-size: cover;          // 背景画像の大きさ
+    background-position: right top;  // 背景画像の位置
+    margin: 0 0 0 0;                 // 上右下左の外側の余白
+    padding: 0 0 0 0;                // 上右下左の内側の余白
 
-    // ツールパネル全体
+    font-family: @font-family;       // 文字フォント
+    color: @gold;                    // 文字色
+
+    // ツールパネル全体(プロジェクトフォルダ表示欄，画面下のステータスバー)
     .tool-panel {
-        background-color: @lapis-lazuli;  // 背景色
-        // display: none;                 // 画面一番下のバーが
-        font-size: 16px;                  // 文字サイズ
-        color: @gold;                     // 文字色
+        background-color: @lazurite;  // 背景色
+        font-size: 16px;              // 文字サイズ
+        color: @gold;                 // 文字色
+        font-family: @font-family;    // 文字フォント
 
         // ツリービュー(左側のプロジェクトファイル表示欄)
         .tree-view {
-            // background-color: @lapis-lazuli;  // 背景色
-            // color: @gold;                     // 文字色
-            // font-family: @font-family;        // 文字フォント
+            // background-color: @lazurite;  // 背景色
+            // color: @gold;                 // 文字色
+            // font-family: @font-family;    // 文字フォント
         }
     }
 
@@ -129,45 +135,66 @@ atom-workspace {
 
         // タブバー全体
         .tab-bar {
-            background-color: @lapis-lazuli;  // 背景
+            background-color: transparent;  // 背景
+
+            // color: @gold;
 
             // タブそのもの
             .tab {
-                color: @gold;  // 文字色
+                color: @gold;             // 文字色
+                background: transparent;  // 背景
+                font-size: 12px;          // 文字サイズ
+
+                // アクティブタブ
+                &.active {
+                    color: @gold;             // 文字色
+                    background: transparent;  // 背景
+                    font-size: 14px;          // 文字サイズ
+                }
             }
         }
 
-        // テキストエディタ部分
+        // エディタ部分
         atom-text-editor {
-            // background-color: @backgound-color-editor;  // 背景色
+            // .highlights {
+            //     .highlight.selection .region {
+            //         background-color: @madoka-vibrant;
+            //     }
+            // }
+
         }
 
         // テキストエディタ部分
         atom-text-editor::shadow {
+
             background-color: @backgound-color-editor;  // 背景色
 
             // 行番号の設定
             .gutter {
-                background-color: @lapis-lazuli;  // 背景色
+                background-color: @lazurite;      // 背景色
                 color: @gold;                     // 文字色
                 width: auto;                      // 横幅
-                // left: 0px;
-                // height: auto;
                 text-align: center;               // 中央揃え
-                font-family: @font-family;        // 文字フォン
+                font-family: @font-family;        // 文字フォント
 
                 // 選択中の行番号
                 .cursor-line {
                     // background-color: ;                // 背景
                     // border-bottom: solid 1px @kyouko;  // アンダーライン
-                    font-size: 18px;                      // 文字サイズ
+                    font-size: 17px;                      // 文字サイズ
                 }
             }
 
             // 入力中の行
-            .line.cursor-line {
-                border-bottom: solid 1px @homura;  // アンダーライン
+            .line {
+                &.cursor-line {
+                    border-bottom: solid 1px @homura;  // アンダーライン
+                    // background-color: @madoka;         // 背景色
+                }
+
             }
+
+
 
             // カーソルの設定
             .cursor {
@@ -190,7 +217,7 @@ atom-workspace {
                     .region:after {
                         background-color: @nagisa;  // 背景色
                         color: @kyouko;             // 文字色
-                        content: "全";              // 追加する文字列
+                        content: "全";              // 追加する文字列
                     }
                 }
 
@@ -202,6 +229,15 @@ atom-workspace {
                         border: solid 2px @gold;  // 枠線
                     }
                 }
+
+                // 文字列検索"highlight-selected"プラグイン
+                .highlight-selected {
+
+                    // 検索文字
+                    .region {
+                        border: solid 1px @nagisa;  // 枠線
+                    }
+                }
             }
 
             // コメントの設定
@@ -210,31 +246,37 @@ atom-workspace {
             }
         }
     }
-
+// background-color-terminal
     // Atomにターミナル機能を追加するプラグイン"platformio-ide-terminal"
-    .platformio-ide-terminal .xterm {
-        background-color: @lapis-lazuli;             // 背景色
-        background: @terminal-background-image;      // 背景
-        background-repeat: no-repeat;                // 背景のリピート
-        background-size: cover;                      // 背景画像の大きさ
-        margin: 0 0 0 0;                             // 上右下左の外側の余白
-        padding: 0 0 0 0;                            // 上右下左の内側の余白
+    .platformio-ide-terminal:not( .status-bar ) {
+        background: @background-image-terminal;  // 背景
+        // background-color: @background-color-terminal;
+        background-repeat: no-repeat;            // 背景のリピート
+        background-size: cover;                  // 背景画像の大きさ
+        // margin: 0 0 0 0;                             // 上右下左の外側の余白
+        border: solid 1px @madoka;
 
-        color: @gold;                                // 文字色
-        border: solid 1px @sayaka;                   // ターミナル部分の外枠線
-        font-style: italic;                          // 字体
+        .xterm {
+            background: transparent;      // 背景
+            background-color: @background-color-terminal;
+            // padding: 0 0 0 0;                            // 上右下左の内側の余白
 
-        // 選択部分
-        ::selection {
-            background-color: @madoka-off;           // 背景色
-        }
+            color: @gold;                                // 文字色
+            border-top: solid 1px @sayaka;               // ターミナル部分の外枠線
+            font-style: italic;                          // 字体
 
-        // カーソル
-        .terminal-cursor {
-            background-color: transparent;           // 背景色
-            // border-bottom: solid 3px @mami-vibrant;  // カーソルをアンダーバーにする
-            border-left: solid 2px @mami-vibrant;    // カーソルを縦棒にする
+            // 選択部分
+            ::selection {
+                background-color: @madoka-off;           // 背景色
+            }
 
+            // カーソル
+            .terminal-cursor {
+                background-color: transparent;           // 背景色
+                // border-bottom: solid 3px @mami-vibrant;  // カーソルをアンダーバーにする
+                border-left: solid 2px @mami-vibrant;    // カーソルを縦棒にする
+
+            }
         }
     }
 
@@ -259,7 +301,7 @@ atom-workspace {
 //     // 行番号の設定
 //     .gutter {
 //         // 背景色
-//         background-color: @lapis-lazuli;
+//         background-color: @lazurite;
 //         // 文字色
 //         color: @gold;
 //         width: auto;  // 横幅
@@ -305,7 +347,7 @@ atom-workspace {
 // atom-text-editor {
     // テキストエディタ内の文字色
     // color: @gold;
-    // background-color: @lapis-lazuli;
+    // background-color: @lazurite;
 // }
 
 // atom-text-editor.editor {
@@ -317,7 +359,7 @@ atom-workspace {
 //     // 行番号の設定
 //     .gutter {
 //         // 背景色
-//         background-color: @lapis-lazuli;
+//         background-color: @lazurite;
 //         // 文字色
 //         color: @gold;
 //         width: auto;
@@ -348,7 +390,7 @@ atom-text-editor::shadow{
     // 行番号周辺に関して
     .gutter{
         // 背景色
-        background-color: @lapis-lazuli;
+        background-color: @lazurite;
         // 文字色
         color: @gold;
     }
@@ -372,7 +414,7 @@ atom-text-editor, atom-text-editor.editor{
     // // 行番号周辺に関して
     // .gutter{
     //     // 背景色
-    //     background-color: @lapis-lazuli;
+    //     background-color: @lazurite;
     //     // 文字色
     //     color: @gold;
     //     //

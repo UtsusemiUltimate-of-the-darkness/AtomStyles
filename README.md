@@ -108,3 +108,16 @@ japanese-menuインストール済が前提<br>
         文字フォントの追加(日本語文字フォントの設定)
     </li>
 </ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_1.0.4">ver_1.0.4</a></h4>
+<ul>
+    <li>
+        背景色と透過率の変更
+    </li>
+    <li>
+        タブの背景透過と文字サイズの変更
+    </li>
+    <li>
+        "highlight-selected"プラグインの枠線，背景の変更
+    </li>
+</ul>
