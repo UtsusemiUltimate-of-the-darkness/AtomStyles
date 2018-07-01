@@ -11,7 +11,7 @@
 /**
  * ファイル名: AtomStyles_ver2.0.0.less
  * 作成者: 命を燃やせない死んでない闇の空蝉ultimate
- * 最終更新日: 2018/07/01
+ * 最終更新日: 2018/07/02
  * バージョン: 2.0.0
  *
  * Atom.App スタイルシート
@@ -45,34 +45,38 @@
  *     タブの背景透過
  *     "highlight-selected"プラグイン枠線の色の変更
  *     "highlight-selected"プラグイン背景の変更
- *   2018/07/01 (ver 2.0.0)
+ *   2018/07/02 (ver 2.0.0)
  *     スタイル指定方法の変更
  *       親要素，子要素の関係の明確化
  *       より細部の特定の部分のみにスタイル適用可能
  *     各ペイン要素の境界線表示
- *     プロジェクトフォルダのツリービューの文字色変更
- *     プロジェクトフォルダ表示欄の開閉ボタンの背景色，文字色の変更
- *     アクティブタブの背景色変更
- *     アクティブタブの文字の太さ変更
- *     アクティブタブに下線を表示
- *     行番号部分とブックマーク表示部分の境界線を表示
- *     テキスト選択中，非選択中の行番号背景色変更
+ *     プロジェクトフォルダ
+ *       ツリービューの文字色変更
+ *       開閉ボタンの背景色，文字色の変更
+ *     アクティブタブ
+ *       背景色，文字の太さ変更，タブの下部に下線を表示
+ *     行番号部分
+ *       行番号とブックマーク表示部分の境界線を表示
+ *       テキスト選択中，非選択中の行番号背景色変更
  *     選択中のテキストの背景色変更
  *     入力中の桁(縦ライン)の背景色変更
- *     "browser plus"(ブラウザーを追加するプラグイン)使用中，ブラウザのナビゲーションバーに枠線と妖怪線を表示
- *     "browser plus"(ブラウザーを追加するプラグイン)使用中，ブラウザのナビゲーションバーの有効なボタンの色を変更
- *     "browser plus"(ブラウザーを追加するプラグイン)使用中，アドレスバーの背景色と文字色の変更
- *     "platformio-ide-terminal"(ターミナル追加プラグイン)のボタン類表示ツールバーの高さ変更
- *     "platformio-ide-terminal"(ターミナル追加プラグイン)のボタン類の枠線，背景色，文字色変更
- *     "platformio-ide-terminal"(ターミナル追加プラグイン)のボタン類のアイコンを中央に表示
- *     ツールバーとターミナル部分の境界線の表示
+ *     "browser plus"(ブラウザーを追加するプラグイン)
+ *       ブラウザのナビゲーションバー
+ *         枠線と境界線を表示
+ *         有効なボタンの色を変更
+ *       アドレスバーの背景色と文字色の変更
+ *       ボタン類表示ツールバーの高さ変更
+ *       ボタン類の枠線，背景色，文字色変更
+ *       ボタン類のアイコンを中央に表示
+ *     "platformio-ide-terminal"(ターミナル追加)プラグイン
+ *       ボタンツールバーとターミナル部分の境界線の表示
  *     Linter開閉ボタンの背景色文字色変更
  *     ステータスバーのアイコン類の文字色変更
  */
 
 
 // 背景画像のフルパス
-@background-image: url("/Users/ユーザー名/Pictures/フルパス");
+@background-image: url("/Users/ユーザー名/Pictures/フルパスを入力");
 
 // ターミナル背景
 // @terminal-background-image: url("/Users/ユーザー名/Pictures/");
@@ -516,8 +520,8 @@ atom-workspace {
 
                                             // "highlight-selected"プラグイン
                                             div.highlight-selected {
-                                                border: solid 1px @nagisa;
-                                                background-color: @background-color-highlight-selected;
+                                                border: solid 1px @nagisa;                               // 枠線
+                                                background-color: @background-color-highlight-selected;  // 背景色
 
                                                 // 選択している同じ文字列
                                                 div.region {
@@ -731,6 +735,7 @@ atom-workspace {
                                         border-right: solid 1px @sayaka;  // アドレスバーの右枠線
                                         background-color: @lazurite;      // 背景色
                                         color: @gold;                     // 文字色
+                                        font-family: @font-family;        // 文字フォント
                                     }
                                 }
                             }
@@ -839,7 +844,7 @@ atom-workspace {
                                 div {
                                     &::selection {
                                         background-color: @madoka-off;     // 背景色
-
+                                        color: @gold;                      // 文字色
                                     }
                                     .terminal-cursor {
                                         background-color: transparent;           // 背景色
@@ -852,7 +857,7 @@ atom-workspace {
                     }
                 }
 
-                // 画面下部から現れる画面(キーバインドではない)
+                // 画面下部(ステータスバー上部)
                 atom-dock.bottom {
 
                     // ステータスバーを伸ばすボタン要素
