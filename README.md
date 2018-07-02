@@ -277,3 +277,22 @@ japanese-menuインストール済が前提<br>
         コメントアウトしてあった不要な部分の削除
     </li>
 </ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.1.0">ver_2.1.0</a></h4>
+<ul>
+    <li>
+        タブの背景を完全透明化
+    </li>
+    <li>
+        アクティブタブのフォント，アンダーラインの太さ変更
+    </li>
+    <li>
+        "highlight-selected"プラグインの背景色変更
+    </li>
+    <li>
+        マッチング検索結果の枠線の色と形を変更
+    </li>
+    <li>
+        コメントの追記
+    </li>
+</ul>
