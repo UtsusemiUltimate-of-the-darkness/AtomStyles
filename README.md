@@ -15,7 +15,7 @@ japanese-menuインストール済が前提<br>
         お好きなバージョンをダウンロード
     </li>
     <li>
-        ダウンロードしたフォルダの中の「AtomStyle_verx.x.x.less」をテキストエディタ(Atomとかメモ帳など)で開く
+        ダウンロードしたフォルダの中の「AtomStyles.less」をテキストエディタ(Atomとかメモ帳など)で開く
     </li>
     <li>
         Atomを起動する
