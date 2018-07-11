@@ -9,10 +9,10 @@
  * http://lesscss.org
 */
 /**
- * ファイル名: AtomStyles_ver2.1.0.less
+ * ファイル名: AtomStyles_ver3.0.0.less
  * 作成者: 命を燃やせない死んでない闇の空蝉ultimate
- * 最終更新日: 2018/07/02
- * バージョン: 2.1.0
+ * 最終更新日: 2018/07/12
+ * バージョン: 3.0.0
  *
  * Atom.App スタイルシート
  * テキストエディタの見た目(デザイン)の設定
@@ -72,7 +72,7 @@
  *       ボタンツールバーとターミナル部分の境界線の表示
  *     Linter開閉ボタンの背景色文字色変更
  *     ステータスバーのアイコン類の文字色変更
- *   2018/07/02 (2.1.0)
+ *   2018/07/02 (ver 2.1.0)
  *     マッチング検索結果の枠線の色と形を変更
  *     "highlight-column"(カーソル縦ライン)プラグイン
  *       背景色変更
@@ -81,6 +81,13 @@
  *       フォントの変更
  *       アンダーラインの太さを変更
  *     タブの背景を完全透明化
+ *   2018/07/02 (ver 2.1.1)
+ *     アクティブタブの下線色変更
+ *     マッチング検索の該当文字列背景色の変更
+ *   2018/07/12 (ver 3.0.0)
+ *     設定画面のスタイル変更
+ *       背景色，背景画像，文字色などの変更
+ *     ステータスバー左下のファイル名表示欄の最大横幅変更
  */
 
 
@@ -92,22 +99,12 @@
 @background-image-terminal: @background-image;
 
 // 背景の色と透過率
-@backgound-color-editor: rgba(02, 17, 80, 0.4);  // エディタ部分背景色
+@backgound-color-editor: rgba(02, 17, 80, 0.55);  // エディタ部分背景色
 // @backgound-color-frame: rgba(0, 0, 0, 0.10);
 @backgound-color-gutter: rgba(0, 0, 0, 0.217);   // 行番号部分の背景色
 
 @font-family: "Apple-Chancery", "Menlo-Italic", "SourceHanCodeJP-LightIt";  // 文字フォント
-
-// 自作色
-@background-color-terminal: rgba(02, 17, 80, 0.17);                           // エディタ部分の背景色
-@background-tab: rgba(02, 17, 80, 0.7);                                       // アクティブタブの背景色
-@background-color-terminal-btns: rgba(02, 17, 80, 0.4);                       // ターミナルプラグインのボタン背景色
-@madoka-selection: rgba(255, 62, 93, 0.217);                                  // テキスト選択時の背景色
-@homura-selection: rgba(173, 102, 239, 0.217);                                // テキスト選択時の背景色
-@background-color-line-number-no-selection-madoka: rgba(255, 62, 93, 0.7);    // テキスト非選択時の行番号背景色(まどか)
-@background-color-line-number-no-selection-homura: rgba(173, 102, 239, 0.7);  // テキスト非選択時の行番号背景色(ほむら)
-@highlight-column-background-color: rgba(173, 102, 239, 0.7);                 // 縦ラインの色
-@background-color-highlight-selected: rgba(02, 17, 80, 0.217);                // 同文字列選択時の背景
+@font-family-precode: "Menlo-Italic", "SourceHanCodeJP-LightIt";  // 文字フォント
 
 @lazurite: #02173C;  // 主に背景色
 @gold: #E5B217;      // 主に文字色
@@ -136,6 +133,30 @@
 @mami:   #FFDD79;
 @kyouko: #FF1B3E;
 @nagisa: #F2EDF3;
+
+
+// 自作色
+@background-active-tab: rgba(02, 17, 80, 0.70);                                // アクティブタブの背景色
+@madoka-selection: rgba(255, 62, 93, 0.217);                                   // テキスト選択時の背景色(まどか)
+@homura-selection: rgba(173, 102, 239, 0.217);                                 // テキスト選択時の背景色(ほむら)
+@background-color-line-number-no-selection-madoka: rgba(255, 62, 93, 0.70);    // テキスト非選択時の行番号背景色(まどか)
+@background-color-line-number-no-selection-homura: rgba(173, 102, 239, 0.70);  // テキスト非選択時の行番号背景色(ほむら)
+@background-color-highlight-selected: rgba(02, 17, 80, 0.217);                 // 同文字列選択時の背景
+@highlight-column-background-color: rgba(173, 102, 239, 0.70);                 // 縦ラインの色
+@background-color-terminal: rgba(02, 17, 80, 0.17);                            // エディタ部分の背景色
+@background-color-terminal-btns: rgba(02, 17, 80, 0.40);                       // ターミナルプラグインのボタン背景色
+@background-color-sayaka-translucent: rgba(122, 151, 255, 0.70);               // さやか半透明
+@lazurite-translucent1: rgba(02, 17, 80, 0.40);                                // lazulite 半透明1
+@lazurite-translucent2: rgba(02, 17, 80, 0.55);                                // lazulite 半透明2
+@background-color-status-indicator-enable: rgba(17, 202, 80, 1.0);             // パッケージ有効インジケータ
+@background-color-status-indicator-disable: @mami;                             // パッケージ無効インジケータ
+@gold-translucent: rgba(229, 181, 60, 0.5);                                    // 金色半透明: 非アクティブ文字色など
+@setting-panel-links: @sayaka;                                                 // 設定画面のリンク
+@setting-panel-highlights: @nagisa;                                            // 設定画面のハイライト
+@setting-panel-kbd-bgcolor: #000000;                                           // キーの背景色
+@setting-panel-kbd-border: silver;                                             // キーの枠線
+@setting-panel-kbd-color: @nagisa;                                             // キーの文字色
+
 
 
 /*
@@ -244,7 +265,6 @@ atom-workspace {
                                             font-size: 12px;          // 文字サイズ
                                             color: @gold;             // 文字色
 
-
                                             // 並び変え可能，アクティブタブ
                                             &.sortable.active {
 
@@ -266,7 +286,7 @@ atom-workspace {
                                         div.tool-panel.tree-view {
 
                                             // background-color: @lazurite;  // 背景色
-                                            background: @background-tab;  // 背景
+                                            background: @background-active-tab;  // 背景
                                             font-size: 16px;              // 文字サイズ
 
                                             // 要素内全ての要素
@@ -289,13 +309,11 @@ atom-workspace {
 
                                                             // フォルダアイコンとフォルダ名
                                                             span.name.icon.atom-icon.dark-green {
-
                                                             }
                                                         }
 
                                                         // リスト要素
                                                         ol.entries.list-tree {
-
                                                         }
                                                     }
 
@@ -307,13 +325,11 @@ atom-workspace {
 
                                                             // フォルダアイコンとフォルダ名
                                                             span.name.icon.icon-file-directory {
-
                                                             }
                                                         }
 
                                                         // リスト要素
                                                         ol.entries.list-tree {
-
                                                         }
                                                     }
 
@@ -325,13 +341,11 @@ atom-workspace {
 
                                                             // フォルダアイコンとフォルダ名
                                                             span.name.icon.atom-icon.dark-green {
-
                                                             }
                                                         }
 
                                                         // リスト要素
                                                         ol.entries.list-tree {
-
                                                         }
                                                     }
 
@@ -343,11 +357,9 @@ atom-workspace {
 
                                                             // アイコンとフォルダ名
                                                             span.name.icon.atom-icon.dark-green {
-
                                                             }
                                                         }
                                                         ol.entries.list-tree {
-
                                                         }
                                                     }
                                                 }
@@ -374,8 +386,8 @@ atom-workspace {
             padding: 0 0 0 0;                // 上右下左の内側の余白
 
             font-family: @font-family;       // 文字フォント
-            color: @gold;                    // 文字色
 
+            color: @gold;                    // 文字色
 
             // ウィンドウタブとエディタタブの7間
             atom-panel-container.top {
@@ -395,9 +407,9 @@ atom-workspace {
                     // タブバー
                     ul.list-inline.tab-bar.inset-panel {
 
-                        background-color: transparent;  // 背景
-                        border-top: solid 1px @sayaka;  // ペイン境界線
-                        border-bottom: solid 1px @madoka;
+                        background-color: transparent;     // 背景
+                        border-top: solid 1px @sayaka;     // ペイン境界線
+                        border-bottom: solid 1px @madoka;  // エディタ部分との境界線
 
                         // タブ
                         li.tab.sortable {
@@ -436,8 +448,8 @@ atom-workspace {
                             // アクティブタブ
                             &.active {
 
-                                background-color: @background-tab;  // アクティブタブの背景
-                                border-bottom: solid 2px @homura;   // アクティブタブの下部にアンダーライン
+                                background-color: @background-active-tab;  // アクティブタブの背景
+                                border-bottom: solid 2px @mami;   // アクティブタブの下部にアンダーライン
                                 font-size: 15px;                    // 文字サイズ
                                 font-family: @font-family;          // 文字フォント
                                 // font-weight: bold;                  // 太字
@@ -448,7 +460,7 @@ atom-workspace {
                                 &::before {
 
                                     // background: red;
-                                    border-bottom: solid 2px @homura;   // アクティブタブの下部にアンダーライン
+                                    border-bottom: solid 2px @mami;   // アクティブタブの下部にアンダーライン
                                 }
 
                                 // アイコンとタイトル
@@ -473,7 +485,7 @@ atom-workspace {
                                 &::after {
 
                                     // background: red;
-                                    border-bottom: solid 2px @homura;   // アクティブタブの下部にアンダーライン
+                                    border-bottom: solid 2px @mami;   // アクティブタブの下部にアンダーライン
                                 }
                             }
                         }
@@ -506,14 +518,3127 @@ atom-workspace {
                     // エディタ部分
                     div.item-views {
 
-                        // 文字入力部分
+                        // 設定画面
+                        div.settings-view {
+
+                            background-color: @lazurite;     // 背景色
+                            background: @background-image;   // 背景
+                            background-repeat: no-repeat;    // 背景のリピート
+                            background-size: cover;          // 背景画像の大きさ
+                            background-position: right top;  // 背景画像の位置
+                            margin: 0 0 0 0;                 // 上右下左の外側の余白
+                            padding: 0 0 0 0;                // 上右下左の内側の余白
+
+                            font-family: @font-family;       // 文字フォント
+                            // font-style: italic;
+                            color: @gold;                    // 文字色
+
+                            // メニューリスト全体
+                            div.config-menu {
+
+                                background-color: @backgound-color-editor;  // 背景色
+                                border-right: solid 1px @sayaka;            // メニューとコンテンツの境界線
+
+                                // メニューリスト要素
+                                ul.panels-menu.nav.nav-pills.nav-stacked {
+
+                                    // 各メニュー要素
+                                    li {
+
+                                        // アイコンとテキスト
+                                        a.icon {
+
+                                            color: @gold;  // 文字色
+
+                                            // アイコン
+                                            &::before {
+                                            }
+                                        }
+
+                                        // アクティブ項目
+                                        &.active {
+
+                                            // border: solid 1px @gold;           // 枠線
+                                            border-top: solid 1px @kyouko;     // 上枠線
+                                            border-bottom: solid 1px @kyouko;  // 下枠線
+
+                                            // メニューアイコンとテキスト
+                                            a.icon {
+
+                                                background-color: @background-active-tab;  // 背景色
+                                                font-size: 16px;                           // フォントサイズ
+
+                                                // アイコン
+                                                &::before {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // ボタンエリア
+                                div.button-area {
+
+                                    // 全てのボタン要素
+                                    button {
+
+                                        // 設定フォルダ開くボタン
+                                        &.btn.btn-default.icon.icon-link-external {
+
+                                            border: solid 1px @homura;  // 枠線
+                                            background: transparent;  // 背景
+                                            color: @gold;             // 文字色
+
+                                            // アイコン
+                                            &::before {
+
+                                                padding: 3px 0 0 0;  // 内側の余白
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            // 設定内容
+                            div.panels {
+
+                                // 設定内容全体
+                                div.panels-item {
+
+                                    background-color: @backgound-color-editor;
+
+                                    // 設定画面
+                                    section.section.settings-panel {
+
+                                        // 内容ラッパー
+                                        div.section-container {
+
+                                            // タイトル
+                                            div.block.section-heading {
+
+                                                color: @gold;  // 文字色
+
+                                                // アイコン
+                                                &::before {
+
+                                                    // color: @gold;  // 文字色
+                                                }
+                                            }
+
+                                            // 概要
+                                            div.text.icon.icon-question {
+
+                                                color: @gold;  // 文字色
+
+                                                // ハイパーリンク
+                                                a.link {
+
+                                                    color: @setting-panel-links;  // 文字色
+                                                }
+                                            }
+
+                                            // 設定内容
+                                            div.section-body {
+
+                                                // div {
+                                                //     color: @gold;
+                                                // }
+                                                // * {
+                                                //     background-color: transparent;
+                                                //     color: @gold;
+                                                // }
+
+                                                // 単一項目
+                                                div.control-group {
+
+                                                    // 中身
+                                                    div.controls {
+
+                                                        // チェックボックス
+                                                        div.checkbox {
+
+                                                            // チェックボックスと項目名
+                                                            label {
+
+                                                                color: @gold;  // 文字色
+
+                                                                // チェックボックス
+                                                                input[type="checkbox"] {
+
+                                                                    background: @lazurite-translucent1;  // 背景
+                                                                    border: solid 1px @gold;             // 枠線
+
+                                                                    // チェックマーク左側右下がり斜め棒
+                                                                    &::before {
+
+                                                                        background: @gold;  // 背景
+                                                                    }
+
+                                                                    // チェックマーク右側右上がり斜め棒
+                                                                    &::after {
+
+                                                                        background: @gold;  // 背景
+                                                                    }
+                                                                }
+
+                                                                // 設定する項目のタイトル
+                                                                div.setting-title {
+                                                                }
+                                                            }
+
+                                                            // 説明文
+                                                            div.setting-description {
+
+                                                                color: @gold;  // 文字色
+                                                            }
+                                                        }
+
+                                                        // 各設定説明要素
+                                                        label.control-label {
+
+                                                            // 設定タイトル
+                                                            div.setting-title {
+
+                                                                color: @gold;  // 文字色
+                                                            }
+
+                                                            // 説明文
+                                                            div.setting-description {
+
+                                                                color: @gold;  // 文字色
+
+                                                                // 強調，コード
+                                                                code {
+
+                                                                    color: @setting-panel-highlights;  // 文字色
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // 選択項目
+                                                        select.form-control {
+
+                                                            background-color: @lazurite-translucent1;  // 背景色
+                                                            border: solid 1px @gold;                   // 枠線
+                                                            color: @gold;                              // 文字色
+                                                        }
+
+                                                        // サブセクション
+                                                        section.sub-section {
+
+                                                            // h3要素
+                                                            h3.sub-section-heading.has-items {
+
+                                                                color: @gold;  // 文字色
+
+                                                                // 要素開閉アイコン
+                                                                &::after {
+
+                                                                    color: @gold;  // 文字色
+                                                                }
+                                                            }
+
+                                                            // サブセクション本体
+                                                            div.sub-section-body {
+
+                                                                // 各項目
+                                                                div.control-group {
+
+                                                                    // 単項目
+                                                                    div.controls {
+
+                                                                        // 設定ラベル
+                                                                        label.control-label {
+
+                                                                            // 設定タイトル
+                                                                            div.setting-title {
+
+                                                                                // color: @gold;  // 文字色
+                                                                            }
+
+                                                                            // 設定説明文
+                                                                            div.setting-description {
+
+                                                                                // color: @gold;  // 文字色
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+
+                                                    // テキストボックス部分
+                                                    div.editor-container {
+
+                                                        // テキストエディタ部分
+                                                        atom-text-editor.editor.mini {
+
+                                                            padding: 0;  // 内側の余白
+
+                                                            // スクロールできる部分
+                                                            div div.scroll-view {
+
+                                                                // border: solid 1px @gold;    // 枠線
+                                                                font-family: @font-family;  // 文字フォント
+                                                                color: @gold;               // 文字色
+                                                                // padding: 0 0 0 0;
+
+                                                                // 中身
+                                                                div.contain {
+
+                                                                    // 内容
+                                                                    div.lines {
+
+                                                                        // ハイライト全般
+                                                                        div.highlights {
+
+                                                                            // 各ハイライト部分
+                                                                            div.highlight{
+
+                                                                                // テキスト選択部分
+                                                                                &.selection {
+
+                                                                                    // 選択されている部分
+                                                                                    div.region {
+
+                                                                                        background-color: @madoka-selection;  // 背景色
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+
+                                                                        // 入力部分
+                                                                        div div.line {
+
+                                                                            // テキスト要素
+                                                                            span span.syntax--text.syntax--plain.syntax--null-grammar {
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // URL Handling設定項目
+                                    form.general-panel.section {
+
+                                        // 設定画面
+                                        div.settings-panel {
+
+                                            // 設定内容ラッパー
+                                            div.section-container {
+
+                                                // div {
+                                                //     color: @gold;  // 文字色
+                                                // }
+
+                                                // 設定タイトル
+                                                div.block.section-heading {
+
+                                                    color: @gold;  // 文字色
+
+                                                    // アイコン
+                                                    &::before {
+
+                                                        // color: red;  // 文字色
+                                                    }
+                                                }
+
+                                                // 設定概要
+                                                div.text.icon.icon-question {
+
+                                                    color: @gold;  // 文字色
+
+                                                    // アイコン
+                                                    &::before {
+
+                                                        // color: red;  // 文字色
+                                                    }
+                                                }
+
+                                                // 設定本体
+                                                div.section-body {
+
+                                                    // 各項目
+                                                    div.control-group {
+
+                                                        // 単一項目
+                                                        div.controls {
+
+                                                            // 設定タイトルと説明
+                                                            label.control-label {
+
+                                                                // タイトル
+                                                                div.setting-title {
+
+                                                                    color: @gold;  // 文字色
+                                                                }
+
+                                                                // 説明文
+                                                                div.setting-description {
+
+                                                                    color: @gold;  // 文字色
+                                                                }
+                                                            }
+
+                                                            // ボタン
+                                                            button.btn.btn-primary {
+
+                                                                background: @lazurite-translucent1;  // 背景
+                                                                border: solid 2px @gold;             // 枠線
+                                                                color: @gold;                        // 文字色
+                                                            }
+
+                                                            // 選択項目
+                                                            select.form-control {
+
+                                                                background-color: @lazurite-translucent1;  // 背景色
+                                                                border: solid 1px @gold;                   // 枠線
+                                                                color: @gold;                              // 文字色
+                                                            }
+
+                                                            // 設定タイトル
+                                                            label.controls-label {
+
+                                                                div.setting-title {
+
+                                                                    color: @gold;  // 文字色
+                                                                }
+                                                            }
+
+                                                            // 表
+                                                            table tr th,
+                                                            table tr td {
+
+                                                                border: solid 1px @gold;    // 枠線
+                                                                border-collapse: collapse;  // 要素間の隙間なし
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // キーバインド設定
+                                    section.keybinding-panel.section {
+
+                                        // タイトル
+                                        div.section-heading.icon.icon-keyboard {
+
+                                            color: @gold;  // 文字色
+
+                                            // アイコン
+                                            &::before {
+
+                                                // color: red;  // 文字色
+                                            }
+                                        }
+
+                                        // 概要
+                                        div.text.native-key-bindings {
+
+                                            color: @gold;  // 文字色
+
+                                            // アイコン類
+                                            span.icon {
+
+                                                // はてな
+                                                &.icon-question {
+
+                                                    // アイコン
+                                                    &::before {
+                                                    }
+                                                }
+
+                                                // クリップボード
+                                                &.icon-clippy {
+
+                                                    // アイコン
+                                                    &::before {
+
+                                                        color: @setting-panel-links;  // 文字色
+                                                    }
+                                                }
+                                            }
+
+                                            // リンク
+                                            a.link {
+
+                                                color: @setting-panel-links;  // 文字色
+                                            }
+                                        }
+
+                                        // 検索文字入力要素ラッパー
+                                        div.editor-container {
+
+                                            // 検索文字入力要素
+                                            atom-text-editor.editor.mini {
+
+                                                // スクロール可能要素
+                                                div div.scroll-view {
+
+                                                    border: solid 1px @gold;  // 枠線
+
+                                                    // テキスト入力要素
+                                                    div.lines {
+
+                                                        // ハイライト全般
+                                                        div.highlights {
+
+                                                            // ハイライト要素
+                                                            div.highlight.selection {
+
+                                                                // ハイライト部分
+                                                                div.region {
+
+                                                                    background-color: @madoka-selection;  // 背景色
+                                                                }
+                                                            }
+
+                                                            // 入力部分
+                                                            div div.line {
+
+                                                                // テキスト要素
+                                                                span span.syntax--text.syntax--plain.syntax--null-grammar {
+                                                                }
+                                                            }
+
+                                                            // プレスホルダー
+                                                            div.placeholder-text {
+                                                            }
+
+                                                            // カーソル
+                                                            div.cursors div.cursor {
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        // 表
+                                        table tr th,
+                                        table tr td {
+
+                                            border: solid 1px @gold;    // 枠線
+                                            border-collapse: collapse;  // 枠線間の隙間なし
+                                            color: @gold;               // 文字色
+
+                                            // キーストローク
+                                            &.keystroke {
+
+                                                // アイコン要素
+                                                span.icon.icon-clippy.copy-icon {
+
+                                                    // アイコン
+                                                    &::before {
+
+                                                        color: @setting-panel-links;  // 文字色
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // パッケージ，テーマ設定
+                                    section.section {
+
+                                        border-top: solid 1px @madoka;  // 境界線
+
+                                        // 要素ラッパー
+                                        div.section-container {
+
+                                            // タイトル
+                                            div.section-heading.icon {
+
+                                                color: @gold;  // 文字色
+
+                                                // パッケージ
+                                                &.icon-package {
+
+                                                    // color: @gold;  // 文字色
+
+                                                    // アイコン
+                                                    &::before {
+                                                    }
+                                                }
+
+                                                // テーマ
+                                                &.icon-paintcan {
+
+                                                    // アイコン
+                                                    &::before {
+                                                    }
+                                                }
+                                            }
+
+                                            // テキストボックスラッパー
+                                            div.editor-container {
+
+                                                // エディタ部分
+                                                atom-text-editor.editor.mini {
+
+                                                    border: solid 1px @gold;  // 枠線
+                                                    color: @gold;             // 文字色
+                                                    padding: 0;               // 内側からの余白
+
+                                                    // スクロール可能部分
+                                                    div div.scroll-view {
+
+                                                        // テキストボックス部分
+                                                        div div.lines {
+
+                                                            // ハイライト全般
+                                                            div.highlights {
+
+                                                                // ハイライト部分
+                                                                div.highlight.selection {
+
+                                                                    // テキスト選択部分
+                                                                    div.region.selection {
+
+                                                                        background-color: @madoka-selection;  // 背景色
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            // 入力行
+                                                            div div.line {
+
+                                                                // 入力されている文字列
+                                                                span span.syntax--text.syntax--plain.syntax--null-grammar {
+                                                                }
+                                                            }
+
+                                                            // プレスホルダー
+                                                            div.placeholder-text {
+                                                            }
+
+                                                            // カーソル
+                                                            div.cursors {
+
+                                                                // カーソル本体
+                                                                div.cursor {
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            // 各サブセクション
+                                            section.sub-section {
+
+                                                // タイトル
+                                                h3.sub-section-heading.icon {
+
+                                                    color: @gold;  // 文字色
+
+                                                    // アイコン
+                                                    &::before {
+                                                    }
+
+                                                    // 開閉ボタン
+                                                    &::after {
+
+                                                        color: @gold;  // 文字色
+                                                    }
+
+                                                    // 個数表示
+                                                    span.section-heading-count.badge.badge-flexible {
+
+                                                        background-color: @lazurite-translucent1;  // 背景色
+                                                        color: @gold;                              // 文字色
+                                                    }
+                                                }
+
+                                                // パケージ一覧
+                                                div.container.package-container {
+
+                                                    // 各パッケージ要素
+                                                    div.row {
+
+                                                        // background-color: red;  // 背景色
+
+                                                        // 単項目
+                                                        div.package-card.col-lg-8 {
+
+                                                            background-color: @lazurite-translucent1;  // 背景色
+                                                            border: solid 1px @gold;                   // 枠線
+
+                                                            // お気に入り登録数とインストール数表示要素
+                                                            div.stats.pull-right {
+
+                                                                // お気に入り登録数とインストール数
+                                                                span.stats-item {
+
+                                                                    // アイコン要素
+                                                                    span.icon.icon-star {
+
+                                                                        &::before {
+
+                                                                            color: @mami;  // 文字色
+                                                                        }
+                                                                    }
+
+                                                                    // クラウドアイコン表示要素
+                                                                    span.icon.icon-cloud-download {
+
+                                                                        // アイコン
+                                                                        &::before {
+
+                                                                            color: @nagisa;  // 文字色
+                                                                        }
+                                                                    }
+
+                                                                    // 登録数
+                                                                    span.value {
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            // 各パッケージ項目本体
+                                                            div.body {
+
+                                                                // パッケージ名とバージョン表示要素
+                                                                h4.card-name {
+
+                                                                    // パッケージ名
+                                                                    a.package-name {
+
+                                                                        color: @gold;  // 文字色
+                                                                    }
+
+                                                                    // バージョン
+                                                                    span.package-version {
+
+                                                                        color: @gold;  // 文字色
+                                                                    }
+                                                                }
+
+                                                                // パッケージ説明
+                                                                span.package-description {
+
+                                                                    // color: @gold;  // 文字色
+                                                                }
+
+                                                                // メッセージ
+                                                                div.package-message {
+
+                                                                    color: @gold;  // 文字色
+                                                                }
+                                                            }
+
+                                                            // 作成者情報とコントロールボタン
+                                                            div.meta {
+
+                                                                // 作成者
+                                                                div.meta-user {
+
+                                                                    // アイコンリンク
+                                                                    a {
+
+                                                                        // アイコン
+                                                                        img.avatar {
+                                                                        }
+                                                                    }
+
+                                                                    // 作成者名
+                                                                    a.author {
+
+                                                                        color: @setting-panel-links;  // 文字色
+                                                                    }
+                                                                }
+
+                                                                // コントロールボタン類表示要素
+                                                                div.meta-controls {
+
+                                                                    // ボタンツールバー
+                                                                    div.btn-toolbar {
+
+                                                                        // 各ボタン要素
+                                                                        div.btn-group {
+
+                                                                            // ボタン全て
+                                                                            button {
+
+                                                                                background: @lazurite-translucent1;  // 背景
+                                                                                color: @gold;                        // 文字色
+
+                                                                                // ボタン類
+                                                                                &.btn {
+
+                                                                                    // アイコンがあるボタン類
+                                                                                    &.icon {
+
+                                                                                        border: solid 1px @homura;  // 枠線
+
+                                                                                        // インストール，アップデートなどの元の背景が青いボタン
+                                                                                        &.btn-info {
+
+                                                                                            border: solid 1px @sayaka;  // 枠線
+
+                                                                                            // インストールボタン
+                                                                                            &.icon-cloud-download.install-button {
+
+                                                                                                // アイコン
+                                                                                                &::before {
+                                                                                                }
+                                                                                            }
+                                                                                        }
+
+                                                                                        // 設定ボタン
+                                                                                        &.icon-gear.settings {
+
+                                                                                            // アイコン
+                                                                                            &::before {
+                                                                                            }
+                                                                                        }
+
+                                                                                        // アンインストールボタン
+                                                                                        &.icon-trashcan.uninstall-button {
+
+                                                                                            // アイコン
+                                                                                            &::before {
+                                                                                            }
+                                                                                        }
+
+                                                                                        // 無効有効切り替えボタン
+                                                                                        &.enablement {
+
+                                                                                            // 「無効にする」表示の時
+                                                                                            &.icon-playback-pause {
+
+                                                                                                // アイコン
+                                                                                                &::before {
+                                                                                                }
+                                                                                            }
+
+                                                                                            // 「有効にする」表示の時
+                                                                                            &.icon-playback-play {
+
+                                                                                                // アイコン
+                                                                                                &::before {
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+
+                                                                                    // インジケーター
+                                                                                    &.status-indicator {
+
+                                                                                        background-color: @background-color-status-indicator-enable;  // 背景色
+
+                                                                                        &.is-disabled {
+
+                                                                                            background-color: @mami;  // 背景色
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                // 廃止予定パッケージ関連情報表示欄
+                                                &.deprecated-packages {
+
+                                                    // タイトル
+                                                    h3.sub-section-heading.icon {
+
+                                                        // アイコン
+                                                        &::before {
+                                                        }
+
+                                                        // 個数表示
+                                                        span.section-heading-count.badge.badge-flexible {
+
+                                                            background-color: @lazurite-translucent1;  // 背景色
+                                                            color: @gold;                             // 文字色
+                                                        }
+                                                    }
+
+                                                    // 説明文
+                                                    p {
+                                                    }
+                                                }
+
+                                                // インストール済みコミュニティパッケージ
+                                                &.installed-packages {
+
+                                                    // タイトル
+                                                    h3.sub-section-heading.icon {
+
+                                                        // アイコン
+                                                        &::before {
+                                                        }
+
+                                                        // 開閉ボタン
+                                                        &::after {
+                                                        }
+
+                                                        // テーマのアイコン
+                                                        &.icon-paintcan {
+
+                                                            // color: @gold;  // 文字色
+
+                                                            // ペイント缶
+                                                            &::before {
+
+                                                                // color: @gold;  // アイコン色
+                                                            }
+
+                                                            // 格納アイコン
+                                                            &::after {
+
+                                                                // color: @gold;  // アイコン色
+                                                            }
+                                                        }
+                                                    }
+
+                                                    // パケージ一覧
+                                                    div.container.package-container {
+
+                                                        // 各パッケージ要素
+                                                        div.row {
+
+                                                            // background-color: red;  // 背景色
+
+                                                            // 単項目
+                                                            div.package-card.col-lg-8 {
+
+                                                                // お気に入り登録数とインストール数表示要素
+                                                                div.stats.pull-right {
+
+                                                                    // お気に入り登録数とインストール数
+                                                                    span.stats-item {
+
+                                                                        // アイコン要素
+                                                                        span.icon {
+
+                                                                            // お気に入りアイコン要素
+                                                                            &.icon-star {
+
+                                                                                // アイコン
+                                                                                &::before {
+                                                                                }
+                                                                            }
+
+                                                                            // クラウドアイコン要素
+                                                                            &.icon-cloud-download {
+
+                                                                                // アイコン
+                                                                                &::before {
+
+                                                                                    color: @nagisa;  // アイコン色
+                                                                                }
+                                                                            }
+                                                                        }
+
+                                                                        // 登録数
+                                                                        span.value {
+
+                                                                            color: @gold;  // 文字色
+                                                                        }
+                                                                    }
+                                                                }
+
+                                                                // 各パッケージ項目本体
+                                                                div.body {
+
+                                                                    // パッケージ名とバージョン表示要素
+                                                                    h4.card-name {
+
+                                                                        // パッケージ名
+                                                                        a.package-name {
+                                                                        }
+
+                                                                        // バージョン要素
+                                                                        span.package-version {
+
+                                                                            // バージョン
+                                                                            span.value {
+
+                                                                                // color: @gold;  // 文字色
+                                                                            }
+                                                                        }
+
+                                                                        // 廃止予定お知らせ要素
+                                                                        span.deprecation-badge.highlight-warning.inline-block {
+
+                                                                            background-color: transparent;  // 背景色
+                                                                            color: @kyouko;                 // 文字色
+                                                                        }
+                                                                    }
+
+                                                                    // パッケージ説明
+                                                                    span.package-description {
+
+                                                                        // color: @gold;  // 文字色
+                                                                    }
+
+                                                                    // メッセージ
+                                                                    div.package-message {
+
+                                                                        color: @gold;  // 文字色
+                                                                    }
+                                                                }
+
+                                                                // 作成者情報とコントロールボタン
+                                                                div.meta {
+
+                                                                    // 作成者
+                                                                    div.meta-user {
+
+                                                                        // アイコンリンク
+                                                                        a {
+
+                                                                            // アイコン
+                                                                            img.avatar {
+                                                                            }
+                                                                        }
+
+                                                                        // 作成者名
+                                                                        a.author {
+
+                                                                            color: @setting-panel-links;  // 文字色
+                                                                        }
+                                                                    }
+
+                                                                    // コントロールボタン類表示要素
+                                                                    div.meta-controls {
+
+                                                                        // ボタンツールバー
+                                                                        div.btn-toolbar {
+
+                                                                            // 各ボタン要素
+                                                                            div.btn-group {
+
+                                                                                // ボタン全て
+                                                                                button {
+
+                                                                                    background: @lazurite-translucent1;  // 背景
+                                                                                    color: @gold;                       // 文字色
+
+                                                                                    // ボタン類
+                                                                                    &.btn.icon {
+
+                                                                                        border: solid 1px @homura;  // 枠線
+
+                                                                                        // インストール，アップデートなどの元の背景が青いボタン
+                                                                                        &.btn-info {
+
+                                                                                            border: solid 1px @sayaka;  // 枠線
+
+                                                                                            // インストールボタン
+                                                                                            &.icon-cloud-download.install-button {
+
+                                                                                                // アイコン
+                                                                                                &::before {
+                                                                                                }
+                                                                                            }
+                                                                                        }
+
+                                                                                        // 設定ボタン
+                                                                                        &.icon-gear.settings {
+
+                                                                                            // アイコン
+                                                                                            &::before {
+                                                                                            }
+                                                                                        }
+
+                                                                                        // アンインストールボタン
+                                                                                        &.icon-trashcan.uninstall-button {
+
+                                                                                            // アイコン
+                                                                                            &::before {
+                                                                                            }
+                                                                                        }
+
+                                                                                        // 無効有効切り替えボタン
+                                                                                        &.enablement {
+
+                                                                                            // 「無効にする」表示の時
+                                                                                            &.icon-playback-pause {
+
+                                                                                                // アイコン
+                                                                                                &::before {
+                                                                                                }
+                                                                                            }
+
+                                                                                            // 「有効にする」表示の時
+                                                                                            &.icon-playback-play {
+
+                                                                                                // アイコン
+                                                                                                &::before {
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+
+                                                                                    // インジケーター
+                                                                                    &.btn.status-indicator {
+
+                                                                                        background-color: @background-color-status-indicator-enable;  // 背景色
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                // コアパッケージ
+                                                &.core-packages {
+
+                                                    // タイトル
+                                                    h3.sub-section-heading.icon {
+
+                                                        color: @gold;  // 文字色
+
+                                                        // アイコン
+                                                        &::before {
+                                                        }
+
+                                                        // 開閉ボタン
+                                                        &::after {
+
+                                                            color: @gold;  // 文字色
+                                                        }
+                                                    }
+
+                                                    // コアパッケージ一覧
+                                                    div.container.package-container {
+
+                                                        // 各パッケージ項目
+                                                        div.row {
+
+                                                            // 単項目
+                                                            div.package-card.col-lg-8 {
+
+                                                                background-color: @lazurite-translucent1;  // 背景色
+                                                                border: solid 1px @gold;                   // 枠線
+
+                                                                // お気に入り数とインストール数表示要素
+                                                                div.stats.pull-right {
+
+                                                                    // お気に入り数とインストール数
+                                                                    span.stats-item {
+
+                                                                        // お気に入りマーク表示要素
+                                                                        span.icon.icon-star {
+
+                                                                            // アイコン
+                                                                            &::before {
+
+                                                                                color: @mami;  // アイコンの色
+                                                                            }
+                                                                        }
+
+                                                                        // クラウドマーク
+                                                                        span.icon.icon-cloud-download {
+
+                                                                            // アイコン
+                                                                            &::before {
+
+                                                                                color: @nagisa;  // アイコン色
+                                                                            }
+                                                                        }
+
+                                                                        // お気に入り数とインストール数
+                                                                        span.value {
+
+                                                                            color: @gold;  // 文字色
+                                                                        }
+                                                                    }
+                                                                }
+
+                                                                // 各パッケージ本体
+                                                                div.body {
+
+                                                                    // パッケージ名とバージョン
+                                                                    h4.card-name {
+
+                                                                        // パッケージ名
+                                                                        a.package-name {
+
+                                                                            color: @gold;  // 文字色
+                                                                        }
+
+                                                                        // バージョン表示要素
+                                                                        span.package-version {
+
+                                                                            span.value {
+
+                                                                                color: @gold;  // 文字色
+                                                                            }
+                                                                        }
+
+                                                                        // 廃止予定お知らせ要素
+                                                                        span.deprecation-badge.highlight-warning.inline-block {
+
+                                                                            background-color: transparent;  // 背景色
+                                                                            color: @kyouko;                 // 文字色
+                                                                        }
+                                                                    }
+
+                                                                    // 説明文
+                                                                    span.package-description {
+
+                                                                        color: @gold;  // 文字色
+                                                                    }
+
+                                                                    // メッセージ
+                                                                    div.package-message {
+
+                                                                        color: @gold;  // 文字色
+                                                                    }
+                                                                }
+
+                                                                // 作成者情報とコントロールボタン
+                                                                div.meta {
+
+                                                                    // 作成者情報
+                                                                    div.meta-user {
+
+                                                                        // アイコンとリンク
+                                                                        a {
+
+                                                                            // アイコン
+                                                                            img.avatar {
+                                                                            }
+                                                                        }
+
+                                                                        // 作成者名
+                                                                        a.author {
+
+                                                                            color: @gold;  // 文字色
+                                                                        }
+                                                                    }
+
+                                                                    // コントロールボタン
+                                                                    div.meta-controls {
+
+                                                                        // ボタンツールバー
+                                                                        div.btn-toolbar {
+
+                                                                            // ボタン類
+                                                                            div.btn-group {
+
+                                                                                // ボタン全て
+                                                                                button {
+
+                                                                                    // ボタン類
+                                                                                    &.btn {
+
+                                                                                        // アイコン付き
+                                                                                        &.icon {
+
+                                                                                            background: transparent;    // 背景
+                                                                                            border: solid 1px @homura;  // 枠線
+                                                                                            color: @gold;               // 文字色
+
+                                                                                            // 設定ボタン
+                                                                                            &.icon-gear.settings {
+                                                                                            }
+
+                                                                                            // アンインストールボタン
+                                                                                            &.icon-trashcan.uninstall-button {
+                                                                                            }
+
+                                                                                            // 無効，有効切り替えボタン
+                                                                                            &.enablement {
+
+                                                                                                // 「無効にする」表示の時
+                                                                                                &.icon-playback-pause {
+                                                                                                }
+
+                                                                                                // 「有効にする」表示の時
+                                                                                                &.icon-playback-play {
+                                                                                                }
+                                                                                            }
+
+                                                                                            // 情報ボタン類
+                                                                                            &.btn-info {
+
+                                                                                                // インストールボタン
+                                                                                                &.icon-cloud-download.install-button {
+
+                                                                                                    background: transparent;    // 背景
+                                                                                                    border: solid 1px @sayaka;  // 枠線
+                                                                                                    color: @gold;               // 文字色
+
+                                                                                                    // アイコン
+                                                                                                    &::before {
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                // 開発パッケージ
+                                                &.dev-packages {
+
+                                                    // タイトル
+                                                    h3.sub-section-heading.icon {
+
+                                                        color: @gold;  // 文字色
+
+                                                        // アイコン
+                                                        &::before {
+                                                        }
+
+                                                        // 開閉ボタン
+                                                        &::after {
+
+                                                            color: @gold;  // 文字色
+                                                        }
+                                                    }
+
+                                                    // 開発パッケージ一覧
+                                                    div.container.package-container {
+
+                                                        // 各パッケージ項目
+                                                        div.row {
+
+                                                            // 単項目
+                                                            div.package-card.col-lg-8 {
+
+                                                                background-color: @lazurite-translucent1;  // 背景色
+                                                                border: solid 1px @gold;                  // 枠線
+
+                                                                // お気に入り数とインストール数表示要素
+                                                                div.stats.pull-right {
+
+                                                                    // お気に入り数とインストール数
+                                                                    span.stats-item {
+
+                                                                        // お気に入りマーク表示要素
+                                                                        span.icon.icon-star {
+
+                                                                            // アイコン
+                                                                            &::before {
+
+                                                                                color: @mami;  // アイコンの色
+                                                                            }
+                                                                        }
+
+                                                                        // クラウドマーク
+                                                                        span.icon.icon-cloud-download {
+
+                                                                            // アイコン
+                                                                            &::before {
+
+                                                                                color: @nagisa;  // アイコン色
+                                                                            }
+                                                                        }
+
+                                                                        // お気に入り数とインストール数
+                                                                        span.value {
+
+                                                                            color: @gold;  // 文字色
+                                                                        }
+                                                                    }
+                                                                }
+
+                                                                // 各パッケージ本体
+                                                                div.body {
+
+                                                                    // パッケージ名とバージョン
+                                                                    h4.card-name {
+
+                                                                        // パッケージ名
+                                                                        a.package-name {
+
+                                                                            color: @gold;  // 文字色
+                                                                        }
+
+                                                                        // バージョン表示要素
+                                                                        span.package-version {
+
+                                                                            span.value {
+
+                                                                                color: @gold;  // 文字色
+                                                                            }
+                                                                        }
+
+                                                                        // 廃止予定お知らせ要素
+                                                                        span.deprecation-badge.highlight-warning.inline-block {
+
+                                                                            background-color: transparent;  // 背景色
+                                                                            color: @kyouko;                 // 文字色
+                                                                        }
+                                                                    }
+
+                                                                    // 説明文
+                                                                    span.package-description {
+
+                                                                        color: @gold;  // 文字色
+                                                                    }
+
+                                                                    // メッセージ
+                                                                    div.package-message {
+
+                                                                        color: @gold;  // 文字色
+                                                                    }
+                                                                }
+
+                                                                // 作成者情報とコントロールボタン
+                                                                div.meta {
+
+                                                                    // 作成者情報
+                                                                    div.meta-user {
+
+                                                                        // アイコンとリンク
+                                                                        a {
+
+                                                                            // アイコン
+                                                                            img.avatar {
+                                                                            }
+                                                                        }
+
+                                                                        // 作成者名
+                                                                        a.author {
+
+                                                                            color: @gold;  // 文字色
+                                                                        }
+                                                                    }
+
+                                                                    // コントロールボタン
+                                                                    div.meta-controls {
+
+                                                                        // ボタンツールバー
+                                                                        div.btn-toolbar {
+
+                                                                            // ボタン類
+                                                                            div.btn-group {
+
+                                                                                // ボタン全て
+                                                                                button {
+
+                                                                                    // インストールボタン
+                                                                                    &.btn.btn-info.icon.icon-cloud-download.install-button {
+
+                                                                                        background: transparent;    // 背景
+                                                                                        border: solid 1px @sayaka;  // 枠線
+                                                                                        color: @gold;               // 文字色
+
+                                                                                        // アイコン
+                                                                                        &::before {
+                                                                                        }
+                                                                                    }
+
+                                                                                    // 設定，アンインストール，無効の3連ボタン
+                                                                                    &.btn.icon {
+
+                                                                                        background: transparent;    // 背景
+                                                                                        border: solid 1px @homura;  // 枠線
+                                                                                        color: @gold;               // 文字色
+
+                                                                                        // 設定ボタン
+                                                                                        &.icon-gear.settings {
+                                                                                        }
+
+                                                                                        // アンインストールボタン
+                                                                                        &.icon-trashcan.uninstall-button {
+                                                                                        }
+
+                                                                                        // 無効，有効切り替えボタン
+                                                                                        &.enablement {
+
+                                                                                            // 「無効にする」表示の時
+                                                                                            &.icon-playback-pause {
+                                                                                            }
+
+                                                                                            // 「有効にする」表示の時
+                                                                                            &.icon-playback-play {
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                // Gitパッケージ
+                                                &.git-packages {
+
+                                                    // タイトル
+                                                    h3.sub-section-heading.icon {
+
+                                                        color: @gold;  // 文字色
+
+                                                        // アイコン
+                                                        &::before {
+                                                        }
+
+                                                        // 開閉ボタン
+                                                        &::after {
+
+                                                            color: @gold;  // 文字色
+                                                        }
+                                                    }
+
+                                                    // Gitパッケージ一覧
+                                                    div.container.package-container {
+
+                                                        // 各パッケージ項目
+                                                        div.row {
+
+                                                            // 単項目
+                                                            div.package-card.col-lg-8 {
+
+                                                                background-color: @lazurite-translucent1;  // 背景色
+                                                                border: solid 1px @gold;                   // 枠線
+
+                                                                // お気に入り数とインストール数表示要素
+                                                                div.stats.pull-right {
+
+                                                                    // お気に入り数とインストール数
+                                                                    span.stats-item {
+
+                                                                        // お気に入りマーク表示要素
+                                                                        span.icon.icon-star {
+
+                                                                            // アイコン
+                                                                            &::before {
+
+                                                                                color: @mami;  // アイコンの色
+                                                                            }
+                                                                        }
+
+                                                                        // クラウドマーク
+                                                                        span.icon.icon-cloud-download {
+
+                                                                            // アイコン
+                                                                            &::before {
+
+                                                                                color: @nagisa;  // アイコン色
+                                                                            }
+                                                                        }
+
+                                                                        // お気に入り数とインストール数
+                                                                        span.value {
+
+                                                                            color: @gold;  // 文字色
+                                                                        }
+                                                                    }
+                                                                }
+
+                                                                // 各パッケージ本体
+                                                                div.body {
+
+                                                                    // パッケージ名とバージョン
+                                                                    h4.card-name {
+
+                                                                        // パッケージ名
+                                                                        a.package-name {
+
+                                                                            color: @gold;  // 文字色
+                                                                        }
+
+                                                                        // バージョン表示要素
+                                                                        span.package-version {
+
+                                                                            span.value {
+
+                                                                                color: @gold;  // 文字色
+                                                                            }
+                                                                        }
+
+                                                                        // 廃止予定お知らせ要素
+                                                                        span.deprecation-badge.highlight-warning.inline-block {
+
+                                                                            background-color: transparent;  // 背景色
+                                                                            color: @kyouko;                 // 文字色
+                                                                        }
+                                                                    }
+
+                                                                    // 説明文
+                                                                    span.package-description {
+
+                                                                        color: @gold;  // 文字色
+                                                                    }
+
+                                                                    // メッセージ
+                                                                    div.package-message {
+
+                                                                        color: @gold;  // 文字色
+                                                                    }
+                                                                }
+
+                                                                // 作成者情報とコントロールボタン
+                                                                div.meta {
+
+                                                                    // 作成者情報
+                                                                    div.meta-user {
+
+                                                                        // アイコンとリンク
+                                                                        a {
+
+                                                                            // アイコン
+                                                                            img.avatar {
+                                                                            }
+                                                                        }
+
+                                                                        // 作成者名
+                                                                        a.author {
+
+                                                                            color: @gold;  // 文字色
+                                                                        }
+                                                                    }
+
+                                                                    // コントロールボタン
+                                                                    div.meta-controls {
+
+                                                                        // ボタンツールバー
+                                                                        div.btn-toolbar {
+
+                                                                            // ボタン類
+                                                                            div.btn-group {
+
+                                                                                // ボタン全て
+                                                                                button {
+
+                                                                                    // インストールボタン
+                                                                                    &.btn.btn-info.icon.icon-cloud-download.install-button {
+
+                                                                                        background: transparent;    // 背景
+                                                                                        border: solid 1px @sayaka;  // 枠線
+                                                                                        color: @gold;               // 文字色
+
+                                                                                        // アイコン
+                                                                                        &::before {
+                                                                                        }
+                                                                                    }
+
+                                                                                    // 設定，アンインストール，無効の3連ボタン
+                                                                                    &.btn.icon {
+
+                                                                                        background: transparent;    // 背景
+                                                                                        border: solid 1px @homura;  // 枠線
+                                                                                        color: @gold;               // 文字色
+
+                                                                                        // 設定ボタン
+                                                                                        &.icon-gear.settings {
+                                                                                        }
+
+                                                                                        // アンインストールボタン
+                                                                                        &.icon-trashcan.uninstall-button {
+                                                                                        }
+
+                                                                                        // 無効，有効切り替えボタン
+                                                                                        &.enablement {
+
+                                                                                            // 「無効にする」表示の時
+                                                                                            &.icon-playback-pause {
+                                                                                            }
+
+                                                                                            // 「有効にする」表示の時
+                                                                                            &.icon-playback-play {
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        // アップデート
+                                        &.packages {
+
+                                            // コンテンツラッパー
+                                            div.section-container.updates-container {
+
+                                                // ヘッダ
+                                                div.updates-heading-container {
+
+                                                    // タイトル
+                                                    h1 {
+
+                                                        color: @gold;
+
+                                                        // アイコンがあるタイトル
+                                                        &.section-heading.icon {
+
+                                                            // 「利用可能なアップデート」
+                                                            &.icon-cloud-download {
+
+                                                                &::before {
+
+                                                                    color: @nagisa;  // 文字色
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+
+                                                    // ボタングループ
+                                                    div.section-heading.updates-btn-group {
+
+                                                        // 全ボタン要素
+                                                        button {
+
+                                                            background: @lazurite-translucent1;  // 背景
+                                                            color: @gold;                        // 文字色
+
+                                                            // アップデート関連ボタン
+                                                            &.update-all-button.btn {
+
+                                                                border: solid 1px @homura;  // 枠線
+
+                                                                // 「全てアップデート」ボタン
+                                                                &.btn-primary {
+
+                                                                    border: solid 1px @sayaka;  // 枠線
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                // アラート
+                                                div.alert.icon {
+
+                                                    // 注意
+                                                    &.alert-warning {
+
+                                                        // 注意マークのあるアラート
+                                                        &.icon-alert {
+
+                                                            background-color: transparent;  // 背景
+                                                            border: solid 1px @mami;        // 枠線
+                                                            color: @mami;                   // 文字色
+                                                        }
+                                                    }
+
+                                                    // 情報
+                                                    &.alert-info {
+
+                                                        background-color: transparent;  // 背景色
+                                                        border: solid 1px @sayaka;      // 枠線
+
+                                                        // アップデートチェック中
+                                                        &.icon-hourglass {
+
+                                                            color: @sayaka;  // 文字色
+
+                                                            // アイコン
+                                                            &::before {
+                                                            }
+                                                        }
+
+                                                        // 全て最新です！
+                                                        &.icon-heart {
+
+                                                            color: @gold;  // 文字色
+
+                                                            // アイコン
+                                                            &::before {
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                // パッケージカードラッパー
+                                                div.container.package-container {
+
+                                                    // 各パッケージカード
+                                                    div.package-card.col-lg-8 {
+
+                                                        background-color: @lazurite-translucent1;  // 背景色
+                                                        border: solid 1px @gold;                   // 枠線
+
+                                                        // お気に入り登録数とインストール数
+                                                        div.stats.pull-right {
+
+                                                            // 各数要素
+                                                            span.stats-item {
+
+                                                                // 各アイコン
+                                                                span.icon {
+
+                                                                    // お気に入りアイコン
+                                                                    &.icon-star {
+
+                                                                        color: @mami;  // アイコン色
+                                                                    }
+
+                                                                    // クラウドアイコン
+                                                                    &.icon-cloud-download {
+                                                                        color: @nagisa;  // アイコン色
+                                                                    }
+                                                                }
+
+                                                                // 各数
+                                                                span.value {
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // パッケージカード本体
+                                                        div.body {
+
+                                                            // カード名とバージョン
+                                                            h4.card-name {
+
+                                                                // パッケージ名
+                                                                a.package-name {
+
+                                                                    color: @gold;  // 文字色
+                                                                }
+
+                                                                // バージョン
+                                                                span.package-version {
+
+                                                                    // 値
+                                                                    span.value {
+                                                                    }
+                                                                }
+
+                                                                // 廃止お知らせ要素
+                                                                span.deprecation-badge.highlight-warning.inline-block {
+
+                                                                    background-color: transparent;  // 背景色
+                                                                    color: @kyouko;                 // 文字色
+                                                                }
+                                                            }
+
+                                                            // パッケージ説明
+                                                            span.package-description {
+                                                            }
+
+                                                            // メッセージ
+                                                            div.package-message {
+                                                            }
+                                                        }
+
+                                                        // 作成者情報とコントロールボタン
+                                                        div.meta {
+
+                                                            // 作成者情報
+                                                            div.meta-user {
+
+                                                                // アイコンリンク
+                                                                a {
+
+                                                                    // アイコン
+                                                                    img.avatar {
+                                                                    }
+
+                                                                    &.author {
+
+                                                                        color: @setting-panel-links;  // 文字色
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            // コントロールボタン
+                                                            div.meta-controls {
+
+                                                                // ボタンツールバー
+                                                                div.btn-toolbar {
+
+                                                                    // ボタン類
+                                                                    div.btn-group {
+
+                                                                        // 全ボタン
+                                                                        button {
+
+                                                                            background: @lazurite-translucent1;  // 背景
+                                                                            color: @gold;                        // 文字色
+
+                                                                            // ボタン類
+                                                                            &.btn {
+
+                                                                                // アイコンのあるボタン
+                                                                                &.icon {
+                                                                                    border: solid 1px @homura;  // 枠線
+
+                                                                                    // インストール，アップデートなどの元の背景が青いボタン
+                                                                                    &.btn-info {
+
+                                                                                        border: solid 1px @sayaka;  // 枠線
+
+                                                                                        // インストールボタン
+                                                                                        &.icon-cloud-download.install-button {
+
+                                                                                            // アイコン
+                                                                                            &::before {
+                                                                                            }
+                                                                                        }
+                                                                                    }
+
+                                                                                    // 設定ボタン
+                                                                                    &.icon-gear.settings {
+
+                                                                                        // アイコン
+                                                                                        &::before {
+                                                                                        }
+                                                                                    }
+
+                                                                                    // アンインストールボタン
+                                                                                    &.icon-trashcan.uninstall-button {
+
+                                                                                        // アイコン
+                                                                                        &::before {
+                                                                                        }
+                                                                                    }
+
+                                                                                    // 無効有効切り替えボタン
+                                                                                    &.enablement {
+
+                                                                                        // 「無効にする」表示の時
+                                                                                        &.icon-playback-pause {
+
+                                                                                            // アイコン
+                                                                                            &::before {
+                                                                                            }
+                                                                                        }
+
+                                                                                        // 「有効にする」表示の時
+                                                                                        &.icon-playback-play {
+
+                                                                                            // アイコン
+                                                                                            &::before {
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+
+                                                                                // インジケーター
+                                                                                &.status-indicator {
+
+                                                                                    background-color: @background-color-status-indicator-enable;  // 背景色
+
+                                                                                    // 無効時
+                                                                                    &.is-disabled {
+                                                                                        background-color: @background-color-status-indicator-disable;  // 背景色
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // テーマ，インストール
+                                    div.section.packages {
+
+                                        border-top: solid 1px @madoka;  // 境界線
+
+                                        // テーマ
+                                        &.themes-panel {
+                                        }
+
+                                        // 要素ラッパー
+                                        div.section-container {
+
+                                            // タイトル
+                                            div.section-heading.icon {
+
+                                                color: @gold;  // 文字色
+
+                                                // アイコン
+                                                &::before {
+
+                                                    // color: @gold;  // 文字色
+                                                }
+                                            }
+
+                                            // 概要
+                                            div.text.native-key-bindings {
+
+                                                color: @gold;  // 文字色
+
+                                                // 説明文
+                                                span {
+
+                                                    // はてなマークからリンクまで
+                                                    &.icon.icon-question {
+
+                                                        // アイコン
+                                                        &::before {
+                                                        }
+                                                    }
+                                                }
+
+                                                // リンク
+                                                a.link {
+
+                                                    color: @setting-panel-links;
+                                                }
+                                            }
+
+                                            // テーマ選択部分
+                                            div.themes-picker {
+
+                                                // インターフェース，シンタックス両テーマ要素ラッパー
+                                                div.themes-picker-item.control-group {
+
+                                                    // 両テーマ要素
+                                                    div.controls {
+
+                                                        // タイトルと説明
+                                                        label.control-label {
+
+                                                            // タイトル
+                                                            div.setting-title.themes-label.text {
+
+                                                                color: @gold;  // 文字色
+                                                            }
+
+                                                            // 説明
+                                                            div.setting-description.text.theme-description {
+
+                                                                color: @gold;  // 文字色
+                                                            }
+                                                        }
+
+                                                        // 選択部分
+                                                        div.select-container {
+
+                                                            // 選択肢要素
+                                                            select.form-control {
+
+                                                                background-color: @lazurite-translucent1;  // 背景色
+                                                                border: solid 1px @gold;                   // 枠線
+                                                                color: @gold;                              // 文字色
+                                                            }
+
+                                                            // 設定ボタン
+                                                            button.btn.icon.icon-gear {
+
+                                                                background: @lazurite-translucent1;  // 背景色
+                                                                border: solid 1px @gold;             // 枠線
+                                                                color: @gold;                        // 文字色
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            // タイトル
+                                            h1.section-heading.icon {
+
+                                                // インストールタイトル
+                                                &.icon-plus {
+
+                                                    color: @gold;  // 文字色
+
+                                                    // アイコン
+                                                    &::before {
+
+                                                    }
+                                                }
+                                            }
+
+                                            // 検索欄
+                                            div.search-container.clearfix {
+
+                                                // エディタラッパー
+                                                div.editor-container {
+
+                                                    // テキストエディタ部分
+                                                    atom-text-editor.editor.mini {
+
+                                                        border: solid 1px @gold;                   // 枠線
+                                                        // background-color: @lazurite-translucent1;  // 背景色
+                                                        color: @gold;                              // 文字色
+                                                        padding: 0;                                // 内側の余白
+
+                                                        // スクロール可能部分
+                                                        div div.scroll-view {
+
+                                                            // 入力行
+                                                            div div.lines {
+
+                                                                // ハイライト類
+                                                                div.highlights {
+
+                                                                    // 各ハイライト
+                                                                    div.highlight {
+
+                                                                        // テキスト選択ハイライト
+                                                                        &.selection {
+
+                                                                            // ハイライト部分のテキスト
+                                                                            div.region.selection {
+
+                                                                                background-color: @homura-selection !important;  // 背景色
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                // ボタン類
+                                                div.btn-group {
+
+                                                    // 全ボタン
+                                                    button {
+
+                                                        border: solid 1px @homura;           // 枠線
+                                                        background: @lazurite-translucent1;  // 背景
+                                                        color: @gold;                        // 文字色
+
+                                                        // 各ボタン
+                                                        &.btn.btn-default {
+
+                                                            // 選択中のボタン
+                                                            &.selected {
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            // 検索処理実行中のアラート
+                                            div.alert.alert-info.search-message.icon.icon-search {
+
+                                                background-color: transparent;  // 背景色
+                                                border: solid 1px @sayaka;      // 枠線
+                                                color: @sayaka;                 // 文字色
+                                            }
+
+                                            // パッケージ要素ラッパー
+                                            div.container.package-container {
+
+                                                // 各パッケージカード
+                                                div.row {
+
+                                                    // パッケージカード
+                                                    div.package-card.col-lg-8 {
+
+                                                        background-color: @lazurite-translucent1;  // 背景色
+                                                        border: solid 1px @gold;                   // 枠線
+
+                                                        // お気に入り登録数とインストール数表示要素
+                                                        div.stats.pull-right {
+
+                                                            // お気に入り登録数とインストール数
+                                                            span.stats-item {
+
+                                                                // アイコン要素
+                                                                span.icon.icon-star {
+
+                                                                    &::before {
+
+                                                                        color: @mami;  // 文字色
+                                                                    }
+                                                                }
+
+                                                                // クラウドアイコン表示要素
+                                                                span.icon.icon-cloud-download {
+
+                                                                    // アイコン
+                                                                    &::before {
+
+                                                                        color: @nagisa;  // 文字色
+                                                                    }
+                                                                }
+
+                                                                // 登録数
+                                                                span.value {
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // 各パッケージ項目本体
+                                                        div.body {
+
+                                                            // パッケージ名とバージョン表示要素
+                                                            h4.card-name {
+
+                                                                // パッケージ名
+                                                                a.package-name {
+
+                                                                    color: @gold;  // 文字色
+                                                                }
+
+                                                                // バージョン
+                                                                span.package-version {
+
+                                                                    color: @gold;  // 文字色
+                                                                }
+
+                                                                // 廃止予定お知らせ要素
+                                                                span.deprecation-badge.highlight-warning.inline-block {
+
+                                                                    background-color: transparent;  // 背景色
+                                                                    color: @kyouko;                 // 文字色
+                                                                }
+                                                            }
+
+                                                            // パッケージ説明
+                                                            span.package-description {
+
+                                                                // color: @gold;  // 文字色
+                                                            }
+
+                                                            // メッセージ
+                                                            div.package-message {
+
+                                                                color: @gold;  // 文字色
+                                                            }
+                                                        }
+
+                                                        // 作成者情報とコントロールボタン
+                                                        div.meta {
+
+                                                            // 作成者
+                                                            div.meta-user {
+
+                                                                // アイコンリンク
+                                                                a {
+
+                                                                    // アイコン
+                                                                    img.avatar {
+                                                                    }
+                                                                }
+
+                                                                // 作成者名
+                                                                a.author {
+
+                                                                    color: @setting-panel-links;  // 文字色
+                                                                }
+                                                            }
+
+                                                            // コントロールボタン類表示要素
+                                                            div.meta-controls {
+
+                                                                // ボタンツールバー
+                                                                div.btn-toolbar {
+
+                                                                    // 各ボタン要素
+                                                                    div.btn-group {
+
+                                                                        // ボタン全て
+                                                                        button {
+
+                                                                            background: @lazurite-translucent1;  // 背景
+                                                                            color: @gold;                        // 文字色
+
+                                                                            // ボタン類
+                                                                            &.btn {
+
+                                                                                // アイコンのあるボタン類
+                                                                                &.icon {
+
+                                                                                    border: solid 1px @homura;  // 枠線
+
+                                                                                    // インストール，アップデートなどの元の背景が青いボタン
+                                                                                    &.btn-info {
+
+                                                                                        border: solid 1px @sayaka;  // 枠線
+
+                                                                                        // インストールボタン
+                                                                                        &.icon-cloud-download.install-button {
+
+                                                                                            // アイコン
+                                                                                            &::before {
+                                                                                            }
+                                                                                        }
+                                                                                    }
+
+                                                                                    // 設定ボタン
+                                                                                    &.icon-gear.settings {
+
+                                                                                        // アイコン
+                                                                                        &::before {
+                                                                                        }
+                                                                                    }
+
+                                                                                    // アンインストールボタン
+                                                                                    &.icon-trashcan.uninstall-button {
+
+                                                                                        // アイコン
+                                                                                        &::before {
+                                                                                        }
+                                                                                    }
+
+                                                                                    // 無効有効切り替えボタン
+                                                                                    &.enablement {
+
+                                                                                        // 「無効にする」表示の時
+                                                                                        &.icon-playback-pause {
+
+                                                                                            // アイコン
+                                                                                            &::before {
+                                                                                            }
+                                                                                        }
+
+                                                                                        // 「有効にする」表示の時
+                                                                                        &.icon-playback-play {
+
+                                                                                            // アイコン
+                                                                                            &::before {
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+
+                                                                                // インジケーター
+                                                                                &.status-indicator {
+
+                                                                                    background-color: @background-color-status-indicator-enable;  // 背景色
+
+                                                                                    // 無効時
+                                                                                    &.is-disabled {
+
+                                                                                        background-color: @mami;  // 背景色
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // パッケージ詳細
+                                    &.package-detail {
+
+                                        // 階層表示要素
+                                        ol.native-key-bindings.breadcrumb {
+
+                                            // 各階層
+                                            li {
+
+                                                // 階層名
+                                                a {
+
+                                                    color: @gold-translucent;  // 文字色
+                                                }
+
+                                                // アクティブ階層
+                                                &.active {
+
+                                                    // 階層名
+                                                    a {
+                                                        color: @gold;  // 文字色
+                                                    }
+                                                    // スラッシュアイコン
+                                                    &::before {
+
+                                                        color: @gold;  // 文字色
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        // パッケージ概要表示要素
+                                        section.section {
+
+                                            // パッケージ概要詳細
+                                            form.section-container.package-detail-view {
+
+                                                // パッケージ項目カードラッパー
+                                                div.container.package-container {
+
+                                                    // パッケージカードラッパー
+                                                    div.row {
+
+                                                        // パッケージカード本体
+                                                        div.package-card.col-lg-8 {
+
+                                                            background-color: transparent;  // 背景色
+                                                            border: solid 1px @gold;        // 枠線
+
+                                                            // お気に入り登録数とインストール数
+                                                            div.stats.pull-right {
+
+                                                                // 各項目
+                                                                span.stats-item {
+
+                                                                    // お気に入りアイコン表示要素
+                                                                    span.icon.icon-star {
+
+                                                                        // アイコン
+                                                                        &::before {
+
+                                                                            color: @mami;  // アイコン色
+                                                                        }
+                                                                    }
+
+                                                                    // 雲アイコン表示要素
+                                                                    span.icon.icon-cloud-download {
+
+                                                                        // アイコン
+                                                                        &::before {
+
+                                                                            color: @nagisa;  // アイコン色
+                                                                        }
+                                                                    }
+
+                                                                    // 各数
+                                                                    span.value {
+
+                                                                        color: @gold;  // 文字色
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            // 本体
+                                                            div.body {
+
+                                                                // パッケージ名とバージョン
+                                                                h4.card-name {
+
+                                                                    // パッケージ名
+                                                                    a.package-name {
+
+                                                                        color: @gold;  // 文字色
+                                                                    }
+
+                                                                    // バージョン表示領域
+                                                                    span.package-version {
+
+                                                                        // バージョン
+                                                                        span.value {
+
+                                                                            color: @gold;  // 文字色
+                                                                        }
+                                                                    }
+
+                                                                    // 廃止予定お知らせ要素
+                                                                    span.deprecation-badge.highlight-warning.inline-block {
+
+                                                                        background-color: transparent;  // 背景色
+                                                                        color: @kyouko;                 // 文字色
+                                                                    }
+                                                                }
+
+                                                                // 概要
+                                                                span.package-description {
+
+                                                                    color: @gold;  // 文字色
+                                                                }
+
+                                                                // メッセージ
+                                                                div.package-message {
+
+                                                                    color: @gold;
+                                                                }
+                                                            }
+
+                                                            // 作成者とコントロールボタン
+                                                            div.meta {
+
+                                                                // 作成者情報
+                                                                div.meta-user {
+
+                                                                    // アイコンリンクと名前
+                                                                    a {
+
+                                                                        color: @gold;  // 文字色
+
+                                                                        // 名前
+                                                                        &.author{
+
+                                                                            color: @setting-panel-links;  // 文字色
+                                                                        }
+                                                                    }
+                                                                }
+
+                                                                // コントロールセット
+                                                                div.meta-controls {
+
+                                                                    // ボタンツールバー
+                                                                    div.btn-toolbar {
+
+                                                                        // ボタン類
+                                                                        div.btn-group {
+
+                                                                            // 全ボタン
+                                                                            button {
+
+                                                                                background: @lazurite-translucent1;  // 背景
+                                                                                color: @gold;                       // 文字色
+                                                                                // border: solid 1px @homura;  // 枠線
+
+                                                                                // ボタン類
+                                                                                &.btn {
+
+                                                                                    &.icon {
+
+                                                                                        border: solid 1px @homura;  // 枠線
+                                                                                    }
+
+                                                                                    // インストール，アップデートなどのボタン
+                                                                                    &.btn-info {
+
+                                                                                        border: solid 1px @sayaka;  // 枠線
+                                                                                    }
+
+                                                                                    // インジケータ
+                                                                                    &.status-indicator {
+
+                                                                                        background-color: @background-color-status-indicator-enable;  // 有効時の色
+
+                                                                                        // 無効時
+                                                                                        &.is-disabled {
+
+                                                                                            background-color: @background-color-status-indicator-disable;  // 無効時の色
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                // ファイルリンク
+                                                p.link.icon.icon-repo.repo-link {
+
+                                                    color: @setting-panel-links;  // 文字色
+
+                                                    // アイコン
+                                                    &::before {
+
+                                                        // color: @gold;  // アイコン色
+                                                    }
+                                                }
+
+                                                // ダッシュボード
+                                                p.text.icon.icon-dashboard {
+
+                                                    color: @gold;
+
+                                                    // ハイライト
+                                                    span.highlight {
+
+                                                        color: @setting-panel-highlights;
+                                                    }
+                                                }
+
+                                                // ボタン類
+                                                div.btn-wrap-group {
+
+                                                    // 全ボタン
+                                                    button {
+
+                                                        background: @lazurite-translucent1;  // 背景
+                                                        color: @gold;                        // 文字色
+                                                        // border: solid 1px @homura;           // 枠線
+
+                                                        // 各ボタン類
+                                                        &.btn.btn-default.icon {
+
+                                                            border: solid 1px @homura;  // 枠線
+
+                                                            // ブラウザで詳細表示ボタン
+                                                            &.icon-link {
+
+                                                                // アイコン要素
+                                                                &::before {
+                                                                }
+                                                            }
+
+                                                            // バグ修正依頼ボタン
+                                                            &.icon-bug {
+
+                                                                // アイコン
+                                                                &::before {
+                                                                }
+                                                            }
+
+                                                            // 更新履歴ボタン
+                                                            &.icon-squirrel {
+
+                                                                // アイコン
+                                                                &::before {
+                                                                }
+                                                            }
+
+                                                            // ライセンス表示ボタン
+                                                            &.icon-law {
+
+                                                                // アイコン
+                                                                &::before {
+                                                                }
+                                                            }
+
+                                                            // ソースコード表示ボタン
+                                                            &.icon-link-external {
+
+                                                                // アイコン
+                                                                &::before {
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        // パッケージ設定類
+                                        div {
+
+                                            // 設定パネル
+                                            section.section {
+
+                                                // タイトル
+                                                div.section-heading.icon {
+
+                                                    color: @gold;  // 文字色
+
+                                                    // キーバインドタイトル
+                                                    &.icon-keyboard {
+
+                                                        // アイコン
+                                                        &::before {
+                                                        }
+                                                    }
+
+                                                    // スニペットタイトル
+                                                    &.icon-code {
+
+                                                        // アイコン
+                                                        &::before {
+                                                        }
+                                                    }
+
+                                                    // アイコン
+                                                    &::before {
+                                                    }
+                                                }
+
+                                                // チェックボックスとタイトル
+                                                div.checkbox {
+
+                                                    // タイトル
+                                                    label {
+
+                                                        // チェックボックス
+                                                        input.input-checkbox {
+
+                                                            background: @lazurite-translucent1;  // 背景
+                                                            border: solid 1px @gold;             // 枠線
+
+                                                            // チェックマーク左側右下がり斜め棒
+                                                            &::before {
+
+                                                                background: @gold;  // 背景
+                                                            }
+
+                                                            // チェックマーク右側右上がり斜め棒
+                                                            &::after {
+
+                                                                background: @gold;  // 背景
+                                                            }
+                                                        }
+
+                                                        // タイトル
+                                                        div.setting-title {
+                                                        }
+                                                    }
+
+                                                    // 説明
+                                                    div.setting-description {
+
+                                                        color: @gold;  // 文字色
+                                                    }
+                                                }
+
+                                                // 表
+                                                table tr th,
+                                                table tr td {
+
+                                                    border: solid 1px @gold;  // 枠線
+                                                    color: @gold;             // 文字色
+
+                                                    // アイコンリンク
+                                                    span.icon {
+
+                                                        // クリップボードにコピー
+                                                        &.icon-clippy.copy-icon {
+
+                                                            color: @setting-panel-links;  // 文字色
+                                                        }
+                                                    }
+                                                }
+
+                                                // 設定
+                                                &.settings-panel {
+
+                                                    // 設定ラッパー
+                                                    div.section-container {
+
+                                                        // タイトル
+                                                        div.block.section-heading.icon {
+
+                                                            // 設定
+                                                            &.icon-gear {
+
+                                                                // アイコン
+                                                                &::before {
+                                                                }
+                                                            }
+
+                                                            // readme
+                                                            &.icon-book {
+
+                                                                // アイコン
+                                                                &::before {
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // 設定項目本体
+                                                        div.section-body {
+
+                                                            // 各項目
+                                                            div.control-group {
+
+                                                                // 単一項目
+                                                                div.controls {
+
+                                                                    // 設定タイトル
+                                                                    div.setting-title {
+                                                                    }
+
+                                                                    // 説明
+                                                                    div.setting-description {
+
+                                                                        // 強調
+                                                                        code {
+
+                                                                            color: @setting-panel-highlights;  // 文字色
+                                                                        }
+                                                                    }
+
+                                                                    // チェックボックス
+                                                                    div.checkbox {
+
+                                                                        // チェックボックス
+                                                                        input.input-checkbox {
+
+                                                                            // 左側右下がり
+                                                                            &::before {
+                                                                            }
+
+                                                                            // 右側右上がり
+                                                                            &::after {
+                                                                            }
+                                                                        }
+
+                                                                        // タイトル
+                                                                        div.setting-title {
+                                                                        }
+
+                                                                        // 説明
+                                                                        div.setting-description {
+
+                                                                            // リンク
+                                                                            a {
+
+                                                                                // 強調
+                                                                                code {
+
+                                                                                    color: @setting-panel-links;  // 文字色
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // README内容
+                                                        div.package-readme.native-key-bindings {
+
+                                                            // タイトル
+                                                            h1#vhdl-linter {
+
+                                                                color: @gold;  // 文字色
+                                                            }
+
+                                                            // 説明文
+                                                            p {
+
+                                                                // 強調
+                                                                code {
+
+                                                                    color: @setting-panel-highlights;  // 文字色
+                                                                }
+                                                            }
+
+                                                            // サブタイトル
+                                                            h3 {
+
+                                                                color: @gold;  // 文字色
+
+                                                                // 要件
+                                                                &#requirements {
+                                                                }
+
+                                                                // インストール方法
+                                                                &#install {
+                                                                }
+
+                                                                // 設定
+                                                                &#config {
+                                                                }
+                                                            }
+
+                                                            // 要件リスト
+                                                            ul {
+
+                                                                // 各項目
+                                                                li {
+
+                                                                    // リンク
+                                                                    a {
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            // サブタイトル
+                                                            h5 {
+
+                                                                // 例
+                                                                &.exemple {
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                // パッケージ詳細内容ラッパー
+                                                div.section-container {
+
+                                                    // タイトル
+                                                    div.section-heading.icon {
+
+                                                        // 本アイコン
+                                                        &.icon-book {
+
+                                                            // アイコン
+                                                            &::before {
+                                                            }
+                                                        }
+                                                    }
+
+                                                    // 内容
+                                                    div.package-readme.native-key-bindings {
+
+                                                        // タイトル
+                                                        h1 {
+
+                                                            color: @gold;  // 文字色
+
+                                                            // vhdl-linterタイトル
+                                                            &#vhdl-linter {
+                                                            }
+
+                                                            // リンク
+                                                            a {
+
+                                                                // color: @setting-panel-links;  // 文字色
+                                                            }
+                                                        }
+
+                                                        // サブタイトル
+                                                        h2 {
+
+                                                            color: @gold;  // 文字色
+
+                                                            // 目次
+                                                            &#Table-of-Contents {
+
+                                                            }
+
+                                                            // インストール方法
+                                                            &#installation {
+                                                            }
+
+                                                            // 美人??
+                                                            &#beautifiers {
+                                                            }
+
+                                                            // 言語サポート
+                                                            &#language-support {
+                                                            }
+
+                                                            // 使用法
+                                                            &#usage {
+                                                            }
+
+                                                            // 設定
+                                                            &#configuration {
+                                                            }
+
+                                                            // トラブルシューティング
+                                                            &#troubleshooting {
+                                                            }
+
+                                                            // 貢献
+                                                            &#contributing {
+                                                            }
+
+                                                            // ライセンスについて
+                                                            &#license {
+                                                            }
+                                                        }
+
+                                                        // サブタイトル
+                                                        h3 {
+
+                                                            color: @gold;  // 文字色
+
+                                                            // 要件
+                                                            &#requirements {
+                                                            }
+
+                                                            // インストール方法
+                                                            &#install {
+                                                            }
+
+                                                            // 設定
+                                                            &#config {
+                                                            }
+
+                                                            // 重要なお知らせ
+                                                            &#important-notice-analytics {
+                                                            }
+
+                                                            // 次のバージョン
+                                                            &#next-version-unibeautify {
+                                                            }
+
+                                                            // アンケート調査
+                                                            &#poll-improving-installation-of-third-party-beautifiers {
+                                                            }
+
+                                                            // コマンドパレット
+                                                            &#command-palette {
+                                                            }
+
+                                                            // 言語の選択
+                                                            &#selection-of-code {
+                                                            }
+
+                                                            // 保存時に整形
+                                                            &#beautify-on-save {
+                                                            }
+
+                                                            // キーボードショートカット
+                                                            &#keyboard-shortcut {
+                                                            }
+
+                                                            // シンプルな設定コード
+                                                            &#simple {
+                                                            }
+
+                                                            // 入れ子状態の設定コード
+                                                            &#nested-recommended- {
+                                                            }
+                                                        }
+
+                                                        // サブタイトル
+                                                        h4 {
+
+                                                            color: @gold;  // 文字色
+
+                                                            // 言語の美化
+                                                            &#beautify-a-specific-language {
+                                                            }
+
+                                                            // カスタムショートカット
+                                                            &#custom-keyboard-shortcuts {
+                                                            }
+                                                        }
+
+                                                        // サブタイトル
+                                                        h5 {
+
+                                                            // 例
+                                                            &.exemple {
+                                                            }
+                                                        }
+
+                                                        // 要件リスト
+                                                        ul {
+
+                                                            padding-left: 20px;  // インデント幅
+
+                                                            // 各項目
+                                                            li {
+
+                                                                // 強調，コード
+                                                                code {
+
+                                                                    color: @setting-panel-highlights;   // 文字色
+                                                                    font-family: @font-family-precode;  // 文字フォント
+                                                                }
+
+                                                                // リンク
+                                                                a {
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // 説明文
+                                                        p {
+
+                                                            color: @gold;  // 文字色
+
+                                                            // 強調，コード
+                                                            code {
+
+                                                                color: @setting-panel-highlights;  // 文字色
+                                                                font-family: @font-family-precode;
+                                                            }
+
+                                                            // 強調
+                                                            strong {
+
+                                                                font-weight: bold;  // 文字太さ
+                                                                // font-family: "SourceHanCodeJP-Light";  // 文字フォント
+
+                                                                // リンク
+                                                                a {
+                                                                }
+                                                            }
+
+                                                            // リンク
+                                                            a {
+
+                                                            }
+
+                                                            // キーボードボタン
+                                                            kbd {
+
+                                                                background-color: @setting-panel-kbd-bgcolor;  // 背景色
+                                                                border: solid 1px @setting-panel-kbd-border;   // 枠線
+                                                                color: @setting-panel-kbd-color;               // 文字色
+                                                            }
+
+                                                            // 強調，アクセント
+                                                            em {
+                                                            }
+                                                        }
+
+                                                        // 表
+                                                        table {
+
+                                                            // 行
+                                                            tr {
+
+                                                                background-color: transparent;  // 背景色
+
+                                                                // 行頭
+                                                                th {
+
+                                                                    border-bottom: double 4px @gold;  // 枠線
+                                                                    // border-bottom: solid 2px @gold;  // 枠線
+                                                                }
+
+                                                                // セル
+                                                                td {
+
+                                                                    // 強調，コード
+                                                                    code {
+
+                                                                        // color: @setting-panel-highlights;  // 文字色
+                                                                        font-family: @font-family-precode;    // 文字フォント
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // 引用部分
+                                                        blockquote{
+
+                                                            border-color: @mami;  // ボーダー色
+
+                                                            // 引用文
+                                                            p {
+                                                            }
+                                                        }
+
+                                                        // 整形済みテキスト要素
+                                                        pre {
+
+                                                            background-color: @lazurite-translucent2;  // 背景色
+                                                            border: solid 1px @mami;                   // 枠線
+
+                                                            // テキスト
+                                                            code {
+
+                                                                color: @gold;                       // 文字色
+                                                                font-family: @font-family-precode;  // 文字フォント
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // メイン作業スペース
                         atom-text-editor.editor {
 
                             background-color: transparent;  // 背景
 
                             // 行番号，エディタ部分
                             div.gutter-container {
-
 
                                 // 行番号
                                 div.gutter {
@@ -575,6 +3700,7 @@ atom-workspace {
                             div.scroll-view {
 
                                 border-left: solid 1px @sayaka;  // 行番号とエディタ部分の境界
+                                padding: 0 0 0 2px;              // 行番号部分とエディタ部分の境界の隙間
 
                                 div div.lines {
 
@@ -596,10 +3722,13 @@ atom-workspace {
 
                                             // マッチング検索
                                             &.bracket-matcher {
+
+                                                // 該当文字列
                                                 .region {
 
                                                     // background-color: @madoka;   // 背景色
                                                     border: dotted 1px @nagisa;  // 枠線
+                                                    background-color: @madoka-selection;  // 背景
                                                 }
                                             }
 
@@ -607,7 +3736,8 @@ atom-workspace {
                                             div.highlight-selected {
 
                                                 border: solid 1px @nagisa;                               // 枠線
-                                                background-color: @background-color-highlight-selected;  // 背景色
+                                                // background-color: @background-color-highlight-selected;  // 背景色
+                                                background-color: @madoka-selection;
 
                                                 // 選択している同じ文字列
                                                 div.region {
@@ -667,8 +3797,6 @@ atom-workspace {
                                         color: #198002;  // 文字色
                                     }
                                 }
-
-
                             }
 
                             // アクティブタブ，入力中の画面
@@ -1052,10 +4180,19 @@ atom-workspace {
                             }
                         }
 
-                        // ファイル名
-                        .file-info.inline-block a.current-path {
+                        // ファイル名表示要素
+                        status-bar-file.file-info.inline-block {
 
-                            color: @gold;  // 文字色
+                            max-width: 500px;              // 最大幅
+                            direction: ltr;                // 左から右に表記
+                            overflow: scroll;              // 要素からはみ出た場合，スクロール
+                            text-overflow: clip ellipsis;  // はみ出たテキスト
+
+                            // ファイル名
+                            a.current-path {
+
+                                color: @gold;  // 文字色
+                            }
                         }
 
                         // ステータスカウント

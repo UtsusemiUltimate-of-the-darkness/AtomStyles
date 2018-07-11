@@ -296,3 +296,13 @@ japanese-menuインストール済が前提<br>
         コメントの追記
     </li>
 </ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.0">ver_3.0.0</a></h4>
+<ul>
+    <li>
+        設定画面の背景，文字色などの変更
+    </li>
+    <li>
+        ステータスバー左下のファイル名表示欄の最大幅変更
+    </li>
+</ul>
