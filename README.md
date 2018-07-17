@@ -328,7 +328,11 @@ japanese-menuインストール済が前提<br>
     </li>
 </ul>
 
+
 <h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.0">ver_3.0.0</a></h4>
+マージ不能のため，新ブランチ作成
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.1">ver_3.0.1</a></h4>
 <ul>
     <li>
         設定画面
