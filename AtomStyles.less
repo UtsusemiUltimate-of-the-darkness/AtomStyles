@@ -9,10 +9,10 @@
  * http://lesscss.org
 */
 /**
- * ファイル名: AtomStyles_ver3.0.1.less
+ * ファイル名: AtomStyles_ver3.0.2.less
  * 作成者: 命を燃やせない死んでない闇の空蝉ultimate
- * 最終更新日: 2018/07/17
- * バージョン: 3.0.1
+ * 最終更新日: 2018/07/18
+ * バージョン: 3.0.2
  *
  * Atom.App スタイルシート
  * テキストエディタの見た目(デザイン)の設定
@@ -93,6 +93,8 @@
  *     ツールパネル
  *       背景色，文字色，文字フォントの変更
  *       テキストボックスやボタンの枠線，背景，文字色の変更
+ *   2018/07/18 (ver 3.0.2)
+ *     色変数などの整頓
  */
 
 
@@ -100,25 +102,25 @@
 @background-image: url("/Users/ユーザー名/Pictures/フルパス入力");
 
 // "Platformio Ide Terminal"プラグイン背景画像
-// @terminal-background-image: url("/Users/ユーザー名/Pictures/");
 @background-image-terminal: @background-image;
+// @background-image-terminal: url("/Users/ユーザー名/Pictures/フルパス入力");
 
 // 各文字フォント
-@font-family: "Apple-Chancery", "Menlo-Italic", "SourceHanCodeJP-LightIt";   // 通常文字フォント
-@setting-precode-font-family: "Menlo-Italic", "SourceHanCodeJP-LightIt";     // 設定画面整形済み文字フォント
-@setting-error-pre-font-family: "SourceHanCodeJP-Medium", "Menlo-Italic";    // エラー文字フォント
-@tool-panel-textbox-font-family: "Menlo-Italic", "SourceHanCodeJP-LightIt";  // ツールパネル文字フォント
+@font-family:                    "Apple-Chancery", "Menlo-Italic", "SourceHanCodeJP-LightIt";   // 通常文字フォント
+@setting-precode-font-family:    "Menlo-Italic", "SourceHanCodeJP-LightIt";                     // 設定画面整形済み文字フォント
+@setting-error-pre-font-family:  "SourceHanCodeJP-Medium", "Menlo-Italic";                      // エラー文字フォント
+@tool-panel-textbox-font-family: "Menlo-Italic", "SourceHanCodeJP-LightIt";                     // ツールパネル文字フォント
 
 
 // 以下色
 // 魔法少女シンタックステーマ色
 @very-light-gray: #c5c8c6;
 @very-light-gray: #EBEAE8;
-@light-gray: #9D95A0;
-@gray: #66606A;
-@dark-gray: #5D5D55;
-// @very-dark-gray: #3B363D;
-@very-dark-gray: #1a1a1a;
+@light-gray:      #9D95A0;
+@gray:            #66606A;
+@dark-gray:       #5D5D55;
+// @very-dark-gray:  #3B363D;
+@very-dark-gray:  #1a1a1a;
 
 @madoka-vibrant: hsl(338, 80%, 62%);
 @homura-vibrant: hsl(271, 81%, 67%);
@@ -139,143 +141,143 @@
 
 // 以下自作色
 @lazurite: #02173C;  // 主に背景色
-@gold: #E5B217;      // 主に文字色
+@gold:     #E5B217;  // 主に文字色
 
-@backgound-color-editor: rgba(02, 17, 80, 0.55);                   // エディタ部分背景色
-// @backgound-color-frame: rgba(0, 0, 0, 0.10);                       //
-// @backgound-color-gutter: rgba(0, 0, 0, 0.217);                     // 行番号部分の背景色
+@backgound-color-editor:                 rgba(02, 17, 80, 0.55);        // エディタ部分背景色
+// @backgound-color-frame:                  rgba(0, 0, 0, 0.10);
+// @backgound-color-gutter:                 rgba(0, 0, 0, 0.217);          // 行番号部分の背景色
 
-@border-color: @madoka;                                            // 各境界線
-@pane-border-color: @sayaka;                                       // ペイン境界線色
-@pane-ocbtn-bgcolor: @lazurite;                                    // ペイン開閉ボタン背景色
-@pane-ocbtn-color: @gold;                                          // ペイン開閉ボタン文字色
+@border-color:                           @madoka;                       // 各境界線
+@pane-border-color:                      @sayaka;                       // ペイン境界線色
+@pane-ocbtn-bgcolor:                     @lazurite;                     // ペイン開閉ボタン背景色
+@pane-ocbtn-color:                       @gold;                         // ペイン開閉ボタン文字色
 
-@tab-bar-bgcolor: transparent;                                     // タブバーの背景色
-@tab-bgcolor: transparent;                                         // タブの背景色
-@active-tab-bgcolor: rgba( 02, 17, 80, 0.70 );                     // アクティブタブの背景色
-@tab-indicator-active-color: @mami;                                // アクティブタブの下線色
+@tab-bar-bgcolor:                        transparent;                   // タブバーの背景色
+@tab-bgcolor:                            transparent;                   // タブの背景色
+@active-tab-bgcolor:                     rgba( 02, 17, 80, 0.70 );      // アクティブタブの背景色
+@tab-indicator-active-color:             @mami;                         // アクティブタブの下線色
 
-@gutter-bgcolor: @lazurite;                                        // 行番号要素背景色
-@gutter-color: @gold;                                              // 行番号文字色
-@line-number-border-color: @gold;                                  // 行番号要素とブックマーク表示要素境界線色
-@cursor-line-bgcolor: @homura-vibrant;                             // カーソルがある行の行番号背景色
-@cursor-line-noselect-bgcolor: rgba( 173, 102, 239, 0.70 );        // 非選択時の行番号背景色
-@cursor-line-horizontal-line-color: @homura;                       // カーソルがある行のエディタ部分の下線色
-@cursor-color: @gold;                                              // カーソルの色
-@textbox-bgcolor: @lazurite;                                       // テキストボックスの背景色
+@gutter-bgcolor:                         @lazurite;                     // 行番号要素背景色
+@gutter-color:                           @gold;                         // 行番号文字色
+@line-number-border-color:               @gold;                         // 行番号要素とブックマーク表示要素境界線色
+@cursor-line-bgcolor:                    @homura-vibrant;               // カーソルがある行の行番号背景色
+@cursor-line-noselect-bgcolor:           rgba( 173, 102, 239, 0.70 );   // 非選択時の行番号背景色
+@cursor-line-horizontal-line-color:      @homura;                       // カーソルがある行のエディタ部分の下線色
+@cursor-color:                           @gold;                         // カーソルの色
+@textbox-bgcolor:                        @lazurite;                     // テキストボックスの背景色
 
-@madoka-selection: rgba( 255, 62, 93, 0.217 );                     // テキスト選択時の背景色(まどか)
-@homura-selection: rgba( 173, 102, 239, 0.217 );                   // テキスト選択時の背景色(ほむら)
-@highlight-selected-bgcolor: rgba( 02, 17, 80, 0.217 );            // 同文字列選択時の背景
-@find-string-border-color: @gold;                                  // 文字列検索で同文字列の枠線
-@highlight-matching-border-color: @nagisa;                         // 対になる文字の枠線色
-@highlight-cursor-column-bgcolor: rgba( 173, 102, 239, 0.70 );     // 縦ラインの色
-@highlight-selected-border-color: @nagisa;                         // 同文字列の枠線
-@comment-color: #198002;                                           // コメント文字色
+@madoka-selection:                       rgba( 255, 62, 93, 0.217 );    // テキスト選択時の背景色(まどか)
+@homura-selection:                       rgba( 173, 102, 239, 0.217 );  // テキスト選択時の背景色(ほむら)
+@highlight-selected-bgcolor:             rgba( 02, 17, 80, 0.217 );     // 同文字列選択時の背景
+@find-string-border-color:               @gold;                         // 文字列検索で同文字列の枠線
+@highlight-matching-border-color:        @nagisa;                       // 対になる文字の枠線色
+@highlight-cursor-column-bgcolor:        rgba( 173, 102, 239, 0.70 );   // 縦ラインの色
+@highlight-selected-border-color:        @nagisa;                       // 同文字列の枠線
+@comment-color:                          #198002;                       // コメント文字色
 
-@ideographic-space-bgcolor: @nagisa;                               // 全角スペースの背景色
-@ideographic-space-color: @kyouko;                                 // 全角スペースの文字色
+@ideographic-space-bgcolor:              @nagisa;                       // 全角スペースの背景色
+@ideographic-space-color:                @kyouko;                       // 全角スペースの文字色
 
-@browser-plus-nav-bar-border-color: @homura;                       // browser-plusプラグインナビゲーションバー境界線
-@browser-plus-nav-bar-btn-border-color: @sayaka;                   // browser-plusプラグインナビゲーションバーボタン境界線
-@browser-plus-nav-bar-active-btn-color: @gold;                     // browser-plusプラグインナビゲーションバーアクティブボタン
+@browser-plus-nav-bar-border-color:      @homura;                       // browser-plusプラグインナビゲーションバー境界線
+@browser-plus-nav-bar-btn-border-color:  @sayaka;                       // browser-plusプラグインナビゲーションバーボタン境界線
+@browser-plus-nav-bar-active-btn-color:  @gold;                         // browser-plusプラグインナビゲーションバーアクティブボタン
 
-@terminal-panes-border-color: @sayaka;                             // ターミナル外枠線色
-@terminal-bgcolor: rgba( 02, 17, 80, 0.17 );                       // ターミナルプラグイン背景色
-@terminal-color: @gold;                                            // ターミナル文字色
-@terminal-border-color: @madoka;                                   // ターミナルボタンツールバーとの境界線色
-@terminal-btn-bgcolor: rgba( 02, 17, 80, 0.40 );                   // ターミナルプラグインのボタン背景色
-@terminal-btn-border-color: @gold;                                 // ターミナルボタン枠線色
-@terminal-btn-color: @gold;                                        // ターミナルボタン文字色
-@terminal-selection-bgcolor: @madoka-off;                          // ターミナル選択文字背景色
-@terminal-cursor-bgcolor: transparent;                             // ターミナルカーソル背景色
-@terminal-cursor-color: @mami-vibrant;                             // ターミナルカーソル色
+@terminal-panes-border-color:            @sayaka;                       // ターミナル外枠線色
+@terminal-bgcolor:                       rgba( 02, 17, 80, 0.17 );      // ターミナルプラグイン背景色
+@terminal-color:                         @gold;                         // ターミナル文字色
+@terminal-border-color:                  @madoka;                       // ターミナルボタンツールバーとの境界線色
+@terminal-btn-bgcolor:                   rgba( 02, 17, 80, 0.40 );      // ターミナルプラグインのボタン背景色
+@terminal-btn-border-color:              @gold;                         // ターミナルボタン枠線色
+@terminal-btn-color:                     @gold;                         // ターミナルボタン文字色
+@terminal-selection-bgcolor:             @madoka-off;                   // ターミナル選択文字背景色
+@terminal-cursor-bgcolor:                transparent;                   // ターミナルカーソル背景色
+@terminal-cursor-color:                  @mami-vibrant;                 // ターミナルカーソル色
 
-@tool-panel-border-color: @sayaka;                                 // ツールパネル枠線色
-@tool-panel-element-border-color: @madoka;                         // ツールパネル各要素境界線
-@tool-panel-bgcolor: @lazurite;                                    // ツールパネル背景色
-@tool-panel-color: @gold;                                          // ツールパネル文字色
-@tool-panel-highlight-color: @nagisa;                              // ツールパネルハイライト文字色
-@tool-panel-textbox-border-color: @gold;                           // ツールパネルテキストボックス枠線色
-@tool-panel-textbox-bgcolor: transparent;                          // ツールパネルテキストボックス背景色
-@tool-panel-textbox-color: @gold;                                  // ツールパネルテキストボックス文字色
-@tool-panel-textbox-placeholder-color: rgba( 229, 181, 60, 0.5 );  // ツールパネルプレスホルダー文字色
-@tool-panel-btn-border-color: @homura;                             // ツールパネルボタン枠線色
-@tool-panel-btn-bgcolor: transparent;                              // ツールパネルボタン背景色
-@tool-panel-btn-selection-bgcolor: @gold;                          // ツールパネルボタン選択時背景色
-@tool-panel-btn-selection-color: @lazurite;                        // ツールパネルボタン選択時背景色
-@tool-panel-btn-color: @gold;                                      // ツールパネボタン文字色
-@tool-panel-progress-bar-bgcolor: @sayaka;                         // ツールパネルプログレスバー背景色
+@tool-panel-border-color:                @sayaka;                       // ツールパネル枠線色
+@tool-panel-element-border-color:        @madoka;                       // ツールパネル各要素境界線
+@tool-panel-bgcolor:                     @lazurite;                     // ツールパネル背景色
+@tool-panel-color:                       @gold;                         // ツールパネル文字色
+@tool-panel-highlight-color:             @nagisa;                       // ツールパネルハイライト文字色
+@tool-panel-textbox-border-color:        @gold;                         // ツールパネルテキストボックス枠線色
+@tool-panel-textbox-bgcolor:             transparent;                   // ツールパネルテキストボックス背景色
+@tool-panel-textbox-color:               @gold;                         // ツールパネルテキストボックス文字色
+@tool-panel-textbox-placeholder-color:   rgba( 229, 181, 60, 0.5 );     // ツールパネルプレスホルダー文字色
+@tool-panel-btn-border-color:            @homura;                       // ツールパネルボタン枠線色
+@tool-panel-btn-bgcolor:                 transparent;                   // ツールパネルボタン背景色
+@tool-panel-btn-selection-bgcolor:       @gold;                         // ツールパネルボタン選択時背景色
+@tool-panel-btn-selection-color:         @lazurite;                     // ツールパネルボタン選択時背景色
+@tool-panel-btn-color:                   @gold;                         // ツールパネボタン文字色
+@tool-panel-progress-bar-bgcolor:        @sayaka;                       // ツールパネルプログレスバー背景色
 
-@status-bar-bgcolor: @lazurite;                                    // ステータスバー背景色
-@status-bar-color: @gold;                                          // ステータスバー文字色
+@status-bar-bgcolor:                     @lazurite;                     // ステータスバー背景色
+@status-bar-color:                       @gold;                         // ステータスバー文字色
 
 // 以下設定画面
-@setting-element-border-color: @madoka;                            // 設定画面各要素境界線色
-@setting-item-border-color: @gold;                                 // 設定画面各項目枠線
+@setting-element-border-color:           @madoka;                       // 設定画面各要素境界線色
+@setting-item-border-color:              @gold;                         // 設定画面各項目枠線
 
-@setting-color: @gold;                                             // 設定画面基本文字色
-@setting-menu-color: @gold;                                        // 設定画面メニュー文字色
-@setting-active-menu-border-color:  @kyouko;                       // 設定画面選択中のメニュー項目境界線色
+@setting-color:                          @gold;                         // 設定画面基本文字色
+@setting-menu-color:                     @gold;                         // 設定画面メニュー文字色
+@setting-active-menu-border-color:       @kyouko;                       // 設定画面選択中のメニュー項目境界線色
 
-@setting-inactive-color: rgba( 229, 181, 60, 0.5 );                // 設定画面非アクティブ文字色
-@setting-title-color: @gold;                                       // 設定画面タイトル文字色
-@setting-icon-color: @gold;                                        // 設定画面要素格納アイコン
-@setting-editor-text-color: @gold;                                 // 設定画面入力文字色
+@setting-inactive-color:                 rgba( 229, 181, 60, 0.5 );     // 設定画面非アクティブ文字色
+@setting-title-color:                    @gold;                         // 設定画面タイトル文字色
+@setting-icon-color:                     @gold;                         // 設定画面要素格納アイコン
+@setting-editor-text-color:              @gold;                         // 設定画面入力文字色
 
-@setting-links-color: @sayaka;                                     // 設定画面のリンク
-@setting-highlights-color: @nagisa;                                // 設定画面のハイライト
+@setting-links-color:                    @sayaka;                       // 設定画面のリンク
+@setting-highlights-color:               @nagisa;                       // 設定画面のハイライト
 
-@setting-checkbox-bgcolor: rgba( 02, 17, 80, 0.40 );               // 設定画面チェックボックス背景色
-@setting-checkbox-border-color: @gold;                             // 設定画面チェックボックス枠線色
-@setting-checkmark-color: @gold;                                   // 設定画面チェックボックスチェックマークの色
+@setting-checkbox-bgcolor:               rgba( 02, 17, 80, 0.40 );      // 設定画面チェックボックス背景色
+@setting-checkbox-border-color:          @gold;                         // 設定画面チェックボックス枠線色
+@setting-checkmark-color:                @gold;                         // 設定画面チェックボックスチェックマークの色
 
-@setting-select-bgcolor: rgba( 02, 17, 80, 0.40 );                 // 設定画面選択項目の背景色
-@setting-select-border-color: @gold;                               // 設定画面選択項目枠線色
-@setting-select-color: @gold;                                      // 設定画面選択項目文字色
+@setting-select-bgcolor:                 rgba( 02, 17, 80, 0.40 );      // 設定画面選択項目の背景色
+@setting-select-border-color:            @gold;                         // 設定画面選択項目枠線色
+@setting-select-color:                   @gold;                         // 設定画面選択項目文字色
 
-@setting-textbox-border-color: @gold;                              // 設定画面テキストボックス枠線色
-@setting-textbox-bgcolor: transparent;                             // 設定画面テキストボックス背景色
-@setting-textbox-color: @gold;                                     // 設定画面テキストボックス文字色
+@setting-textbox-border-color:           gold;                          // 設定画面テキストボックス枠線色
+@setting-textbox-bgcolor:                ransparent;                    // 設定画面テキストボックス背景色
+@setting-textbox-color:                  gold;                          // 設定画面テキストボックス文字色
 
-@setting-btn-border-color: @homura;                                // 設定画面ボタンの枠線
-@setting-btn-info-border-color: @sayaka;                           // 設定画面元背景が青いボタンの枠線
-@setting-btn-bgcolor: transparent;                                 // 設定画面ボタン背景
-@setting-btn-color: @gold;                                         // 設定画面ボタン文字色
+@setting-btn-border-color:               @homura;                       // 設定画面ボタンの枠線
+@setting-btn-info-border-color:          @sayaka;                       // 設定画面元背景が青いボタンの枠線
+@setting-btn-bgcolor:                    transparent;                   // 設定画面ボタン背景
+@setting-btn-color:                      @gold;                         // 設定画面ボタン文字色
 
-@setting-icon-star-color: @mami;                                   // 設定画面お気に入り星アイコン
-@setting-icon-cloud-color: @nagisa;                                // 設定画面クラウド雲アイコン
+@setting-icon-star-color:                @mami;                         // 設定画面お気に入り星アイコン
+@setting-icon-cloud-color:               @nagisa;                       // 設定画面クラウド雲アイコン
 
-@setting-package-card-border-color: @gold;                         // 設定画面各パッケージカードの枠線
-@setting-package-card-bgcolor: rgba( 02, 17, 80, 0.40 );           // 設定画面各パッケージカードの背景色
-@setting-deprecation-package-bgcolor: transparent;                 // 設定画面廃止予定の各パッケージ要素上の警告要素背景色
-@setting-deprecation-package-color: @kyouko;                       // 設定画面廃止予定の各パッケージ警告文字色
-@setting-numarticle-bgcolor: rgba( 02, 17, 80, 0.40 );             // 設定画面パッケージ数表示要素背景色
-@setting-status-indicator-enable-color: rgba( 17, 202, 80, 1.0 );  // 設定画面パッケージ有効インジケータ
-@setting-status-indicator-disable-color: @mami;                    // 設定画面パッケージ無効インジケータ
+@setting-package-card-border-color:      @gold;                         // 設定画面各パッケージカードの枠線
+@setting-package-card-bgcolor:           rgba( 02, 17, 80, 0.40 );      // 設定画面各パッケージカードの背景色
+@setting-deprecation-package-bgcolor:    transparent;                   // 設定画面廃止予定の各パッケージ要素上の警告要素背景色
+@setting-deprecation-package-color:      @kyouko;                       // 設定画面廃止予定の各パッケージ警告文字色
+@setting-numarticle-bgcolor:             rgba( 02, 17, 80, 0.40 );      // 設定画面パッケージ数表示要素背景色
+@setting-status-indicator-enable-color:  rgba( 17, 202, 80, 1.0 );      // 設定画面パッケージ有効インジケータ
+@setting-status-indicator-disable-color: @mami;                         // 設定画面パッケージ無効インジケータ
 
-@setting-error-color: @kyouko;                                     // 設定画面エラー要素文字色
-@setting-error-bgcolor: rgba( 02, 17, 80, 0.60 );                  // 設定画面エラー要素背景色
-@setting-error-border-color: @mami;                                // 設定画面エラー要素説明部分枠線
+@setting-error-color:                    @kyouko;                       // 設定画面エラー要素文字色
+@setting-error-bgcolor:                  rgba( 02, 17, 80, 0.60 );      // 設定画面エラー要素背景色
+@setting-error-border-color:             @mami;                         // 設定画面エラー要素説明部分枠線
 
-@setting-alert-bgcolor: transparent;                               // 設定画面アラート要素背景色
-@setting-alert-warn-border-color: @mami;                           // 設定画面注意アラート枠線色
-@setting-alert-color: @mami;                                       // 設定画面注意アラート文字色
-@setting-alert-info-border-color: @sayaka;                         // 設定画面情報アラート枠線色
-@setting-alert-info-color: @sayaka;                                // 設定画面情報アラート文字色
+@setting-alert-bgcolor:                  transparent;                   // 設定画面アラート要素背景色
+@setting-alert-warn-border-color:        @mami;                         // 設定画面注意アラート枠線色
+@setting-alert-color:                    @mami;                         // 設定画面注意アラート文字色
+@setting-alert-info-border-color:        @sayaka;                       // 設定画面情報アラート枠線色
+@setting-alert-info-color:               @sayaka;                       // 設定画面情報アラート文字色
 
-@setting-table-border-color: @gold;                                // 設定画面表枠線，罫線
-@setting-table-bgcolor: transparent;                               // 設定画面表背景色
-@setting-table-color: @gold;                                       // 設定画面表の文字色
+@setting-table-border-color:             @gold;                         // 設定画面表枠線，罫線
+@setting-table-bgcolor:                  transparent;                   // 設定画面表背景色
+@setting-table-color:                    @gold;                         // 設定画面表の文字色
 
-@setting-blockquote-border-color: @mami;                           // 設定画面引用要素教会線色
-@setting-element-pre-bgcolor: rgba( 02, 17, 80, 0.55 );            // 設定画面整形済みテキスト要素背景色
-@setting-element-pre-border-color: @mami;                          // 設定画面整形済みテキスト要素枠線色
-@setting-pre-code-color: @gold;                                    // 設定画面整形済みテキスト文字色
+@setting-blockquote-border-color:        @mami;                         // 設定画面引用要素教会線色
+@setting-element-pre-bgcolor:            rgba( 02, 17, 80, 0.55 );      // 設定画面整形済みテキスト要素背景色
+@setting-element-pre-border-color:       @mami;                         // 設定画面整形済みテキスト要素枠線色
+@setting-pre-code-color:                 @gold;                         // 設定画面整形済みテキスト文字色
 
-@setting-kbd-bgcolor: #000000;                                     // 設定画面キーボードキーの背景色
-@setting-kbd-border: silver;                                       // 設定画面キーボードキーの枠線
-@setting-kbd-color: @nagisa;                                       // 設定画面キーボードキーの文字色
+@setting-kbd-bgcolor:                    #000000;                       // 設定画面キーボードキーの背景色
+@setting-kbd-border:                     silver;                        // 設定画面キーボードキーの枠線
+@setting-kbd-color:                      @nagisa;                       // 設定画面キーボードキーの文字色
 
 
 /*
