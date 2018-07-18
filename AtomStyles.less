@@ -9,10 +9,10 @@
  * http://lesscss.org
 */
 /**
- * ファイル名: AtomStyles_ver3.0.3.less
+ * ファイル名: AtomStyles_ver3.0.4.less
  * 作成者: 命を燃やせない死んでない闇の空蝉ultimate
  * 最終更新日: 2018/07/18
- * バージョン: 3.0.3
+ * バージョン: 3.0.4
  *
  * Atom.App スタイルシート
  * テキストエディタの見た目(デザイン)の設定
@@ -98,6 +98,8 @@
  *   2018/07/18 (ver 3.0.3)
  *     コメントの整理と追記
  *     主要な要素の色の変数化
+ *   2018/07/18 (ver 3.0.4)
+ *     ツールパネル一部文字色変更
  */
 
 
@@ -4566,6 +4568,20 @@ atom-workspace {
 
                                 // 概要
                                 &.description {
+
+                                    color: @tool-panel-color;  // 文字色
+
+                                    // 説明，閉じ方など
+                                    span.subtle-info-message {
+
+                                        color: @tool-panel-color;  // 文字色
+
+                                        // ハイライト
+                                        span.highlight {
+
+                                            color: @tool-panel-highlight-color;  // 文字色
+                                        }
+                                    }
                                 }
                             }
                         }

@@ -382,3 +382,10 @@ japanese-menuインストール済が前提<br>
         主要な要素の色の変数化
     </li>
 </ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.4">ver_3.0.4</a></h4>
+<ul>
+    <li>
+        ツールパネル一部文字色変更
+    </li>
+</ul>
