@@ -328,7 +328,6 @@ japanese-menuインストール済が前提<br>
     </li>
 </ul>
 
-
 <h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.0">ver_3.0.0</a></h4>
 マージ不能のため，新ブランチ作成
 
@@ -364,5 +363,12 @@ japanese-menuインストール済が前提<br>
     </li>
     <li>
         ステータスバー左下のファイル名表示欄の最大幅変更
+    </li>
+</ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.2">ver_3.0.2</a></h4>
+<ul>
+    <li>
+        変数類などの整理
     </li>
 </ul>
