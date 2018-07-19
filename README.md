@@ -365,3 +365,10 @@ japanese-menuインストール済が前提<br>
         ステータスバー左下のファイル名表示欄の最大幅変更
     </li>
 </ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.1.2">ver_2.1.2</a></h4>
+<ul>
+    <li>
+        変数類などの整理
+    </li>
+</ul>
