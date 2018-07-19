@@ -372,3 +372,13 @@ japanese-menuインストール済が前提<br>
         変数類などの整理
     </li>
 </ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.1.3">ver_2.1.3</a></h4>
+<ul>
+    <li>
+        コメントの追記，整理
+    </li>
+    <li>
+        主要な要素の色の変数化
+    </li>
+</ul>
