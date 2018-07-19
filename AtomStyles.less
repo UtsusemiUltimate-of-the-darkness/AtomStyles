@@ -9,10 +9,10 @@
  * http://lesscss.org
 */
 /**
- * ファイル名: AtomStyles_ver2.1.3.less
+ * ファイル名: AtomStyles_ver2.1.4.less
  * 作成者: 命を燃やせない死んでない闇の空蝉ultimate
  * 最終更新日: 2018/07/18
- * バージョン: 2.1.3
+ * バージョン: 2.1.4
  *
  * Atom.App スタイルシート
  * テキストエディタの見た目(デザイン)の設定
@@ -86,7 +86,7 @@
  *     マッチング検索の該当文字列背景色の変更
  *   2018/07/17 (ver 2.1.0)
  *     マージ不能のため新ブランチ作成
- *   2018/07/17 (ver 2.1.1)
+ *   2018/07/17 (ver 2.1.1)
  *     設定画面のスタイル変更
  *       背景色，背景画像，文字色などの変更
  *     ステータスバー左下のファイル名表示欄の最大横幅変更
@@ -98,6 +98,8 @@
  *   2018/07/18 (ver 2.1.3)
  *     コメントの整理と追記
  *     主要な要素の色の変数化
+ *   2018/07/18 (ver 2.1.4)
+ *     ツールパネル一部文字色変更
  */
 
 
@@ -109,11 +111,11 @@
 @background-image-terminal: @background-image;
 
 // 各文字フォント
-@font-family:                    "Apple-Chancery", "Menlo-Italic", "SourceHanCodeJP-LightIt";   // 通常文字フォント
-@setting-textbox-font-family:    "Menlo-Italic", "SourceHanCodeJP-LightIt";                      // 設定画面テキストボックス文字フォント
-@setting-precode-font-family:    "Menlo-Italic", "SourceHanCodeJP-LightIt";                     // 設定画面整形済み文字フォント
-@setting-error-pre-font-family:  "SourceHanCodeJP-Medium", "Menlo-Italic";                      // エラー文字フォント
-@tool-panel-textbox-font-family: "Menlo-Italic", "SourceHanCodeJP-LightIt";                     // ツールパネル文字フォント
+@font-family:                    "Apple-Chancery", "Menlo-Italic", "SourceHanCodeJP-LightIt";  // 通常文字フォント
+@setting-textbox-font-family:    "Menlo-Italic", "SourceHanCodeJP-LightIt";                    // 設定画面テキストボックス文字フォント
+@setting-precode-font-family:    "Menlo-Italic", "SourceHanCodeJP-LightIt";                    // 設定画面整形済み文字フォント
+@setting-error-pre-font-family:  "SourceHanCodeJP-Medium", "Menlo-Italic";                     // エラー文字フォント
+@tool-panel-textbox-font-family: "Menlo-Italic", "SourceHanCodeJP-LightIt";                    // ツールパネル文字フォント
 
 
 // 以下色
@@ -4566,6 +4568,20 @@ atom-workspace {
 
                                 // 概要
                                 &.description {
+
+                                    color: @tool-panel-color;  // 文字色
+
+                                    // 説明，閉じ方など
+                                    span.subtle-info-message {
+
+                                        color: @tool-panel-color;  // 文字色
+
+                                        // ハイライト
+                                        span.highlight {
+
+                                            color: @tool-panel-highlight-color;  // 文字色
+                                        }
+                                    }
                                 }
                             }
                         }
