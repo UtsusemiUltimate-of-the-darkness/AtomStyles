@@ -389,3 +389,16 @@ japanese-menuインストール済が前提<br>
         ツールパネル一部文字色変更
     </li>
 </ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.1.5">ver_2.1.5</a></h4>
+<ul>
+    <li>
+        ツリービューのタブバーの背景色変更
+    </li>
+    <li>
+        ツリービューのタブの背景色変更
+    </li>
+    <li>
+        ツリービューのアクティブタブにアンダーライン表示
+    </li>
+</ul>

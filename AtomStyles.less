@@ -9,10 +9,10 @@
  * http://lesscss.org
 */
 /**
- * ファイル名: AtomStyles_ver2.1.4.less
+ * ファイル名: AtomStyles_ver2.1.5.less
  * 作成者: 命を燃やせない死んでない闇の空蝉ultimate
- * 最終更新日: 2018/07/18
- * バージョン: 2.1.4
+ * 最終更新日: 2018/07/19
+ * バージョン: 2.1.5
  *
  * Atom.App スタイルシート
  * テキストエディタの見た目(デザイン)の設定
@@ -86,7 +86,7 @@
  *     マッチング検索の該当文字列背景色の変更
  *   2018/07/17 (ver 2.1.0)
  *     マージ不能のため新ブランチ作成
- *   2018/07/17 (ver 2.1.1)
+ *   2018/07/17 (ver 2.1.1)
  *     設定画面のスタイル変更
  *       背景色，背景画像，文字色などの変更
  *     ステータスバー左下のファイル名表示欄の最大横幅変更
@@ -100,18 +100,22 @@
  *     主要な要素の色の変数化
  *   2018/07/18 (ver 2.1.4)
  *     ツールパネル一部文字色変更
+ *   2018/07/19 (ver 2.1.5)
+ *     ツリービュータブを透明化
+ *     ツリービューアクティブタブにアンダーライン表示
  */
 
 
 // 背景画像のフルパス
-@background-image: url("/Users/ユーザー名/Pictures/フルパス入力");
+@background-image: url("/Users/utsusemi-ultimate/Pictures/publicBackGroundPicture/1440_900_20120223032123223025.jpg");
 
 // "Platformio Ide Terminal"プラグイン背景画像
+@terminal-background-image: @background-image;
 // @terminal-background-image: url("/Users/ユーザー名/Pictures/");
-@background-image-terminal: @background-image;
 
 // 各文字フォント
 @font-family:                    "Apple-Chancery", "Menlo-Italic", "SourceHanCodeJP-LightIt";  // 通常文字フォント
+@tree-view-font-family:          "Apple-Chancery", "Menlo-Italic", "SourceHanCodeJP-LightIt";  // ツリービュー文字フォント
 @setting-textbox-font-family:    "Menlo-Italic", "SourceHanCodeJP-LightIt";                    // 設定画面テキストボックス文字フォント
 @setting-precode-font-family:    "Menlo-Italic", "SourceHanCodeJP-LightIt";                    // 設定画面整形済み文字フォント
 @setting-error-pre-font-family:  "SourceHanCodeJP-Medium", "Menlo-Italic";                     // エラー文字フォント
@@ -152,16 +156,21 @@
 @backgound-color-editor:                 rgba(02, 17, 80, 0.55);        // エディタ部分背景色
 // @backgound-color-frame:                  rgba(0, 0, 0, 0.10);
 // @backgound-color-gutter:                 rgba(0, 0, 0, 0.217);          // 行番号部分の背景色
+@workspace-bgcolor: @lazurite;                                          // 作業スペース背景色
 
 @border-color:                           @madoka;                       // 各境界線
 @pane-border-color:                      @sayaka;                       // ペイン境界線色
 @pane-ocbtn-bgcolor:                     @lazurite;                     // ペイン開閉ボタン背景色
 @pane-ocbtn-color:                       @gold;                         // ペイン開閉ボタン文字色
 
-@tab-bar-bgcolor:                        transparent;                   // タブバーの背景色
-@tab-bgcolor:                            transparent;                   // タブの背景色
+@tab-bar-bgcolor:                        rgba( 02, 17, 80, 0.217 );     // タブバーの背景色
+@tab-bgcolor:                            rgba( 02, 17, 80, 0.217 );     // タブの背景色
 @active-tab-bgcolor:                     rgba( 02, 17, 80, 0.70 );      // アクティブタブの背景色
+@tab-color:                              @gold;                         // タブの文字色
 @tab-indicator-active-color:             @mami;                         // アクティブタブの下線色
+
+@tree-view-bgcolor:                      @lazurite;                     // ツリービュー背景色
+@tree-view-color:                        @gold;                         // ツリービュー文字色
 
 @gutter-bgcolor:                         @lazurite;                     // 行番号要素背景色
 @gutter-color:                           @gold;                         // 行番号文字色
@@ -372,9 +381,6 @@ atom-workspace {
                             // ツリービューの中身が入っている箱
                             atom-pane-container.panes {
 
-                                // background-color: @lazurite;  // 背景色
-                                // font-size: 16px;              // 文字サイズ
-                                // color: @gold;                 // 文字色
                                 font-family: @font-family;    // 文字フォント
 
                                 // 中身
@@ -383,25 +389,61 @@ atom-workspace {
                                     // タブ部分
                                     ul.list-inline.tab-bar.inset-panel {
 
-                                        border-bottom: solid 1px @madoka;  // タブとコンテンツとの境界線
+                                        background-color: @tab-bar-bgcolor;        // 背景
+                                        // border-top: solid 1px @pane-border-color;  // ペイン境界線
+                                        border-bottom: solid 1px @border-color;    // エディタ部分との境界線
 
                                         // タブそのもの
-                                        li.tab {
+                                        li.tab.sortable {
 
                                             background: transparent;  // 背景
+                                            color: @tab-color;        // 文字色
                                             font-size: 12px;          // 文字サイズ
-                                            color: @gold;             // 文字色
 
-                                            // 並び変え可能，アクティブタブ
-                                            &.sortable.active {
+                                            // アイコン表示要素
+                                            &::before {
 
-                                                font-size: 14px;  // 文字サイズ
+                                                background: @tab-bgcolor;  // 背景
                                             }
 
                                             // タブのタイトル
                                             div.title {
 
                                                 text-align: center;  // 中央揃え
+                                            }
+
+                                            // アイコン表示要素
+                                            &::after {
+
+                                                background: @tab-bgcolor;  // 背景
+                                            }
+
+                                            // アクティブタブ
+                                            &.active {
+
+                                                background-color: @active-tab-bgcolor;                 // アクティブタブの背景
+                                                border-bottom: solid 2px @tab-indicator-active-color;  // アクティブタブの下部にアンダーライン
+                                                font-size: 14px;                                       // 文字サイズ
+                                                font-family: @font-family;                             // 文字フォント
+                                                font-style: italic;                                    // フォントスタイル
+                                            }
+
+                                            // アイコン表示要素
+                                            &::before {
+
+                                                border-bottom: solid 2px @tab-indicator-active-color;   // アクティブタブの下部にアンダーライン
+                                                background-color: @active-tab-bgcolor;                  // アクティブタブの背景
+                                            }
+
+                                            // タイトル
+                                            div.title {
+                                            }
+
+                                            // アイコン表示要素
+                                            &::after {
+
+                                                border-bottom: solid 2px @tab-indicator-active-color;   // アクティブタブの下部にアンダーライン
+                                                background-color: @active-tab-bgcolor;                  // アクティブタブの背景
                                             }
                                         }
                                     }
@@ -412,13 +454,13 @@ atom-workspace {
                                         // アイテム
                                         div.tool-panel.tree-view {
 
-                                            background: @active-tab-bgcolor;  // 背景
-                                            font-size: 16px;                  // 文字サイズ
+                                            background: @tree-view-bgcolor;  // 背景
+                                            font-size: 16px;                 // 文字サイズ
 
                                             // 要素内全ての要素
                                             * {
-                                                color: @gold;               // 文字色
-                                                font-family: @font-family;  // 文字フォント
+                                                color: @tree-view-color;              // 文字色
+                                                font-family: @tree-view-font-family;  // 文字フォント
                                             }
 
                                             // 階層表示リスト
@@ -503,17 +545,15 @@ atom-workspace {
         // 画面中央作業スペース
         atom-workspace-axis.vertical {
 
-            background-color: @lazurite;     // 背景色
-            background: @background-image;   // 背景
-            background-repeat: no-repeat;    // 背景のリピート
-            background-size: cover;          // 背景画像の大きさ
-            background-position: right top;  // 背景画像の位置
-            margin: 0 0 0 0;                 // 上右下左の外側の余白
-            padding: 0 0 0 0;                // 上右下左の内側の余白
+            background-color: @workspace-bgcolor;  // 背景色
+            background: @background-image;         // 背景
+            background-repeat: no-repeat;          // 背景のリピート
+            background-size: cover;                // 背景画像の大きさ
+            background-position: right top;        // 背景画像の位置
+            margin: 0 0 0 0;                       // 上右下左の外側の余白
+            padding: 0 0 0 0;                      // 上右下左の内側の余白
 
-            font-family: @font-family;       // 文字フォント
-
-            color: @gold;                    // 文字色
+            font-family: @font-family;             // 文字フォント
 
             // ウィンドウタブとエディタタブの7間
             atom-panel-container.top {
@@ -539,8 +579,8 @@ atom-workspace {
                         // タブ
                         li.tab.sortable {
 
-                            color: @gold;              // 文字色
                             background: @tab-bgcolor;  // 背景
+                            color: @tab-color;         // 文字色
                             font-size: 12px;           // 文字サイズ
 
                             // アイコン表示要素
@@ -560,7 +600,7 @@ atom-workspace {
                             // 閉じるアイコン
                             div.close-icon {
 
-                                color: @gold;  // 文字色
+                                color: @tab-color;  // 文字色
                             }
 
                             // 閉じるアイコン表示要素
@@ -593,21 +633,16 @@ atom-workspace {
 
                                     // アイコン
                                     &::before {
-
-                                        // background: red;
                                     }
                                 }
 
                                 // 閉じるアイコン
                                 div.close-icon {
-
-                                    // color: @gold;  // 文字色
                                 }
 
                                 // 閉じるアイコン表示要素
                                 &::after {
 
-                                    // background: red;
                                     border-bottom: solid 2px @tab-indicator-active-color;   // アクティブタブの下部にアンダーライン
                                 }
                             }
@@ -4363,7 +4398,7 @@ atom-workspace {
                     // ターミナル追加プラグイン"platformio-ide-terminal terminal-view"
                     div.platformio-ide-terminal {
 
-                        background: @background-image-terminal;          // 背景
+                        background: @terminal-background-image;          // 背景
                         background-repeat: no-repeat;                    // 背景のリピート
                         background-size: cover;                          // 背景画像の大きさ
                         border: solid 1px @terminal-panes-border-color;  // 枠線
