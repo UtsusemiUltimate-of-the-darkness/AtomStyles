@@ -309,7 +309,7 @@ japanese-menuインストール済が前提<br>
     </li>
 </ul>
 
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.1.0">ver_2.1.0</a></h4>
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.0.1">ver_2.0.1</a></h4>
 <ul>
     <li>
         タブの背景を完全透明化
@@ -325,67 +325,5 @@ japanese-menuインストール済が前提<br>
     </li>
     <li>
         コメントの追記
-    </li>
-</ul>
-
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.0">ver_3.0.0</a></h4>
-マージ不能のため，新ブランチ作成
-
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.1">ver_3.0.1</a></h4>
-<ul>
-    <li>
-        設定画面
-        <ul>
-            <li>
-                背景画像，背景色の変更
-            </li>
-            <li>
-                文字色，文字フォントの変更
-            </li>
-            <li>
-                各要素の枠線，背景色，文字色の色の変更
-            </li>
-        </ul>
-    </li>
-    <li>
-        ツールパネル
-        <ul>
-            <li>
-                背景色の変更
-            </li>
-            <li>
-                文字色，文字フォントの変更
-            </li>
-            <li>
-                各要素の枠線，背景色，文字色の変更
-            </li>
-        </ul>
-    </li>
-    <li>
-        ステータスバー左下のファイル名表示欄の最大幅変更
-    </li>
-</ul>
-
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.2">ver_3.0.2</a></h4>
-<ul>
-    <li>
-        変数類などの整理
-    </li>
-</ul>
-
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.3">ver_3.0.3</a></h4>
-<ul>
-    <li>
-        コメントの追記，整理
-    </li>
-    <li>
-        主要な要素の色の変数化
-    </li>
-</ul>
-
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.4">ver_3.0.4</a></h4>
-<ul>
-    <li>
-        ツールパネル一部文字色変更
     </li>
 </ul>
