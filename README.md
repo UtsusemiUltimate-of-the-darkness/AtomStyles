@@ -327,3 +327,41 @@ japanese-menuインストール済が前提<br>
         コメントの追記
     </li>
 </ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.1.0">ver_2.1.0</a></h4>
+マージ不能のため，新ブランチ作成
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.1.1">ver_2.1.1</a></h4>
+<ul>
+    <li>
+        設定画面
+        <ul>
+            <li>
+                背景画像，背景色の変更
+            </li>
+            <li>
+                文字色，文字フォントの変更
+            </li>
+            <li>
+                各要素の枠線，背景色，文字色の色の変更
+            </li>
+        </ul>
+    </li>
+    <li>
+        ツールパネル
+        <ul>
+            <li>
+                背景色の変更
+            </li>
+            <li>
+                文字色，文字フォントの変更
+            </li>
+            <li>
+                各要素の枠線，背景色，文字色の変更
+            </li>
+        </ul>
+    </li>
+    <li>
+        ステータスバー左下のファイル名表示欄の最大幅変更
+    </li>
+</ul>
