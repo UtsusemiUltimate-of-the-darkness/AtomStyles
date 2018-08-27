@@ -402,3 +402,15 @@ japanese-menuインストール済が前提<br>
         ツリービューのアクティブタブにアンダーライン表示
     </li>
 </ul>
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.2.0">ver_2.2.0</a></h4>
+<ul>
+    <li>
+        platformioの導入
+    </li>
+    <li>
+        platformioツールパネルの枠線や背景色，文字色を変更
+    </li>
+    <li>
+        terminalのボタンの枠線色を変更
+    </li>
+</ul>
