@@ -9,10 +9,10 @@
  * http://lesscss.org
 */
 /**
- * ファイル名: AtomStyles_ver2.2.0.less
+ * ファイル名: AtomStyles_ver2.2.1.less
  * 作成者: 命を燃やせない死んでない闇の空蝉ultimate
  * 最終更新日: 2018/08/27
- * バージョン: 2.2.0
+ * バージョン: 2.2.1
  *
  * Atom.App スタイルシート
  * テキストエディタの見た目(デザイン)の設定
@@ -107,11 +107,13 @@
  *     platformioの導入
  *     platformioのツールパネルの枠線や背景色，文字色を変更
  *     terminalのボタンの枠線色を変更
+ *   2018/08/27 (ver 2.2.1)
+ *     platformioツールパネルのボタンアイコンサイズの変更
  */
 
 
  // 背景画像のフルパス
- @background-image: url("/Users/ユーザー名/Pictures/画像までのフルパス");
+ @background-image: url("/Users/ユーザー名/Pictures/画像までのフルパスを入力");
 
  // "Platformio Ide Terminal"プラグイン背景画像
  @terminal-background-image: @background-image;
@@ -5340,8 +5342,15 @@ atom-workspace {
                         background-color: @tool-panel-btn-bgcolor;       // 背景色
                         color: @tool-panel-btn-color;                    // 文字色
 
+
                         // ツールバーのデフォルトボタン
                         &.btn.btn-default.tool-bar-btn {
+
+                            // アイコン
+                            &::before {
+
+                                font-size: 20px;  // 文字サイズ
+                            }
                         }
                     }
                 }

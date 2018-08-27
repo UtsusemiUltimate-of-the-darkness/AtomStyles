@@ -434,3 +434,9 @@ japanese-menuインストール済が前提<br>
         terminalのボタンの枠線色を変更
     </li>
 </ul>
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.2.1">ver_2.2.1</a></h4>
+<ul>
+    <li>
+        platformioツールパネルのボタンアイコンのサイズの変更
+    </li>
+</ul>
