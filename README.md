@@ -211,6 +211,9 @@ japanese-menuインストール済が前提<br>
             </li>
         </ul>
     </li>
+    <li>
+        「One Dark」テーマに対応
+    </li>
 </ul>
 
 <h3>バージョン情報</h3>
@@ -438,5 +441,11 @@ japanese-menuインストール済が前提<br>
 <ul>
     <li>
         platformioツールパネルのボタンアイコンのサイズの変更
+    </li>
+</ul>
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.0">ver_3.0.0</a></h4>
+<ul>
+    <li>
+        「One Dark」テーマに対応
     </li>
 </ul>

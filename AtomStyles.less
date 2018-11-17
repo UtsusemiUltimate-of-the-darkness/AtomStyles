@@ -9,10 +9,10 @@
  * http://lesscss.org
 */
 /**
- * ファイル名: AtomStyles_ver2.2.1.less
+ * ファイル名: AtomStyles_ver3.0.0.less
  * 作成者: 命を燃やせない死んでない闇の空蝉ultimate
- * 最終更新日: 2018/08/27
- * バージョン: 2.2.1
+ * 最終更新日: 2018/11/16
+ * バージョン: 3.0.0
  *
  * Atom.App スタイルシート
  * テキストエディタの見た目(デザイン)の設定
@@ -109,11 +109,18 @@
  *     terminalのボタンの枠線色を変更
  *   2018/08/27 (ver 2.2.1)
  *     platformioツールパネルのボタンアイコンサイズの変更
+ *   2018/11/16 (ver 3.0.0)
+ *     「One Dark」テーマに対応
+ *     シングルペインでも背景を透過可能
+ *     ツリービューにおいて，アクティブタブで編集中のファイル名の拡大と枠線表示
+ *     各ペインのアクティブタブに下線を表示，アクティブペインアクティブタブと非アクティブペインアクティブタブの下線色の変更
+ *     設定画面選択中メニューに枠線表示と文字サイズの変更
+ *     ステータスバーアイコンの色を変更
  */
 
 
  // 背景画像のフルパス
- @background-image: url("/Users/ユーザー名/Pictures/画像までのフルパスを入力");
+ @background-image: url("/Users/utsusemi-ultimate/Pictures/publicBackGroundPicture/1440_900_20120223032123223025.jpg");
 
  // "Platformio Ide Terminal"プラグイン背景画像
  @terminal-background-image: @background-image;
@@ -162,7 +169,7 @@
 @backgound-color-editor:                 rgba(02, 17, 80, 0.55);        // エディタ部分背景色
 // @backgound-color-frame:                  rgba(0, 0, 0, 0.10);
 // @backgound-color-gutter:                 rgba(0, 0, 0, 0.217);          // 行番号部分の背景色
-@workspace-bgcolor: @lazurite;                                          // 作業スペース背景色
+@workspace-bgcolor:                      @lazurite;                     // 作業スペース背景色
 
 @border-color:                           @madoka;                       // 各境界線
 @pane-border-color:                      @sayaka;                       // ペイン境界線色
@@ -173,10 +180,14 @@
 @tab-bgcolor:                            rgba( 02, 17, 80, 0.217 );     // タブの背景色
 @active-tab-bgcolor:                     rgba( 02, 17, 80, 0.70 );      // アクティブタブの背景色
 @tab-color:                              @gold;                         // タブの文字色
-@tab-indicator-active-color:             @mami;                         // アクティブタブの下線色
+@tab-indicator-active-color:             @nagisa;                       // アクティブタブの下線
+@active-pane-tab-indicator-active-color: @mami;                         // アクティブペインのアクティブタブの下線色
+@tab-closebtn-bgcolor:                   transparent;                   // 閉じるボタンの背景色
 
 @tree-view-bgcolor:                      @lazurite;                     // ツリービュー背景色
 @tree-view-color:                        @gold;                         // ツリービュー文字色
+@tree-view-select-border-color:          @mami;                         // ツリービュー選択項目枠線
+@tree-view-select-bgcolor:               @lazurite;                     // ツリービュー選択項目背景色
 
 @gutter-bgcolor:                         @lazurite;                     // 行番号要素背景色
 @gutter-color:                           @gold;                         // 行番号文字色
@@ -210,7 +221,7 @@
 @terminal-color:                         @gold;                         // ターミナル文字色
 @terminal-border-color:                  @madoka;                       // ターミナルボタンツールバーとの境界線色
 @terminal-btn-bgcolor:                   rgba( 02, 17, 80, 0.40 );      // ターミナルプラグインのボタン背景色
-@terminal-btn-border-color:              @homura;                         // ターミナルボタン枠線色
+@terminal-btn-border-color:              @homura;                       // ターミナルボタン枠線色
 @terminal-btn-color:                     @gold;                         // ターミナルボタン文字色
 @terminal-selection-bgcolor:             @madoka-off;                   // ターミナル選択文字背景色
 @terminal-cursor-bgcolor:                transparent;                   // ターミナルカーソル背景色
@@ -221,6 +232,7 @@
 @tool-panel-bgcolor:                     @lazurite;                     // ツールパネル背景色
 @tool-panel-color:                       @gold;                         // ツールパネル文字色
 @tool-panel-highlight-color:             @nagisa;                       // ツールパネルハイライト文字色
+@tool-panel-highlight-bgcolor:           homura-selection;              // ツールパネルハイライト文字背景色
 @tool-panel-textbox-border-color:        @gold;                         // ツールパネルテキストボックス枠線色
 @tool-panel-textbox-bgcolor:             transparent;                   // ツールパネルテキストボックス背景色
 @tool-panel-textbox-color:               @gold;                         // ツールパネルテキストボックス文字色
@@ -232,16 +244,22 @@
 @tool-panel-btn-color:                   @gold;                         // ツールパネボタン文字色
 @tool-panel-progress-bar-bgcolor:        @sayaka;                       // ツールパネルプログレスバー背景色
 
+// Linterプラグイン
+@linter-table-bgcolor :                  transparent;                      // Linterプラグインの表ヘッダ背景色
+@linter-table-color :                    @gold;                            // Linterプラグインの表要素文字色
+
 @status-bar-bgcolor:                     @lazurite;                     // ステータスバー背景色
 @status-bar-color:                       @gold;                         // ステータスバー文字色
-
+@status-bar-icon-bgcolor :               transparent;                   // ステータスバーアイコン背景色
+@status-bar-group-border-color :         @gold;                         // ステータスバーアイコングループ枠線
 // 以下設定画面
 @setting-element-border-color:           @madoka;                       // 設定画面各要素境界線色
 @setting-item-border-color:              @gold;                         // 設定画面各項目枠線
 
 @setting-color:                          @gold;                         // 設定画面基本文字色
 @setting-menu-color:                     @gold;                         // 設定画面メニュー文字色
-@setting-active-menu-border-color:       @kyouko;                       // 設定画面選択中のメニュー項目境界線色
+@setting-active-menu-border-color:       @mami;                         // 設定画面選択中のメニュー項目境界線色
+@setting-menu-mouseon-bgcolor:           transparent;                   // 設定画面マウスオンされたメニュー項目の背景色
 
 @setting-inactive-color:                 rgba( 229, 181, 60, 0.5 );     // 設定画面非アクティブ文字色
 @setting-title-color:                    @gold;                         // 設定画面タイトル文字色
@@ -250,6 +268,9 @@
 
 @setting-links-color:                    @sayaka;                       // 設定画面のリンク
 @setting-highlights-color:               @nagisa;                       // 設定画面のハイライト
+@setting-warning-icon-color:             #F6AA00;                       // 警告アイコン色
+@setting-warning-color:                  #F2E700;                       // 警告色
+@setting-danger-color:                   #FF4B00;                       // 停止，危険色
 
 @setting-checkbox-bgcolor:               rgba( 02, 17, 80, 0.40 );      // 設定画面チェックボックス背景色
 @setting-checkbox-border-color:          @gold;                         // 設定画面チェックボックス枠線色
@@ -260,13 +281,16 @@
 @setting-select-color:                   @gold;                         // 設定画面選択項目文字色
 
 @setting-textbox-border-color:           gold;                          // 設定画面テキストボックス枠線色
-@setting-textbox-bgcolor:                transparent;                    // 設定画面テキストボックス背景色
+@setting-textbox-bgcolor:                transparent;                   // 設定画面テキストボックス背景色
 @setting-textbox-color:                  gold;                          // 設定画面テキストボックス文字色
-
+@setting-textbox-placeholder-color:      rgba( 229, 181, 60, 0.5 );     // ツールパネルプレスホルダー文字色
 @setting-btn-border-color:               @homura;                       // 設定画面ボタンの枠線
+@setting-btn-inactive-border-color:      rgba( 173, 102, 239, 0.40 );   // 設定画面非アクティブボタンの枠線色
 @setting-btn-info-border-color:          @sayaka;                       // 設定画面元背景が青いボタンの枠線
 @setting-btn-bgcolor:                    transparent;                   // 設定画面ボタン背景
 @setting-btn-color:                      @gold;                         // 設定画面ボタン文字色
+@setting-btn-icon-color:                 @gold;                         // 設定画面ボタンアイコン色
+@setting-btn-inactive-color:             rgba( 229, 181, 60, 0.5 );     // 設定画面選択されていないボタンの文字色
 
 @setting-icon-star-color:                @mami;                         // 設定画面お気に入り星アイコン
 @setting-icon-cloud-color:               @nagisa;                       // 設定画面クラウド雲アイコン
@@ -286,6 +310,7 @@
 @setting-alert-bgcolor:                  transparent;                   // 設定画面アラート要素背景色
 @setting-alert-warn-border-color:        @mami;                         // 設定画面注意アラート枠線色
 @setting-alert-color:                    @mami;                         // 設定画面注意アラート文字色
+@setting-alert-info-icon-color:          #1980FF;                       // 情報アラートアイコン色
 @setting-alert-info-border-color:        @sayaka;                       // 設定画面情報アラート枠線色
 @setting-alert-info-color:               @sayaka;                       // 設定画面情報アラート文字色
 
@@ -392,6 +417,8 @@ atom-workspace {
                                 // 中身
                                 atom-pane.pane {
 
+                                    background-color: @tab-bar-bgcolor;  // 背景色
+
                                     // タブ部分
                                     ul.list-inline.tab-bar.inset-panel {
 
@@ -402,9 +429,9 @@ atom-workspace {
                                         // タブそのもの
                                         li.tab.sortable {
 
-                                            background: transparent;  // 背景
-                                            color: @tab-color;        // 文字色
-                                            font-size: 12px;          // 文字サイズ
+                                            background: @tab-bgcolor;  // 背景
+                                            color: @tab-color;         // 文字色
+                                            font-size: 12px;           // 文字サイズ
 
                                             // アイコン表示要素
                                             &::before {
@@ -428,7 +455,7 @@ atom-workspace {
                                             &.active {
 
                                                 background-color: @active-tab-bgcolor;                 // アクティブタブの背景
-                                                border-bottom: solid 2px @tab-indicator-active-color;  // アクティブタブの下部にアンダーライン
+                                                border-bottom: solid 2px @active-pane-tab-indicator-active-color;  // アクティブタブの下部にアンダーライン
                                                 font-size: 14px;                                       // 文字サイズ
                                                 font-family: @font-family;                             // 文字フォント
                                                 font-style: italic;                                    // フォントスタイル
@@ -437,7 +464,7 @@ atom-workspace {
                                             // アイコン表示要素
                                             &::before {
 
-                                                border-bottom: solid 2px @tab-indicator-active-color;   // アクティブタブの下部にアンダーライン
+                                                border-bottom: solid 2px @active-pane-tab-indicator-active-color;   // アクティブタブの下部にアンダーライン
                                                 background-color: @active-tab-bgcolor;                  // アクティブタブの背景
                                             }
 
@@ -448,7 +475,7 @@ atom-workspace {
                                             // アイコン表示要素
                                             &::after {
 
-                                                border-bottom: solid 2px @tab-indicator-active-color;   // アクティブタブの下部にアンダーライン
+                                                border-bottom: solid 2px @active-pane-tab-indicator-active-color;   // アクティブタブの下部にアンダーライン
                                                 background-color: @active-tab-bgcolor;                  // アクティブタブの背景
                                             }
                                         }
@@ -461,7 +488,7 @@ atom-workspace {
                                         div.tool-panel.tree-view {
 
                                             background: @tree-view-bgcolor;  // 背景
-                                            font-size: 16px;                 // 文字サイズ
+                                            font-size: 17px;                 // 文字サイズ
 
                                             // 要素内全ての要素
                                             * {
@@ -470,70 +497,37 @@ atom-workspace {
                                             }
 
                                             // 階層表示リスト
-                                            ol.tree-view-root.full-menu.list-tree.has-collapsable-children.focusable-panel {
+                                            ol {
 
-                                                // 各フォルダ
-                                                li.directory.entry.list-nested-item.project-root {
+                                                // 各要素
+                                                li {
 
-                                                    // 選択してない，展開していない
-                                                    &.collapsed {
+                                                    font-size: 17px;  // 文字サイズ
+                                                    margin: 3px 0;    // 余白
 
-                                                        // フォルダ要素
-                                                        div.header.list-item.project-root-header {
+                                                    // 選択している
+                                                    &.selected {
 
-                                                            // フォルダアイコンとフォルダ名
-                                                            span.name.icon.atom-icon.dark-green {
+                                                        font-size: 20px;  // 文字サイズ
+
+                                                        // 選択している項目
+                                                        &::before {
+
+                                                            background-color: @tree-view-select-bgcolor;              // 背景色
+                                                            border-top: solid 1px @tree-view-select-border-color;     // 上枠線
+                                                            border-bottom: solid 1px @tree-view-select-border-color;  // 下枠線
+                                                        }
+
+                                                        // 各項目の名称
+                                                        div {
+
+                                                            color: @tree-view-color;  // 文字色
+
+                                                            // 展開ボタン
+                                                            &::before {
+
+                                                                color: @tree-view-color;  // 文字色
                                                             }
-                                                        }
-
-                                                        // リスト要素
-                                                        ol.entries.list-tree {
-                                                        }
-                                                    }
-
-                                                    // 選択してない，展開している
-                                                    &.expanded {
-
-                                                        // フォルダ要素
-                                                        div.header.list-item.project-root-header {
-
-                                                            // フォルダアイコンとフォルダ名
-                                                            span.name.icon.icon-file-directory {
-                                                            }
-                                                        }
-
-                                                        // リスト要素
-                                                        ol.entries.list-tree {
-                                                        }
-                                                    }
-
-                                                    // 選択している，展開していない
-                                                    &.selected.collapsed {
-
-                                                        // フォルダ要素
-                                                        div.header.list-item.project-root-header {
-
-                                                            // フォルダアイコンとフォルダ名
-                                                            span.name.icon.atom-icon.dark-green {
-                                                            }
-                                                        }
-
-                                                        // リスト要素
-                                                        ol.entries.list-tree {
-                                                        }
-                                                    }
-
-                                                    // 選択している，展開している
-                                                    &.selected.expanded {
-
-                                                        // フォルダ要素
-                                                        div.header.list-item.project-root-header {
-
-                                                            // アイコンとフォルダ名
-                                                            span.name.icon.atom-icon.dark-green {
-                                                            }
-                                                        }
-                                                        ol.entries.list-tree {
                                                         }
                                                     }
                                                 }
@@ -568,7 +562,7 @@ atom-workspace {
             // メイン作業スペース，エディタタブからエディタ部分
             atom-pane-container.panes {
 
-                // 本体
+                // 各ペイン本体
                 atom-pane.pane {
 
                     border-right: solid 1px @pane-border-color;  // 枠線
@@ -651,33 +645,107 @@ atom-workspace {
 
                                     border-bottom: solid 2px @tab-indicator-active-color;   // アクティブタブの下部にアンダーライン
                                 }
+
+                                // 未保存状態
+                                &.modified {
+
+                                    // タイトル
+                                    div.title {
+
+                                    }
+
+                                    // 閉じるボタン
+                                    div.close-icon {
+
+                                    }
+                                }
                             }
                         }
                     }
 
                     // アクティブペイン
-                    // &.active {
-                    //
-                    //     // タブバー
-                    //     ul.list-inline.tab-bar.inset-panel {
-                    //
-                    //         background-color: transparent;  // 背景
-                    //
-                    //         // タブ
-                    //         li.texteditor.tab.sortable {
-                    //
-                    //             color: @gold;             // 文字色
-                    //             background-color: transparent;  // 背景
-                    //             font-size: 14px;          // 文字サイズ
-                    //
-                    //             // アクティブタブ
-                    //             &.active {
-                    //
-                    //                 font-size: 16px;          // 文字サイズ
-                    //             }
-                    //         }
-                    //     }
-                    // }
+                    &.active {
+
+                        // タブバー
+                        ul.list-inline.tab-bar.inset-panel {
+
+                            background-color: @tab-bar-bgcolor;        // 背景
+                            border-top: solid 1px @pane-border-color;  // ペイン境界線
+                            border-bottom: solid 1px @border-color;    // エディタ部分との境界線
+
+                            // タブ
+                            li.tab.sortable {
+
+                                background: @tab-bgcolor;  // 背景
+                                color: @tab-color;         // 文字色
+                                font-size: 12px;           // 文字サイズ
+
+                                // アイコン表示要素
+                                &::before {
+
+                                    background: @tab-bgcolor;  // 背景
+                                }
+
+                                // アイコンとタイトル
+                                div.title.icon {
+
+                                    // アイコン
+                                    &::before {
+                                    }
+                                }
+
+                                // 閉じるアイコン
+                                div.close-icon {
+
+                                    color: @tab-color;  // 文字色
+                                }
+
+                                // 閉じるアイコン表示要素
+                                &::after {
+
+                                    background: @tab-bgcolor;  // 背景
+                                }
+
+                                // アクティブタブ
+                                &.active {
+
+                                    background-color: @active-tab-bgcolor;                 // アクティブタブの背景
+                                    border-bottom: solid 2px @active-pane-tab-indicator-active-color;  // アクティブタブの下部にアンダーライン
+                                    font-size: 15px;                                       // 文字サイズ
+                                    font-family: @font-family;                             // 文字フォント
+                                    font-style: italic;                                    // フォントスタイル
+                                    // font-weight: bold;                                     // 太字
+                                    // text-align: center;                                    // 中央揃え
+
+                                    // アイコン表示要素
+                                    &::before {
+
+                                        border-bottom: solid 2px @active-pane-tab-indicator-active-color;   // アクティブタブの下部にアンダーライン
+                                    }
+
+                                    // アイコンとタイトル
+                                    div.title.icon {
+
+                                        // text-align: center;
+
+                                        // アイコン
+                                        &::before {
+                                        }
+                                    }
+
+                                    // 閉じるアイコン
+                                    div.close-icon {
+                                    }
+
+                                    // 閉じるアイコン表示要素
+                                    &::after {
+
+                                        border-bottom: solid 2px @active-pane-tab-indicator-active-color;   // アクティブタブの下部にアンダーライン
+                                    }
+                                }
+                            }
+                        }
+                    }
 
                     // エディタ部分
                     div.item-views {
@@ -764,6 +832,8 @@ atom-workspace {
 
                             // 設定内容
                             div.panels {
+
+                                background-color: transparent;  // 背景色
 
                                 // 設定内容全体
                                 div.panels-item {
@@ -4391,6 +4461,7 @@ atom-workspace {
                         }
                     }
                 }
+                }
             }
 
             // 画面下部(ステータスバー以外)
@@ -4749,7 +4820,6 @@ atom-workspace {
                                         }
                                     }
                                 }
-                            }
 
                             // 置換文字列入力欄と各ボタン
                             &.replace-container {
@@ -5542,5 +5612,1892 @@ atom-workspace {
 
     // 画面最下部ステータスバーより下の部分
     atom-panel-container.modal {
+    }
+
+
+    // 「One Dark」テーマ選択中
+    &.theme-one-dark-ui {
+
+        // ツリービューとエディタ部分
+        atom-workspace-axis.horizontal {
+
+            // 画面左側
+            atom-panel-container.left {
+
+                // 画面左側に置いたドック部分
+                atom-dock.left {
+
+                    // ツリービューなど
+                    div.atom-dock-inner.left {
+
+                        // 展開中
+                        &.atom-dock-open {
+
+                            // ドック要素全体
+                            div.atom-dock-mask {
+
+                                // コンテンツラッパー
+                                div.atom-dock-content-wrapper {
+
+                                    // 幅調整用ポインティング領域
+                                    div.atom-dock-resize-handle {
+
+                                        width: 6px;  // 横幅
+                                    }
+
+                                    // 要素ラッパー
+                                    atom-pane-container.panes {
+
+                                        // ツリービュー全体
+                                        atom-pane.pane {
+
+                                            // タブ全体
+                                            ul.list-inline.tab-bar.inset-panel {
+
+                                                // 各タブ
+                                                li.tab.sortable {
+
+                                                    // アクティブタブ
+                                                    &.active {
+
+                                                        // タイトル要素
+                                                        div.title {
+
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            // ツリービューラッパー
+                                            div.item-views {
+
+                                                // ツリービュー全体
+                                                div.tool-panel.tree-view {
+
+                                                    // ツリービューリスト
+                                                    ol {
+
+                                                        // 各要素
+                                                        li {
+
+                                                            margin: 0;  // 余白
+
+                                                            // 選択している
+                                                            &.selected {
+
+                                                                // 選択している項目
+                                                                &::before {
+                                                                }
+
+                                                                // 各項目の名称
+                                                                div {
+
+                                                                    // フォルダ展開ボタン
+                                                                    &::before {
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // メイン作業スペース
+            atom-workspace-axis.vertical {
+
+                // ペインラッパー
+                atom-pane-container.panes {
+
+                    // 作業ペイン全て
+                    atom-pane-axis.horizontal {
+
+                        // 各ペイン
+                        atom-pane.pane {
+
+                            // タブバー
+                            ul.list-inline.tab-bar.inset-panel {
+
+                                // 各タブ
+                                li.tab.sortable {
+
+                                    // タイトル
+                                    div.title {
+                                    }
+
+                                    // 閉じるボタン
+                                    div.close-icon {
+
+                                        background-color: @tab-closebtn-bgcolor;  // ボタン背景色
+                                    }
+
+                                    // アクティブタブ
+                                    &.active {
+
+                                        // タイトル
+                                        div.title {
+
+                                        }
+
+                                        // 閉じるボタン
+                                        div.close-icon {
+
+                                            border-bottom: solid 2px @tab-indicator-active-color;  // アクティブタブに下線
+                                        }
+
+                                        // 未保存状態
+                                        &.modified {
+
+                                            // タイトル
+                                            div.title {
+                                            }
+
+                                            // 閉じるボタン
+                                            div.close-icon {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            // アクティブペイン
+                            &.active {
+
+                                // タブバー
+                                ul.list-inline.tab-bar.inset-panel {
+
+                                    // 各タブ
+                                    li.tab.sortable {
+
+                                        // タイトル
+                                        div.title {
+                                        }
+
+                                        // 閉じるボタン
+                                        div.close-icon {
+
+                                            background-color: @tab-closebtn-bgcolor;  // ボタン背景色
+                                        }
+
+                                        // アクティブタブ
+                                        &.active {
+
+                                            // タイトル
+                                            div.title {
+
+                                            }
+
+                                            // 閉じるボタン
+                                            div.close-icon {
+
+                                                border-bottom: solid 2px @active-pane-tab-indicator-active-color;  // アクティブタブに下線
+                                            }
+
+                                            // 未保存状態
+                                            &.modified {
+
+                                                // タイトル
+                                                div.title {
+
+                                                }
+
+                                                // 閉じるボタン
+                                                div.close-icon {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            // エディタ部分
+                            div.item-views {
+
+                                // 設定画面
+                                div.settings-view {
+
+                                    // メニューリスト全体
+                                    div.config-menu {
+
+                                        // 設定項目リスト
+                                        ul.panels-menu.nav.nav-pills.nav-stacked {
+
+                                            // 各設定項目
+                                            li {
+
+                                                // 設定項目グループ名称
+                                                a {
+
+                                                    background-color: @setting-menu-mouseon-bgcolor;  // 背景色
+
+                                                    // 設定項目グループアイコン
+                                                    &::before {
+
+                                                        color: @gold;  // 文字色
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        // ボタン類
+                                        div.button-area {
+
+                                            // ボタン全て
+                                            button.btn {
+
+                                                // アイコン付き
+                                                &.icon {
+
+                                                    // アイコン
+                                                    &::before {
+
+                                                        color: @setting-btn-color;  // アイコン色
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // 設定パネル
+                                    div.panels {
+
+                                        border-left: solid 1px @pane-border-color;
+
+                                        // 各設定項目グループ内容
+                                        div.panels-item {
+
+                                            // 設定項目グループ内容
+                                            section.section {
+
+                                                // コア，エディタ設定
+                                                &.settings-panel {
+
+                                                    // 設定項目群ラッパー
+                                                    div.section-container {
+
+                                                        // 設定項目グループタイトル
+                                                        div.section-heading {
+
+                                                            // アイコン付きタイトル
+                                                            &.icon {
+
+                                                                // アイコン
+                                                                &::before {
+
+                                                                    color: @gold;  // アイコン色
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // コア設定，エディタ設定グループの説明文
+                                                        div.text.icon {
+
+                                                            // アイコン
+                                                            &::before {
+
+                                                                color: @setting-icon-color;  // アイコン色
+                                                                font-size: 20px;             // 文字サイズ
+                                                            }
+                                                        }
+
+                                                        // 設定画面本体
+                                                        div.section-body {
+
+                                                            // 各設定項目要素
+                                                            div.control-group {
+
+                                                                // テキストボックスラッパー
+                                                                div.controls {
+
+                                                                    // テキストボックス要素ラッパー
+                                                                    div.editor-container {
+
+                                                                        // テキストボックス本体
+                                                                        atom-text-editor.editor.mini {
+
+                                                                            // スクロール可能部分
+                                                                            div div.scroll-view {
+
+                                                                                // 入力中の行
+                                                                                div div.lines {
+
+                                                                                    // 入力中の行
+                                                                                    div div.line {
+
+                                                                                        span {
+
+                                                                                            color : @setting-textbox-color;  //  文字色
+                                                                                        }
+                                                                                    }
+
+                                                                                    // ハイライト類
+                                                                                    div.highlights {
+
+                                                                                        // 各ハイライト
+                                                                                        div.highlight {
+
+                                                                                            // 選択部分
+                                                                                            &.selection {
+
+                                                                                                // 選択範囲
+                                                                                                div.region {
+
+                                                                                                    background-color : @setting-highlights-color;  /* 背景色 */
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+
+                                                                                    // プレスホルダー
+                                                                                    div.placeholder-text {
+
+                                                                                        color : @setting-textbox-placeholder-color;  // 文字色
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                // キーバインド設定
+                                                &.keybinding-panel {
+
+                                                    // ヘッダ
+                                                    div.section-heading.icon {
+
+                                                        &::before {
+
+                                                            color: @setting-icon-color;  // アイコン色
+                                                        }
+                                                    }
+
+                                                    // 概要
+                                                    div.text.native-key-bindings {
+
+                                                        // 文頭アイコン
+                                                        span.icon.icon-question {
+
+                                                            // アイコン
+                                                            &::before {
+
+                                                                color: @setting-icon-color;  // アイコン色
+                                                            }
+                                                        }
+                                                    }
+
+                                                    // テキストエディタラッパー
+                                                    div.editor-container {
+
+                                                        // テキストボックス
+                                                        atom-text-editor.editor.mini {
+
+                                                            // スクロール可能部分
+                                                            div div.scroll-view {
+
+                                                                // 入力中の行
+                                                                div div.lines {
+
+                                                                    // 入力中の行
+                                                                    div div.line {
+
+                                                                        span {
+
+                                                                            color : @setting-textbox-color;  //  文字色
+                                                                        }
+                                                                    }
+
+                                                                    // ハイライト類
+                                                                    div.highlights {
+
+                                                                        // 各ハイライト
+                                                                        div.highlight {
+
+                                                                            // 選択部分
+                                                                            &.selection {
+
+                                                                                // 選択範囲
+                                                                                div.region {
+
+                                                                                    background-color : @setting-highlights-color;  /* 背景色 */
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+
+                                                                    // プレスホルダー
+                                                                    div.placeholder-text {
+
+                                                                        color : @setting-textbox-placeholder-color;  // 文字色
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                // パッケージ設定ラッパー
+                                                div.section-container {
+
+                                                    // ヘッダ
+                                                    div.section-heading {
+
+                                                        // アイコン
+                                                        &::before {
+
+                                                        color : @setting-icon-color;  // アイコン色
+                                                        }
+                                                    }
+
+                                                    // 各パッケージ
+                                                    section.sub-section {
+
+                                                        // 廃止予定パッケージ
+                                                        &.deprecated-packages {
+
+                                                            // タイトル
+                                                            h3.sub-section-heading {
+
+                                                                // アイコン
+                                                                &::before {
+
+                                                                    color: @setting-icon-color;  // アイコン色
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // コミュニティパッケージ
+                                                        &.installed-packages {
+
+                                                            // タイトル
+                                                            h3.sub-section-heading {
+
+                                                                // アイコン
+                                                                &::before {
+
+                                                                    color: @setting-icon-color;  // アイコン色
+                                                                }
+                                                            }
+
+                                                            // パッケージカード
+                                                            div.container.package-container {
+
+                                                                // 各パッケージカードラッパー
+                                                                div.row {
+
+                                                                    // 各パッケージカード
+                                                                    div.package-card.col-lg-8 {
+
+                                                                        // 作成者情報と制御ボタン
+                                                                        div.meta {
+
+                                                                            // コントロールボタン要素
+                                                                            div.meta-controls {
+
+                                                                                // ボタンツールバー
+                                                                                div.btn-toolbar {
+
+                                                                                    // ボタン類
+                                                                                    div.btn-group {
+
+                                                                                        // 各ボタン
+                                                                                        button.btn {
+
+                                                                                            // 情報系ボタン(インストールなど)
+                                                                                            &.btn-info {
+
+                                                                                                // アイコン付き
+                                                                                                &.icon {
+
+                                                                                                    // アイコン本体
+                                                                                                    &::before {
+
+                                                                                                        color : @setting-icon-cloud-color;  /* アイコン色 */
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+
+                                                                                            // アイコンがあるボタン類
+                                                                                            &.icon {
+
+                                                                                                // アイコン本体
+                                                                                                &::before {
+
+                                                                                                    color : @setting-btn-icon-color;  /* アイコン色 */
+                                                                                                }
+
+
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // コアパッケージ
+                                                        &.core-packages {
+
+                                                            // タイトル
+                                                            h3.sub-section-heading {
+
+                                                                // アイコン
+                                                                &::before {
+
+                                                                    color : @setting-icon-color;  // アイコン色
+                                                                }
+                                                            }
+
+                                                            // パッケージカードラッパー
+                                                            div.container.package-container {
+
+                                                                // 各パッケージカード要素
+                                                                div.row {
+
+                                                                    // パッケージカード
+                                                                    div.package-card.col-lg-8 {
+
+                                                                        // 作成者情報とコントロールボタン類
+                                                                        div.meta {
+
+                                                                            // コントロールボタン類
+                                                                            div.meta-controls {
+
+                                                                                // ボタンツールバー
+                                                                                div.btn-toolbar {
+
+                                                                                    // ボタン類
+                                                                                    div.btn-group {
+
+                                                                                        // 各ボタン
+                                                                                        button.btn {
+
+                                                                                            // 情報系ボタン(インストールなど)
+                                                                                            &.btn-info {
+
+                                                                                                // アイコン付き
+                                                                                                &.icon {
+
+                                                                                                    // アイコン本体
+                                                                                                    &::before {
+
+                                                                                                        color : @setting-icon-cloud-color;  /* アイコン色 */
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+
+                                                                                            // アイコンがあるボタン類
+                                                                                            &.icon {
+
+                                                                                                // アイコン本体
+                                                                                                &::before {
+
+                                                                                                    color : @setting-btn-icon-color;  /* アイコン色 */
+                                                                                                }
+
+
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // 開発パッケージ
+                                                        &.dev-packages {
+
+                                                            // タイトル
+                                                            h3.sub-section-heading {
+
+                                                                // アイコン
+                                                                &::before {
+
+                                                                    color : @setting-icon-color;  // アイコン色
+                                                                }
+                                                            }
+
+                                                            // パッケージカードラッパー
+                                                            div.container.package-container {
+
+                                                                // 各パッケージカード要素
+                                                                div.row {
+
+                                                                    // パッケージカード
+                                                                    div.package-card.col-lg-8 {
+
+                                                                        // 作成者情報とコントロールボタン類
+                                                                        div.meta {
+
+                                                                            // コントロールボタン類
+                                                                            div.meta-controls {
+
+                                                                                // ボタンツールバー
+                                                                                div.btn-toolbar {
+
+                                                                                    // ボタン類
+                                                                                    div.btn-group {
+
+                                                                                        // 各ボタン
+                                                                                        button.btn {
+
+                                                                                            // 情報系ボタン(インストールなど)
+                                                                                            &.btn-info {
+
+                                                                                                // アイコン付き
+                                                                                                &.icon {
+
+                                                                                                    // アイコン本体
+                                                                                                    &::before {
+
+                                                                                                        color : @setting-icon-cloud-color;  /* アイコン色 */
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+
+                                                                                            // アイコンがあるボタン類
+                                                                                            &.icon {
+
+                                                                                                // アイコン本体
+                                                                                                &::before {
+
+                                                                                                    color : @setting-btn-icon-color;  /* アイコン色 */
+                                                                                                }
+
+
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // Gitパッケージ
+                                                        &.git-packages {
+
+                                                            // タイトル
+                                                            h3.sub-section-heading {
+
+                                                                // アイコン
+                                                                &::before {
+
+                                                                    color : @setting-icon-color;  // アイコン色
+                                                                }
+                                                            }
+
+                                                            // パッケージカードラッパー
+                                                            div.container.package-container {
+
+                                                                // 各パッケージカード要素
+                                                                div.row {
+
+                                                                    // パッケージカード
+                                                                    div.package-card.col-lg-8 {
+
+                                                                        // 作成者情報とコントロールボタン類
+                                                                        div.meta {
+
+                                                                            // コントロールボタン類
+                                                                            div.meta-controls {
+
+                                                                                // ボタンツールバー
+                                                                                div.btn-toolbar {
+
+                                                                                    // ボタン類
+                                                                                    div.btn-group {
+
+                                                                                        // 各ボタン
+                                                                                        button.btn {
+
+                                                                                            // 情報系ボタン(インストールなど)
+                                                                                            &.btn-info {
+
+                                                                                                // アイコン付き
+                                                                                                &.icon {
+
+                                                                                                    // アイコン本体
+                                                                                                    &::before {
+
+                                                                                                        color : @setting-icon-cloud-color;  /* アイコン色 */
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+
+                                                                                            // アイコンがあるボタン類
+                                                                                            &.icon {
+
+                                                                                                // アイコン本体
+                                                                                                &::before {
+
+                                                                                                    color : @setting-btn-icon-color;  /* アイコン色 */
+                                                                                                }
+
+
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+
+                                                    // アップデートパッケージ
+                                                    &.updates-container {
+
+                                                        // ヘッダ
+                                                        div.updates-heading-container {
+
+                                                            // タイトル
+                                                            h1.section-heading {
+
+                                                                // アイコン
+                                                                &::before {
+
+                                                                    color : @setting-icon-cloud-color;  // アイコン色
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // 警告
+                                                        div.alert.alert-warning {
+
+                                                            color: @setting-warning-color;  // 文字色
+
+                                                            // アイコン
+                                                            &::before {
+
+                                                                color: @setting-warning-icon-color;  // アイコン色
+                                                            }
+                                                        }
+
+                                                        // 情報アラート
+                                                        div.alert.alert-info {
+
+                                                            // アイコン
+                                                            &.icon {
+
+                                                                // 砂時計アイコン
+                                                                &.icon-hourglass {
+
+                                                                    // アイコン本体
+                                                                    &::before {
+
+                                                                        color : @setting-alert-info-icon-color;  // アイコン色
+                                                                    }
+                                                                }
+
+                                                                // ハートアイコン
+                                                                &.icon-heart {
+
+                                                                    // アイコン本体
+                                                                    &::before {
+
+                                                                        color: @madoka;  // アイコン色
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // 全パッケージカードラッパー
+                                                        div.container.package-container {
+
+                                                            // 各パッケージカード
+                                                            div.package-card.col-lg-8 {
+
+                                                                // インストール数とお気に入り登録数
+                                                                div.stats.pull-right {
+
+                                                                    // お気に入り登録数
+                                                                    span.stats-item {
+
+                                                                        // 星アイコン
+                                                                        span.icon.icon-star {
+
+                                                                            // アイコン本体
+                                                                            &::before {
+
+                                                                                color : @setting-icon-star-color;  // アイコン色
+                                                                            }
+                                                                        }
+
+                                                                        // 雲アイコン
+                                                                        span.icon.icon-cloud-download {
+
+                                                                            // アイコン本体
+                                                                            &::before {
+
+                                                                                color : @setting-icon-cloud-color;  // アイコン色
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+
+                                                                // 作成者情報
+                                                                div.meta {
+
+                                                                    // コントロールボタン
+                                                                    div.meta-controls {
+
+                                                                        // ボタン類
+                                                                        div.btn-toolbar {
+
+                                                                            // ボタングループ
+                                                                            div.btn-group {
+
+                                                                                // ボタン全て
+                                                                                button.btn {
+
+                                                                                    // アイコンのあるもの
+                                                                                    &.icon {
+
+                                                                                        // アイコン
+                                                                                        &::before {
+
+                                                                                            color: @setting-btn-icon-color;
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            // URL Handling設定
+                                            form.section {
+
+                                                // 設定パネル
+                                                div.settings-panel {
+
+                                                    // 設定項目ラッパー
+                                                    div.section-container {
+
+                                                        // アイコン全て
+                                                        // div.icon {
+                                                        //
+                                                        //     &::before {
+                                                        //         color: @setting-icon-color;  // アイコン色
+                                                        //     }
+                                                        // }
+
+                                                        // ヘッダ
+                                                        div.section-heading.icon {
+
+                                                            // アイコン
+                                                            &::before {
+
+                                                                color: @setting-icon-color;  // アイコン色
+                                                            }
+                                                        }
+
+                                                        // 説明
+                                                        div.text.icon {
+
+                                                            // アイコン
+                                                            &::before {
+
+                                                                color: @setting-icon-color;  // アイコン色
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            // テーマ，パッケージインストール設定
+                                            div.section.packages {
+
+                                                // テーマ設定
+                                                &.themes-panel {
+
+                                                    // 設定内容ラッパー
+                                                    div.section-container {
+
+                                                        // タイトル
+                                                        div.section-heading {
+
+                                                            // アイコン
+                                                            &::before {
+
+                                                                color : @setting-icon-color;  // アイコン色
+                                                            }
+                                                        }
+
+                                                        // 概要説明
+                                                        div.text.native-key-bindings {
+
+                                                            // アイコン含有要素
+                                                            span.icon {
+
+                                                                // アイコン本体
+                                                                &::before {
+
+                                                                    color : @setting-icon-color;  // アイコン色
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // テーマ選択全体
+                                                        div.themes-picker {
+
+                                                            // 各テーマ選択部分ラッパー
+                                                            div.themes-picker-item.control-group {
+
+                                                                // 各テーマ選択部分
+                                                                div.controls {
+
+                                                                    // テーマ選択肢と設定ボタン
+                                                                    div.select-container {
+
+                                                                        // 設定ボタン
+                                                                        button.btn {
+
+                                                                            // アイコン
+                                                                            &::before {
+
+                                                                                color : @setting-btn-color;  // ボタンアイコン色
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                // パッケージインストール
+                                                div.section-container {
+
+                                                    // タイトル
+                                                    h1.section-heading {
+
+                                                        // アイコン
+                                                        &::before {
+
+                                                            color : @setting-icon-color;  // アイコン色
+                                                        }
+                                                    }
+
+                                                    // 概要説明
+                                                    div.text.native-key-bindings {
+
+                                                        // アイコン要素
+                                                        span.icon {
+
+                                                            // アイコン本体
+                                                            &::before {
+
+                                                                color : @setting-icon-color;  // アイコン色
+                                                            }
+                                                        }
+                                                    }
+
+                                                    // 検索用テキストボックスとボタン
+                                                    div.search-container {
+
+                                                        // テキストエディタラッパー
+                                                        div.editor-container {
+
+                                                            // テキストボックス
+                                                            atom-text-editor.editor.mini {
+
+                                                                // スクロール可能部分
+                                                                div div.scroll-view {
+
+                                                                    // 入力中の行
+                                                                    div div.lines {
+
+                                                                        // 入力中の行
+                                                                        div div.line {
+
+                                                                            span {
+
+                                                                                color : @setting-textbox-color;  //  文字色
+                                                                            }
+                                                                        }
+
+                                                                        // ハイライト類
+                                                                        div.highlights {
+
+                                                                            // 各ハイライト
+                                                                            div.highlight {
+
+                                                                                // 選択部分
+                                                                                &.selection {
+
+                                                                                    // 選択範囲
+                                                                                    div.region {
+
+                                                                                        background-color : @setting-highlights-color;  /* 背景色 */
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+
+                                                                        // プレスホルダー
+                                                                        div.placeholder-text {
+
+                                                                            color : @setting-textbox-placeholder-color;  // 文字色
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // ボタン類
+                                                        div.btn-group {
+
+                                                            // 各ボタン全て
+                                                            button.btn.btn-default {
+
+                                                                border : solid 1px @setting-btn-inactive-border-color;  // 枠線
+                                                                color : @setting-btn-inactive-color;                    // 選択されていないボタンの文字色
+
+                                                                // 選択されているボタン
+                                                                &.selected {
+
+                                                                    border : solid 1px @setting-btn-border-color;  // 枠線
+                                                                    color : @setting-btn-color;  // 選択されているボタンの文字色
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+
+                                                    // サブタイトル
+                                                    div.section-heading {
+
+                                                        // アイコン
+                                                        &::before {
+
+                                                            color : @setting-icon-star-color;  // アイコン色
+                                                        }
+                                                    }
+
+                                                    // 「パッケージ読み込み中」アラート
+                                                    div.alert.alert-info {
+
+                                                        border : solid 1px @setting-alert-info-border-color;  // 境界線
+                                                        background-color : @setting-alert-bgcolor;            // 背景色
+                                                        color : @setting-alert-info-color;                    // 文字色
+
+                                                        // アイコン
+                                                        &::before {
+
+                                                            color : @setting-alert-info-icon-color;  // アイコン色
+                                                        }
+                                                    }
+
+                                                    // 各パッケージカードラッパー
+                                                    div.row {
+
+                                                        // 各パッケージカード
+                                                        div.package-card.col-lg-8 {
+
+                                                            // 作成者情報とコントロールボタン
+                                                            div.meta {
+
+                                                                // コントロールボタン
+                                                                div.meta-controls {
+
+                                                                    // ボタンツールバー
+                                                                    div.btn-toolbar {
+
+                                                                        // ボタングループ
+                                                                        div.btn-group {
+
+                                                                            // 全ボタン類
+                                                                            button.btn {
+
+                                                                                // アイコン付き
+                                                                                &.icon {
+
+                                                                                    // アイコン
+                                                                                    &::before {
+
+                                                                                        color : @setting-btn-icon-color;  // アイコン色
+                                                                                    }
+                                                                                }
+
+                                                                                // 情報系アイコン
+                                                                                &.btn-info {
+
+                                                                                    // アイコン付き
+                                                                                    &.icon {
+
+                                                                                        // インストールボタン
+                                                                                        &.icon-cloud-download.install-button {
+
+                                                                                            // アイコン
+                                                                                            &::before {
+
+                                                                                                color : @setting-icon-cloud-color;  // アイコン色
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        // 各設定項目タイトルのアイコンの色を金色にする
+                                        // div {
+                                        //     &::before {
+                                        //         color: @gold;
+                                        //     }
+                                        //     section {
+                                        //         &::before {
+                                        //             color: @gold;
+                                        //         }
+                                        //     }
+                                        // }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // 画面下部
+                atom-panel-container.bottom {
+
+                    // 検索ツール
+                    atom-panel.tool-panel.panel-bottom.bottom {
+
+                        background-color: @tool-panel-bgcolor;  // 背景色
+
+                        // プロジェクト内検索内容ラッパー
+                        div.project-find.padded {
+
+                            border: solid 1px @tool-panel-border-color;  // 境界線
+
+                            // ヘッダー
+                            header.header {
+
+                                border-bottom: solid 1px @tool-panel-element-border-color;  // 要素境界線
+
+                                // ヘッダ内各要素
+                                span.header-item {
+
+                                    // 閉じるボタン
+                                    &.close-button.pull-right {
+
+                                        color : @tool-panel-btn-color;  // 文字色
+                                    }
+
+                                    // タイトルと閉じ方説明
+                                    &.description {
+
+                                        color : @tool-panel-color;  // 文字色
+
+                                        // 閉じ方説明
+                                        span.subtle-info-message {
+
+                                            color : @gold;
+
+                                            // ハイライト部分
+                                            span.highlight {
+
+                                                background-color: @tool-panel-highlight-bgcolor;  // 背景色
+                                                color : @tool-panel-highlight-color;              // 文字色
+                                            }
+                                        }
+                                    }
+
+                                    // 検索オプション
+                                    &.options-label.pull-right {
+
+                                        color: @tool-panel-color;  // 文字色
+
+                                        // 選択中のオプション
+                                        span.options {
+
+                                            color : @tool-panel-color;  // 文字色
+                                        }
+
+                                        // ボタン類
+                                        span.btn-group {
+
+                                            // 全ボタン
+                                            button.btn {
+
+                                                border: solid 1px @tool-panel-btn-border-color;  // 境界線
+                                                background: @tool-panel-btn-bgcolor;             // 背景色
+                                                color: @tool-panel-btn-color;                    // 文字色
+
+                                                // 選択中
+                                                &.selected {
+
+                                                    background: @tool-panel-btn-selection-bgcolor;  // 背景色
+                                                    color : @tool-panel-btn-selection-color         // 文字色
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            // 進行バーと進行度
+                            section.input-block {
+
+                                // 進行バー
+                                progress.inline-block {
+
+                                    background-image: linear-gradient( -45deg , transparent 33% , @gold 33% , rgba( 02 , 17 , 60 , 0.7 ) 66% , transparent 66% );
+                                }
+
+                                // 進捗度
+                                span.inline-block {
+
+                                    color : @tool-panel-color;  // 文字色
+                                }
+
+                                // 検索文字列入力欄と検索ボタン
+                                &.find-container {
+
+                                    // 検索文字列入力欄と検索ボタンラッパー
+                                    div.input-block-item {
+
+                                        // 検索文字列入力欄
+                                        &.editor-container {
+
+                                            // テキストボックス
+                                            atom-text-editor.editor.mini {
+
+                                                border : solid 1px @tool-panel-textbox-border-color;  // 境界線
+                                                background-color : @tool-panel-textbox-bgcolor;       // 背景色
+                                                color : @tool-panel-textbox-color;                    // 文字色
+
+                                                // スクロール可能領域
+                                                div div.scroll-view {
+
+                                                    // 入力中の行
+                                                    div div.lines {
+
+                                                        // ハイライト類
+                                                        div.highlights {
+
+                                                            // 各ハイライト
+                                                            div.highlight {
+
+                                                                // 文字列選択状態
+                                                                &.selection {
+
+                                                                    // 選択されている文字列
+                                                                    div.region.selection {
+
+                                                                        background-color : @homura-selection;  // 背景色
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        // プレスホルダー
+                                                        div.placeholder-text {
+
+                                                            color : @tool-panel-textbox-placeholder-color;  // 文字色
+                                                        }
+
+                                                        // カーソル
+                                                        div.cursors div.cursor {
+
+                                                            border-left : solid 1px @cursor-color;  // カーソルの形状と色
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        // 検索ボタン格納要素
+                                        div.btn-group.btn-group-find {
+
+                                            // 検索ボタン
+                                            button.btn {
+
+                                                border : solid 1px @tool-panel-btn-border-color;  // 境界線
+                                                background : @tool-panel-btn-bgcolor;             // 背景色
+                                                color : @tool-panel-btn-color;                    // 文字色
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // 置換文字列入力欄と置換ボタン
+                                &.replace-container {
+
+                                    // 置換文字列入力欄と置換ボタンラッパー
+                                    div.input-block-item {
+
+                                        // 置換文字列入力欄
+                                        &.editor-container {
+
+                                            // テキストボックス
+                                            atom-text-editor.editor.mini {
+
+                                                border : solid 1px @tool-panel-textbox-border-color;  // 境界線
+                                                background : @tool-panel-textbox-bgcolor;             // 背景色
+                                                color : @tool-panel-textbox-color;                    // 文字色
+
+                                                // スクロール可能領域
+                                                div div.scroll-view {
+
+                                                    // 入力中の行
+                                                    div div.lines {
+
+                                                        // ハイライト類
+                                                        div.highlights {
+
+                                                            // 各ハイライト
+                                                            div.highlight {
+
+                                                                // 文字列選択状態
+                                                                &.selection {
+
+                                                                    // 選択されている文字列
+                                                                    div.region.selection {
+
+                                                                        background-color : @homura-selection;  // 背景色
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // プレスホルダー
+                                                        div.placeholder-text {
+
+                                                            color: @tool-panel-textbox-placeholder-color;
+                                                        }
+
+                                                        // カーソル
+                                                        div.cursors div.cursor {
+
+                                                            border-left : solid 1px @cursor-color;  // カーソルの形状と色
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        // 置換ボタン
+                                        div.btn-group.btn-group-replace-all {
+
+                                            // ボタン本体
+                                            button.btn {
+
+                                                border : solid 1px @tool-panel-btn-border-color;  // 境界線
+                                                background : @tool-panel-btn-bgcolor;             // 背景色
+                                                color : @tool-panel-btn-color;                    // 文字色
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // ファイル検索
+                                &.paths-container {
+
+                                    // ファイル検索要素
+                                    div.input-block-item {
+
+                                        // 検索文字列入力領域
+                                        &.editor-container {
+
+                                            // テキストボックス
+                                            atom-text-editor.editor.mini {
+
+                                                border : solid 1px @tool-panel-textbox-border-color;  // 境界線
+                                                background : @tool-panel-textbox-bgcolor;             // 背景色
+                                                color : @tool-panel-textbox-color;                    // 文字色
+
+                                                // スクロール可能領域
+                                                div div.scroll-view {
+
+                                                    // 入力中の行
+                                                    div div.lines {
+
+                                                        // ハイライト類
+                                                        div.highlights {
+
+                                                            // 各ハイライト
+                                                            div.highlight {
+
+                                                                // 文字列選択状態
+                                                                &.selection {
+
+                                                                    // 選択されている文字列
+                                                                    div.region.selection {
+
+                                                                        background-color : @homura-selection;  // 背景色
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // プレスホルダー
+                                                        div.placeholder-text {
+
+                                                            color: @tool-panel-textbox-placeholder-color;
+                                                        }
+
+                                                        // カーソル
+                                                        div.cursors div.cursor {
+
+                                                            border-left : solid 1px @cursor-color;  // カーソルの形状と色
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // 文字列検索と置換
+                        div.find-and-replace {
+
+                            // ヘッダ
+                            header.header {
+
+                                // ヘッダアイテム
+                                span.header-item {
+
+                                    // 右側のボタン類
+                                    &.pull-right {
+
+                                        // 閉じるボタン
+                                        &.close-button {
+
+                                        }
+
+                                        // オプションボタンと説明
+                                        &.options-label {
+
+                                            // 検索オプションタイトル
+                                            span {
+
+                                                // 選択されているオプション
+                                                &.options {
+
+                                                }
+
+                                                // オプション選択ボタン
+                                                &.btn-broup.btntoggle.btn-group-options {
+
+                                                    // ボタン全て
+                                                    button.btn {
+
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // 左側の説明
+                                    &.description {
+
+                                    }
+                                }
+                            }
+
+                            // 文字列検索と文字列置換
+                            section.input-block {
+
+                                // 文字列検索ラッパー
+                                &.find-container {
+
+                                    // 文字列検索テキストボックスとボタンラッパー
+                                    div.input-block-item {
+
+                                        // テキストボックスラッパー
+                                        &.editor-container {
+
+                                            // 文字入力部分
+                                            atom-text-editor.editor.mini {
+
+                                                // スクロール可能部分
+                                                div div.scroll-view {
+
+                                                    // 入力中の行
+                                                    div div.lines {
+
+                                                        // ハイライト類
+                                                        div.highlights {
+
+                                                            // 各ハイライト
+                                                            div.highlight {
+
+                                                                // 選択部分
+                                                                &.selection {
+
+                                                                    // 選択領域
+                                                                    div.region {
+
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // プレスホルダー
+                                                        div.placeholder-text {
+
+                                                        }
+
+                                                        // カーソル
+                                                        div.cursors div.cursor {
+
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            // 結果表示部ラッパー
+                                            div.find-meta-container {
+
+                                                // 結果表示部
+                                                span.text-subtle.result-counter {
+
+                                                }
+                                            }
+                                        }
+
+                                        // 検索ボタン類
+                                        div.btn-group {
+
+                                            // 検索ボタン
+                                            &.btn-group-find {
+
+                                                // ボタン
+                                                button.btn.btn-next {
+
+                                                }
+                                            }
+
+                                            // 全て検索ボタン
+                                            &.btn-group-find-all {
+
+                                                // ボタン
+                                                button.btn-all {
+
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // 文字列置換ラッパー
+                                &.replace-container {
+
+                                    // テキストボックスとボタン
+                                    div.input-block-item {
+
+                                        // テキストボックスラッパー
+                                        &.editor-container {
+
+                                            // テキストボックス
+                                            atom-text-editor.editor.mini {
+
+                                                border : solid 1px @tool-panel-textbox-border-color;  // 枠線
+                                                background-color : @tool-panel-textbox-bgcolor;       // 背景色
+                                                color : @tool-panel-textbox-color;                    // 文字色
+
+                                                // スクロール可能部分
+                                                div div.scroll-view {
+
+                                                    // 入力中の行
+                                                    div div.lines {
+
+                                                        // ハイライト類
+                                                        div.highlights {
+
+                                                            // 各ハイライト
+                                                            div.highlight {
+
+                                                                // 選択要素
+                                                                &.selecton {
+
+                                                                    // 選択部分
+                                                                    div.region.selection {
+
+                                                                        background-color : @tool-panel-highlight-bgcolor;  // 背景色
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        // ボタン要素
+                                        div.btn-group {
+
+                                            // 置換ボタン要素
+                                            &.btn-group-replace {
+
+                                                // 置換ボタン
+                                                button.btn {
+
+                                                    border : solid 1px @tool-panel-btn-border-color;  // 枠線
+                                                    background : @tool-panel-btn-bgcolor;             // 背景色
+                                                    color : @tool-panel-btn-color;                    // 文字色
+                                                }
+                                            }
+
+                                            // すべて置換要素
+                                            &.btn-group-replace-all {
+
+                                                // 全てのボタン
+                                                button.btn {
+
+                                                    // すべて置換ボタン
+                                                    &.btn-all {
+
+                                                        border : solid 1px @tool-panel-btn-border-color;  // 枠線
+                                                        background : @tool-panel-btn-bgcolor;             // 背景色
+                                                        color : @tool-panel-btn-color;                    // 文字色
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // 画面下部(ステータスバー上部)
+                    atom-dock.bottom {
+
+                        // ステータスバーとステータスバーを伸ばすボタン要素
+                        div.atom-dock-inner.bottom {
+
+                            // ステータスバーが開いている時
+                            &.atom-dock-open {
+
+                                // Linterプラグイン全体要素
+                                div.atom-dock-mask {
+
+                                    // コンテンツラッパー
+                                    div.atom-dock-content-wrapper.bottom {
+
+                                        // リサイズ可能部分
+                                        div.atom-dock-resize-handle {
+
+                                            // height : 10px;
+                                        }
+
+                                        // ペイン要素
+                                        atom-pane-container.panes {
+
+                                            // ペイン本体
+                                            atom-pane.pane {
+
+                                                // タブバー
+                                                ul.list-inline.tab-bar.inset-panel {
+
+                                                    // 各タブ要素
+                                                    li.tab.sortable {
+
+                                                        // アクティブタブ
+                                                        &.active {
+
+                                                            // タイトル
+                                                            div.title {
+
+                                                            }
+
+                                                            // 閉じるアイコン要素
+                                                            div.close-icon {
+
+                                                                // アイコン本体
+                                                                &::before {
+
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                // Linter本体
+                                                div.item-views {
+
+                                                    // Linterパネル
+                                                    div div#linter-panel {
+
+                                                        // 表
+                                                        table.sb-table.linter {
+
+                                                            border : solid 1px @gold;  // 枠線
+
+                                                            tr {
+
+                                                                background : @linter-table-bgcolor;  // 背景色
+                                                                color : @linter-table-color;         // 文字色
+                                                                text-align : center;                 // 中央揃え
+
+                                                                // 表ヘッダ各要素
+                                                                th {
+
+                                                                    background : @linter-table-bgcolor;  // 背景色
+                                                                    text-align : center;                 // 中央揃え
+                                                                }
+
+                                                                // 表の各要素
+                                                                td {
+
+                                                                    background : @linter-table-bgcolor;  // 背景色
+                                                                    text-align : center;                 // 中央揃え
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            // 見えているボタン部分
+                            div.atom-dock-toggle-button.bottom {
+
+                                // ボタンが表示されている時
+                                &.atom-dock-toggle-button-visible{
+                                }
+
+                                // 半円部分
+                                div.atom-dock-toggle-button-inner.bottom {
+
+                                    background-color: @pane-ocbtn-bgcolor;  // ボタン背景
+
+                                    // 閉じている時
+                                    span.icon.icon-chevron-up {
+
+                                        color: @pane-ocbtn-color;  // 文字色
+                                    }
+
+                                    // 開いている時
+                                    span.icon.icon-chevron-down {
+
+                                        color: @pane-ocbtn-color;  // 文字色
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // フッター(ステータスバー)
+        atom-panel-container.footer {
+
+            // ステータスバー全体の要素
+            status-bar.status-bar {
+
+                // ステータスバーラッパー
+                div.flexbox-repaint-hack {
+
+                    // 左右ラッパー
+                    div {
+
+                        // 左側
+                        &.status-bar-left {
+
+                            // platformioステータスアイコン
+                            div.platformio-ide-terminal.status-bar {
+
+                                border : solid 1px @status-bar-group-border-color;  // 枠線
+                                background-color: @status-bar-icon-bgcolor;         // 背景色
+
+                                // +アイコンとxアイコン
+                                i.icon {
+
+                                    margin : 0 0 0 5px;  // 余白
+
+                                    // +アイコン
+                                    &.icon-plus {
+
+                                        // アイコン本体
+                                        &::before {
+
+                                            margin : 0 0 0 0;  // 上右下左の余白
+                                        }
+                                    }
+
+                                    // xアイコン
+                                    &.icon-x {
+
+                                        margin : 0 2px 0 0;  // 余白
+
+                                        // アイコン本体
+                                        &::before {
+
+                                            // margin : 0 5px 0 0;
+                                        }
+                                    }
+                                }
+
+                                // ターミナルアイコンリスト要素
+                                ul.list-inline.status-container {
+
+                                    // ターミナルアイコンリスト
+                                    li.pio-terminal-status-icon {
+
+                                        border-left : solid 1px @status-bar-group-border-color;   // 枠線
+                                        border-right : solid 1px @status-bar-group-border-color;  // 枠線
+
+                                        // アクティブ要素
+                                        &.active {
+
+                                            // アイコン要素
+                                            i.icon.icon-terminal {
+
+                                                // アイコン本体
+                                                &::before {
+
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
