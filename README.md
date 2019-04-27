@@ -461,11 +461,7 @@ japanese-menuインストール済が前提<br>
 <h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.2">ver_3.0.2</a></h4>
 <ul>
     <li>
-<<<<<<< HEAD
-        コメントの整理
-=======
         コメントの追記
->>>>>>> ver_3.0.2
     </li>
     <li>
         コードの可読性の改善
