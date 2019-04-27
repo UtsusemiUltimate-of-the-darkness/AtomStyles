@@ -2,7 +2,7 @@
 
 github製テキストエディタ「Atom」のスタイルシートです．<br>
 「カスタムメイド」ならぬ「カスタムアトム」作成のご参考になればと思います．<br>
-Mac使用者で，ダークテーマや暗い背景画像を使用している方や「カスタムメイド」が通じる方にオススメ．<br>
+Windows非対応．Mac使用者で，ダークテーマや暗い背景画像を使用している方や「カスタムメイド」が通じる方にオススメ．<br>
 もし，「てめ，意味わかんねーぞ」などあれば日本語でご指摘いただけると幸いです．<br>
 <br>
 
@@ -447,5 +447,14 @@ japanese-menuインストール済が前提<br>
 <ul>
     <li>
         「One Dark」テーマに対応
+    </li>
+</ul>
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.1">ver_3.0.1</a></h4>
+<ul>
+    <li>
+        pratformio-ide-terminalで最下行のはみ出しを改善
+    </li>
+    <li>
+        設定画面サブセクションタイトル背景透過
     </li>
 </ul>
