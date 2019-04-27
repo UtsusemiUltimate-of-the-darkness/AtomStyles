@@ -458,3 +458,12 @@ japanese-menuインストール済が前提<br>
         設定画面サブセクションタイトル背景透過
     </li>
 </ul>
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.2">ver_3.0.2</a></h4>
+<ul>
+    <li>
+        コメントの追記
+    </li>
+    <li>
+        コードの可読性の改善
+    </li>
+</ul>
