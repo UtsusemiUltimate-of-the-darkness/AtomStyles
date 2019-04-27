@@ -9,9 +9,9 @@
  * http://lesscss.org
 */
 /**
- * ファイル名: AtomStyles_ver3.0.0.less
+ * ファイル名: AtomStyles_ver3.0.1.less
  * 作成者: 命を燃やせない死んでない闇の空蝉ultimate
- * 最終更新日: 2018/11/16
+ * 最終更新日: 2019/04/27
  * バージョン: 3.0.0
  *
  * Atom.App スタイルシート
@@ -116,11 +116,14 @@
  *     各ペインのアクティブタブに下線を表示，アクティブペインアクティブタブと非アクティブペインアクティブタブの下線色の変更
  *     設定画面選択中メニューに枠線表示と文字サイズの変更
  *     ステータスバーアイコンの色を変更
+ *   2019/04/27 ( ver 3.0.1 )
+ *     platform-ide-terminalで最下行のはみ出しを改善
+ *     設定画面サブセクションタイトル背景色透過
  */
 
 
  // 背景画像のフルパス
- @background-image: url("/Users/ユーザー名/Pictures/");
+ @background-image: url("/Users/utusemi-ultimate/Pictures/publicBackGroundPicture/1440_900_20120223032123223025.jpg");
 
  // "Platformio Ide Terminal"プラグイン背景画像
  @terminal-background-image: @background-image;
@@ -245,8 +248,8 @@
 @tool-panel-progress-bar-bgcolor:        @sayaka;                       // ツールパネルプログレスバー背景色
 
 // Linterプラグイン
-@linter-table-bgcolor :                  transparent;                   // Linterプラグインの表ヘッダ背景色
-@linter-table-color :                    @gold;                         // Linterプラグインの表要素文字色
+@linter-table-bgcolor :                  transparent;                      // Linterプラグインの表ヘッダ背景色
+@linter-table-color :                    @gold;                            // Linterプラグインの表要素文字色
 
 @status-bar-bgcolor:                     @lazurite;                     // ステータスバー背景色
 @status-bar-color:                       @gold;                         // ステータスバー文字色
@@ -1256,6 +1259,7 @@ atom-workspace {
                                                 // タイトル
                                                 h3.sub-section-heading.icon {
 
+                                                    background-color: transparent;
                                                     color: @setting-title-color;  // 文字色
 
                                                     // アイコン
@@ -4127,7 +4131,7 @@ atom-workspace {
                         // メイン作業スペース
                         atom-text-editor.editor {
 
-                            // background-color: transparent;  // 背景
+                            background-color: transparent;  // 背景
 
                             // 行番号，エディタ部分
                             div.gutter-container {
@@ -4570,6 +4574,8 @@ atom-workspace {
 
                             // 入力部分
                             div.terminal {
+
+                                padding: 0;  // 余白なし(行が隠れてしまうのを防ぐ)
 
                                 div {
 
@@ -5820,6 +5826,7 @@ atom-workspace {
                             // エディタ部分
                             div.item-views {
 
+                                //
                                 // 設定画面
                                 div.settings-view {
 
