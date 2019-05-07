@@ -9,10 +9,10 @@
  * http://lesscss.org
 */
 /**
- * ファイル名 : AtomStyles_ver3.0.2.less
+ * ファイル名 : AtomStyles_ver3.0.3.less
  * 作成者 : 命を燃やせない死んでない闇の空蝉ultimate
- * 最終更新日 : 2019/04/27
- * バージョン : 3.0.2
+ * 最終更新日 : 2019/05/07
+ * バージョン : 3.0.3
  *
  * Atom.App スタイルシート
  * テキストエディタの見た目(デザイン)の設定
@@ -122,15 +122,21 @@
  *   2019/04/27 ( ver 3.0.2 )
  *     コメント追記
  *     コード可読性の改善
+ *   2019/05/07 ( ver 3.0.3 )
+ *     設定画面で一部要素にスタイルが適用できていなかった部分の改善
+ *     ボタンのアイコン位置の修正
+ *     フッタアイコン色の修正
+ *     不要部分の削除
+ *     コメントの修正
  */
 
 
 // 背景画像のフルパス
-@background-image: url("/Users/ユーザ名/Pictures/画像までのフルパス");
+@background-image : url( "/Users/ユーザー名/Pictures/画像までのフルパス" );
 
 // "Platformio Ide Terminal"プラグイン背景画像
-@terminal-background-image: @background-image;
-// @terminal-background-image: url("/Users/ユーザ名/Pictures/画像までのフルパス");
+@terminal-background-image : @background-image;
+// @terminal-background-image : url("/Users/ユーザー名/Pictures/");
 
 // 各文字フォント
 @font-family :                    "Apple-Chancery", "Menlo-Italic", "SourceHanCodeJP-LightIt";  // 通常文字フォント
@@ -148,7 +154,7 @@
 @light-gray :      #9D95A0;
 @gray :            #66606A;
 @dark-gray :       #5D5D55;
-// @very-dark-gray  :  #3B363D;
+// @very-dark-gray :  #3B363D;
 @very-dark-gray :  #1a1a1a;
 
 @madoka-vibrant : hsl(338, 80%, 62%);
@@ -162,7 +168,7 @@
 
 @madoka : #FF628D;
 @homura : @homura-vibrant;
-@sayaka :  @sayaka-vibrant;
+@sayaka : @sayaka-vibrant;
 @mami :   #FFDD79;
 @kyouko : #FF1B3E;
 @nagisa : #F2EDF3;
@@ -251,13 +257,13 @@
 @tool-panel-progress-bar-bgcolor :        @sayaka;                       // ツールパネルプログレスバー背景色
 
 // Linterプラグイン
-@linter-table-bgcolor  :                  transparent;                      // Linterプラグインの表ヘッダ背景色
-@linter-table-color  :                    @gold;                            // Linterプラグインの表要素文字色
+@linter-table-bgcolor :                  transparent;                   // Linterプラグインの表ヘッダ背景色
+@linter-table-color :                    @gold;                         // Linterプラグインの表要素文字色
 
 @status-bar-bgcolor :                     @lazurite;                     // ステータスバー背景色
 @status-bar-color :                       @gold;                         // ステータスバー文字色
-@status-bar-icon-bgcolor  :               transparent;                   // ステータスバーアイコン背景色
-@status-bar-group-border-color  :         @gold;                         // ステータスバーアイコングループ枠線
+@status-bar-icon-bgcolor :               transparent;                   // ステータスバーアイコン背景色
+@status-bar-group-border-color :         @gold;                         // ステータスバーアイコングループ枠線
 // 以下設定画面
 @setting-element-border-color :           @madoka;                       // 設定画面各要素境界線色
 @setting-item-border-color :              @gold;                         // 設定画面各項目枠線
@@ -333,6 +339,11 @@
 @setting-kbd-border :                     silver;                        // 設定画面キーボードキーの枠線
 @setting-kbd-color :                      @nagisa;                       // 設定画面キーボードキーの文字色
 
+// フッター
+@footer-color :                           @gold;                         // フッター標準文字色
+@footer-error-icon-color :                @kyouko;                       // フッターデバッガエラーアイコン
+@footer-warn-icon-color :                 @mami;                         // フッターデバッガ注意アイコン
+@footer-info-icon-color :                 @sayaka;                       // フッターデバッガ情報アイコン
 
 /*
  * Examples
@@ -420,13 +431,12 @@ atom-workspace {
                                 // 中身
                                 atom-pane.pane {
 
-                                    background-color : @tab-bar-bgcolor;  // 背景色
+                                    // background-color : @tab-bar-bgcolor;  // 背景色
 
                                     // タブ部分
                                     ul.list-inline.tab-bar.inset-panel {
 
                                         background-color : @tab-bar-bgcolor;        // 背景
-                                        // border-top : solid 1px @pane-border-color;  // ペイン境界線
                                         border-bottom : solid 1px @border-color;    // エディタ部分との境界線
 
                                         // タブそのもの
@@ -457,18 +467,18 @@ atom-workspace {
                                             // アクティブタブ
                                             &.active {
 
-                                                background-color : @active-tab-bgcolor;                 // アクティブタブの背景
+                                                background-color : @active-tab-bgcolor;                             // アクティブタブの背景
                                                 border-bottom : solid 2px @active-pane-tab-indicator-active-color;  // アクティブタブの下部にアンダーライン
-                                                font-size : 14px;                                       // 文字サイズ
-                                                font-family : @font-family;                             // 文字フォント
-                                                font-style : italic;                                    // フォントスタイル
+                                                font-size : 14px;                                                   // 文字サイズ
+                                                font-family : @font-family;                                         // 文字フォント
+                                                font-style : italic;                                                // フォントスタイル
                                             }
 
                                             // アイコン表示要素
                                             &::before {
 
                                                 border-bottom : solid 2px @active-pane-tab-indicator-active-color;   // アクティブタブの下部にアンダーライン
-                                                background-color : @active-tab-bgcolor;                  // アクティブタブの背景
+                                                background-color : @active-tab-bgcolor;                              // アクティブタブの背景
                                             }
 
                                             // タイトル
@@ -479,7 +489,7 @@ atom-workspace {
                                             &::after {
 
                                                 border-bottom : solid 2px @active-pane-tab-indicator-active-color;   // アクティブタブの下部にアンダーライン
-                                                background-color : @active-tab-bgcolor;                  // アクティブタブの背景
+                                                background-color : @active-tab-bgcolor;                              // アクティブタブの背景
                                             }
                                         }
                                     }
@@ -555,7 +565,6 @@ atom-workspace {
             background-position : right top;        // 背景画像の位置
             margin : 0 0 0 0;                       // 上右下左の外側の余白
             padding : 0 0 0 0;                      // 上右下左の内側の余白
-
             font-family : @font-family;             // 文字フォント
 
             // ウィンドウタブとエディタタブの7間
@@ -654,12 +663,10 @@ atom-workspace {
 
                                     // タイトル
                                     div.title {
-
                                     }
 
                                     // 閉じるボタン
                                     div.close-icon {
-
                                     }
                                 }
                             }
@@ -712,13 +719,13 @@ atom-workspace {
                                 // アクティブタブ
                                 &.active {
 
-                                    background-color : @active-tab-bgcolor;                 // アクティブタブの背景
+                                    background-color : @active-tab-bgcolor;                             // アクティブタブの背景
                                     border-bottom : solid 2px @active-pane-tab-indicator-active-color;  // アクティブタブの下部にアンダーライン
-                                    font-size : 15px;                                       // 文字サイズ
-                                    font-family : @font-family;                             // 文字フォント
-                                    font-style : italic;                                    // フォントスタイル
-                                    // font-weight : bold;                                     // 太字
-                                    // text-align : center;                                    // 中央揃え
+                                    font-size : 15px;                                                   // 文字サイズ
+                                    font-family : @font-family;                                         // 文字フォント
+                                    font-style : italic;                                                // フォントスタイル
+                                    // font-weight : bold;                                                 // 太字
+                                    // text-align : center;                                                // 中央揃え
 
                                     // アイコン表示要素
                                     &::before {
@@ -763,9 +770,8 @@ atom-workspace {
                             background-position : right top;  // 背景画像の位置
                             margin : 0 0 0 0;                 // 上右下左の外側の余白
                             padding : 0 0 0 0;                // 上右下左の内側の余白
-
                             font-family : @font-family;       // 文字フォント
-                            // font-style : italic;
+                            // font-style : italic;              // 斜体
                             color : @setting-color;           // 文字色
 
                             // メニューリスト全体
@@ -876,14 +882,6 @@ atom-workspace {
                                             // コア，エディタ設定設定内容
                                             div.section-body {
 
-                                                // div {
-                                                //     color : @gold;
-                                                // }
-                                                // * {
-                                                //     background-color : transparent;
-                                                //     color : @gold;
-                                                // }
-
                                                 // 単一項目
                                                 div.control-group {
 
@@ -962,7 +960,7 @@ atom-workspace {
                                                         // サブセクション
                                                         section.sub-section {
 
-                                                            // h3要素
+                                                            // セクションタイトル
                                                             h3.sub-section-heading.has-items {
 
                                                                 color : @setting-color;  // 文字色
@@ -1040,6 +1038,7 @@ atom-workspace {
 
                                                                     // フォーカス中
                                                                     &.is-forcused {
+
                                                                         // スクロール可能部分
                                                                         div div.scroll-view {
 
@@ -1120,6 +1119,7 @@ atom-workspace {
 
                                                             // フォーカス中
                                                             &.is-forcused {
+
                                                                 // スクロール可能部分
                                                                 div div.scroll-view {
 
@@ -1226,6 +1226,7 @@ atom-workspace {
 
                                                     // フォーカス中
                                                     &.is-forcused {
+
                                                         // スクロール可能部分
                                                         div div.scroll-view {
 
@@ -3072,10 +3073,6 @@ atom-workspace {
                                             // 設定内容ラッパー
                                             div.section-container {
 
-                                                // div {
-                                                //     color : @gold;  // 文字色
-                                                // }
-
                                                 // 設定タイトル
                                                 div.block.section-heading {
 
@@ -4125,6 +4122,112 @@ atom-workspace {
                                         }
                                     }
                                 }
+
+                                // パッケージ細部
+                                div.package-detail {
+
+                                    // 階層表示パス要素
+                                    ol {
+
+                                        background-color : @backgound-color-editor;  // 背景色
+                                        border-bottom : solid 1px @border-color;     // 文字色
+
+                                        // 各階層要素
+                                        li {
+
+                                            color : @setting-color;  // 文字色
+
+                                            // ファイル名色
+                                            a {
+
+                                                color : @setting-color;  // 文字色
+                                            }
+                                        }
+                                    }
+
+                                    // 設定内容
+                                    div.panels-item {
+
+                                        // 項目ラッパー
+                                        div {
+
+                                            // 項目全体
+                                            section {
+
+                                                // キーバインド，スニペット，readme
+                                                &.section {
+
+                                                    // ヘッダ
+                                                    div.section-heading {
+
+                                                        color : @setting-color;  // 文字色
+
+                                                        // アイコン
+                                                        &::before {
+
+                                                            color : @setting-color;  // アイコン色
+                                                        }
+                                                    }
+
+                                                    // チェックボックスと項目
+                                                    div.checkbox {
+
+                                                        // ラベリング
+                                                        label {
+
+                                                            // チェックボックス
+                                                            input[type="checkbox"] {
+
+                                                                background : @setting-checkbox-bgcolor;             // 背景
+                                                                border : solid 1px @setting-checkbox-border-color;  // 枠線
+
+                                                                // チェックマーク左側右下がり斜め棒
+                                                                &::before {
+
+                                                                    background : @setting-checkmark-color;  // 背景
+                                                                }
+
+                                                                // チェックマーク右側右上がり斜め棒
+                                                                &::after {
+
+                                                                    background : @setting-checkmark-color;  // 背景
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // 説明文
+                                                        div.setting-description {
+
+                                                            color : @setting-color;
+                                                        }
+                                                    }
+
+                                                    // 表
+                                                    table , th , td {
+
+                                                        border : solid 1px @setting-table-border-color;  // 表の枠線と罫線色
+                                                        color : @setting-color;                          // 文字色
+
+                                                    }
+
+                                                    // 項目ラッパー
+                                                    div.section-container {
+
+                                                        // パッケージの説明
+                                                        div.package-readme {
+
+                                                            // タイトル
+                                                            h1 , h2 , h3 {
+
+                                                                color : @setting-color;  // 文字色
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
 
@@ -4160,7 +4263,7 @@ atom-workspace {
                                         // カーソルがある行番号
                                         div div.cursor-line {
 
-                                            // background-color : @madoka-vibrant;  // 行番号の背景色
+                                            // background-color : @madoka-vibrant;       // 行番号の背景色
                                             background-color : @cursor-line-bgcolor;  // 背景色
                                             color : @gutter-color;                    // 文字色
 
@@ -4222,7 +4325,7 @@ atom-workspace {
                                                 // 該当文字列
                                                 .region {
 
-                                                    // background-color : @madoka;                         // 背景色
+                                                    // background-color : @madoka;                            // 背景色
                                                     border : dotted 1px @highlight-matching-border-color;  // 枠線
                                                     background-color : @madoka-selection;                  // 背景
                                                 }
@@ -4232,8 +4335,8 @@ atom-workspace {
                                             div.highlight-selected {
 
                                                 border : solid 1px @highlight-selected-border-color;  // 枠線                               // 枠線
-                                                // background-color : @highlight-selected-bgcolor;  // 背景色
-                                                background-color : @madoka-selection;
+                                                // background-color : @highlight-selected-bgcolor;       // 背景色
+                                                background-color : @madoka-selection;                 // 背景色
 
                                                 // 選択している同じ文字列
                                                 div.region {
@@ -4280,7 +4383,7 @@ atom-workspace {
                                         }
                                     }
 
-                                    // 縦ライン
+                                    // 垂直線
                                     div.highlight-column {
 
                                         // border-left : solid 8px @mami-vibrant;  // カーソルがある桁(列)の背景
@@ -4508,7 +4611,7 @@ atom-workspace {
 
                                         // アイコン
                                         &::before {
-                                            margin : 4px 0 0 0;                        // 外側からの余白
+                                            margin : 7px 0 0 2px;                        // 外側からの余白
                                         }
                                     }
 
@@ -4528,7 +4631,7 @@ atom-workspace {
                                                 // アイコン
                                                 &::before {
 
-                                                    margin : 4px 0 0 0;                        // 上右下左の余白
+                                                    margin : 5px 0 0 0;  // 上右下左の余白
                                                 }
                                             }
 
@@ -4542,7 +4645,7 @@ atom-workspace {
                                                 // アイコン
                                                 &::before {
 
-                                                    margin : 3px 0 0 0;                        // 外側の余白
+                                                    margin : 5px 0 0 0;                        // 外側の余白
                                                 }
                                             }
 
@@ -4556,7 +4659,7 @@ atom-workspace {
                                                 // アイコン
                                                 &::before {
 
-                                                    margin : 3px 0 0 0;                        // 外側の余白
+                                                    margin : 4px 0 0 0;                        // 外側の余白
                                                 }
                                             }
                                         }
@@ -4582,8 +4685,8 @@ atom-workspace {
                                     // 選択部分
                                     &::selection {
 
-                                        background-color : @terminal-selection-bgcolor;     // 背景色
-                                        color : @terminal-color;                            // 文字色
+                                        background-color : @terminal-selection-bgcolor;  // 背景色
+                                        color : @terminal-color;                         // 文字色
                                     }
 
                                     // カーソル
@@ -4962,7 +5065,6 @@ atom-workspace {
 
                             border-bottom : solid 1px @tool-panel-element-border-color;  // 境界線
 
-
                             // ヘッダ各要素
                             span.header-item {
 
@@ -5056,8 +5158,8 @@ atom-workspace {
                                                     // オプション機能適用時
                                                     &.selected {
 
-                                                        background : @tool-panel-btn-selection-bgcolor; // 背景
-                                                        color : @tool-panel-btn-selection-color;        // 文字色
+                                                        background : @tool-panel-btn-selection-bgcolor;  // 背景
+                                                        color : @tool-panel-btn-selection-color;         // 文字色
 
                                                         // 正規表現検索ボタン
                                                         &.option-regex {
@@ -5449,10 +5551,33 @@ atom-workspace {
                 color : @status-bar-color;               // 文字色
                 font-family : @font-family;              // 文字フォント
 
+                // 可変幅要素
                 div.flexbox-repaint-hack {
 
                     // ステータスバー左側
                     div.status-bar-left {
+
+                        // デバッガ
+                        div.inline-block {
+
+                            // アイコン類
+                            span a.diagnostics-status-bar-highlight {
+
+                                color : @footer-color;  // 文字色
+
+                                // エラー
+                                span.icon.icon-nuclicon-error::before {
+
+                                        color : @footer-error-icon-color;  // アイコン色
+                                }
+
+                                // 注意
+                                span.icon.icon-nuclicon-warning::before {
+
+                                        color : @footer-warn-icon-color;  // アイコン色
+                                }
+                            }
+                        }
 
                         // ターミナル追加プラグイン
                         div.platformio-ide-terminal.status-bar {
@@ -5499,19 +5624,37 @@ atom-workspace {
                             // ストップアイコン
                             a.icon-stop {
 
-                                color : @status-bar-color;  // 文字色
+                                color : @footer-color;  // 文字色
+
+                                // アイコン
+                                &::before {
+
+                                    color : @footer-error-icon-color;  // 文字色
+                                }
                             }
 
                             // アラートアイコン
                             a.icon-alert {
 
-                                color : @status-bar-color;  // 文字色
+                                color : @footer-color;  // 文字色
+
+                                // アイコン
+                                &::before {
+
+                                    color : @footer-warn-icon-color;  // 文字色
+                                }
                             }
 
                             // インフォメーションアイコン
                             a.icon-info {
 
-                                color : @status-bar-color;  // 文字色
+                                color : @footer-color;  // 文字色
+
+                                // アイコン
+                                &::before {
+
+                                    color : @footer-info-icon-color;  // 文字色
+                                }
                             }
                         }
 
@@ -5535,17 +5678,19 @@ atom-workspace {
                             color : @status-bar-color;  // 文字色
                         }
 
-                        // 注意事項
+                        // アラート
                         div.deprecation-cop-status.inline-block.text-warning {
 
                             // アイコン
-                            span.icon.icon-alert {
+                            span.icon.icon-alert::before {
 
+                                color : @footer-warn-icon-color;  // アイコン色
                             }
 
                             // 注意数
                             span.deprecation-number {
 
+                                color : @footer-color;  // 文字色
                             }
                         }
 
@@ -5574,8 +5719,6 @@ atom-workspace {
 
                             // 表示部分
                             a.github-ChangedFilesCount.inline-block {
-
-                                color : @status-bar-color;  // 文字色
                             }
                         }
 
@@ -5588,7 +5731,6 @@ atom-workspace {
 
                             // テキスト
                             span.available-updates-status {
-
                             }
                         }
 
@@ -5597,7 +5739,6 @@ atom-workspace {
 
                             // アイコン
                             span.icon.icon-squirrel {
-
                             }
                         }
 
@@ -5668,7 +5809,6 @@ atom-workspace {
 
                                                         // タイトル要素
                                                         div.title {
-
                                                         }
                                                     }
                                                 }
@@ -5749,7 +5889,6 @@ atom-workspace {
 
                                         // タイトル
                                         div.title {
-
                                         }
 
                                         // 閉じるボタン
@@ -5797,7 +5936,6 @@ atom-workspace {
 
                                             // タイトル
                                             div.title {
-
                                             }
 
                                             // 閉じるボタン
@@ -5811,7 +5949,6 @@ atom-workspace {
 
                                                 // タイトル
                                                 div.title {
-
                                                 }
 
                                                 // 閉じるボタン
@@ -5940,7 +6077,7 @@ atom-workspace {
 
                                                                                         span {
 
-                                                                                            color  : @setting-textbox-color;  //  文字色
+                                                                                            color : @setting-textbox-color;  //  文字色
                                                                                         }
                                                                                     }
 
@@ -5956,7 +6093,7 @@ atom-workspace {
                                                                                                 // 選択範囲
                                                                                                 div.region {
 
-                                                                                                    background-color  : @setting-highlights-color;  /* 背景色 */
+                                                                                                    background-color : @setting-highlights-color;  /* 背景色 */
                                                                                                 }
                                                                                             }
                                                                                         }
@@ -5965,7 +6102,7 @@ atom-workspace {
                                                                                     // プレスホルダー
                                                                                     div.placeholder-text {
 
-                                                                                        color  : @setting-textbox-placeholder-color;  // 文字色
+                                                                                        color : @setting-textbox-placeholder-color;  // 文字色
                                                                                     }
                                                                                 }
                                                                             }
@@ -6020,7 +6157,7 @@ atom-workspace {
 
                                                                         span {
 
-                                                                            color  : @setting-textbox-color;  //  文字色
+                                                                            color : @setting-textbox-color;  //  文字色
                                                                         }
                                                                     }
 
@@ -6036,7 +6173,7 @@ atom-workspace {
                                                                                 // 選択範囲
                                                                                 div.region {
 
-                                                                                    background-color  : @setting-highlights-color;  /* 背景色 */
+                                                                                    background-color : @setting-highlights-color;  /* 背景色 */
                                                                                 }
                                                                             }
                                                                         }
@@ -6045,7 +6182,7 @@ atom-workspace {
                                                                     // プレスホルダー
                                                                     div.placeholder-text {
 
-                                                                        color  : @setting-textbox-placeholder-color;  // 文字色
+                                                                        color : @setting-textbox-placeholder-color;  // 文字色
                                                                     }
                                                                 }
                                                             }
@@ -6062,7 +6199,7 @@ atom-workspace {
                                                         // アイコン
                                                         &::before {
 
-                                                        color  : @setting-icon-color;  // アイコン色
+                                                        color : @setting-icon-color;  // アイコン色
                                                         }
                                                     }
 
@@ -6129,7 +6266,7 @@ atom-workspace {
                                                                                                     // アイコン本体
                                                                                                     &::before {
 
-                                                                                                        color  : @setting-icon-cloud-color;  /* アイコン色 */
+                                                                                                        color : @setting-icon-cloud-color;  /* アイコン色 */
                                                                                                     }
                                                                                                 }
                                                                                             }
@@ -6140,10 +6277,8 @@ atom-workspace {
                                                                                                 // アイコン本体
                                                                                                 &::before {
 
-                                                                                                    color  : @setting-btn-icon-color;  /* アイコン色 */
+                                                                                                    color : @setting-btn-icon-color;  /* アイコン色 */
                                                                                                 }
-
-
                                                                                             }
                                                                                         }
                                                                                     }
@@ -6164,7 +6299,7 @@ atom-workspace {
                                                                 // アイコン
                                                                 &::before {
 
-                                                                    color  : @setting-icon-color;  // アイコン色
+                                                                    color : @setting-icon-color;  // アイコン色
                                                                 }
                                                             }
 
@@ -6201,7 +6336,7 @@ atom-workspace {
                                                                                                     // アイコン本体
                                                                                                     &::before {
 
-                                                                                                        color  : @setting-icon-cloud-color;  /* アイコン色 */
+                                                                                                        color : @setting-icon-cloud-color;  /* アイコン色 */
                                                                                                     }
                                                                                                 }
                                                                                             }
@@ -6212,10 +6347,8 @@ atom-workspace {
                                                                                                 // アイコン本体
                                                                                                 &::before {
 
-                                                                                                    color  : @setting-btn-icon-color;  /* アイコン色 */
+                                                                                                    color : @setting-btn-icon-color;  /* アイコン色 */
                                                                                                 }
-
-
                                                                                             }
                                                                                         }
                                                                                     }
@@ -6236,7 +6369,7 @@ atom-workspace {
                                                                 // アイコン
                                                                 &::before {
 
-                                                                    color  : @setting-icon-color;  // アイコン色
+                                                                    color : @setting-icon-color;  // アイコン色
                                                                 }
                                                             }
 
@@ -6273,7 +6406,7 @@ atom-workspace {
                                                                                                     // アイコン本体
                                                                                                     &::before {
 
-                                                                                                        color  : @setting-icon-cloud-color;  /* アイコン色 */
+                                                                                                        color : @setting-icon-cloud-color;  /* アイコン色 */
                                                                                                     }
                                                                                                 }
                                                                                             }
@@ -6284,10 +6417,8 @@ atom-workspace {
                                                                                                 // アイコン本体
                                                                                                 &::before {
 
-                                                                                                    color  : @setting-btn-icon-color;  /* アイコン色 */
+                                                                                                    color : @setting-btn-icon-color;  /* アイコン色 */
                                                                                                 }
-
-
                                                                                             }
                                                                                         }
                                                                                     }
@@ -6308,7 +6439,7 @@ atom-workspace {
                                                                 // アイコン
                                                                 &::before {
 
-                                                                    color  : @setting-icon-color;  // アイコン色
+                                                                    color : @setting-icon-color;  // アイコン色
                                                                 }
                                                             }
 
@@ -6345,7 +6476,7 @@ atom-workspace {
                                                                                                     // アイコン本体
                                                                                                     &::before {
 
-                                                                                                        color  : @setting-icon-cloud-color;  /* アイコン色 */
+                                                                                                        color : @setting-icon-cloud-color;  /* アイコン色 */
                                                                                                     }
                                                                                                 }
                                                                                             }
@@ -6356,10 +6487,8 @@ atom-workspace {
                                                                                                 // アイコン本体
                                                                                                 &::before {
 
-                                                                                                    color  : @setting-btn-icon-color;  /* アイコン色 */
+                                                                                                    color : @setting-btn-icon-color;  /* アイコン色 */
                                                                                                 }
-
-
                                                                                             }
                                                                                         }
                                                                                     }
@@ -6384,7 +6513,7 @@ atom-workspace {
                                                                 // アイコン
                                                                 &::before {
 
-                                                                    color  : @setting-icon-cloud-color;  // アイコン色
+                                                                    color : @setting-icon-cloud-color;  // アイコン色
                                                                 }
                                                             }
                                                         }
@@ -6413,7 +6542,7 @@ atom-workspace {
                                                                     // アイコン本体
                                                                     &::before {
 
-                                                                        color  : @setting-alert-info-icon-color;  // アイコン色
+                                                                        color : @setting-alert-info-icon-color;  // アイコン色
                                                                     }
                                                                 }
 
@@ -6447,7 +6576,7 @@ atom-workspace {
                                                                             // アイコン本体
                                                                             &::before {
 
-                                                                                color  : @setting-icon-star-color;  // アイコン色
+                                                                                color : @setting-icon-star-color;  // アイコン色
                                                                             }
                                                                         }
 
@@ -6457,7 +6586,7 @@ atom-workspace {
                                                                             // アイコン本体
                                                                             &::before {
 
-                                                                                color  : @setting-icon-cloud-color;  // アイコン色
+                                                                                color : @setting-icon-cloud-color;  // アイコン色
                                                                             }
                                                                         }
                                                                     }
@@ -6507,14 +6636,6 @@ atom-workspace {
                                                     // 設定項目ラッパー
                                                     div.section-container {
 
-                                                        // アイコン全て
-                                                        // div.icon {
-                                                        //
-                                                        //     &::before {
-                                                        //         color : @setting-icon-color;  // アイコン色
-                                                        //     }
-                                                        // }
-
                                                         // ヘッダ
                                                         div.section-heading.icon {
 
@@ -6553,7 +6674,7 @@ atom-workspace {
                                                             // アイコン
                                                             &::before {
 
-                                                                color  : @setting-icon-color;  // アイコン色
+                                                                color : @setting-icon-color;  // アイコン色
                                                             }
                                                         }
 
@@ -6566,7 +6687,7 @@ atom-workspace {
                                                                 // アイコン本体
                                                                 &::before {
 
-                                                                    color  : @setting-icon-color;  // アイコン色
+                                                                    color : @setting-icon-color;  // アイコン色
                                                                 }
                                                             }
                                                         }
@@ -6589,7 +6710,7 @@ atom-workspace {
                                                                             // アイコン
                                                                             &::before {
 
-                                                                                color  : @setting-btn-color;  // ボタンアイコン色
+                                                                                color : @setting-btn-color;  // ボタンアイコン色
                                                                             }
                                                                         }
                                                                     }
@@ -6608,7 +6729,7 @@ atom-workspace {
                                                         // アイコン
                                                         &::before {
 
-                                                            color  : @setting-icon-color;  // アイコン色
+                                                            color : @setting-icon-color;  // アイコン色
                                                         }
                                                     }
 
@@ -6621,7 +6742,7 @@ atom-workspace {
                                                             // アイコン本体
                                                             &::before {
 
-                                                                color  : @setting-icon-color;  // アイコン色
+                                                                color : @setting-icon-color;  // アイコン色
                                                             }
                                                         }
                                                     }
@@ -6646,7 +6767,7 @@ atom-workspace {
 
                                                                             span {
 
-                                                                                color  : @setting-textbox-color;  //  文字色
+                                                                                color : @setting-textbox-color;  //  文字色
                                                                             }
                                                                         }
 
@@ -6662,7 +6783,7 @@ atom-workspace {
                                                                                     // 選択範囲
                                                                                     div.region {
 
-                                                                                        background-color  : @setting-highlights-color;  /* 背景色 */
+                                                                                        background-color : @setting-highlights-color;  /* 背景色 */
                                                                                     }
                                                                                 }
                                                                             }
@@ -6671,7 +6792,7 @@ atom-workspace {
                                                                         // プレスホルダー
                                                                         div.placeholder-text {
 
-                                                                            color  : @setting-textbox-placeholder-color;  // 文字色
+                                                                            color : @setting-textbox-placeholder-color;  // 文字色
                                                                         }
                                                                     }
                                                                 }
@@ -6684,14 +6805,14 @@ atom-workspace {
                                                             // 各ボタン全て
                                                             button.btn.btn-default {
 
-                                                                border  : solid 1px @setting-btn-inactive-border-color;  // 枠線
-                                                                color  : @setting-btn-inactive-color;                    // 選択されていないボタンの文字色
+                                                                border : solid 1px @setting-btn-inactive-border-color;  // 枠線
+                                                                color : @setting-btn-inactive-color;                    // 選択されていないボタンの文字色
 
                                                                 // 選択されているボタン
                                                                 &.selected {
 
-                                                                    border  : solid 1px @setting-btn-border-color;  // 枠線
-                                                                    color  : @setting-btn-color;  // 選択されているボタンの文字色
+                                                                    border : solid 1px @setting-btn-border-color;  // 枠線
+                                                                    color : @setting-btn-color;  // 選択されているボタンの文字色
                                                                 }
                                                             }
                                                         }
@@ -6703,21 +6824,21 @@ atom-workspace {
                                                         // アイコン
                                                         &::before {
 
-                                                            color  : @setting-icon-star-color;  // アイコン色
+                                                            color : @setting-icon-star-color;  // アイコン色
                                                         }
                                                     }
 
                                                     // 「パッケージ読み込み中」アラート
                                                     div.alert.alert-info {
 
-                                                        border  : solid 1px @setting-alert-info-border-color;  // 境界線
-                                                        background-color  : @setting-alert-bgcolor;            // 背景色
-                                                        color  : @setting-alert-info-color;                    // 文字色
+                                                        border : solid 1px @setting-alert-info-border-color;  // 境界線
+                                                        background-color : @setting-alert-bgcolor;            // 背景色
+                                                        color : @setting-alert-info-color;                    // 文字色
 
                                                         // アイコン
                                                         &::before {
 
-                                                            color  : @setting-alert-info-icon-color;  // アイコン色
+                                                            color : @setting-alert-info-icon-color;  // アイコン色
                                                         }
                                                     }
 
@@ -6748,7 +6869,7 @@ atom-workspace {
                                                                                     // アイコン
                                                                                     &::before {
 
-                                                                                        color  : @setting-btn-icon-color;  // アイコン色
+                                                                                        color : @setting-btn-icon-color;  // アイコン色
                                                                                     }
                                                                                 }
 
@@ -6764,7 +6885,7 @@ atom-workspace {
                                                                                             // アイコン
                                                                                             &::before {
 
-                                                                                                color  : @setting-icon-cloud-color;  // アイコン色
+                                                                                                color : @setting-icon-cloud-color;  // アイコン色
                                                                                             }
                                                                                         }
                                                                                     }
@@ -6779,18 +6900,6 @@ atom-workspace {
                                                 }
                                             }
                                         }
-
-                                        // 各設定項目タイトルのアイコンの色を金色にする
-                                        // div {
-                                        //     &::before {
-                                        //         color : @gold;
-                                        //     }
-                                        //     section {
-                                        //         &::before {
-                                        //             color : @gold;
-                                        //         }
-                                        //     }
-                                        // }
                                     }
                                 }
                             }
@@ -6822,24 +6931,24 @@ atom-workspace {
                                     // 閉じるボタン
                                     &.close-button.pull-right {
 
-                                        color  : @tool-panel-btn-color;  // 文字色
+                                        color : @tool-panel-btn-color;  // 文字色
                                     }
 
                                     // タイトルと閉じ方説明
                                     &.description {
 
-                                        color  : @tool-panel-color;  // 文字色
+                                        color : @tool-panel-color;  // 文字色
 
                                         // 閉じ方説明
                                         span.subtle-info-message {
 
-                                            color  : @gold;
+                                            color : @gold;
 
                                             // ハイライト部分
                                             span.highlight {
 
                                                 background-color : @tool-panel-highlight-bgcolor;  // 背景色
-                                                color  : @tool-panel-highlight-color;              // 文字色
+                                                color : @tool-panel-highlight-color;              // 文字色
                                             }
                                         }
                                     }
@@ -6852,7 +6961,7 @@ atom-workspace {
                                         // 選択中のオプション
                                         span.options {
 
-                                            color  : @tool-panel-color;  // 文字色
+                                            color : @tool-panel-color;  // 文字色
                                         }
 
                                         // ボタン類
@@ -6869,7 +6978,7 @@ atom-workspace {
                                                 &.selected {
 
                                                     background : @tool-panel-btn-selection-bgcolor;  // 背景色
-                                                    color  : @tool-panel-btn-selection-color         // 文字色
+                                                    color : @tool-panel-btn-selection-color         // 文字色
                                                 }
                                             }
                                         }
@@ -6889,7 +6998,7 @@ atom-workspace {
                                 // 進捗度
                                 span.inline-block {
 
-                                    color  : @tool-panel-color;  // 文字色
+                                    color : @tool-panel-color;  // 文字色
                                 }
 
                                 // 検索文字列入力欄と検索ボタン
@@ -6904,9 +7013,9 @@ atom-workspace {
                                             // テキストボックス
                                             atom-text-editor.editor.mini {
 
-                                                border  : solid 1px @tool-panel-textbox-border-color;  // 境界線
-                                                background-color  : @tool-panel-textbox-bgcolor;       // 背景色
-                                                color  : @tool-panel-textbox-color;                    // 文字色
+                                                border : solid 1px @tool-panel-textbox-border-color;  // 境界線
+                                                background-color : @tool-panel-textbox-bgcolor;       // 背景色
+                                                color : @tool-panel-textbox-color;                    // 文字色
 
                                                 // スクロール可能領域
                                                 div div.scroll-view {
@@ -6926,7 +7035,7 @@ atom-workspace {
                                                                     // 選択されている文字列
                                                                     div.region.selection {
 
-                                                                        background-color  : @homura-selection;  // 背景色
+                                                                        background-color : @homura-selection;  // 背景色
                                                                     }
                                                                 }
                                                             }
@@ -6934,13 +7043,13 @@ atom-workspace {
                                                         // プレスホルダー
                                                         div.placeholder-text {
 
-                                                            color  : @tool-panel-textbox-placeholder-color;  // 文字色
+                                                            color : @tool-panel-textbox-placeholder-color;  // 文字色
                                                         }
 
                                                         // カーソル
                                                         div.cursors div.cursor {
 
-                                                            border-left  : solid 1px @cursor-color;  // カーソルの形状と色
+                                                            border-left : solid 1px @cursor-color;  // カーソルの形状と色
                                                         }
                                                     }
                                                 }
@@ -6953,9 +7062,9 @@ atom-workspace {
                                             // 検索ボタン
                                             button.btn {
 
-                                                border  : solid 1px @tool-panel-btn-border-color;  // 境界線
-                                                background  : @tool-panel-btn-bgcolor;             // 背景色
-                                                color  : @tool-panel-btn-color;                    // 文字色
+                                                border : solid 1px @tool-panel-btn-border-color;  // 境界線
+                                                background : @tool-panel-btn-bgcolor;             // 背景色
+                                                color : @tool-panel-btn-color;                    // 文字色
                                             }
                                         }
                                     }
@@ -6973,9 +7082,9 @@ atom-workspace {
                                             // テキストボックス
                                             atom-text-editor.editor.mini {
 
-                                                border  : solid 1px @tool-panel-textbox-border-color;  // 境界線
-                                                background  : @tool-panel-textbox-bgcolor;             // 背景色
-                                                color  : @tool-panel-textbox-color;                    // 文字色
+                                                border : solid 1px @tool-panel-textbox-border-color;  // 境界線
+                                                background : @tool-panel-textbox-bgcolor;             // 背景色
+                                                color : @tool-panel-textbox-color;                    // 文字色
 
                                                 // スクロール可能領域
                                                 div div.scroll-view {
@@ -6995,7 +7104,7 @@ atom-workspace {
                                                                     // 選択されている文字列
                                                                     div.region.selection {
 
-                                                                        background-color  : @homura-selection;  // 背景色
+                                                                        background-color : @homura-selection;  // 背景色
                                                                     }
                                                                 }
                                                             }
@@ -7010,7 +7119,7 @@ atom-workspace {
                                                         // カーソル
                                                         div.cursors div.cursor {
 
-                                                            border-left  : solid 1px @cursor-color;  // カーソルの形状と色
+                                                            border-left : solid 1px @cursor-color;  // カーソルの形状と色
                                                         }
                                                     }
                                                 }
@@ -7023,9 +7132,9 @@ atom-workspace {
                                             // ボタン本体
                                             button.btn {
 
-                                                border  : solid 1px @tool-panel-btn-border-color;  // 境界線
-                                                background  : @tool-panel-btn-bgcolor;             // 背景色
-                                                color  : @tool-panel-btn-color;                    // 文字色
+                                                border : solid 1px @tool-panel-btn-border-color;  // 境界線
+                                                background : @tool-panel-btn-bgcolor;             // 背景色
+                                                color : @tool-panel-btn-color;                    // 文字色
                                             }
                                         }
                                     }
@@ -7043,9 +7152,9 @@ atom-workspace {
                                             // テキストボックス
                                             atom-text-editor.editor.mini {
 
-                                                border  : solid 1px @tool-panel-textbox-border-color;  // 境界線
-                                                background  : @tool-panel-textbox-bgcolor;             // 背景色
-                                                color  : @tool-panel-textbox-color;                    // 文字色
+                                                border : solid 1px @tool-panel-textbox-border-color;  // 境界線
+                                                background : @tool-panel-textbox-bgcolor;             // 背景色
+                                                color : @tool-panel-textbox-color;                    // 文字色
 
                                                 // スクロール可能領域
                                                 div div.scroll-view {
@@ -7065,7 +7174,7 @@ atom-workspace {
                                                                     // 選択されている文字列
                                                                     div.region.selection {
 
-                                                                        background-color  : @homura-selection;  // 背景色
+                                                                        background-color : @homura-selection;  // 背景色
                                                                     }
                                                                 }
                                                             }
@@ -7080,7 +7189,7 @@ atom-workspace {
                                                         // カーソル
                                                         div.cursors div.cursor {
 
-                                                            border-left  : solid 1px @cursor-color;  // カーソルの形状と色
+                                                            border-left : solid 1px @cursor-color;  // カーソルの形状と色
                                                         }
                                                     }
                                                 }
@@ -7105,7 +7214,6 @@ atom-workspace {
 
                                         // 閉じるボタン
                                         &.close-button {
-
                                         }
 
                                         // オプションボタンと説明
@@ -7116,7 +7224,6 @@ atom-workspace {
 
                                                 // 選択されているオプション
                                                 &.options {
-
                                                 }
 
                                                 // オプション選択ボタン
@@ -7124,7 +7231,6 @@ atom-workspace {
 
                                                     // ボタン全て
                                                     button.btn {
-
                                                     }
                                                 }
                                             }
@@ -7133,7 +7239,6 @@ atom-workspace {
 
                                     // 左側の説明
                                     &.description {
-
                                     }
                                 }
                             }
@@ -7170,7 +7275,6 @@ atom-workspace {
 
                                                                     // 選択領域
                                                                     div.region {
-
                                                                     }
                                                                 }
                                                             }
@@ -7178,12 +7282,10 @@ atom-workspace {
 
                                                         // プレスホルダー
                                                         div.placeholder-text {
-
                                                         }
 
                                                         // カーソル
                                                         div.cursors div.cursor {
-
                                                         }
                                                     }
                                                 }
@@ -7194,7 +7296,6 @@ atom-workspace {
 
                                                 // 結果表示部
                                                 span.text-subtle.result-counter {
-
                                                 }
                                             }
                                         }
@@ -7207,7 +7308,6 @@ atom-workspace {
 
                                                 // ボタン
                                                 button.btn.btn-next {
-
                                                 }
                                             }
 
@@ -7216,7 +7316,6 @@ atom-workspace {
 
                                                 // ボタン
                                                 button.btn-all {
-
                                                 }
                                             }
                                         }
@@ -7235,9 +7334,9 @@ atom-workspace {
                                             // テキストボックス
                                             atom-text-editor.editor.mini {
 
-                                                border  : solid 1px @tool-panel-textbox-border-color;  // 枠線
-                                                background-color  : @tool-panel-textbox-bgcolor;       // 背景色
-                                                color  : @tool-panel-textbox-color;                    // 文字色
+                                                border : solid 1px @tool-panel-textbox-border-color;  // 枠線
+                                                background-color : @tool-panel-textbox-bgcolor;       // 背景色
+                                                color : @tool-panel-textbox-color;                    // 文字色
 
                                                 // スクロール可能部分
                                                 div div.scroll-view {
@@ -7257,7 +7356,7 @@ atom-workspace {
                                                                     // 選択部分
                                                                     div.region.selection {
 
-                                                                        background-color  : @tool-panel-highlight-bgcolor;  // 背景色
+                                                                        background-color : @tool-panel-highlight-bgcolor;  // 背景色
                                                                     }
                                                                 }
                                                             }
@@ -7276,9 +7375,9 @@ atom-workspace {
                                                 // 置換ボタン
                                                 button.btn {
 
-                                                    border  : solid 1px @tool-panel-btn-border-color;  // 枠線
-                                                    background  : @tool-panel-btn-bgcolor;             // 背景色
-                                                    color  : @tool-panel-btn-color;                    // 文字色
+                                                    border : solid 1px @tool-panel-btn-border-color;  // 枠線
+                                                    background : @tool-panel-btn-bgcolor;             // 背景色
+                                                    color : @tool-panel-btn-color;                    // 文字色
                                                 }
                                             }
 
@@ -7291,9 +7390,9 @@ atom-workspace {
                                                     // すべて置換ボタン
                                                     &.btn-all {
 
-                                                        border  : solid 1px @tool-panel-btn-border-color;  // 枠線
-                                                        background  : @tool-panel-btn-bgcolor;             // 背景色
-                                                        color  : @tool-panel-btn-color;                    // 文字色
+                                                        border : solid 1px @tool-panel-btn-border-color;  // 枠線
+                                                        background : @tool-panel-btn-bgcolor;             // 背景色
+                                                        color : @tool-panel-btn-color;                    // 文字色
                                                     }
                                                 }
                                             }
@@ -7321,8 +7420,6 @@ atom-workspace {
 
                                         // リサイズ可能部分
                                         div.atom-dock-resize-handle {
-
-                                            // height  : 10px;
                                         }
 
                                         // ペイン要素
@@ -7342,7 +7439,6 @@ atom-workspace {
 
                                                             // タイトル
                                                             div.title {
-
                                                             }
 
                                                             // 閉じるアイコン要素
@@ -7350,7 +7446,6 @@ atom-workspace {
 
                                                                 // アイコン本体
                                                                 &::before {
-
                                                                 }
                                                             }
                                                         }
@@ -7366,26 +7461,19 @@ atom-workspace {
                                                         // 表
                                                         table.sb-table.linter {
 
-                                                            border  : solid 1px @gold;  // 枠線
+                                                            border : solid 1px @gold;  // 枠線
 
                                                             tr {
 
-                                                                background  : @linter-table-bgcolor;  // 背景色
-                                                                color  : @linter-table-color;         // 文字色
-                                                                text-align  : center;                 // 中央揃え
+                                                                background : @linter-table-bgcolor;  // 背景色
+                                                                color : @linter-table-color;         // 文字色
+                                                                text-align : center;                 // 中央揃え
 
-                                                                // 表ヘッダ各要素
-                                                                th {
+                                                                // 表各要素
+                                                                th , td {
 
-                                                                    background  : @linter-table-bgcolor;  // 背景色
-                                                                    text-align  : center;                 // 中央揃え
-                                                                }
-
-                                                                // 表の各要素
-                                                                td {
-
-                                                                    background  : @linter-table-bgcolor;  // 背景色
-                                                                    text-align  : center;                 // 中央揃え
+                                                                    background : @linter-table-bgcolor;  // 背景色
+                                                                    text-align : center;                 // 中央揃え
                                                                 }
                                                             }
                                                         }
@@ -7446,13 +7534,13 @@ atom-workspace {
                             // platformioステータスアイコン
                             div.platformio-ide-terminal.status-bar {
 
-                                border  : solid 1px @status-bar-group-border-color;  // 枠線
+                                border : solid 1px @status-bar-group-border-color;  // 枠線
                                 background-color : @status-bar-icon-bgcolor;         // 背景色
 
                                 // +アイコンとxアイコン
                                 i.icon {
 
-                                    margin  : 0 0 0 5px;  // 余白
+                                    margin : 0 0 0 5px;  // 余白
 
                                     // +アイコン
                                     &.icon-plus {
@@ -7460,19 +7548,19 @@ atom-workspace {
                                         // アイコン本体
                                         &::before {
 
-                                            margin  : 0 0 0 0;  // 上右下左の余白
+                                            margin : 0 0 0 0;  // 上右下左の余白
                                         }
                                     }
 
                                     // xアイコン
                                     &.icon-x {
 
-                                        margin  : 0 2px 0 0;  // 余白
+                                        margin : 0 2px 0 0;  // 余白
 
                                         // アイコン本体
                                         &::before {
 
-                                            // margin  : 0 5px 0 0;
+                                            // margin : 0 5px 0 0;
                                         }
                                     }
                                 }
@@ -7483,8 +7571,8 @@ atom-workspace {
                                     // ターミナルアイコンリスト
                                     li.pio-terminal-status-icon {
 
-                                        border-left  : solid 1px @status-bar-group-border-color;   // 枠線
-                                        border-right  : solid 1px @status-bar-group-border-color;  // 枠線
+                                        border-left : solid 1px @status-bar-group-border-color;   // 枠線
+                                        border-right : solid 1px @status-bar-group-border-color;  // 枠線
 
                                         // アクティブ要素
                                         &.active {
@@ -7494,7 +7582,6 @@ atom-workspace {
 
                                                 // アイコン本体
                                                 &::before {
-
                                                 }
                                             }
                                         }

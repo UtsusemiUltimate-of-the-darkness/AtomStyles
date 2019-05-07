@@ -467,3 +467,21 @@ japanese-menuインストール済が前提<br>
         コードの可読性の改善
     </li>
 </ul>
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.3">ver_3.0.3</a></h4>
+<ul>
+    <li>
+        設定画面で一部要素にスタイルが適用できていなかった部分の改善
+    </li>
+    <li>
+        ボタンのアイコン位置の修正
+    </li>
+    <li>
+        フッタアイコン色の修正
+    </li>
+    <li>
+        不要部分の削除
+    </li>
+    <li>
+        コメントの修正
+    </li>
+</ul>
