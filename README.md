@@ -468,7 +468,7 @@
 </ul>
 
 
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_4.0.0_One-Dark">ver_4.0.0_One-Dark</a></h4>
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/v4.0.0_OneDark">v4.0.0_OneDark</a></h4>
 <ul>
     <li>
         テーマ別スタイルの「One Dark」用スタイル．
