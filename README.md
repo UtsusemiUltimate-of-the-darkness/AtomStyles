@@ -487,10 +487,33 @@
     </li>
 </ul>
 
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/v4.1.0">v4.1.0</a></h4>
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_4.1.0">ver_4.1.0</a></h4>
 <ul>
     <li>
         Atom Darkテーマに対応
+    </li>
+    <li>
+        One Darkテーマに対応
+    </li>
+    <li>
+        テキスト選択時に行番号が重なる問題の解消
+    </li>
+</ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_4.1.0_AtomDark">ver_4.1.0 AtomDark</a></h4>
+<ul>
+    <li>
+        Atom Darkテーマに対応
+    </li>
+    <li>
+        テキスト選択時に行番号が重なる問題の解消
+    </li>
+</ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_4.1.0_OneDark">ver_4.1.0 OneDark</a></h4>
+<ul>
+    <li>
+        One Darkテーマに対応
     </li>
     <li>
         テキスト選択時に行番号が重なる問題の解消
