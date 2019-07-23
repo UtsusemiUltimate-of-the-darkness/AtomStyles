@@ -489,8 +489,12 @@
 
 <h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_4.1.0">ver_4.1.0</a></h4>
 <ul>
+
     <li>
         Atom Darkテーマに対応
+    </li>
+    <li>
+        One Darkテーマに対応
     </li>
     <li>
         テキスト選択時に行番号が重なる問題の解消
