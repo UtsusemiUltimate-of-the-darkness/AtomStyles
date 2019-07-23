@@ -486,3 +486,13 @@
         ステータスバーのアイコン背景色変更
     </li>
 </ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/v4.1.0">v4.1.0</a></h4>
+<ul>
+    <li>
+        Atom Darkテーマに対応
+    </li>
+    <li>
+        テキスト選択時に行番号が重なる問題の解消
+    </li>
+</ul>
