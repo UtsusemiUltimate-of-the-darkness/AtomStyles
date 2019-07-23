@@ -6,11 +6,15 @@
     もし，「あ？動かねーぞ？ぶっ飛ばすぞfu**がぁ！」などあれば日本語で具体的にご指摘いただけると幸いです．<br>
 </div>
 
+<<<<<<< HEAD
 <div>
     <h3>設定方法とか</h3>
+=======
+>>>>>>> ver_4.0.0
 
     japanese-menuインストール済が前提<br>
 
+<<<<<<< HEAD
     <ol>
         <li>
             お好きなバージョンをダウンロード
@@ -29,9 +33,13 @@
             先ほどダウンロードして開いておいたスタイルシートを全選択しコピー．Atomのスタイルシートに貼り付け，編集，保存．おわり．
         </li>
     </ol>
+=======
+<p>japanese-menuインストール済が前提</p>
+>>>>>>> ver_4.0.0
 
 </div>
 
+<<<<<<< HEAD
 <div>
     <h3>できること</h3>
 
@@ -195,12 +203,42 @@
 
     <div>
         <h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_1.0.0">ver_1.0.0</a></h4>
+=======
+
+<h3>できること</h3>
+
+<ul>
+    <li>
+        ペインの枠線色の変更
+    </li>
+    <li>
+        タブの背景色，文字色，文字フォントの変更
+    </li>
+    <li>
+        アクティブタブの背景色，文字の大きさ，フォントの変更，タブの下線の色，太さの変更
+    </li>
+    <li>
+        ツリービュー(プロジェクトフォルダ表示欄)
+>>>>>>> ver_4.0.0
         <ul>
             <li>
                 とりあえず書いていたものの最適化と整理
             </li>
+<<<<<<< HEAD
             <li>
                 コメント等の追記や修正
+=======
+        </ul>
+    </li>
+    <li>
+        作業スペースの背景色，背景画像，文字色の変更
+    </li>
+    <li>
+        行番号部分
+        <ul>
+            <li>
+                行番号部分とデバッガ間の境界線の色の変更
+>>>>>>> ver_4.0.0
             </li>
         </ul>
     </div>
@@ -209,10 +247,17 @@
         <h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_1.0.1">ver_1.0.1</a></h4>
         <ul>
             <li>
+<<<<<<< HEAD
                 コメント文の整理と追記
             </li>
             <li>
                 ターミナル追加パッケージの背景と文字サイズの変更
+=======
+                カーソルがある行番号の背景色，文字色の変更
+            </li>
+            <li>
+                テキストを選択している状態での背景色，文字色の変更
+>>>>>>> ver_4.0.0
             </li>
         </ul>
     </div>
@@ -233,7 +278,11 @@
                 コメント文の整理と追記
             </li>
             <li>
+<<<<<<< HEAD
                 文字フォントの追加(日本語文字フォントの設定)
+=======
+                背景色の変更
+>>>>>>> ver_4.0.0
             </li>
         </ul>
     </div>
@@ -242,10 +291,20 @@
         <h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_1.0.4">ver_1.0.4</a></h4>
         <ul>
             <li>
+<<<<<<< HEAD
                 背景色と透過率の変更
             </li>
             <li>
                 タブの背景透過と文字サイズの変更
+=======
+                ナビゲーションバー境界線の変更
+            </li>
+            <li>
+                各ボタンの境界線の色の変更
+            </li>
+            <li>
+                有効ボタンの色の変更
+>>>>>>> ver_4.0.0
             </li>
             <li>
                 "highlight-selected"プラグインの枠線，背景の変更
@@ -259,10 +318,26 @@
                 スタイル指定方法の変更
                 <ul>
                     <li>
+<<<<<<< HEAD
                         親要素，子要素の関係の明確化
                     </li>
                     <li>
                         より細部の特定の部分のみにスタイル適用可能
+=======
+                        枠線，境界線，背景画像の設定
+                    </li>
+                    <li>
+                        ボタンツールバーのボタンの枠線の色，太さ，ボタンの背景色，ボタンアイコンの色の変更
+                    </li>
+                    <li>
+                        ターミナル部分の背景，背景色，文字色，文字フォントの変更
+                    </li>
+                    <li>
+                        選択部分の背景色，文字色の変更
+                    </li>
+                    <li>
+                        カーソルの形，太さ，色の変更
+>>>>>>> ver_4.0.0
                     </li>
                 </ul>
             </li>
@@ -294,6 +369,7 @@
                 "browser plus"(ブラウザーを追加するプラグイン)
                 <ul>
                     <li>
+<<<<<<< HEAD
                         ブラウザのナビゲーションバーに枠線と境界線を表示
                     </li>
                     <li>
@@ -373,6 +449,12 @@
                     </li>
                     <li>
                         各要素の枠線，背景色，文字色の変更
+=======
+                        境界線，背景，文字色の変更
+                    </li>
+                    <li>
+                        ボタン枠線，背景，文字色の変更
+>>>>>>> ver_4.0.0
                     </li>
                 </ul>
             </li>
@@ -380,13 +462,22 @@
                 ステータスバー左下のファイル名表示欄の最大幅変更
             </li>
         </ul>
+<<<<<<< HEAD
     </div>
 
     <div>
         <h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.1.2">ver_2.1.2</a></h4>
+=======
+    </li>
+    <li>
+        ドック
+>>>>>>> ver_4.0.0
         <ul>
             <li>
                 変数類などの整理
+            </li>
+            <li>
+                ドック背景画像の設定
             </li>
         </ul>
     </div>
@@ -398,10 +489,52 @@
                 コメントの追記，整理
             </li>
             <li>
+<<<<<<< HEAD
                 主要な要素の色の変数化
             </li>
         </ul>
     </div>
+=======
+                各アイコンの背景，文字色の変更
+            </li>
+            <li>
+                一部要素の文字フォント変更
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+
+<h3>バージョン情報</h3>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_1.0.0">ver_1.0.0</a></h4>
+<ul>
+    <li>
+        とりあえず書いていたものの最適化と整理
+    </li>
+    <li>
+        コメント等の追記や修正
+    </li>
+</ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_1.0.1">ver_1.0.1</a></h4>
+<ul>
+    <li>
+        コメント文の整理と追記
+    </li>
+    <li>
+        ターミナル追加パッケージの背景と文字サイズの変更
+    </li>
+</ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_1.0.2">ver_1.0.2</a></h4>
+<ul>
+    <li>
+        背景透明度の変更
+    </li>
+</ul>
+>>>>>>> ver_4.0.0
 
     <div>
         <h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.1.4">ver_2.1.4</a></h4>
@@ -505,6 +638,7 @@
         </ul>
     </div>
 
+<<<<<<< HEAD
     <div>
         <h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_4.0.0_One-Dark">ver_4.0.0_One-Dark</a></h4>
         <ul>
@@ -526,3 +660,128 @@
         </ul>
     </div>
 </div>
+=======
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.1.2">ver_2.1.2</a></h4>
+<ul>
+    <li>
+        変数類などの整理
+    </li>
+</ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.1.3">ver_2.1.3</a></h4>
+<ul>
+    <li>
+        コメントの追記，整理
+    </li>
+    <li>
+        主要な要素の色の変数化
+    </li>
+</ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.1.4">ver_2.1.4</a></h4>
+<ul>
+    <li>
+        ツールパネル一部文字色変更
+    </li>
+</ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.1.5">ver_2.1.5</a></h4>
+<ul>
+    <li>
+        ツリービューのタブバーの背景色変更
+    </li>
+    <li>
+        ツリービューのタブの背景色変更
+    </li>
+    <li>
+        ツリービューのアクティブタブにアンダーライン表示
+    </li>
+</ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.2.0">ver_2.2.0</a></h4>
+<ul>
+    <li>
+        platformioの導入
+    </li>
+    <li>
+        platformioツールパネルの枠線や背景色，文字色を変更
+    </li>
+    <li>
+        terminalのボタンの枠線色を変更
+    </li>
+</ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_2.2.1">ver_2.2.1</a></h4>
+<ul>
+    <li>
+        platformioツールパネルのボタンアイコンのサイズの変更
+    </li>
+</ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.0">ver_3.0.0</a></h4>
+<ul>
+    <li>
+        「One Dark」テーマに対応
+    </li>
+</ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.1">ver_3.0.1</a></h4>
+<ul>
+    <li>
+        pratformio-ide-terminalで最下行のはみ出しを改善
+    </li>
+    <li>
+        設定画面サブセクションタイトル背景透過
+    </li>
+</ul>
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.2">ver_3.0.2</a></h4>
+<ul>
+    <li>
+        コメントの追記
+    </li>
+    <li>
+        コードの可読性の改善
+    </li>
+</ul>
+
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_3.0.3">ver_3.0.3</a></h4>
+<ul>
+    <li>
+        設定画面で一部要素にスタイルが適用できていなかった部分の改善
+    </li>
+    <li>
+        ボタンのアイコン位置の修正
+    </li>
+    <li>
+        フッタアイコン色の修正
+    </li>
+    <li>
+        不要部分の削除
+    </li>
+    <li>
+        コメントの修正
+    </li>
+</ul>
+
+
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_4.0.0_One-Dark">ver_4.0.0_One-Dark</a></h4>
+<ul>
+    <li>
+        テーマ別スタイルの「One Dark」用スタイル．
+    </li>
+    <li>
+        各ペイン，ドックでの背景画像を指定可能
+    </li>
+    <li>
+        各要素別に文字フォントの指定
+    </li>
+    <li>
+        設定画面で一部要素にスタイルが適用できていなかった部分の修正
+    </li>
+    <li>
+        ステータスバーのアイコン背景色変更
+    </li>
+</ul>
+>>>>>>> ver_4.0.0
