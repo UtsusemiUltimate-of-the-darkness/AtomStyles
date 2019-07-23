@@ -487,7 +487,7 @@
     </li>
 </ul>
 
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/v4.1.0">v4.1.0</a></h4>
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_4.1.0">ver_4.1.0</a></h4>
 <ul>
     <li>
         Atom Darkテーマに対応
