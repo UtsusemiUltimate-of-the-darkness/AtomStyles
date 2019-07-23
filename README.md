@@ -500,7 +500,7 @@
     </li>
 </ul>
 
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_4.1.0_AtomDark">ver_4.1.0 AtomDark</a></h4>
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_4.1.0_AtomDark">v4.1.0 AtomDark</a></h4>
 <ul>
     <li>
         Atom Darkテーマに対応
@@ -510,7 +510,7 @@
     </li>
 </ul>
 
-<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_4.1.0_OneDark">ver_4.1.0 OneDark</a></h4>
+<h4><a href="https://github.com/UtsusemiUltimate-of-the-darkness/AtomStyles/tree/ver_4.1.0_OneDark">v4.1.0 OneDark</a></h4>
 <ul>
     <li>
         One Darkテーマに対応
