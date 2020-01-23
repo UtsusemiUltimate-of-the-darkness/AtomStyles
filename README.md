@@ -9,11 +9,17 @@ Windows非対応．Mac使用者で，ダークテーマを使用している方�
 <img src="img/ScreenShot.png" width="1000px"><br>
 
 <h2>推奨環境</h2>
--OS:macOS Mojave 10.14.3
--macOS版Atom 1.43.0
--以下のプラグインがインストールされていること
-    -Japanese menu
-    -Show Ideographic space
+<ul>
+    <li>OS:macOS Mojave 10.14.3</li>
+    <li>macOS版Atom 1.43.0</li>
+    <li>
+        以下のプラグインがインストールされていること
+        <ul>
+            <li>Japanese menu</li>
+            <li>Show Ideographic space</li>
+        </ul>
+    </li>
+</ul>
 
 <h2>できること</h2>
 <ul>
