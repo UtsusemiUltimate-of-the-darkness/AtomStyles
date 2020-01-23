@@ -6,7 +6,7 @@ Windows非対応．Mac使用者で，ダークテーマを使用している方�
 もし，「あ？使えねーぞ？ぶっ飛ばすぞfu**がぁ！」などあれば日本語で具体的にご指摘いただけると幸いです．<br>
 
 <h2>イメージ</h2>
-<img src="img/ScreenShot.png" width="1000px"><br>
+<img src="img/ScreenShot.png" width="1000px">
 
 <h2>推奨環境</h2>
 <ul>
