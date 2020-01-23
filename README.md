@@ -65,7 +65,7 @@ Windows非対応．Mac使用者で，ダークテーマを使用している方�
         設定画面
         <ul>
             <li>背景色，背景画像の設定</li>
-            
+
         </ul>
     </li>
 </ul>
@@ -88,4 +88,12 @@ Windows非対応．Mac使用者で，ダークテーマを使用している方�
             を記述する．
     </li>
     <li>「styles.less」ファイルを上書き保存する．</li>
+    <li>
+        「~/.atom/AtomStyles/dark/general/settings」内の各ファイルを編集して自分好みのエディタを作成する．編集するファイルは以下の通り．
+        <ul>
+            <li>background.less:背景画像の変更</li>
+            <li>color:各種文字色の変更</li>
+            <li>fonts:各種文字フォントの変更</li>
+        </ul>
+    </li>
 </ol>
