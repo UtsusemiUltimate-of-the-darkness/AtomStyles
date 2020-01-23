@@ -1,4 +1,4 @@
-#AtomStyles
+<h1>AtomStyles</h1>
 
 github製テキストエディタ「Atom」のスタイルシートです．<br>
 「カスタムメイド」ならぬ「カスタムAtom」作成のご参考になればと思います．<br>
