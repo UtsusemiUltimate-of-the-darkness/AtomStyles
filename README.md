@@ -67,7 +67,7 @@ Windows非対応．Mac使用者で，ダークテーマを使用している方�
 
 <h2>適用方法</h2>
 <ol>
-    <li>緑色のボタン「clone or Download」＞「Download ZIP」をクリックし，AtomStylesをダウンロードする．</li>
+    <li>緑色のボタン「Clone or download」＞「Download ZIP」をクリックし，AtomStylesをダウンロードする．</li>
     <li>ダウンロードしたzipフォルダを解凍する．解凍後のフォルダを「~/.atom」に保存する．</li>
     <li>Atom.appを起動し，メニューバー の「Atom」＞「スタイルシート」を選択する．「styles.less」ファイルが開く．</li>
     <li>
