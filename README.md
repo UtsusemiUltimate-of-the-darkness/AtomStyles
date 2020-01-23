@@ -15,8 +15,8 @@ Windows非対応．Mac使用者で，ダークテーマを使用している方�
     <li>
         以下のプラグインがインストールされていること
         <ul>
-            <li>Japanese menu</li>
-            <li>Show Ideographic space</li>
+            <li>Japanese menu:日本語化プラグイン</li>
+            <li>Show Ideographic space:全角スペース可視化プラグイン</li>
         </ul>
     </li>
 </ul>
