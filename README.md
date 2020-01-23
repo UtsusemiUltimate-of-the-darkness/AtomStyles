@@ -40,7 +40,7 @@ Windows非対応．Mac使用者で，ダークテーマを使用している方�
     -コメント文字色の変更
 〜and more〜
 
-##適用方法
+##適用方法 ホゲー
 1. 緑色のボタン「clone or Download」＞「Download Zip」をクリックし，AtomStylesをダウンロードする．
 2. ダウンロードしたzipフォルダを解凍する．解凍後のフォルダを「~/.atom」に保存する．
 3. Atom.appを起動し，メニューバー の「Atom」＞「スタイルシート」を選択する．「styles.less」ファイルが開く．
