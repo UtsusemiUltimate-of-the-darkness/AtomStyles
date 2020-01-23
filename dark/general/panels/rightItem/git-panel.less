@@ -1,0 +1,472 @@
+// Git
+div.github-Git-root {
+
+    // リポジトリ内部
+    div.github-Git {
+
+        // 空リポジトリ
+        &.is-empty {
+
+            // 空表示要素
+            div.github-Git.no-repository {
+
+                // 大アイコン要素
+                div.large-icon {
+
+                    // アイコン本体
+                    svg {
+
+                        g {
+
+                            g.git-logo-path {
+
+                                path#Shape {
+
+                                    fill : @git-icon-color;  // アイコン色
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+
+                // 概要要素
+                div.initialize-repo-description {
+
+                    // 概要文
+                    span {
+
+                        font-family : @rightPane-font-family;  // 文字フォント
+                        color : @rightPane-color;              // 文字色
+                    }
+                }
+
+                // リポジトリ作成ボタン
+                button.btn {
+
+                    border : solid 1px @btn-disable-bdcolor;  // 枠線
+                    background : @btn-disable-bgcolor;        // 背景色
+                    color : @btn-disable-color;               // 文字色
+                    font-family : @btn-font-family;           // 文字フォント
+
+                    // アイコン
+                    &::before {
+
+                        color : @btn-disable-color;  // アイコン色
+                    }
+
+                    // 有効ボタン
+                    &:enabled {
+
+                        border : solid 1px @btn-enable-bdcolor;  // 枠線
+                        background : @btn-enable-bgcolor;        // 背景色
+                        color : @btn-enable-color;               // 文字色
+
+                        // アイコン
+                        &::before {
+
+                            color : @btn-enable-color;  // アイコン色
+                        }
+                    }
+                }
+            }
+        }
+
+        // リポジトリが存在する場合
+        div.github-StagingView {
+
+            // ステージングエリア(add)グループ
+            div.github-StagingView-group {
+
+                border-bottom : solid 1px @separate-color;
+                background: transparent;
+
+                // ヘッダ要素
+                header.github-StagingView-header {
+
+                    border : none;                                 // 枠線
+                    // border : solid 1px @btn-enable-bdcolor;
+                    background-color : @gitPanel-title-bgcolor;  // 背景色
+                    color : @rightPane-color;                      // 文字色
+
+                    // タイトルアイコン
+                    span.icon {
+
+                        // Unstaged Changesアイコン
+                        &.icon-list-unordered {
+
+                            // アイコン本体
+                            &::before {
+
+                                color : @gitPanel-title-icon-color;  // アイコン色
+                            }
+                        }
+
+                        // Staged Changesアイコン
+                        &.icon-tasklist {
+
+                            // アイコンん本体
+                            &::before {
+
+                                color : @gitPanel-title-icon-color;  // アイコン色
+                            }
+                        }
+                    }
+
+                    // Unstaged Changesタイトル
+                    span.github-StagingView-title {
+                    }
+
+                    // ボタン要素
+                    button.github-StagingView-headerButton {
+
+                        border : solid 1px @btn-disable-bdcolor;  // 枠線
+                        background : @btn-disable-bgcolor;        // 背景色
+                        color : @btn-disable-color;               // 文字色
+                        font-family : @btn-font-family;           // 文字フォント
+
+                        // アイコン
+                        &::before {
+
+                            color : @btn-disable-color;  // アイコン色
+                        }
+
+                        // 有効ボタン
+                        &:enabled {
+
+                            border : solid 1px @btn-enable-bdcolor;  // 枠線
+                            background : @btn-enable-bgcolor;        // 背景色
+                            color : @btn-enable-color;               // 文字色
+
+                            // アイコン
+                            &::before {
+
+                                color : @btn-enable-color;  // アイコン色
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // コミット閲覧要素
+        div.github-CommitView {
+
+            // border-bottom : solid 1px @separate-color;  // 境界線
+
+            // 全ての変更閲覧ボタン表示要素
+            div.github-CommitView-buttonWrapper {
+
+                border-bottom : solid 1px @separate-color;  // 境界線
+
+                // 全ての変更閲覧ボタン
+                button.btn.github-CommitView-button.github-CommitView-commitPreview {
+
+                    border : solid 1px @btn-disable-bdcolor;  // 枠線
+                    background : @btn-disable-bgcolor;        // 背景色
+                    color : @btn-disable-color;               // 文字色
+                    font-family : @btn-font-family;           // 文字フォント
+
+                    // アイコン
+                    &::before {
+
+                        color : @btn-disable-color;  // アイコン色
+                    }
+
+                    // 有効ボタン
+                    &:enabled {
+
+                        border : solid 1px @btn-enable-bdcolor;  // 枠線
+                        background : @btn-enable-bgcolor;        // 背景色
+                        color : @btn-enable-color;               // 文字色
+
+                        // アイコン
+                        &::before {
+
+                            color : @btn-enable-color;  // アイコン色
+                        }
+                    }
+                }
+            }
+
+            // コミットメッセージ入力欄要素
+            div.github-CommitView-editor {
+
+                border : solid 1px @gitPanel-textBox-bdcolor;  // 枠線
+                background-color : @gitPanel-textBox-bgcolor;  // 背景色
+
+                // テキストエリア要素
+                div.github-AtomTextEditor-container {
+
+                    // テキストエリア
+                    atom-text-editor.editor {
+
+                        // border : solid 1px @gitPanel-textBox-bdcolor;  // 枠線
+                        // background-color : @gitPanel-textBox-bgcolor;  // 背景色
+                        font-family : @textBox-font-family;   // 文字フォント
+                        color : @gitPanel-textBox-color;               // 文字色
+
+                        // スクロール可能部分ラッパー
+                        div {
+
+                            border : none;
+
+                            // スクロール可能部分
+                            div.scroll-view {
+
+                                // 入力行
+                                div div.lines {
+
+                                    // ハイライト全般
+                                    div.highlights {
+
+                                        // 各ハイライト
+                                        div.highlight {
+
+                                            // テキスト選択部分のハイライト
+                                            &.selection {
+
+                                                // ハイライト中のテキスト部分
+                                                div.region.selection {
+
+                                                    background-color : @selection-bgcolor;  // 背景色
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // 行
+                                    div div.line {
+
+                                        // 各行
+                                        span {
+
+                                            // 入力中の行
+                                            span.syntax--text.syntax--plain.syntax--null-grammar {
+                                            }
+                                        }
+                                    }
+
+                                    // プレスホルダー
+                                    div.placeholder-text {
+
+                                        color : @gitPanel-textBox-placeholder-color;  // 文字色
+                                    }
+
+                                    // カーソル類
+                                    div.cursors {
+
+                                        // カーソル本体
+                                        div.cursor {
+
+                                            border : none;
+                                            border-left : solid 1px @gitPanel-textBox-cursor-color;  // カーソルの形と色
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // フォーカス中
+                        &.is-forcused {
+
+                            // スクロール可能部分
+                            div div.scroll-view {
+
+                                // 入力行
+                                div div.lines {
+
+                                    // ハイライト全般
+                                    div.highlights {
+
+                                        // 各ハイライト
+                                        div.highlight {
+
+                                            // テキスト選択部分のハイライト
+                                            &.selection {
+
+                                                // ハイライト中のテキスト部分
+                                                div.region.selection {
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // 行
+                                    div div.line {
+
+                                        // 各行
+                                        span {
+
+                                            // 入力中の行
+                                            span.syntax--text.syntax--plain.syntax--null-grammar {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // ボタン類
+                button {
+
+                    border : solid 1px @btn-disable-bdcolor;  // 枠線
+                    background : @btn-disable-bgcolor;        // 背景色
+                    color : @btn-disable-color;               // 文字色
+                    font-family : @btn-font-family;           // 文字フォント
+
+                    // アイコン
+                    &::before {
+
+                        color : @btn-disable-color;  // アイコン色
+                    }
+
+                    // svgアイコン
+                    svg.github-CommitView-coAuthorToggleIcon {
+
+                        fill : @btn-disable-color;  // アイコン色
+                    }
+
+                    // 有効ボタン
+                    &:enabled {
+
+                        border : solid 1px @btn-enable-bdcolor;  // 枠線
+                        background : @btn-enable-bgcolor;        // 背景色
+                        color : @btn-enable-color;               // 文字色
+
+                        // アイコン
+                        &::before {
+
+                            color : @btn-enable-color;  // アイコン色
+                        }
+
+                        // svgアイコン
+                        svg.github-CommitView-coAuthorToggleIcon {
+
+                            fill : @btn-enable-color;  // アイコン色
+                        }
+                    }
+                }
+            }
+
+            // コミットビューフッター
+            footer.github-CommitView-bar {
+
+                // コミットボタン
+                button.btn.btn-primary.github-CommitView-button {
+
+                    border : solid 1px @btn-disable-bdcolor;  // 枠線
+                    background : @btn-disable-bgcolor;        // 背景色
+                    color : @btn-disable-color;               // 文字色
+                    font-family : @btn-font-family;           // 文字フォント
+
+                    // アイコン
+                    &::before {
+
+                        color : @btn-disable-color;  // アイコン色
+                    }
+
+                    // 有効ボタン
+                    &:enabled {
+
+                        border : solid 1px @btn-enable-bdcolor;  // 枠線
+                        background : @btn-enable-bgcolor;        // 背景色
+                        color : @btn-enable-color;               // 文字色
+
+                        // アイコン
+                        &::before {
+
+                            color : @btn-enable-color;  // アイコン色
+                        }
+                    }
+                }
+
+                // コミットカウンター
+                div.github-CommitView-remaining-characters {
+
+                    font-family : @gitPanel-counter-font-family;  // 文字フォント
+                    color : @rightPane-color;                     // 文字色
+                }
+            }
+        }
+
+        // 最近のコミット
+        div.github-RecentCommits {
+
+            border-top : solid 1px @separate-color;  // 境界線
+
+            // コミットリスト
+            ul.github-RecentCommits-list {
+
+                // 各リスト要素
+                li.github-RecentCommit {
+
+                    // border-top : solid 1px @list-item-separate-color;     // 上枠線
+                    border-bottom : solid 1px @list-item-separate-color;  // 下枠線
+                    background-color : @list-item-bgcolor;                // 背景色
+                    color : @rightPane-color;                             // 文字色
+
+                    // 直近のコミット
+                    &.most-recent {
+
+                        border-top : solid 1px @list-item-separate-color;  // 上枠線
+                    }
+                }
+
+                // コミットしたユーザアバター要素
+                span.github-RecentCommit-authors {
+
+                    // アバター画像
+                    img.github-RecentCommit-avatar {
+                    }
+                }
+
+                // コミットメッセージ
+                span.github-RecentCommit-message {
+
+                    font-family : @gitPanel-commitMassage-font-family;  // 文字フォント
+                    color : @rightPane-color;                           // 文字色
+                }
+
+                // Undoボタン
+                button.btn.github-RecentCommit-undoButton {
+
+                    border : solid 1px @btn-disable-bdcolor;  // 枠線
+                    background : @btn-disable-bgcolor;        // 背景色
+                    color : @btn-disable-color;               // 文字色
+                    font-family : @btn-font-family;           // 文字フォント
+
+                    // アイコン
+                    &::before {
+
+                        color : @btn-disable-color;  // アイコン色
+                    }
+
+                    // 有効ボタン
+                    &:enabled {
+
+                        border : solid 1px @btn-enable-bdcolor;  // 枠線
+                        background : @btn-enable-bgcolor;        // 背景色
+                        color : @btn-enable-color;               // 文字色
+
+                        // アイコン
+                        &::before {
+
+                            color : @btn-enable-color;  // アイコン色
+                        }
+                    }
+                }
+
+                // コミット時間
+                time.timeago.github-RecentCommit-time {
+
+                    color : @rightPane-color;                     // 文字色
+                    font-family : @gitPanel-counter-font-family;  // 文字フォント
+                }
+            }
+        }
+    }
+}

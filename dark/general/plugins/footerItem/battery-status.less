@@ -1,0 +1,61 @@
+// バッテリー残量表示
+battery-status.battery-status.inline-block {
+
+    background-color : @statusBar-elem-bgcolor;  // 背景色
+
+    // バッテリーアイコン領域
+    div.status {
+
+        // 通常
+        &.normal {
+
+            // アイコン要素
+            span.battery-icon.icon-battery {
+
+                // 背景
+                &.back-icon {
+
+                    // 充電中
+                    &.icon-battery-charging {
+                    }
+                }
+
+                // 前景
+                &.front-icon {
+
+                    // 充電中
+                    &.icon-battery-charging {
+                    }
+                }
+            }
+        }
+
+        // バッテリー残量少
+        &.warning {
+
+            // アイコン要素
+            span.battery-icon.icon-battery {
+
+                // 背景
+                &.back-icon {
+
+                    // 充電中
+                    &.icon-battery-charging {
+                    }
+                }
+
+                // 前景
+                &.front-icon {
+
+                    // 充電中
+                    &.icon-battery-charging {
+                    }
+                }
+            }
+        }
+    }
+
+    // 残量表示
+    span {
+    }
+}

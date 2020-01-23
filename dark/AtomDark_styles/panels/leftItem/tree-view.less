@@ -1,0 +1,68 @@
+// ツリービュー
+&.tree-view {
+
+    background-color : @treeView-bgcolor;  // 背景色
+
+    // 要素内全ての要素
+    * {
+
+        color : @treeView-color;              // 文字色
+        // font-size : @treeView-font-size;      // フォントサイズ
+        font-family : @treeView-font-family;  // 文字フォント
+    }
+
+    // 階層表示リスト
+    ol {
+
+        // 各要素
+        li {
+
+            font-size : @treeView-font-size;  // 文字サイズ
+            margin : 5px 0;                   // 余白
+
+            // フォルダ要素
+            div.header.list-item {
+
+                // 展開アイコン
+                &::before {
+
+                    color : @treeView-color;  // アイコン色
+                }
+            }
+
+            // 選択している
+            &.selected {
+
+                font-size : @treeView-selectItem-font-size;  // 文字サイズ
+
+                // 選択している項目
+                &::before {
+
+                    border-top : solid 1px @treeView-selectItem-bdcolor;     // 上枠線
+                    border-bottom : solid 1px @treeView-selectItem-bdcolor;  // 下枠線
+                    background-color : @treeView-selectItem-bgcolor;         // 背景色
+                }
+
+                // 項目名
+                span.name {
+
+                    color : @treeView-selectItem-color;  // 文字色
+
+                    // アイコン
+                    ::before {
+                    }
+                }
+
+                // フォルダ要素
+                div.header.list-item {
+
+                    // 展開アイコン
+                    &::before {
+
+                        color : @treeView-selectItem-color;  // アイコン色
+                    }
+                }
+            }
+        }
+    }
+}

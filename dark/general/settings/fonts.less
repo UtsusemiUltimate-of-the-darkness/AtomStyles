@@ -1,0 +1,261 @@
+/**
+ * 全体共通
+ */
+@font-size :                                    1.000em;                                                      // 通常文字サイズ
+@font-family :                                  "Apple-Chancery", "Menlo-Italic", "SourceHanCodeJP-LightIt";  // 通常文字フォント
+@tab-font-size :                                12px;                                                         // タブ文字サイズ
+@tab-font-family :                              @font-family;                                                 // タブ文字フォント
+@btn-font-size :                                1.000em;                                                      // ボタン文字サイズ
+@btn-font-family :                              @font-family;                                                 // ボタン文字フォント
+// エディタに関する設定
+// 行番号
+@gutter-font-size :                             1.000em;                                                      // 行番号文字サイズ
+@gutter-font-family :                           @font-family;                                                 // 行番号文字フォント
+@cursorLineNumber-font-size :                   1.217em;                                                      // 行番号文字サイズ083
+@lineNumber-selected-font-size :                1.000em;                                                      // 選択時行番号文字サイズ167
+@lineNumber-selected-font-family :              @gutter-font-family;                                          // 選択時行番号文字フォント
+// タブ設定
+@activeTab-font-size :                          14px;                                                         // アクティブタブ文字サイズ
+@activeTab-font-family :                        @tab-font-family;                                             // アクティブタブ文字フォント
+@activePane-tab-font-size :                     1.000em;                                                      // アクティブペインタブ文字サイズ
+@activePane-tab-font-family :                   @tab-font-family;                                             // アクティブペインタブ文字フォント
+@activePane-activeTab-font-size :               1.000em;                                                      // アクティブタブ文字サイズ
+@activePane-activeTab-font-family :             @tab-font-family;                                             // アクティブタブ文字フォント
+// ボタン類設定
+@btn-enable-font-size :                         @btn-font-size;                                               // 有効ボタン文字サイズ
+@btn-enable-font-family :                       @btn-font-family;                                             // 有効ボタン文字フォント
+@btn-disable-font-size :                        @btn-font-size;                                               // 無効ボタン文字サイズ
+@btn-disable-font-family :                      @btn-font-family;                                             // 無効ボタン文字フォント
+@btn-selected-font-size :                       @btn-font-size;                                               // 選択中ボタン文字サイズ
+@btn-selected-font-family :                     @btn-font-family;                                             // 選択中ボタン文字フォント
+// テキストボックス
+@textBox-font-size :                            @font-size;                                                   // テキストボックス文字サイズ
+@textBox-font-family :                          "Menlo-Italic", "SourceHanCodeJP-LightIt";                    // テキストボックス文字フォント
+@textBox-placeholder-font-family :              @textBox-font-family;                                         // テキストボックスプレスホルダー文字フォント
+// 表
+@table-font-size :                              @font-size;                                                   // 表文字サイズ
+@table-font-family :                            @font-family;                                                 // 表文字フォント
+// リストアイテム
+@list-item-font-size :                          @font-size;                                                   // リストアイテム文字サイズ
+@list-item-font-family :                        @font-family;                                                 // リストアイテム文字フォント
+
+// 各ペインごとの設定
+/**
+ * 左ペイン
+ */
+@leftPane-font-size :                           @font-size;                                                   // 左ペイン文字サイズ
+@leftPane-font-family :                         @font-family;                                                 // 左ペイン文字フォント
+// 開閉ボタン
+@leftPane-toggleBtn-font-size :                 @leftPane-font-size;                                          // 左ペイン開閉ボタン文字サイズ
+@leftPane-toggleBtn-font-family :               @leftPane-font-family;                                        // 左ペイン文字フォント
+// タブ
+@leftPane-tab-font-size :                       @tab-font-size;                                               // 左ペインタブ文字サイズ
+@leftPane-tab-font-family :                     @tab-font-family;                                             // 左ペインタブ文字フォント
+@leftPane-activeTab-font-size :                 @activeTab-font-size;                                         // 左ペインアクティブタブ文字サイズ
+@leftPane-activeTab-font-family :               @activeTab-font-family;                                       // 左ペインアクティブタブ文字フォント
+// ツリービュー
+@treeView-font-size :                           17px;                                                         // ツリービュー文字サイズ
+@treeView-font-family :                         @font-family;                                                 // ツリービュー文字フォント
+@treeView-selectItem-font-size :                20px;                                                         // ツリービュー選択項目文字サイズ
+@treeView-selectItem-font-family :              @font-family;                                                 // ツリービュー選択項目文字フォント
+
+/**
+ * 中央ペイン
+ */
+// ブラウザープラスプラグイン
+@browserPlus-toolBar-font-size :                @font-size;                                                   // ツールバー文字サイズ
+@browserPlus-toolBar-font-family :              @font-family;                                                 // ツールバー文字フォント
+@browserPlus-toolBar-btn-newTab-font-size :     1.7rem;                                                       // 新規タブボタン大きさ
+@browserPlus-toolBar-btn-print-font-size :      2.0rem;                                                       // 印刷ボタン大きさ
+// イメージビュープラグイン
+@imageView-font-size :                          @font-size;                                                   // 文字サイズ
+@imageView-font-family :                        @font-family;                                                 // 文字フォント
+
+/**
+ * 下ペイン
+ */
+@bottomPane-font-size :                         @font-size;                                                   // 文字サイズ
+@bottomPane-font-family :                       @font-family;                                                 // 文字フォント
+// 開閉ボタン
+@bottomPane-toggleBtn-font-size :               12px;                                                         // 開閉ボタン文字サイズ
+@bottomPane-toggleBtn-font-family :             @bottomPane-font-family;                                      // 開閉ボタン文字フォント
+// タブ
+@bottomPane-tab-font-size :                     @tab-font-size;                                               // タブ文字サイズ
+@bottomPane-tab-font-family :                   @tab-font-family;                                             // タブ文字フォント
+@bottomPane-activeTab-font-size :               @tab-font-size;                                               // アクティブタブ文字サイズ
+@bottomPane-activeTab-font-family :             @tab-font-family;                                             // アクティブタブ文字フォント
+@bottomActivePane-actveTab-font-size :          @tab-font-size;                                               // アクティブペインアクティブタブタブ文字サイズ
+@bottomActivePane-actveTab-font-family :        @tab-font-family;                                             // アクティブペインアクティブタブタブ文字フォント
+// ツールパネル テキストボックス
+@bottomPane-textBox-font-size :                 @textBox-font-size;                                           // テキストボックス文字サイズ
+@bottomPane-textBox-font-family :               @textBox-font-family;                                         // テキストボックス文字フォント
+@bottomPane-textBox-placeholder-font-family :   @textBox-placeholder-font-family;                             // テキストボックスプレスホルダー文字フォント
+// ツールパネル ボタン
+@bottomPane-btn-enable-font-size :              @btn-enable-font-size;                                        // 有効ボタン文字サイズ
+@bottomPane-btn-enable-font-family :            @btn-enable-font-family;                                      // 有効ボタン文字フォント
+@bottomPane-btn-disable-font-size :             @btn-disable-font-size;                                       // 無効ボタン文字サイズ
+@bottomPane-btn-disable-font-family :           @btn-disable-font-family;                                     // 無効ボタン文字フォント
+@bottomPane-btn-selected-font-size :            @btn-selected-font-size;                                      // 選択中ボタン文字サイズ
+@bottomPane-btn-selected-font-family :          @btn-selected-font-family;                                    // 選択中ボタン文字フォント
+// ターミナルプラグイン
+@terminal-font-size :                           @font-size;                                                   // 文字サイズ
+@terminal-font-family :                         "Menlo-Italic", "SourceHanCodeJP-LightIt";                    // 文字フォント
+@termianl-btn-enable-font-size :                @btn-enable-font-size;                                        // 有効ボタン文字サイズ
+@termianl-btn-enable-font-family :              @btn-enable-font-family;                                      // 有効ボタン文字フォント
+@termianl-btn-disable-font-size :               @btn-disable-font-size;                                       // 無効ボタン文字サイズ
+@termianl-btn-disable-font-family :             @btn-disable-font-family;                                     // 無効ボタン文字フォント
+@termianl-btn-selected-font-size :              @btn-selected-font-size;                                      // 選択中ボタン文字サイズ
+@termianl-btn-selected-font-family :            @btn-selected-font-family;                                    // 選択中ボタン文字フォント
+// Linterプラグイン
+@linter-table-font-size :                       @table-font-size;                                             // 表文字サイズ
+@linter-table-font-family :                     @table-font-family;                                           // 表文字フォント
+// Watch Expressions
+@watchExpressions-textBox-font-family :         @bottomPane-font-family;                                      // Watch Expressions文字フォント
+// Console
+@console-textBox-font-family :                  @bottomPane-font-family;                                      // consoleテキストボックス文字フォント
+@console-btn-font-family :                      @bottomPane-font-family;                                      // consoleボタン文字フォント
+// Diagnostics
+@diagnostics-textBox-font-family :              @bottomPane-font-family;                                      // Diagnosticsテキストボックス文字フォント
+// key binding resolver
+@keyBindingResolver-keystroke-font-size :       @font-size;                                                   // key binding resolverキーストローク文字サイズ
+@keyBindingResolver-keystroke-font-family :     @font-family;                                                 // key binding resolverキーストローク文字フォント
+@keyBindingResolver-table-font-size :           @table-font-size;                                             // key binding resolverキーストローク文字サイズ
+@keyBindingResolver-table-font-family :         @table-font-family;                                           // key binding resolverキーストローク文字フォント
+
+/**
+ * 右ペイン
+ */
+@rightPane-font-size :                          @font-size;                                                   // 右ペイン文字サイズ
+@rightPane-font-family :                        @font-family;                                                 // 右ペイン文字フォント
+// 開閉ボタン
+@rightPane-toggleBtn-font-size :                @rightPane-font-size;                                         // 開閉ボタン文字サイズ
+@rightPane-toggleBtn-font-family :              @rightPane-font-family;                                       // 開閉ボタン文字フォント
+// タブ
+@rightPane-tab-font-size :                      @tab-font-size;                                               // タブ文字サイズ
+@rightPane-tab-font-family :                    @tab-font-family;                                             // タブ文字フォント
+@rightPane-activeTab-font-size :                @tab-font-size;                                               // アクティブタブタブ文字サイズ
+@rightPane-activeTab-font-family :              @tab-font-family;                                             // アクティブタブタブ文字フォント
+@rightActivePane-tab-font-size :                @tab-font-size;
+@rightActivePane-tab-font-family :              @tab-font-family;
+@rightActivePane-activeTab-font-size :          @tab-font-size;                                               // アクティブペインアクティブタブタブ文字サイズ
+@rightActivePane-activeTab-font-family :        @tab-font-family;                                             // アクティブペインアクティブタブタブ文字フォント
+// ボタン
+@rightPane-btn-enable-font-size :               @btn-font-size;                                               // 有効ボタン文字サイズ
+@rightPane-btn-enable-font-family :             @btn-font-family;                                             // 有効ボタン文字フォント
+@rightPane-btn-disable-font-size :              @btn-font-size;                                               // 無効ボタン文字サイズ
+@rightPane-btn-disable-font-family :            @btn-font-family;                                             // 無効ボタン文字フォント
+@rightPane-btn-selected-font-size :             @btn-font-size;                                               // 選択中ボタン文字サイズ
+@rightPane-btn-selected-font-family :           @btn-font-family;                                             // 選択中ボタン文字フォント
+// gitパネル
+@gitPanel-counter-font-family :                @rightPane-font-family;                                       // gitパネルカウンター文字フォント
+@gitPanel-commitMassage-font-family :          @rightPane-font-family;                                       // gitパネルコミットメッセージ文字フォント
+
+
+// ツールパネル
+@toolPanel-font-size :                          20px;                                                         // ツールパネルボタン文字サイズ
+
+/**
+ * ステータスバー
+ */
+@statusBar-font-size :                          1.083em;                                                      // 文字サイズ
+@statusBar-font-family :                        @font-family;                                                 // 文字フォント
+@statusBar-fileInfo-font-family :               @font-family;                                                 // ファイル情報文字フォント
+@statusBar-counter-font-family :                @font-family;                                                 // カウンター文字フォント
+@statusBar-lineEndTile-font-family :            @font-family;                                                 // 改行コード文字フォント
+@statusBar-encode-font-family :                  @font-family;                                                 // エンコード文字フォント
+@statusBar-grammar-font-family :                @font-family;                                                 // ファイル種類文字フォント
+/**
+ * 設定画面
+ */
+@settingsView-font-size :                       @font-size;                                                   // 設定画面文字サイズ
+@settingsView-font-family :                     @font-family;                                                 // 設定画面文字フォント
+@settingsView-menu-font-size :                  1.167em;                                                      // 設定画面メニュー項目文字サイズ
+// メニュー
+@settingsView-menu-font-family :                @font-family;                                                 // 設定画面メニュー項目文字フォント
+@settingsView-menu-activeItem-font-size :       1.417em;                                                      // 設定画面選択中メニュー項目文字サイズ
+@settingsView-menu-activeItem-font-family :    @font-family;                                                  // 設定画面選択中メニュー項目文字フォント
+// タイトル
+// @settingsView-title-font-size :                 20px;                                                      // 設定画面タイトル文字サイズ
+@settingsView-title-font-family :               @font-family;                                                 // 設定画面タイトル文字フォント
+@settingsView-subtitle-font-size :              16px;                                                         // 設定画面サブタイトル文字サイズ
+@settingsView-subtitle-font-family :            @font-family;                                                 // 設定画面タイトル文字フォント
+// ボタン
+@settingsView-btn-enable-font-size :            @btn-font-size;                                               // 設定画面有効ボタン文字サイズ
+@settingsView-btn-enable-font-family :          @btn-font-family;                                             // 設定画面有効ボタン文字フォント
+@settingsView-btn-disable-font-size :           @btn-font-size;                                               // 設定画面無効ボタン文字サイズ
+@settingsView-btn-disable-font-family :         @btn-font-family;                                             // 設定画面無効ボタン文字フォント
+@settingsView-btn-selected-font-size :          @btn-font-size;                                               // 設定画面選択中ボタン文字サイズ
+@settingsView-btn-selected-font-family :        @btn-font-family;                                             // 設定画面選択中ボタン文字フォント
+// テキストボックス
+@settingsView-textBox-font-size :               @textBox-font-size;                                           // 設定画面テキストボックス文字サイズ
+@settingsView-textBox-font-family :             "Menlo-Italic", "SourceHanCodeJP-LightIt";                    // 設定画面テキストボックス文字フォント
+@settingsView-textBox-placeholder-font-family : @textBox-font-family;                                         // 設定画面テキストボックスプレスホルダー文字フォント
+// 表
+@settingsView-table-font-family :               @font-family;                                                 // 設定画面表文字フォント
+// アラート
+@settingsView-alert-font-size :                 @font-size;                                                   // 設定画面アラート文字サイズ
+@settingsView-alert-font-family :               @font-family;                                                 // 設定画面アラート文字フォント
+// エラー
+@settingsView-error-font-size :                 @font-size;                                                   // 設定画面エラー文字サイズ
+@settingsView-error-font-family :               @font-family;                                                 // 設定画面エラー文字フォント
+// パッケージカード
+@settingsView-packageCard-font-family :         @font-family;                                                 // パッケージカード文字フォント
+// カウンター
+@settingsView-counter-font-size :               @font-size;                                                   // 設定画面カウンター文字サイズ
+@settingsView-counter-font-family :             @font-family;                                                 // 設定画面カウンター文字フォント
+// 整形済み(コードなど)
+@settingsView-precode-font-family :             "Menlo-Italic", "SourceHanCodeJP-LightIt";                    // 設定画面整形済み文字フォント
+
+
+
+
+
+//////////////////////////////////////以下ゴミ//////////////////////////////////////////////////////
+
+// 各文字フォント
+// @counter-font-family :                    @font-family;                                           // カウンター文字フォント
+// @markdown-font-family :                   @font-family;                                           // mdプレビュー文字フォント
+//
+// // 左パネル
+// @leftPanel-tab-font-size :               @tab-font-size;                                          // 左パネルタブ文字サイズ
+// @leftPanel-tab-font-family :             @tab-font-family;                                        // 左パネルタブ文字フォント
+// @leftPanel-font-family :                 @font-family;                                            // 左パネル文字フォント
+// @leftPanel-active-tab-font-size :        @active-tab-font-size;                                   // 左パネルアクティブタブ文字サイズ
+// @leftPanel-active-tab-font-family :      @tab-font-family;                                        // 左パネルアクティブタブ文字フォント
+//
+// // ツリービュー
+// @treeView-font-family :                  @font-family;                                                 // ツリービュー文字フォント
+//
+// // 中央ペイン
+// @browserPlus-font-family :               @font-family;                                                 // ブラウザurl文字フォント
+//
+// // 右ペイン
+// @rightPane-font-family :                 @font-family;                                                 // 右ペイン文字フォント
+// @rightPane-counter-font-family :         @counter-font-family;                                         // カウンター文字フォント
+// @rightPane-commit-message-font-family :  @font-family;                                                 // コミットメッセージ文字フォント
+//
+// // 下ペイン
+//
+// // フッター
+// @statusBar-font-family :                 @font-family;                                                 // ステータスバー文字フォント
+// @statusBar-file-info-font-family :       @font-family;                                                 // ステータスバーファイル情報文字フォント
+// @statusBar-counter-font-family :         @counter-font-family;                                         // ステータスバーカウンター文字フォント
+//
+// // 以下詳細設定用
+// @terminal-font-family :                   @textBox-font-family;                                        // ターミナル文字フォント
+// @bottomPane-textBox-font-family :        @textBox-font-family;                                        // ツールパネル文字フォント
+// @table-font-family :                      @font-family;                                                 // 表の文字フォント
+//
+// @settingsView-font-family :                    @font-family;                                                 // 設定画面文字フォント
+// @settingsView-menu-font-family :               @settingsView-font-family;                                         //設定画面メニュー文字フォント
+// @settingsView-title-font-family :              @settingsView-font-family;                                         // 設定画面タイトル文字フォント
+// @settingsView-subtitle-font-family :           @settingsView-font-family;                                         // 設定画面サブタイトル文字フォント
+// @settingsView-btn-font-family :                @btn-font-family;                                             // 設定画面ボタン文字フォント
+// @setting-textbox-font-family :            @textBox-font-family;                                        // 設定画面テキストボックス文字フォント
+// @settingsView-counter-font-family :            @counter-font-family;                                         // カウンター文字フォント
+// @setting-error-font-family :              @settingsView-font-family;                                         // 設定画面エラー表示文字フォント
+// @setting-precode-font-family :            @textBox-font-family;                                        // 設定画面整形済み文字フォント
+// @setting-deprecate-package-font-family :  @settingsView-font-family;                                         // 廃止予定パッケージ，アラート文字フォント
+// @settingsView-packageCard-font-family :       @font-family;                                                 // 設定画面パッケージカード文字フォント
+// @settingsView-packageCard-font-family : @font-family;                                                 // 設定画面パッケージカードタイトル文字フォント
+// @settingsView-packageCard-font-family :  @font-family;                                                 // 設定画面パッケージカード作成者情報文字フォント

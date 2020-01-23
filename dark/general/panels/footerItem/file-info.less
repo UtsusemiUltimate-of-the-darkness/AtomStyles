@@ -1,0 +1,22 @@
+// ファイル名表示要素
+status-bar-file.file-info.inline-block {
+
+    background-color : @statusBar-elem-bgcolor;  // 背景色
+    max-width : 100px;                           // 最大幅
+    direction : ltr;                             // 左から右に表記
+    overflow : scroll;                           // 要素からはみ出た場合，スクロール
+    text-overflow : clip ellipsis;               // はみ出たテキスト
+
+    // マウスオン
+    &:hover {
+
+        background-color : @statusBar-hoverIcon-bgcolor;  // 背景色
+    }
+
+    // ファイル名
+    a.current-path {
+
+        color : @statusBar-color;                       // 文字色
+        font-family : @statusBar-fileInfo-font-family;  // 文字フォント
+    }
+}

@@ -1,0 +1,35 @@
+// テレタイプ(画面共有プラグイン)
+a.PortalStatusBarIndicator.inline-block {
+
+    background-color : @statusBar-elem-bgcolor;  // 背景色
+
+    // マウスオン
+    &:hover {
+
+        background-color : @statusBar-hoverIcon-bgcolor;
+    }
+
+    // アイコン要素
+    span.icon.icon-radio-tower {
+
+        // アイコン本体
+        &::before {
+
+            color : @statusBar-passtiveIcon-color;  // アイコン色
+        }
+    }
+
+    // 共有中
+    &.transmitting {
+
+        // アイコン要素
+        span.icon.icon-radio-tower {
+
+            // アイコン本体
+            &::before {
+
+                color : @statusBar-activeIcon-color;  // アイコン色
+            }
+        }
+    }
+}

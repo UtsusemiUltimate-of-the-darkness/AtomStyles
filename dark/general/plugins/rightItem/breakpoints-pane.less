@@ -1,0 +1,120 @@
+// ブレークポイントペイン
+&.debugger-breakpoint-list {
+
+    // デバッガペイン内容
+    div.debugger-pane-content {
+
+        // 状態通知領域
+        div.debugger-state-notice {
+
+            // 内容
+            span {
+
+                color : @breakpointsPane-color;  // 文字色
+            }
+        }
+
+        // ブレークポイントペイン
+        div {
+
+            // ブレークポイントセクション
+            div.debugger-breakpoint-section {
+
+                // サブタイトル
+                h3.icon.icon-chevron-down.nuclide-ui-section-collapsable {
+
+                    color : @breakpointsPane-color;  // 文字色
+
+                    // アイコン
+                    &::before {
+
+                        color : @breakpointsPane-toggleBtn-color;  // アイコン色
+                    }
+                }
+            }
+
+            // ブレークポイントリスト表示要素
+            div.native-key-bindings.nuclide-ui-listview.nuclide-ui-listview-highlight-odd.nuclide-ui-listview-selectable {
+
+                // 各ブレークポイントリスト
+                div.debugger-breakpoint {
+
+                    border : solid 1px @breakpointsPane-listItem-separate-color;  // リスト要素境界線
+                    border-collapse : collapse;                              // 要素間隙間
+                    background-color : @breakpointsPane-listItem-bgcolor;         // 背景色
+
+                    // 各リスト表示要素
+                    div.inline-block {
+
+                        // 各要素ラッパー
+                        div {
+
+                            // チェックボックスラッパー
+                            label.debugger-breakpoint-unresolved.debugger-breakpoint-checkbox.nuclide-ui-checkbox-label {
+
+                                // チェックボックス
+                                input.input-checkbox.nuclide-ui-checkbox {
+
+                                    border : solid 1px @breakpointsPane-checkbox-bdcolor;  // 枠線色
+                                    background-color : @breakpointsPane-checkbox-bgcolor;  // 背景色
+
+                                    // チェックマーク(短)
+                                    &::before {
+
+                                        background-color : @breakpointsPane-checkbox-color;  // チェックマーク色
+                                    }
+
+                                    // チェックマーク(長)
+                                    &::after {
+
+                                        background-color : @breakpointsPane-checkbox-color;  // チェックマーク色
+                                    }
+                                }
+                            }
+
+                            // ブレークポイント箇所と編集削除ボタン要素
+                            span {
+
+                                color : @breakpointsPane-color;  // 文字色
+
+                                // ボタン表示領域
+                                div.debugger-breakpoint-condition-controls {
+
+                                    // border : solid 1px @btn-enable-bdcolor;  // 枠線色
+                                    background-color : transparent;             // 背景色
+
+                                    // 各ボタン
+                                    span.debugger-breakpoint-condition-control.icon {
+
+                                        border : solid 1px @breakpointsPane-btn-enable-bdcolor;  // 枠線色
+                                        background-color : @breakpointsPane-btn-enable-bgcolor;   // 背景色
+
+                                        // 鉛筆アイコン
+                                        &.icon-pencil {
+
+                                            // アイコン本体
+                                            &::before {
+
+                                                margin : 0 2px 0 0;  // 余白
+                                            }
+                                        }
+
+                                        // xアイコン
+                                        &.icon-x {
+
+                                            // アイコン本体
+                                            &::before {
+
+                                                margin : 1px 2px 0 0;  // 余白
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

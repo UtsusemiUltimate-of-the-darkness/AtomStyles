@@ -1,0 +1,336 @@
+@import "../plugins/rightItem/debugger-pane.less";  // デバッガーペイン
+@import "rightItem/git-panel.less";                 // git
+@import "rightItem/github-panel.less";              // github
+
+// 画面右側
+atom-panel-container.right {
+
+    border : solid 1px @pane-bdcolor;       // 枠線
+    border-left : none;                     // 左枠線
+    background : @rightPane-background;     // 背景
+    background-repeat : no-repeat;          // 背景のリピート
+    background-size : cover;                // 背景画像の大きさ
+    background-position : right top;        // 背景画像の位置
+    margin : 0 0 0 0;                       // 上右下左の外側の余白
+    padding : 0 0 0 0;                      // 上右下左の内側の余白
+    font-family : @rightPane-font-family;   // 文字フォント
+
+    // 画面右側ドック
+    atom-dock.right {
+
+        // 画面右側ドック格納要素
+        div.atom-dock-inner.right {
+
+            border : none;
+            background-color : @rightPane-bgcolor;  // 背景色
+
+            // 開閉ボタン領域
+            div.atom-dock-toggle-button.right {
+
+                // 開閉ボタン要素
+                div.atom-dock-toggle-button-inner.right {
+
+                    border : solid 1px @rightPane-toggleBtn-bdcolor;  // 枠線
+                    background-color : @rightPane-toggleBtn-bgcolor;  // 背景色
+                    color : @rightPane-toggleBtn-color;               // アイコン色
+
+                    // 開閉ボタン本体
+                    span.icon.icon-chevron-left {
+
+                        // アイコン
+                        &::before {
+                        }
+                    }
+                }
+            }
+
+            // 展開中
+            &.atom-dock-open {
+
+                // 表示領域
+                div.atom-dock-mask {
+
+                    background: none;
+
+                    // 本体ラッパー
+                    div.atom-dock-content-wrapper.right {
+
+                        // リサイズハンドル
+                        div.atom-dock-resize-handle.right.atom-dock-resize-handle-resizable {
+
+                            width : 4px;  // 横幅
+                        }
+
+                        // ペインラッパー
+                        atom-pane-container.panes {
+
+                            // ペイン本体
+                            atom-pane.pane {
+
+                                border : none;
+
+                                // タブバー
+                                ul.list-inline.tab-bar.inset-panel {
+
+                                    background-color : @rightPane-tabBar-bgcolor;         // 背景
+                                    border-bottom : solid 1px @rightPane-separate-color;  // エディタ部分との境界線
+                                    height : 34px;                                        // 高さ
+
+                                    // タブ
+                                    li.tab.sortable {
+
+                                        border-left : solid 1px @rightPane-tab-bdcolor;   // 境界線
+                                        border-right : solid 1px @rightPane-tab-bdcolor;  // 境界線
+                                        background : @rightPane-tab-bgcolor;              // 背景
+                                        color : @rightPane-tab-color;                     // 文字色
+                                        font-size : @rightPane-tab-font-size;             // 文字サイズ
+                                        font-family : @rightPane-tab-font-family;         // 文字フォント
+
+                                        // アイコン表示要素
+                                        &::before {
+
+                                            background : @rightPane-tab-bgcolor;  // 背景
+                                        }
+
+                                        // アイコンとタイトル
+                                        div.title.icon {
+
+                                            // アイコン
+                                            &::before {
+                                            }
+                                        }
+
+                                        // 閉じるアイコン
+                                        div.close-icon {
+
+                                            background : @rightPane-tab-bgcolor;  // 背景色
+                                            color : @rightPane-tab-color;         // 文字色
+                                        }
+
+                                        // 閉じるアイコン表示要素
+                                        &::after {
+
+                                            background : @rightPane-tab-bgcolor;  // 背景
+                                        }
+
+                                        // アクティブタブ
+                                        &.active {
+
+                                            background : @rightPane-activeTab-bgcolor;                       // アクティブタブの背景
+                                            border-bottom : solid 2px @rightPane-activeTab-indicator-color;  // アクティブタブの下部にアンダーライン
+                                            font-size : @rightPane-activeTab-font-size;                      // 文字サイズ
+                                            font-family : @rightPane-activeTab-font-family;                  // 文字フォント
+                                            font-style : italic;                                             // フォントスタイル
+                                            // font-weight : bold;                                              // 太字
+                                            // text-align : center;                                             // 中央揃え
+
+                                            // アイコン表示要素
+                                            &::before {
+
+                                                border-bottom : solid 2px @rightPane-activeTab-indicator-color;  // アクティブタブの下部にアンダーライン
+                                            }
+
+                                            // アイコンとタイトル
+                                            div.title.icon {
+
+                                                // アイコン
+                                                &::before {
+                                                }
+                                            }
+
+                                            // 閉じるアイコン
+                                            div.close-icon {
+                                            }
+
+                                            // 閉じるアイコン表示要素
+                                            &::after {
+
+                                                border-bottom : solid 2px @rightPane-activeTab-indicator-color;  // アクティブタブの下部にアンダーライン
+                                            }
+
+                                            // 未保存状態
+                                            &.modified {
+
+                                                // タイトル
+                                                div.title {
+                                                }
+
+                                                // 閉じるボタン
+                                                div.close-icon {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // アクティブペイン
+                                &.active {
+
+                                    // タブバー
+                                    ul.list-inline.tab-bar.inset-panel {
+
+                                        background : @rightActivePane-tabBar-bgcolor;         // 背景
+                                        border-top : solid 1px @pane-bdcolor;                 // ペイン境界線
+                                        border-bottom : solid 1px @rightPane-separate-color;  // エディタ部分との境界線
+
+                                        // タブ
+                                        li.tab.sortable {
+
+                                            background : @rightActivePane-tab-bgcolor;       // 背景
+                                            color : @rightActivePane-tab-color;              // 文字色
+                                            font-size : @rightActivePane-tab-font-size;      // 文字サイズ
+                                            font-family : @rightActivePane-tab-font-family;  // 文字フォント
+
+                                            // アイコン表示要素
+                                            &::before {
+
+                                                background : @rightActivePane-tab-bgcolor;  // 背景色
+                                            }
+
+                                            // アイコンとタイトル
+                                            div.title.icon {
+
+                                                // アイコン
+                                                &::before {
+                                                }
+                                            }
+
+                                            // 閉じるアイコン
+                                            div.close-icon {
+
+                                                background : @rightActivePane-tab-bgcolor;  // 背景色
+                                                color : @rightActivePane-tab-color;         // 文字色
+                                            }
+
+                                            // 閉じるアイコン表示要素
+                                            &::after {
+
+                                                background : @rightActivePane-tab-bgcolor;  // 背景色
+                                            }
+
+                                            // アクティブタブ
+                                            &.active {
+
+                                                background : @rightActivePane-activeTab-bgcolor;                      // アクティブタブの背景
+                                                border-bottom : solid 2px @rightActivePane-activeTab-indicator-color;  // アクティブタブの下部にアンダーライン
+                                                font-size : @rightActivePane-activeTab-font-size;                     // 文字サイズ
+                                                font-family : @rightActivePane-activeTab-font-family;                 // 文字フォント
+                                                font-style : italic;                                                  // フォントスタイル
+                                                // font-weight : bold;                                                   // 太字
+                                                // text-align : center;                                                  // 中央揃え
+
+                                                // アイコン表示要素
+                                                &::before {
+
+                                                    border-bottom : solid 2px @rightActivePane-activeTab-indicator-color;   // アクティブタブの下部にアンダーライン
+                                                }
+
+                                                // アイコンとタイトル
+                                                div.title.icon {
+
+                                                    // アイコン
+                                                    &::before {
+                                                    }
+                                                }
+
+                                                // 閉じるアイコン
+                                                div.close-icon {
+                                                }
+
+                                                // 閉じるアイコン表示要素
+                                                &::after {
+
+                                                    background : @rightActivePane-activeTab-bgcolor;                       // 背景
+                                                    border-bottom : solid 2px @rightActivePane-activeTab-indicator-color;  // アクティブタブ下線
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // 内容表示領域
+                                div.item-views {
+
+                                    background-color : transparent;        // 背景色
+                                    color : @rightPane-color;              // 全体の文字色
+                                    font-family : @rightPane-font-family;  // 全体の文字フォント
+
+                                    // タブとの境界
+                                    &::before {
+
+                                        display : none;
+                                        border : solid 1px @rightPane-separate-color;  // 境界線
+                                    }
+
+                                    // 全体のボタン要素
+                                    button.btn {
+
+                                        border : solid 1px @rightPane-btn-disable-bdcolor;  // 枠線
+                                        background : @rightPane-btn-disable-bgcolor;        // 背景色
+                                        color : @rightPane-btn-disable-color;               // 文字色
+                                        font-family : @rightPane-btn-disable-font-family;           // 文字フォント
+
+                                        // アイコン
+                                        &::before {
+
+                                            color : @rightPane-btn-disable-color;  // アイコン色
+                                        }
+
+                                        // 有効ボタン
+                                        &:enabled {
+
+                                            border : solid 1px @rightPane-btn-enable-bdcolor;  // 枠線
+                                            background : @rightPane-btn-enable-bgcolor;        // 背景色
+                                            color : @rightPane-btn-enable-color;               // 文字色
+
+                                            // アイコン
+                                            &::before {
+
+                                                color : @rightPane-btn-enable-color;  // アイコン色
+                                            }
+                                        }
+                                    }
+
+                                    // デバッガ表示要素ラッパー
+
+                                    // Git
+
+                                    // GitHubタブ
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // ツールパネル??
+        atom-panel.tool-panel {
+
+            // platformioのツールパネル
+            div.tool-bar.tool-bar-right.tool-bar-vertical {
+
+                border : solid 1px @pane-bdcolor;       // 枠線
+                background-color : @toolPanel-bgcolor;  // 背景色
+
+                // ボタン類全て
+                button {
+
+                    border : solid 1px @toolPanel-btn-enable-bdcolor;  // 枠線
+                    background-color : @toolPanel-btn-enable-bgcolor;  // 背景色
+                    color : @toolPanel-btn-enable-color;               // 文字色
+
+                    // ツールバーのデフォルトボタン
+                    &.btn.btn-default.tool-bar-btn {
+
+                        // アイコン
+                        &::before {
+
+                            font-size : @toolPanel-font-size;  // 文字サイズ
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

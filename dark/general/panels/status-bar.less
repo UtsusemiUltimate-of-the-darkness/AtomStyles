@@ -1,0 +1,47 @@
+@import "footerItem/file-info.less";                 // ファイル名
+@import "footerItem/cursor-position.less";           // カーソル行列位置
+@import "footerItem/line-ending-tile.less";          // 改行コード
+@import "footerItem/encoding-selector-status.less";  // エンコード
+@import "footerItem/grammar-selector-status.less";   // ファイルの種類
+@import "footerItem/git-statusBar.less";             // gitステータスボタン
+@import "footerItem/about-release-notes.less";       // リリースノート
+
+// ステータスバー全体
+status-bar.status-bar {
+
+    background-color : @statusBar-bgcolor;  // 背景色
+    font-size : @statusBar-font-size;       // 文字サイズ
+    color : @statusBar-color;               // 文字色
+    font-family : @statusBar-font-family;   // 文字フォント
+
+    // 可変幅要素
+    div.flexbox-repaint-hack {
+
+        // ステータスバー左側
+        div.status-bar-left {
+
+            // デバッガ
+            // ターミナル追加プラグイン
+            // ファイル名表示要素
+            // ステータスカウント
+            // 行，列番号表示要素
+        }
+
+        // ステータスバー右側
+        div.status-bar-right {
+
+            // ビジーシグナル
+            // パッケージ互換性エラー
+            // 改行コード
+            // アラート
+            // 文字コード表示要素
+            // ファイル種類表示要素
+            // バッテリー残量表示
+            // テレタイプ(画面共有プラグイン)
+            // github関連ファイル数表示要素
+            // パッケージアップデート数
+            // リリースノート
+            // atom clockプラグイン
+        }
+    }
+}

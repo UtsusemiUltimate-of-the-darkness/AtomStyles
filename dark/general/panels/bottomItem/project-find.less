@@ -1,0 +1,419 @@
+// プロジェクト内検索
+div.project-find.padded {
+
+    background-color : @bottomPane-bgcolor;  // 背景色
+    color : @bottomPane-color;               // 文字色
+
+    // ヘッダ
+    header.header {
+
+        border-bottom : solid 1px @bottomPane-separate-color;  // 境界線
+
+        // ヘッダ各要素
+        span.header-item {
+
+            // 右側
+            &.pull-right {
+
+                // 閉じるボタン
+                &.close-button {
+
+                    color : @bottomPane-btn-enable-color;  // 文字色
+
+                    // アイコン要素
+                    i.icon.icon-x.clickable {
+
+                        // アイコン
+                        &::before {
+
+                            margin : 0 0 4px 0;  // 余白(アイコンを中央揃え)
+                        }
+                    }
+                }
+
+                // オプション機能ボタン
+                &.options-label {
+
+                    margin : 0 0 5px 0;
+
+                    // 各要素
+                    span {
+
+                        color : @bottomPane-color;  // 文字色
+
+                        // 説明
+                        &.description {
+                        }
+
+                        // オプション
+                        &.options {
+                        }
+
+                        // ボタン類
+                        &.btn-group.btn-toggle.btn-group-options {
+
+                            // 全ボタン
+                            button.btn {
+
+                                border : solid 1px @bottomPane-btn-enable-bdcolor;  // 枠線
+                                background : @bottomPane-btn-enable-bgcolor;        // 背景
+                                color : @bottomPane-btn-enable-color;               // 文字色
+
+                                // 正規表現検索ボタン
+                                &.option-regex {
+
+                                    // アイコン要素
+                                    svg.icon {
+
+                                        // アイコン部分
+                                        use#find-and-replace-icon-regex {
+
+                                            // アイコン本体
+                                            svg#find-and-replace-icon-regex {
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // 大文字，小文字区別ボタン
+                                &.option-case-sensitive {
+
+                                    // アイコン要素
+                                    svg.icon {
+
+                                        // アイコン部分
+                                        use svg#find-and-replace-icon-case {
+                                        }
+                                    }
+                                }
+
+                                // 完全一致ボタン
+                                &.option-whole-word {
+
+                                    // アイコン要素
+                                    svg.icon {
+
+                                        // アイコン部分
+                                        use#find-and-replace-icon-word {
+
+                                            // アイコン本体
+                                            svg#find-and-replace-icon-word {
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // オプション機能適用時
+                                &.selected {
+
+                                    background : @bottomPane-btn-selected-bgcolor;  // 背景
+                                    color : @bottomPane-btn-selected-color;         // 文字色
+
+                                    // 正規表現検索ボタン
+                                    &.option-regex {
+
+                                        // アイコン要素
+                                        svg.icon {
+
+                                            // アイコン部分
+                                            use#find-and-replace-icon-regex {
+
+                                                // アイコン本体
+                                                svg#find-and-replace-icon-regex {
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // 大文字，小文字区別ボタン
+                                    &.option-case-sensitive {
+
+                                        // アイコン要素
+                                        svg.icon {
+
+                                            // アイコン部分
+                                            use svg#find-and-replace-icon-case {
+                                            }
+                                        }
+                                    }
+
+                                    // 完全一致ボタン
+                                    &.option-whole-word {
+
+                                        // アイコン要素
+                                        svg.icon {
+
+                                            // アイコン部分
+                                            use#find-and-replace-icon-word {
+
+                                                // アイコン本体
+                                                svg#find-and-replace-icon-word {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // 概要
+            &.description {
+
+                // メッセージ
+                span.subtle-info-message {
+
+                    color : @bottomPane-color;  // 文字色
+
+                    // ハイライト
+                    span.highlight {
+
+                        background-color : @bottomPane-highlight-bgcolor;  // 背景色
+                        color : @bottomPane-highlight-color;               // 文字色
+                    }
+                }
+            }
+        }
+    }
+
+    // 各要素
+    section.input-block {
+
+        // プログレスバー
+        progress.inline-block {
+
+            background-color : @bottomPane-progressBar-bgcolor;  // 背景色
+        }
+
+        // 進行状況表示要素
+        span.inline-block {
+        }
+
+        // 検索文字列入力欄とボタン
+        &.find-container {
+
+            // テキストボックスとボタン
+            div.input-block-item {
+
+                // テキストボックスラッパー
+                &.input-block-item--flex.editor-container {
+
+                    // テキストボックス部分
+                    atom-text-editor.editor.mini {
+
+                        border : solid 1px @bottomPane-textBox-bdcolor;  // テキストボックス枠線
+                        background-color : @bottomPane-textBox-bgcolor;  // テキストボックス背景色
+                        color : @bottomPane-textBox-color;               // テキストボックス文字色
+                        font-family : @bottomPane-textBox-font-family;   // テキストボックス文字フォント
+
+                        // スクロール可能要素
+                        div div.scroll-view {
+
+                            // 入力中の行
+                            div div.lines {
+
+                                // ハイライト全般
+                                div.highlights {
+
+                                    // 各ハイライト
+                                    div.highlight {
+
+                                        // 選択部分
+                                        &.selection {
+
+                                            // 選択中のテキスト
+                                            div.region.selection {
+
+                                                background-color : @bottomPane-textBox-selection-bgcolor !important;  // 背景色
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // プレスホルダー
+                                div.placeholder-text {
+
+                                    color : @bottomPane-textBox-placeholder-color;  // 文字色
+                                }
+
+                                // カーソル要素
+                                div.cursors {
+
+                                    // カーソル本体
+                                    div.cursor {
+
+                                        border-left : solid 1px @bottomPane-textBox-cursor-color;  // カーソルの形と色
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // ボタン類
+                div.btn-group {
+
+                    // 検索ボタン
+                    &.btn-group-find {
+
+                        // ボタン要素
+                        button.btn {
+
+                            border : solid 1px @bottomPane-btn-enable-bdcolor;  // 枠線
+                            background : @bottomPane-btn-enable-bgcolor;        // 背景
+                            color : @bottomPane-btn-enable-color;               // 文字色
+                        }
+                    }
+                }
+            }
+        }
+
+        // 置換文字列入力欄とボタン
+        &.replace-container {
+
+            // テキストボックスとボタン
+            div.input-block-item {
+
+                // テキストボックスラッパー
+                &.input-block-item--flex.editor-container {
+
+                    // テキストボックス部分
+                    atom-text-editor.editor.mini {
+
+                        border : solid 1px @bottomPane-textBox-bdcolor;  // テキストボックス枠線
+                        background-color : @bottomPane-textBox-bgcolor;  // テキストボックス背景色
+                        color : @bottomPane-textBox-color;               // テキストボックス文字色
+                        font-family : @bottomPane-textBox-font-family;   // テキストボックス文字フォント
+
+                        // スクロール可能要素
+                        div div.scroll-view {
+
+                            // 入力中の行
+                            div div.lines {
+
+                                // ハイライト全般
+                                div.highlights {
+
+                                    // 各ハイライト
+                                    div.highlight {
+
+                                        // 選択部分
+                                        &.selection {
+
+                                            // 選択中のテキスト
+                                            div.region.selection {
+
+                                                background-color : @bottomPane-textBox-selection-bgcolor !important;  // 背景色
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // プレスホルダー
+                                div.placeholder-text {
+
+                                    color : @bottomPane-textBox-placeholder-color;  // 文字色
+                                }
+
+                                // カーソル要素
+                                div.cursors {
+
+                                    // カーソル本体
+                                    div.cursor {
+
+                                        border-left : solid 1px @bottomPane-textBox-cursor-color;  // カーソルの形と色
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // ボタン類
+                div.btn-group {
+
+                    // 全て置換ボタン
+                    &.btn-group-replace-all {
+
+                        // ボタン要素
+                        button.btn {
+
+                            border : solid 1px @bottomPane-btn-enable-bdcolor;  // 枠線
+                            background : @bottomPane-btn-enable-bgcolor;        // 背景
+                            color : @bottomPane-btn-enable-color;               // 文字色
+
+                            // ボタン無効時
+                            &.disabled {
+
+                                border : solid 1px @bottomPane-btn-disable-bdcolor;  // 枠線
+                                background : @bottomPane-btn-disable-bgcolor;        // 背景
+                                color : @bottomPane-btn-disable-color;               // 文字色
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // 検索対象のファイルパス入力欄
+        &.paths-container {
+
+            // テキストボックスラッパー
+            div.input-block-item.editor-container {
+
+                // テキストボックス部分
+                atom-text-editor.editor.mini {
+
+                    border : solid 1px @bottomPane-textBox-bdcolor;  // テキストボックス枠線
+                    background-color : @bottomPane-textBox-bgcolor;  // テキストボックス背景色
+                    color : @bottomPane-textBox-color;               // テキストボックス文字色
+                    font-family : @bottomPane-textBox-font-family;   // テキストボックス文字フォント
+
+                    // スクロール可能部分
+                    div div.scroll-view {
+
+                        // 入力中の行
+                        div div.lines {
+
+                            // ハイライト全般
+                            div.highlights {
+
+                                // 各ハイライト
+                                div.highlight {
+
+                                    // 選択部分
+                                    &.selection {
+
+                                        // テキスト選択部分
+                                        div.region.selection {
+
+                                            background-color : @bottomPane-textBox-selection-bgcolor !important;  // 背景色
+                                        }
+                                    }
+                                }
+                            }
+
+                            // プレスホルダー
+                            div.placeholder-text {
+
+                                color : @bottomPane-textBox-placeholder-color;  // 文字色
+                            }
+
+                            // カーソル
+                            div.cursors {
+
+                                // カーソル本体
+                                div.cursor {
+
+                                    border-left : solid 1px @bottomPane-textBox-cursor-color;  // カーソルの形と色
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

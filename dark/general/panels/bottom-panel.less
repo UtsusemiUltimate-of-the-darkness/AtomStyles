@@ -1,0 +1,206 @@
+@import "bottomItem/find-and-replace.less";                    // 検索と置換
+@import "bottomItem/project-find.less";                        // プロジェクト内検索
+// その他プラグインはpluginsフォルダ内
+
+// 画面下部(ステータスバー以外)
+atom-panel-container.bottom {
+
+    border-right : solid 1px @pane-bdcolor;   // 右枠線
+    border-bottom : solid 1px @pane-bdcolor;  // 下枠線
+    border-collapse : collapse;               // 枠線の隙間
+    background : @bottomPane-background;     // 背景
+    background-repeat : no-repeat;            // 背景のリピート
+    background-size : cover;                  // 背景画像の大きさ
+    background-position : right top;          // 背景画像の位置
+    margin : 0 0 0 0;                         // 上右下左の外側の余白
+    padding : 0 0 0 0;                        // 上右下左の内側の余白
+    // background-color : @bottomPane-bgcolor;  // 背景色
+
+    // 画面下部のパネル(ツールパネルとターミナル)
+    atom-panel.tool-panel.panel-bottom {
+
+        border-top : solid 1px @pane-bdcolor;
+        background-color: @bottomPane-bgcolor;  // 背景色
+
+        // ターミナル追加プラグイン"platformio-ide-terminal terminal-view"
+        // バッファ内文字列検索(検索と置換)
+        // プロジェクト内検索
+    }
+
+    // 画面下部ドック
+    atom-dock.bottom {
+
+        border-top : solid 1px @pane-bdcolor;
+
+        // 画面下部ドック格納要素
+        div.atom-dock-inner.bottom {
+
+            // 開閉ボタン領域
+            div.atom-dock-toggle-button.bottom {
+
+                // 開閉ボタン本体
+                div.atom-dock-toggle-button-inner.bottom {
+
+                    border : solid 1px @bottomPane-toggleBtn-bdcolor;  // 枠線
+                    background-color : @bottomPane-toggleBtn-bgcolor;  // 背景色
+                    color : @bottomPane-toggleBtn-color;               // アイコン色
+                }
+            }
+
+            // 展開中
+            &.atom-dock-open {
+
+                // 表示領域
+                div.atom-dock-mask {
+
+                    background-color : @bottomPane-bgcolor;  // 背景色
+
+                    // 本体ラッパー
+                    div.atom-dock-content-wrapper.bottom {
+
+                        background-color : transparent;  // 背景色
+
+                        // リサイズハンドル
+                        div.atom-dock-resize-handle.bottom {
+
+                            height : 5px;  // 縦幅
+                            // background-color: red;
+                        }
+
+                        // ペインラッパー
+                        atom-pane-container.panes {
+
+                            background-color : transparent;  // 背景色
+
+                            // ペイン本体
+                            atom-pane.pane {
+
+                                border : none;                   // 枠線
+                                background-color : transparent;  // 背景色
+
+                                // タブバー
+                                ul.list-inline.tab-bar.inset-panel {
+
+                                    border-bottom : solid 1px @bottomPane-separate-color;  // エディタ部分との境界線
+                                    background-color : @bottomPane-tabBar-bgcolor;        // 背景
+
+                                    // タブ
+                                    li.tab.sortable {
+
+                                        border-left : solid 1px @bottomPane-tab-bdcolor;   // 左境界線
+                                        border-right : solid 1px @bottomPane-tab-bdcolor;  // 右境界線
+                                        background-color : @bottomPane-tab-bgcolor;        // 背景
+                                        color : @bottomPane-tab-color;                     // 文字色
+                                        font-size : @bottomPane-tab-font-size;             // 文字サイズ
+                                        font-family : @bottomPane-tab-font-family;         // 文字フォント
+
+                                        // アイコン表示要素
+                                        &::before {
+
+                                            background-color : @bottomPane-tab-bgcolor;  // 背景
+                                        }
+
+                                        // アイコンとタイトル
+                                        div.title.icon {
+
+                                            // アイコン
+                                            &::before {
+                                            }
+                                        }
+
+                                        // 閉じるアイコン
+                                        div.close-icon {
+
+                                            background-color : @bottomPane-tab-bgcolor;  // 背景色
+                                            color : @bottomPane-tab-color;               // 文字色
+                                        }
+
+                                        // 閉じるアイコン表示要素
+                                        &::after {
+
+                                            background-color : @bottomPane-tab-bgcolor;  // 背景
+                                        }
+
+                                        // アクティブタブ
+                                        &.active {
+
+                                            background-color : @bottomPane-activeTab-bgcolor;                 // アクティブタブの背景
+                                            color : @bottomPane-activeTab-color;                              // アクティブタブ文字色
+                                            border-bottom : solid 2px @bottomPane-activeTab-indicator-color;  // アクティブタブの下部にアンダーライン
+                                            font-size : @bottomPane-activeTab-font-size;                                       // 文字サイズ
+                                            font-family : @bottomPane-activeTab-font-family;                             // 文字フォント
+                                            font-style : italic;                                    // フォントスタイル
+                                            // font-weight : bold;                                     // 太字
+                                            // text-align : center;                                    // 中央揃え
+
+                                            // アイコン表示要素
+                                            &::before {
+
+                                                border-bottom : solid 2px @bottomPane-activeTab-indicator-color;   // アクティブタブの下部にアンダーライン
+                                            }
+
+                                            // アイコンとタイトル
+                                            div.title.icon {
+
+                                                // アイコン
+                                                &::before {
+                                                }
+                                            }
+
+                                            // 閉じるアイコン
+                                            div.close-icon {
+                                            }
+
+                                            // 閉じるアイコン表示要素
+                                            &::after {
+
+                                                border-bottom : solid 2px @bottomPane-activeTab-indicator-color;   // アクティブタブの下部にアンダーライン
+                                            }
+
+                                            // 未保存状態
+                                            &.modified {
+
+                                                // タイトル
+                                                div.title {
+                                                }
+
+                                                // 閉じるボタン
+                                                div.close-icon {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // 項目要素領域
+                                div.item-views {
+
+                                    background-color : @bottomPane-bgcolor;  // 背景色
+
+                                    // Linterパネル
+
+                                    // Watch Expressions, Console, Diagnostics画面
+                                    nuclide-react-mount-root {
+
+                                        // Watch Expressions画面
+                                        // console画面
+                                        // Diagnostics画面
+                                        // key-binding-resolver画面
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // 開閉ボタン領域
+                div.atom-dock-toggle-button.bottom {
+
+                    // 開閉ボタン本体
+                    div.atom-dock-toggle-button-inner.bottom {
+                    }
+                }
+            }
+        }
+    }
+}

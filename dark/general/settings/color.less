@@ -1,0 +1,497 @@
+// 魔法少女シンタックステーマ色
+@very-light-gray : #c5c8c6;
+@very-light-gray : #EBEAE8;
+@light-gray :      #9D95A0;
+@gray :            #66606A;
+@dark-gray :       #5D5D55;
+// @very-dark-gray :  #3B363D;
+@very-dark-gray :  #1a1a1a;
+
+@madoka-vibrant : hsl(338, 80%, 62%);
+@homura-vibrant : hsl(271, 81%, 67%);
+@sayaka-vibrant : hsl(227, 100%, 74%);
+@mami-vibrant :   hsl(50, 74%, 61%);
+@kyouko-vibrant : hsl(351, 90%, 52%);
+
+@sayaka-off : @sayaka-vibrant;
+@madoka-off : #FBD6DE;
+
+@madoka : #FF628D;
+@homura : @homura-vibrant;
+@sayaka : @sayaka-vibrant;
+@mami :   #FFDD79;
+@kyouko : #FF1B3E;
+@nagisa : #F2EDF3;
+
+// 自作色
+@lazurite : #021750;  // 主に背景色
+@gold :     #E5B217;  // 主に文字色
+
+// 略称
+// border-color -> bdcolor
+// background-color -> bgcolor
+// button -> btns
+
+/**
+ * 全体共通
+ */
+@workspace-bgcolor :                            @lazurite;                                   // 作業スペース背景色
+@pane-bdcolor :                                 @sayaka;                                     // ペイン境界線色
+@separate-color :                               @madoka;                                     // 各区切り線
+@pane-bgcolor :                                 rgba( 02 , 17 , 80 , 0.5 );                  // 各ペイン背景色
+@pane-color :                                   @gold;                                       // 各ペイン文字色
+@tabBar-bgcolor :                               rgba( 02 , 17 , 80 , 0.217 );                // タブバー背景色
+@tab-bdcolor :                                  transparent;                                 // 各タブ境界線
+@tab-bgcolor :                                  rgba( 02 , 17 , 80 , 0.217 );                // 各タブ背景色
+@tab-color :                                    @pane-color;                                 // 各タブ
+// エディタに関する設定
+@editor-bgcolor :                               transparent;                                 // エディタ背景色
+@cursor-color :                                 @gold;                                       // カーソル色
+@cursor-horaizontalLine-color :                 @homura;                                     // カーソル水平線色
+@cursor-columnLine-color :                      rgba( 173, 102, 239, 0.70 );                 // カーソル垂直線色
+@selection-bgcolor :                            rgba( 173 , 102 , 239 , 0.217 );             // 選択文字背景色
+// タブ設定
+@activeTab-bdcolor :                            @tab-bdcolor;                                // アクティブタブ境界線色
+@activeTab-bgcolor :                            @tab-bgcolor;                                // アクティブタブ背景色
+@activeTab-color :                              @tab-color;                                  // アクティブタブ文字色
+@activeTab-indicator-color :                    @nagisa;                                     // アクティブタブ下線色
+@activePane-tabBar-bgcolor :                    @tabBar-bgcolor;                             // アクティブペインタブバー背景色
+@activePane-tab-bdcolor :                       @tab-bdcolor;                                // アクティブペインタブ境界線
+@activePane-tab-bgcolor :                       @tab-bgcolor;                                // アクティブペインタブ背景色
+@activePane-tab-color :                         @tab-color;                                  // アクティブペインタブ文字色
+@activePane-activeTab-bdcolor :                 @tab-bdcolor;                                // アクティブペインアクティブタブ境界線色
+@activePane-activeTab-bgcolor :                 @tab-bgcolor;                                // アクティブペインアクティブタブ背景色
+@activePane-activeTab-color :                   @tab-color;                                  // アクティブペインアクティブタブ文字色
+@activePane-activeTab-indicator-color :         @mami;                                       // アクティブペインアクティブタブ
+// ボタン類設定
+@btn-enable-bdcolor :                           @homura;                                     // 有効ボタン枠線
+@btn-enable-bgcolor :                           rgba( 02 , 17 , 50 , 0.4 );                  // 有効ボタン背景色
+@btn-enable-color :                             @gold;                                       // 有効ボタン文字色
+@btn-disable-bdcolor :                          rgba( 173 , 102 , 239 , 0.7 );               // 無効ボタン枠線
+@btn-disable-bgcolor :                          @btn-enable-bgcolor;                         // 無効ボタン背景色
+@btn-disable-color :                            rgba( 229 , 181 , 60 , 0.5 );                // 無効ボタン文字色
+@btn-selected-bgcolor :                         @gold;                                       // 選択中ボタン背景色
+@btn-selected-color :                           @lazurite;                                   // 選択中ボタン文字色
+// テキストボックス
+@textBox-bdcolor :                              @gold;                                       // テキストボックス枠線色
+@textBox-bgcolor :                              rgba( 02 , 17 , 50 , 0.17 );                 // テキストボックス背景色
+@textBox-color :                                @pane-color;                                 // テキストボックス文字色
+@textBox-placeholder-color :                    rgba( 229, 181, 60, 0.5 );                   // テキストボックスプレスホルダー文字色
+@textBox-cursor-color :                         @cursor-color;                               // カーソル色
+@textBox-selection-bgcolor :                    @selection-bgcolor;                          // 選択文字列背景色
+// 表
+@table-bdcolor :                                @pane-color;                                 // 表枠線色
+@table-bgcolor :                                rgba( 02, 17, 80, 0.20 );                    // 表背景色
+@table-color :                                  @pane-color;                                 // 表文字色
+// リストアイテム
+@list-item-separate-color :                     rgba( 229, 181, 60, 0.5 );                   // リストアイテム境界線
+@list-item-bgcolor :                            rgba( 02, 17, 80, 0.4 );                     // リストアイテム背景色
+// その他
+@pane-resize-handle-color :                     @lazurite;                                   // 画面リサイズハンドル色
+
+// 各ペインごとの設定
+/**
+ * 左ペイン
+ */
+@leftPane-bgcolor :                             @pane-bgcolor;                               // 左ペイン背景色
+@leftPane-separate-color :                      @separate-color;                             // 左ペイン分割線
+@leftPane-color :                               @pane-color;                                 // 左ペイン文字色
+@leftPane-resize-handle-color :                 @pane-resize-handle-color;                   // 左ペインリサイズハンドル色
+// 開閉ボタン
+@leftPane-toggleBtn-bdcolor :                   @btn-enable-bdcolor;                         // 開閉ボタン枠線
+@leftPane-toggleBtn-bgcolor :                   @btn-enable-bgcolor;                         // 背景ボタン背景色
+@leftPane-toggleBtn-color :                     @btn-enable-color;                           // 開閉ボタン文字色
+// タブ
+@leftPane-tabBar-bgcolor :                      @tabBar-bgcolor;                             // 左ペインタブバー背景色
+@leftPane-tab-bdcolor :                         @tab-bdcolor;                                // 左ペインタブ境界線
+@leftPane-tab-bgcolor :                         @tab-bgcolor;                                // 左ペインタブ背景色
+@leftPane-tab-color :                           @tab-color;                                  // 左ペインタブ文字色
+@leftPane-activeTab-bgcolor :                   @activeTab-bgcolor;                          // 左ペインアクティブタブ背景色
+@leftPane-activeTab-color :                     @activeTab-color;                            // 左ペインアクティブタブ文字色
+@leftPane-activeTab-indicator-color :           @activeTab-indicator-color;                  // 左ペインアクティブタブ下線色
+@leftActivePane-activeTab-bgcolor :             @activePane-activeTab-bgcolor;               // 左アクティブペインアクティブタブ背景色
+@leftActivePane-activeTab-color :               @activePane-activeTab-color;                 // 左アクティブペインアクティブタブ文字色
+@leftActivePane-activeTab-indicator-color :     @activePane-activeTab-indicator-color;       // 左アクティブペインアクティブタブ下線色
+// ツリービュー
+@treeView-bgcolor :                             @leftPane-bgcolor;                           // ツリービュー背景色
+@treeView-color :                               @leftPane-color;                             // ツリービュー文字色
+@treeView-selectItem-bdcolor :                  @mami;                                       // ツリービュー選択項目枠線
+@treeView-selectItem-bgcolor :                  transparent;                                 // ツリービュー選択項目背景色
+@treeView-selectItem-color :                    @leftPane-color;                             // ツリービュー選択項目文字色
+
+/**
+ * 中央ペイン
+ */
+// 行番号
+@gutter-bgcolor :                               rgba( 02 , 17 , 80 , 0.7 );                  // 行番号要素背景色
+@gutter-separate-color :                        @gold;                                       // 行番号要素とブックマーク表示要素境界線色
+@lineNumber-color :                             @gold;                                       // 行番号文字色
+@cursorLineNumber-bgcolor :                     rgba( 173 , 102 , 239 , 0.70 );              // カーソルがある行の行番号背景色
+@cursorLineNumber-color :                       @lineNumber-color;                           // カーソルがある行番号色
+@lineNumber-selected-bgcolor :                  @cursorLineNumber-bgcolor;                   // 選択中の行番号背景色
+@lineNumber-selected-color :                    @cursorLineNumber-color;                     // 選択中の行番号文字色
+@bookmarkIcon-color :                           @gold;                                       // ブックマークアイコン色
+// ハイライト
+@highlight-selected-match-bdcolor :             @nagisa;                                     // 同文字列の枠線
+@highlight-selected-match-bgcolor :             rgba( 02, 17, 80, 0.217 );                   // 同文字列選択時の背景
+@highlight-pair-bdcolor :                       @nagisa;                                     // 対になる文字の枠線色
+@find-string-bdcolor :                          @nagisa;                                     // 文字列検索で同文字列の枠線
+@find-string-bgcolor :                          transparent;                                 // 文字列検索一致文字列背景色
+@comment-color :                                #198002;                                     // コメント文字色
+// 全角スペース
+@ideographic-space-bgcolor :                    @nagisa;                                     // 全角スペースの背景色
+@ideographic-space-color :                      @kyouko;                                     // 全角スペースの文字色
+// ブラウザープラスプラグイン
+@browserPlus-toolBar-separate-color :           @separate-color;                             // ツールバーとの境界線
+@browserPlus-toolBar-bgcolor :                  @btn-enable-bgcolor;                         // ツールバーボタン背景色
+@browserPlus-btn-bdcolor :                      @btn-enable-bdcolor;                         // ツールバーボタン枠線
+@browserPlus-btn-bgcolor :                      transparent;                                 // ツールバーボタン背景色
+@browserPlus-btn-disable-color :                @btn-disable-color;                          // ツールバー無効ボタン文字色
+@browserPlus-btn-enable-color :                 @btn-enable-color;                           // ツールバー有効ボタン文字色
+@browserPlus-textBox-bdcolor :                  @textBox-bdcolor;                            // テキスボックス枠線色
+@browserPlus-textBox-bgcolor :                  @textBox-bgcolor;                            // テキスボックス背景色
+@browserPlus-textBox-color :                    @textBox-color;                              // テキスボックス文字色
+// イメージビュープラグイン
+@imageView-separate-color :                     @separate-color;                             // イメージビュー分割線色
+@imageView-bgcolor :                            @pane-bgcolor;                               // イメージビュー背景色
+@imageView-btn-bdcolor :                        @btn-enable-bdcolor;                         // イメージビューボタン枠線色
+@imageView-btn-bgcolor :                        @btn-enable-bgcolor;                         // イメージビューボタン背景色
+@imageView-btn-color :                          @btn-enable-color;                           // イメージビューボタン文字色
+
+/**
+ * 下ペイン
+ */
+@bottomPane-bgcolor :                           @pane-bgcolor;                               // 下ペイン背景色
+@bottomPane-separate-color :                    @separate-color;                             // 下ペイン分割線
+@bottomPane-color :                             @pane-color;                                 // 下ペイン文字色
+@bottomPane-highlight-color :                   @nagisa;                                     // 下ペインハイライト文字色
+@bottomPane-highlight-bgcolor :                 @selection-bgcolor;                          // 下ペインハイライト背景色
+@bottomPane-progressBar-bgcolor :               @sayaka;                                     // プログレスバー背景色
+// 開閉ボタン
+@bottomPane-toggleBtn-bdcolor :                 @btn-enable-bdcolor;                         // 開閉ボタン枠線色
+@bottomPane-toggleBtn-bgcolor :                 @btn-enable-bgcolor;                         // 開閉ボタン背景色
+@bottomPane-toggleBtn-color :                   @btn-enable-color;                           // 開閉ボタン文字色
+// タブ
+@bottomPane-tabBar-bgcolor :                    @tabBar-bgcolor;                             // 下ペインタブバー背景色
+@bottomPane-tab-bdcolor :                       @tab-bdcolor;                                // 下ペインタブ境界線
+@bottomPane-tab-bgcolor :                       @tab-bgcolor;                                // 下ペインタブ背景色
+@bottomPane-tab-color :                         @tab-color;                                  // 下ペインタブ文字色
+@bottomPane-activeTab-bgcolor :                 @activeTab-bgcolor;                          // 下ペインアクティブタブ背景色
+@bottomPane-activeTab-color :                   @activeTab-color;                            // 下ペインアクティブタブ文字色
+@bottomPane-activeTab-indicator-color :         @activeTab-indicator-color;                  // 下ペインアクティブタブ下線色
+@bottomActivePane-activeTab-bgcolor :           @activePane-activeTab-bgcolor;               // 下アクティブペインアクティブタブ背景色
+@bottomActivePane-activeTab-color :             @activePane-activeTab-color;                 // 下アクティブペインアクティブタブ文字色
+@bottomActivePane-activeTab-indicator-color :   @activePane-activeTab-indicator-color;       // 下アクティブペインアクティブタブ下線色
+// ツールパネル テキストボックス
+@bottomPane-textBox-bdcolor :                   @textBox-bdcolor;                            // ツールパネルテキストボックス枠線
+@bottomPane-textBox-bgcolor :                   @textBox-bgcolor;                            // ツールパネルテキストボックス背景色
+@bottomPane-textBox-color :                     @textBox-color;                              // ツールパネルテキストボックス文字色
+@bottomPane-textBox-placeholder-color :         @textBox-placeholder-color;                  // ツールパネルテキストボックスプレスホルダー文字色
+@bottomPane-textBox-cursor-color :              @textBox-cursor-color;                       // ツールパネルテキストボックスカーソル色
+@bottomPane-textBox-selection-bgcolor :         @textBox-selection-bgcolor;                  // ツールパネルテキストボックス選択文字列背景色
+// ツールパネル ボタン
+@bottomPane-btn-enable-bdcolor :                @btn-enable-bdcolor;                         // 有効ボタン枠線
+@bottomPane-btn-enable-bgcolor :                @btn-enable-bgcolor;                         // 有効ボタン背景色
+@bottomPane-btn-enable-color :                  @btn-enable-color;                           // 有効ボタン文字色
+@bottomPane-btn-disable-bdcolor :               @btn-disable-bdcolor;                        // 無効ボタン枠線
+@bottomPane-btn-disable-bgcolor :               @btn-disable-bgcolor;                        // 無効ボタン背景色
+@bottomPane-btn-disable-color :                 @btn-disable-color;                          // 無効ボタン文字色
+@bottomPane-btn-selected-bgcolor :              @btn-selected-bgcolor;                       // 選択中ボタン背景色
+@bottomPane-btn-selected-color :                @btn-selected-color;                         // 選択中ボタン文字色
+// ターミナルプラグイン
+@terminal-bgcolor :                             transparent;                                 // ターミナル背景色
+@terminal-separate-color :                      @bottomPane-separate-color;                  // ターミナル分割線
+@terminal-color :                               @bottomPane-color;                           // ターミナル文字色
+@terminal-cursor-bgcolor :                      transparent;                                 // ターミナルカーソル背景色
+@terminal-cursor-color :                        @cursor-color;                               // ターミナルカーソル色
+@terminal-btn-enable-bdcolor :                  @bottomPane-btn-enable-bdcolor;              // ターミナル有効ボタン枠線
+@terminal-btn-enable-bgcolor :                  @bottomPane-btn-enable-bgcolor;              // ターミナル有効ボタン背景色
+@terminal-btn-enable-color :                    @bottomPane-btn-enable-color;                // ターミナル有効ボタン文字色
+@terminal-btn-disable-bdcolor :                 @bottomPane-btn-disable-bdcolor;             // ターミナル無効ボタン枠線
+@terminal-btn-disable-bgcolor :                 @bottomPane-btn-disable-bgcolor;             // ターミナル無効ボタン背景色
+@terminal-btn-disable-color :                   @bottomPane-btn-disable-color;               // ターミナル無効ボタン文字色
+@terminal-btn-selected-bgcolor :                @bottomPane-btn-selected-bgcolor;            // ターミナル選択中ボタン背景色
+@terminal-btn-selected-color :                  @bottomPane-btn-selected-color;              // ターミナル選択中ボタン文字色
+// Linterプラグイン
+@linter-table-bdcolor :                         @table-bdcolor;                              // 表枠線色
+@linter-table-bgcolor :                         @table-bgcolor;                              // 表背景色
+@linter-table-color :                           @table-color;                                // 表文字色
+// Watch Expressionsプラグイン
+@watchExpressions-color :                       @settingsView-color;                         // Watch Expressions文字色
+@watchExpressions-listItem-separate-color :     @list-item-separate-color;                   // リストアイテム境界線
+@watchExpressions-listItem-bgcolor :            @list-item-bgcolor;                          // リストアイテム背景色
+@watchExpressions-btn-enable-bgcolor :          @bottomPane-btn-enable-bgcolor;              // ボタン背景色
+@watchExpressions-btn-enable-color :            @bottomPane-btn-enable-color;                // ボタン文字色
+@watchExpressions-textBox-bdcolor :             @bottomPane-textBox-bdcolor;                 // テキストボックス枠線色
+@watchExpressions-textBox-bgcolor :             @bottomPane-textBox-bgcolor;                 // テキストボックス背景色
+@watchExpressions-textBox-color :               @bottomPane-textBox-color;                   // テキストボックス文字色
+@watchExpressions-textBox-placeholder-color :   @bottomPane-textBox-placeholder-color;       // テキストボックスプレスホルダー文字色
+@watchExpressions-textBox-cursor-color :        @bottomPane-textBox-cursor-color;            // カーソル色
+@watchExpressions-textBox-selection-bgcolor :   @bottomPane-textBox-selection-bgcolor;       // 選択文字列背景色
+// console
+@console-textBox-bdcolor :                      @bottomPane-textBox-bdcolor;                 // テキストボックス枠線色
+@console-textBox-bgcolor :                      @bottomPane-textBox-bgcolor;                 // テキストボックス背景色
+@console-textBox-color :                        @bottomPane-textBox-color;                   // テキストボックス文字色
+@console-textBox-placeholder-color :            @bottomPane-textBox-placeholder-color;       // テキストボックスプレスホルダー文字色
+@console-textBox-cursor-color :                 @bottomPane-textBox-cursor-color;            // カーソル色
+@console-textBox-selection-bgcolor :            @bottomPane-textBox-selection-bgcolor;       // 選択文字列背景色
+@console-btn-enable-bdcolor :                   @bottomPane-btn-enable-bdcolor;              // console有効ボタン枠線
+@console-btn-enable-bgcolor :                   @bottomPane-btn-enable-bgcolor;              // console有効ボタン背景色
+@console-btn-enable-color :                     @bottomPane-btn-enable-color;                // console有効ボタン文字色
+@console-btn-disable-bdcolor :                  @bottomPane-btn-disable-bdcolor;             // console無効ボタン枠線
+@console-btn-disable-bgcolor :                  @bottomPane-btn-disable-bgcolor;             // console無効ボタン背景色
+@console-btn-disable-color :                    @bottomPane-btn-disable-color;               // console無効ボタン文字色
+@console-btn-selected-bgcolor :                 @bottomPane-btn-selected-bgcolor;            // console選択中ボタン背景色
+@console-btn-selected-color :                   @bottomPane-btn-selected-color;              // console選択中ボタン文字色
+// Diagnostics
+@diagnostics-color :                            @bottomPane-color;                           // diagnostics-文字色
+@diagnostics-btn-enable-bdcolor :               @bottomPane-btn-enable-bdcolor;              // diagnostics有効ボタン枠線
+@diagnostics-btn-enable-bgcolor :               @bottomPane-btn-enable-bgcolor;              // diagnostics有効ボタン背景色
+@diagnostics-btn-enable-color :                 @bottomPane-btn-enable-color;                // diagnostics有効ボタン文字色
+@diagnostics-btn-disable-bdcolor :              @bottomPane-btn-disable-bdcolor;             // diagnostics無効ボタン枠線
+@diagnostics-btn-disable-bgcolor :              @bottomPane-btn-disable-bgcolor;             // diagnostics無効ボタン背景色
+@diagnostics-btn-disable-color :                @bottomPane-btn-disable-color;               // diagnostics無効ボタン文字色
+@diagnostics-btn-selected-bgcolor :             @bottomPane-btn-selected-bgcolor;            // diagnostics選択中ボタン背景色
+@diagnostics-btn-selected-color :               @bottomPane-btn-selected-color;              // diagnostics選択中ボタン文字色
+@diagnostics-icon-error-color :                 @kyouko;                                     // エラーアイコン色
+@diagnostics-icon-warning-color :               @mami;                                       // 注意アイコン色
+@diagnostics-icon-info-color :                  @sayaka;                                     // 情報アイコン色
+@diagnostics-icon-light-color :                 @mami;                                       // 電球アイコン色
+@diagnostics-icon-gear-color :                  @bottomPane-color;                           // ギアアイコン色
+@diagnostics-textBox-bdcolor :                  @bottomPane-textBox-bdcolor;                 // テキストボックス枠線色
+@diagnostics-textBox-bgcolor :                  @bottomPane-textBox-bgcolor;                 // テキストボックス背景色
+@diagnostics-textBox-color :                    @bottomPane-textBox-color;                   // テキストボックス文字色
+@diagnostics-textBox-placeholder-color :        @bottomPane-textBox-placeholder-color;       // テキストボックスプレスホルダー文字色
+@diagnostics-textBox-cursor-color :             @bottomPane-textBox-cursor-color;            // カーソル色
+@diagnostics-textBox-selection-bgcolor :        @bottomPane-textBox-selection-bgcolor;       // 選択文字列背景色
+@diagnostics-table-bdcolor :                    @table-bdcolor;                              // 表枠線色
+@diagnostics-table-bgcolor :                    @table-bgcolor;                              // 表背景色
+@diagnostics-table-color :                      @table-color;                                // 表文字色
+// key binding resolver
+@keyBindingResolver-keystroke-bdcolor :         @sayaka;                                     // key binding resolverキーストローク枠線
+@keyBindingResolver-keystroke-bgcolor :         transparent;                                 // key binding resolverキーストローク背景色
+@keyBindingResolver-keystroke-color :           @gold;                                       // key binding resolverキーストローク文字色
+@keyBindingResolver-table-bdcolor :             @table-bdcolor;                              // key binding resolver表枠線
+@keyBindingResolver-table-bgcolor :             @table-bgcolor;                              // key binding resolver表背景色
+@keyBindingResolver-table-color :               @table-color;                                // key binding resolver表文字色
+@keyBindingResolver-used-color :                @table-color;                                // key binding resolver表文字色
+@keyBindingResolver-unused-color :              rgba( 229 , 178 , 23 , 0.6 );                // key binding resolver表文字色
+@keyBindingResolver-unmatched-color :           rgba( 229 , 178 , 23 , 0.3 );                // key binding resolver表文字色
+@keyBindingResolver-copyIcon-color :            @sayaka;                                     // key binding resolverコピーアイコン色
+
+/**
+ * 右ペイン
+ */
+@rightPane-bgcolor :                            @pane-bgcolor;                               // 右ペイン背景色
+@rightPane-separate-color :                     @separate-color;                             // 右ペイン分割線
+@rightPane-color :                              @pane-color;                                 // 右ペイン文字色
+// ボタン
+@rightPane-toggleBtn-bdcolor :                  @btn-enable-bdcolor;                         // 開閉ボタン枠線色
+@rightPane-toggleBtn-bgcolor :                  @btn-enable-bgcolor;                         // 開閉ボタン背景色
+@rightPane-toggleBtn-color :                    @btn-enable-color;                           // 開閉ボタン文字色
+@rightPane-btn-enable-bdcolor :                 @btn-enable-bdcolor;                         // 有効ボタン枠線
+@rightPane-btn-enable-bgcolor :                 @btn-enable-bgcolor;                         // 有効ボタン背景色
+@rightPane-btn-enable-color :                   @btn-enable-color;                           // 有効ボタン文字色
+@rightPane-btn-disable-bdcolor :                @btn-disable-bdcolor;                        // 無効ボタン枠線
+@rightPane-btn-disable-bgcolor :                @btn-disable-bgcolor;                        // 無効ボタン背景色
+@rightPane-btn-disable-color :                  @btn-disable-color;                          // 無効ボタン文字色
+@rightPane-btn-selected-bgcolor :               @btn-selected-bgcolor;                       // 選択中ボタン背景色
+@rightPane-btn-selected-color :                 @btn-selected-color;                         // 選択中ボタン文字色
+// タブ
+@rightPane-tabBar-bgcolor :                     @tabBar-bgcolor;                             // 右ペインタブバー背景色
+@rightPane-tab-bdcolor :                        @tab-bdcolor;                                // 右ペインタブ境界線
+@rightPane-tab-bgcolor :                        @tab-bgcolor;                                // 右ペインタブ背景色
+@rightPane-tab-color :                          @tab-color;                                  // 右ペインタブ文字色
+@rightPane-activeTab-bgcolor :                  @activeTab-bgcolor;                          // 右ペインアクティブタブ背景色
+@rightPane-activeTab-color :                    @activeTab-color;                            // 右ペインアクティブタブ文字色
+@rightPane-activeTab-indicator-color :          @activeTab-indicator-color;                  // 右ペインアクティブタブ下線色
+@rightActivePane-tabBar-bgcolor :               @rightPane-tabBar-bgcolor;                   // 右アクティブペインタブバー背景色
+@rightActivePane-tab-bgcolor :                  @activePane-tab-bgcolor;                     // 右アクティブペインタブ背景色
+@rightActivePane-tab-color :                    @activePane-tab-color;                       // 右アクティブペインタブ文字色
+@rightActivePane-activeTab-bgcolor :            @activePane-activeTab-bgcolor;               // 右アクティブペインアクティブタブ背景色
+@rightActivePane-activeTab-color :              @activePane-activeTab-color;                 // 右アクティブペインアクティブタブ文字色
+@rightActivePane-activeTab-indicator-color :    @activePane-activeTab-indicator-color;       // 右アクティブペインアクティブタブ下線色
+// テキストボックス
+@rightPane-textBox-bdcolor :                    @textBox-bdcolor;                            // テキストボックス枠線色
+@rightPane-textBox-bgcolor :                    @textBox-bgcolor;                            // テキストボックス背景色
+@rightPane-textBox-color :                      @textBox-color;                              // テキストボックス文字色
+@rightPane-textBox-placeholder-color :          @textBox-placeholder-color;                  // テキストボックスプレスホルダー文字色
+@rightPane-textBox-cursor-color :               @textBox-cursor-color;                       // カーソル色
+@rightPane-textBox-selection-bgcolor :          @textBox-selection-bgcolor;                  // 選択文字列背景色
+// デバッガペイン
+@debuggerPane-tabBar-bgcolor :                  @rightPane-tabBar-bgcolor;                   // タブバー背景色
+@debuggerPane-tab-bdcolor :                     @rightPane-tab-bdcolor;                      // タブ境界線
+@debuggerPane-tab-bgcolor :                     @rightPane-tab-bgcolor;                      // debuggerペインタブ背景色
+@debuggerPane-tab-color :                       @rightPane-tab-color;                        // debuggerペインタブ文字色
+@debuggerPane-activeTab-bgcolor :               @rightPane-activeTab-bgcolor;                // debuggerペインアクティブタブ背景色
+@debuggerPane-activeTab-color :                 @rightPane-activeTab-color;                  // debuggerペインアクティブタブ文字色
+@debuggerPane-activeTab-indicator-color :       @rightPane-activeTab-indicator-color;        // debuggerペインアクティブタブ下線色
+@debuggerActivePane-tabBar-bgcolor :            @debuggerPane-tabBar-bgcolor;                // debuggerペインタブバー背景色
+@debuggerActivePane-tab-bgcolor :               @rightActivePane-tab-bgcolor;                // debuggerアクティブペインタブ背景色
+@debuggerActivePane-tab-color :                 @rightActivePane-tab-color;                  // debuggerアクティブペインタブ文字色
+@debuggerActivePane-activeTab-bgcolor :         @rightActivePane-activeTab-bgcolor;          // debuggerアクティブペインアクティブタブ背景色
+@debuggerActivePane-activeTab-color :           @rightActivePane-activeTab-color;            // debuggerアクティブペインアクティブタブ文字色
+@debuggerActivePane-activeTab-indicator-color : @rightActivePane-activeTab-indicator-color;  // debuggerアクティブペインアクティブタブ下線色
+
+// ブレークポイントペイン
+@breakpointsPane-color :                        @rightPane-color;                            // 文字色
+@breakpointsPane-toggleBtn-color :              @rightPane-color;                            // 展開ボタン
+@breakpointsPane-listItem-separate-color :      @list-item-separate-color;                   // リスト要素境界線
+@breakpointsPane-listItem-bgcolor :             @list-item-bgcolor;                          // リスト要素背景色
+@breakpointsPane-checkbox-bdcolor :             @rightPane-color;                            // チェックボックス枠線色
+@breakpointsPane-checkbox-bgcolor :             rgba( 02 , 17 , 50 , 0.40 );                 // チェックボックス背景色
+@breakpointsPane-checkbox-color :               @rightPane-color;                            // チェックボックスマーク色
+@breakpointsPane-btn-enable-bdcolor :           @rightPane-btn-enable-bdcolor;               // 有効ボタン枠線
+@breakpointsPane-btn-enable-bgcolor :           @rightPane-btn-enable-bgcolor;               // 有効ボタン背景色
+@breakpointsPane-btn-enable-color :             @rightPane-btn-enable-color;                 // 有効ボタン文字色
+@breakpointsPane-btn-disable-bdcolor :          @rightPane-btn-disable-bdcolor;              // 無効ボタン枠線
+@breakpointsPane-btn-disable-bgcolor :          @rightPane-btn-disable-bgcolor;              // 無効ボタン背景色
+@breakpointsPane-btn-disable-color :            @rightPane-btn-disable-color;                // 無効ボタン文字色
+@breakpointsPane-btn-selected-bgcolor :         @rightPane-btn-selected-bgcolor;             // 選択中ボタン背景色
+@breakpointsPane-btn-selected-color :           @rightPane-btn-selected-color;               // 選択中ボタン文字色
+// gitパネル
+@git-icon-color :                               @rightPane-color;                            // gitアイコン色
+@gitPanel-title-bgcolor :                       @rightPane-bgcolor;                          // gitパネルタイトル背景色
+@gitPanel-title-icon-color :                    @rightPane-color;                            // gitパネルタイトルアイコン色
+@gitPanel-textBox-bdcolor :                     @rightPane-textBox-bdcolor;                  // テキストボックス枠線色
+@gitPanel-textBox-bgcolor :                     @rightPane-textBox-bgcolor;                  // テキストボックス背景色
+@gitPanel-textBox-color :                       @rightPane-textBox-color;                    // テキストボックス文字色
+@gitPanel-textBox-placeholder-color :           @rightPane-textBox-placeholder-color;        // テキストボックスプレスホルダー文字色
+@gitPanel-textBox-cursor-color :                @rightPane-textBox-cursor-color;             // カーソル色
+@gitPanel-textBox-selection-bgcolor :           @rightPane-textBox-selection-bgcolor;        // 選択文字列背景色
+// githubパネル
+@githubPanel-textBox-bdcolor :                  @rightPane-textBox-bdcolor;                  // テキストボックス枠線色
+@githubPanel-textBox-bgcolor :                  @rightPane-textBox-bgcolor;                  // テキストボックス背景色
+@githubPanel-textBox-color :                    @rightPane-textBox-color;                    // テキストボックス文字色
+@githubPanel-textBox-placeholder-color :        @rightPane-textBox-placeholder-color;        // テキストボックスプレスホルダー文字色
+@githubPanel-textBox-cursor-color :             @rightPane-textBox-cursor-color;             // カーソル色
+@githubPanel-textBox-selection-bgcolor :        @rightPane-textBox-selection-bgcolor;        // 選択文字列背景色
+// ツールパネル
+@toolPanel-bgcolor :                            transparent;                                 // ツールパネル背景色
+@toolPanel-btn-enable-bdcolor :                 @rightPane-btn-enable-bdcolor;               // 有効ボタン枠線
+@toolPanel-btn-enable-bgcolor :                 @rightPane-btn-enable-bgcolor;               // 有効ボタン背景色
+@toolPanel-btn-enable-color :                   @rightPane-btn-enable-color;                 // 有効ボタン文字色
+
+/**
+ * ステータスバー
+ */
+@statusBar-bgcolor :                            @lazurite;                                   // ステータスバー背景色
+@statusBar-color :                              @pane-color;                                 // ステータスバー文字色
+@statusBar-elem-bgcolor :                       rgba( 02 , 17 , 50 , 0.3 );                  // ステータスバーアイコン背景色
+@statusBar-passtiveIcon-color :                 rgba(  229 , 181 , 60 , 0.5 );               // ステータスバー非アクティブアイコン色
+@statusBar-activeIcon-color :                   @statusBar-color;                            // ステータスバーアクティブアイコン色
+@statusBar-hoverIcon-bgcolor :                  @lazurite;                                   // ステータスバーマウスオンアイコン背景色
+@statusBar-icon-error-color :                   @kyouko;                                     // エラーアイコン色
+@statusBar-icon-warning-color :                 @mami;                                       // 注意アイコン色
+@statusBar-icon-info-color :                    @sayaka;                                     // 情報アイコン色
+
+// 設定パネル全般
+@settingsView-bgcolor :                         @pane-bgcolor;                               // 設定画面背景色
+@settingsView-separate-color :                  @separate-color;                             // 設定画面分割色
+@settingsView-menu-bgcolor :                    @settingsView-bgcolor;                       // 設定画面メニューパネル背景色
+@settingsView-panel-bgcolor :                   @settingsView-bgcolor;                       // 設定画面設定パネル背景色
+@settingsView-color :                           @pane-color;                                 // 設定画面文字色
+// メニュー
+@settingsView-menu-color :                      @settingsView-color;                         // 設定画面メニューパネル文字色
+@settingsView-menu-separate-color :             @sayaka;                                     // 設定画面メニューパネル分割線色
+@settingsView-menu-activeItem-bdcolor :         @mami;                                       // 設定画面アクティブメニュー項目境界線色
+@settingsView-menu-activeItem-bgcolor :         rgba( 02 , 17 , 80 , 0.40 );                 // 設定画面アクティブメニュー項目背景色
+@settingsView-menu-activeItem-color :           @settingsView-menu-color;                    // 設定画面アクティブメニュー項目文字色
+// アイコン
+@settingsView-icon-color :                      @settingsView-color;                         // 設定画面アイコン色
+@settingsView-icon-set-color :                  @settingsView-color;                         // 設定画面設定アイコン色
+@settingsView-icon-code-color :                 @settingsView-color;                         // 設定画面コーディングアイコン色
+@settingsView-icon-link-color :                 @settingsView-color;                         // 設定画面リンクアイコン色
+@settingsView-icon-keyboard-color :             @settingsView-color;                         // 設定画面キーボードアイコン色
+@settingsView-icon-package-color :              @settingsView-color;                         // 設定画面パッケージアイコン色
+@settingsView-icon-paintcan-color :             @settingsView-color;                         // 設定画面ペイントカンアイコン色
+@settingsView-icon-cloud-color :                @nagisa;                                     // 設定画面雲アイコン色
+@settingsView-icon-plus-color :                 @settingsView-color;                         // 設定画面＋アイコン色
+@settingsView-icon-question-color :             @settingsView-color;                         // 設定画面？アイコン色
+@settingsView-icon-warning-color :              @mami;                                       // 設定画面注意アイコン色
+@settingsView-icon-denger-color :               @kyouko;                                     // 設定画面エラーアイコン色
+@settingsView-icon-star-color :                 @mami;                                       // 設定画面星アイコン色
+@settingsView-icon-info-color :                 @sayaka;                                     // 設定画面情報アイコン色
+@settingsView-icon-heart-color :                @kyouko;                                     // 設定画面ハートアイコン色
+@settingsView-icon-gear-color :                 @settingsView-color;                         // ギアアイコン色
+@settingsView-icon-trash-color :                @settingsView-color;                         // ゴミ箱アイコン色
+@settingsView-icon-play-color :                 @settingsView-color;                         // 再生アイコン色
+@settingsView-icon-pause-color :                @settingsView-color;                         // 停止アイコン色
+@settingsView-icon-bug-color :                  @settingsView-color;                         // バグアイコン色
+@settingsView-icon-squirrel-color :             @settingsView-color;                         // リスアイコン(更新アイコン)色
+@settingsView-icon-law-color :                  @settingsView-color;                         // 天秤アイコン色
+@settingsView-icon-external-color :             @settingsView-color;                         // 外部リンクアイコン色
+@settingsView-icon-monitor-color :              @settingsView-color;                         // 画面アイコン色
+@settingsView-icon-dashboard-color :            @settingsView-color;                         // ダッシュボードアイコン色
+@settingsView-icon-book-color :                 @settingsView-color;                         // 本アイコン色
+// タイトル
+@settingsView-title-bgcolor :                   transparent;                                 // 設定画面タイトル背景色
+@settingsView-title-color :                     @settingsView-color;                         // 設定画面タイトル文字色
+@settingsView-subtitle-bgcolor :                transparent;                                 // 設定画面サブタイトル背景色
+@settingsView-subtitle-color :                  @settingsView-color;                         // 設定画面サブタイトル文字色
+@settingsView-subtitle-icon-color :             @settingsView-subtitle-color;                // 設定画面サブタイトルアイコン色
+@settingsView-subtitle-btn-color :              @settingsView-subtitle-color;                // 設定画面サブタイトルボタン色
+// テキストボックス
+@settingsView-textBox-bdcolor :                 @textBox-bdcolor;                            // 設定画面テキストボックス枠線色
+@settingsView-textBox-bgcolor :                 @textBox-bgcolor;                            // 設定画面テキストボックス背景色
+@settingsView-textBox-color :                   @textBox-color;                              // 設定画面テキストボックス文字色
+@settingsView-textBox-placeholder-color :       @textBox-placeholder-color;                  // 設定画面テキストボックスプレスホルダー文字色
+@settingsView-textBox-cursor-color :            @textBox-cursor-color;                       // 設定画面テキストボックスカーソル色
+@settingsView-textBox-selection-bgcolor :       @textBox-selection-bgcolor;                  // 設定画面テキストボックス選択文字列背景色
+// ボタン類
+@settingsView-toggleBtn-color :                 @settingsView-subtitle-color;                // 設定画面要素開閉ボタン色
+@settingsView-btn-enable-bdcolor :              @btn-enable-bdcolor;                         // 設定画面有効ボタン枠線色
+@settingsView-btn-enable-bgcolor :              @btn-enable-bgcolor;                         // 設定画面有効ボタン背景色
+@settingsView-btn-enable-color :                @btn-enable-color;                           // 設定画面有効ボタン文字色
+@settingsView-btn-icon-color :                  @btn-enable-color;                           // 設定画面ボタンアイコン色
+@settingsView-btn-disable-bdcolor :             @btn-disable-bdcolor;                        // 設定画面無効ボタン枠線色
+@settingsView-btn-disable-bgcolor :             @btn-disable-bgcolor;                        // 設定画面無効ボタン背景色
+@settingsView-btn-disable-color :               @btn-disable-color;                          // 設定画面無効ボタン文字色
+@settingsView-btn-selected-bgcolor :            @btn-selected-bgcolor;                       // 設定画面選択中ボタン背景色
+@settingsView-btn-selected-color :              @btn-selected-color;                         // 設定画面選択中ボタン文字色
+@settingsView-btn-info-enable-bdcolor :         @sayaka;                                     // 設定画面情報ボタン枠線色
+@settingsView-btn-info-enable-bgcolor :         @settingsView-btn-enable-bgcolor;            // 設定画面情報ボタン背景色
+// チェックボックス
+@settingsView-checkbox-bdcolor :                @settingsView-color;                         // 設定画面チェックボックス枠線色
+@settingsView-checkbox-bgcolor :                rgba( 02 , 17 , 50 , 0.40 );                 // 設定画面チェックボックス背景色
+@settingsView-checkbox-color :                  @settingsView-color;                         // 設定画面チェックボックスマーク色
+// プルダウンメニュー
+@settingsView-pullDownMenu-bdcolor :            @settingsView-color;                         // 設定画面プルダウンメニュー枠線色
+@settingsView-pullDownMenu-bgcolor :            rgba( 02 , 17 , 50 , 0.40 );                 // 設定画面プルダウンメニュー背景色
+@settingsView-pullDownMenu-color :              @settingsView-color;                         // 設定画面プルダウンメニュー文字色
+// 表
+@settingsView-table-bdcolor :                   @table-bdcolor;                              // 設定画面表枠線色
+@settingsView-table-bgcolor :                   @table-bgcolor;                              // 設定画面表背景色
+@settingsView-table-color :                     @table-color;                                // 設定画面表文字色
+// アラート類
+@settingsView-alert-bgcolor :                   transparent;                                 // 設定画面アラート背景色
+@settingsView-alert-info-bdcolor :              @sayaka;                                     // 設定画面情報アラート枠線色
+@settingsView-alert-info-bgcolor :              @settingsView-alert-bgcolor;                 // 設定画面情報アラート背景色
+@settingsView-alert-info-color :                @sayaka;                                     // 設定画面情報アラート文字色
+@settingsView-alert-warning-bdcolor :           @mami;                                       // 設定画面注意アラート枠線色
+@settingsView-alert-warning-bgcolor :           @settingsView-alert-bgcolor;                 // 設定画面注意アラート背景色
+@settingsView-alert-warning-color :             @mami;                                       // 設定画面注意アラート文字色
+@settingsView-alert-danger-bdcolor :            @kyouko;                                     // 設定画面危険アラート枠線色
+@settingsView-alert-danger-bgcolor :            @settingsView-alert-bgcolor;                 // 設定画面危険アラート背景色
+@settingsView-alert-danger-color :              @kyouko;                                     // 設定画面危険アラート文字色
+@settingsView-alert-error-bdcolor :             @kyouko;                                     // 設定画面エラーアラート枠線色
+@settingsView-alert-error-bgcolor :             rgba( 02 , 17 , 50 , 0.60 );                 // 設定画面エラーアラート背景色
+@settingsView-alert-error-color :               @kyouko;                                     // 設定画面エラーアラート文字色
+// パッケージカード
+@settingsView-packageCard-bdcolor :             @settingsView-color;                         // 設定画面パッケージカード枠線色
+@settingsView-packageCard-bgcolor :             rgba( 02 , 17 , 50 , 0.40 );                 // 設定画面パッケージカード背景色
+@settingsView-packageCard-color :               @settingsView-color;                         // 設定画面パッケージカード文字色
+@settingsView-packageCard-title-color :         @settingsView-packageCard-color;             // 設定画面パッケージカードタイトル色
+@settingsView-packageCard-deprecate-bdcolor :   @kyouko;                                     // 設定画面廃止予定パッケージカード枠線色
+@settingsView-packageCard-deprecate-bgcolor :   transparent;                                 // 設定画面廃止予定パッケージカード背景色
+@settingsView-packageCard-deprecate-color :     @kyouko;                                     // 設定画面廃止予定パッケージカード文字色
+@settingsView-enablePackage-indicator-color :   rgba( 17 , 202 , 80 , 1.00 );                // 設定画面有効パッケージインジケーター色
+@settingsView-disablePackage-indicator-color :  @mami;                                       // 設定画面無効パッケージインジケーター色
+// リンク
+@settingsView-link-color :                      @sayaka;                                     // 設定画面リンク文字色
+// カウンター
+@settingsView-counter-bgcolor :                 rgba( 02 , 17 , 50 , 0.30 );                 // 設定画面カウンター背景色
+@settingsView-counter-color :                   @settingsView-color;                         // 設定画面カウンター文字色
+// ハイライト
+@settingsView-highlight-bgcolor :               transparent;                                 // 設定画面ハイライト背景色
+@settingsView-highlight-color :                 @nagisa;                                     // 設定画面ハイライト文字色

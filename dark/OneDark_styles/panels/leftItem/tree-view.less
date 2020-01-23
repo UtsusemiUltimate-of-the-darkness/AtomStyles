@@ -1,0 +1,102 @@
+// ツリービュー
+&.tree-view {
+
+    background-color : @treeView-bgcolor;  // 背景色
+
+    // フォーカス項目
+    &:focus {
+
+        // 選択されている項目
+        .selected {
+
+            // 各要素
+            &.list-item > .name,
+            &.list-nested-item > .list-item > .name,
+            &.list-nested-item > .header:before {
+
+                color : @treeView-selectItem-color;  // 文字色
+            }
+
+            // 選択項目
+            &:before {
+
+                background : @treeView-selectItem-bgcolor;  // 背景色
+            }
+        }
+    }
+
+    // 階層表示リスト
+    ol {
+
+        // 各要素
+        li {
+
+            font-size : @treeView-font-size;  // 文字サイズ
+            margin : 3px 0;    // 余白
+
+            // フォルダ名称と展開ボタン
+            div.header.list-item {
+
+                color : @treeView-color;  // 文字色
+
+                // 展開ボタン
+                &::before {
+
+                    color : @treeView-color;  // アイコン色
+                }
+
+                // フォルダ名称
+                span {
+
+                    color : @treeView-color;
+
+                    // アイコン
+                    &::before {
+
+                        color : @treeView-color;
+                    }
+                }
+            }
+
+            span {
+
+                color : @treeView-color;
+
+                // アイコン
+                &::before {
+
+                    color : @treeView-color;
+                }
+            }
+
+            // 選択している
+            &.selected {
+
+                font-size : @treeView-selectItem-font-size;  // 文字サイズ
+
+                // 選択している項目
+                &::before {
+
+                    background-color : @treeView-selectItem-bgcolor;         // 背景色
+                    border-top : solid 1px @treeView-selectItem-bdcolor;     // 上枠線
+                    border-bottom : solid 1px @treeView-selectItem-bdcolor;  // 下枠線
+                    color : @treeView-selectItem-color;                      // 文字色
+                }
+
+                // 各項目の名称
+                div {
+
+                    color : @treeView-selectItem-color;
+
+                    // 展開ボタン
+                    &::before {
+
+                        color : @treeView-selectItem-color;  // 文字色
+                    }
+
+                    //
+                }
+            }
+        }
+    }
+}

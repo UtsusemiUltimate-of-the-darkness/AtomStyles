@@ -1,0 +1,306 @@
+@import "breakpoints-pane.less";  // ブレークポイントペイン
+
+// デバッガ表示要素ラッパー
+nuclide-react-mount-root.debugger-container {
+
+    // デバッグ機能要素
+    nuclide-react-mount-root {
+
+        // ペインラッパー
+        atom-pane-container.panes {
+
+            // 縦に並んだペイン
+            atom-pane-axis.vertical.pane-column {
+
+                // 各ペイン
+                atom-pane.pane {
+
+                    // タブバー
+                    ul.list-inline.tab-bar.inset-panel {
+
+                        background-color : @tabBar-bgcolor;         // 背景
+                        border-top : solid 1px @pane-bdcolor;       // ペイン境界線
+                        border-bottom : solid 1px @separate-color;  // エディタ部分との境界線
+
+                        // タブ
+                        li.tab.sortable {
+
+                            border-left : solid 1px @tab-bdcolor;   // 境界線
+                            border-right : solid 1px @tab-bdcolor;  // 境界線
+                            background-color : @tab-bgcolor;        // 背景
+                            color : @tab-color;                     // 文字色
+                            font-size : @tab-font-size;             // 文字サイズ
+                            font-family : @tab-font-family;         // 文字フォント
+
+                            // アイコン表示要素
+                            &::before {
+
+                                background-color : @tab-bgcolor;  // 背景
+                            }
+
+                            // アイコンとタイトル
+                            div.title.icon {
+
+                                // アイコン
+                                &::before {
+                                }
+                            }
+
+                            // 閉じるアイコン
+                            div.close-icon {
+
+                                background-color : @tab-bgcolor;  // 背景色
+                                color : @tab-color;               // 文字色
+                            }
+
+                            // 閉じるアイコン表示要素
+                            &::after {
+
+                                background-color : @tab-bgcolor;  // 背景
+                            }
+
+                            // アクティブタブ
+                            &.active {
+
+                                background-color : @activeTab-bgcolor;                 // アクティブタブの背景
+                                border-bottom : solid 2px @activeTab-indicator-color;  // アクティブタブの下部にアンダーライン
+                                font-size : @activeTab-font-size;                      // 文字サイズ
+                                font-family : @tab-font-family;                        // 文字フォント
+                                font-style : italic;                                   // フォントスタイル
+                                // font-weight : bold;                                    // 太字
+                                // text-align : center;                                   // 中央揃え
+
+                                // アイコン表示要素
+                                &::before {
+
+                                    border-bottom : solid 2px @activeTab-indicator-color;   // アクティブタブの下部にアンダーライン
+                                }
+
+                                // アイコンとタイトル
+                                div.title.icon {
+
+                                    // アイコン
+                                    &::before {
+                                    }
+                                }
+
+                                // 閉じるアイコン
+                                div.close-icon {
+                                }
+
+                                // 閉じるアイコン表示要素
+                                &::after {
+
+                                    border-bottom : solid 2px @activeTab-indicator-color;   // アクティブタブの下部にアンダーライン
+                                }
+
+                                // 未保存状態
+                                &.modified {
+
+                                    // タイトル
+                                    div.title {
+                                    }
+
+                                    // 閉じるボタン
+                                    div.close-icon {
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // アクティブペイン
+                    &.active {
+
+                        // タブバー
+                        ul.list-inline.tab-bar.inset-panel {
+
+                            background-color : @tabBar-bgcolor;         // 背景
+                            border-top : solid 1px @pane-bdcolor;       // ペイン境界線
+                            border-bottom : solid 1px @separate-color;  // エディタ部分との境界線
+
+                            // タブ
+                            li.tab.sortable {
+
+                                background : @tab-bgcolor;       // 背景
+                                color : @tab-color;              // 文字色
+                                font-size : @tab-font-size;      // 文字サイズ
+                                font-family : @tab-font-family;  // 文字フォント
+
+                                // アイコン表示要素
+                                &::before {
+
+                                    background-color : @tab-bgcolor;  // 背景色
+                                }
+
+                                // アイコンとタイトル
+                                div.title.icon {
+
+                                    // アイコン
+                                    &::before {
+                                    }
+                                }
+
+                                // 閉じるアイコン
+                                div.close-icon {
+
+                                    background-color : @tab-bgcolor;  // 背景色
+                                    color : @tab-color;               // 文字色
+                                }
+
+                                // 閉じるアイコン表示要素
+                                &::after {
+
+                                    background-color : @tab-bgcolor;  // 背景色
+                                }
+
+                                // アクティブタブ
+                                &.active {
+
+                                    background-color : @activeTab-bgcolor;                            // アクティブタブの背景
+                                    border-bottom : solid 2px @activePane-activeTab-indicator-color;  // アクティブタブの下部にアンダーライン
+                                    font-size : @activeTab-font-size;                                 // 文字サイズ
+                                    font-family : @tab-font-family;                                   // 文字フォント
+                                    font-style : italic;                                              // フォントスタイル
+                                    // font-weight : bold;                                               // 太字
+                                    // text-align : center;                                              // 中央揃え
+
+                                    // アイコン表示要素
+                                    &::before {
+
+                                        border-bottom : solid 2px @activePane-activeTab-indicator-color;  // アクティブタブの下部にアンダーライン
+                                    }
+
+                                    // アイコンとタイトル
+                                    div.title.icon {
+
+                                        // アイコン
+                                        &::before {
+                                        }
+                                    }
+
+                                    // 閉じるアイコン
+                                    div.close-icon {
+                                    }
+
+                                    // 閉じるアイコン表示要素
+                                    &::after {
+
+                                        background-color : @activeTab-bgcolor;                            // 背景色
+                                        border-bottom : solid 2px @activePane-activeTab-indicator-color;  // アクティブタブの下部にアンダーライン
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // 内容表示領域
+                    div.item-views {
+
+                        // デバッガラッパー
+                        nuclide-react-mount-root.debugger-container {
+
+                            // デバッガ表示領域
+                            div.debugger-container-new {
+
+                                // デバッガヘッダ
+                                div.debugger-section-header {
+                                }
+
+                                // コントロール部
+                                div.debugger-section-header.debugger-controls-section {
+
+                                    border : none;
+
+                                    // ボタン表示要素ラッパー
+                                    div.debugger-stepping-component {
+
+                                        // ボタン類表示要素
+                                        div.debugger-stepping-buttongroup.btn-group.nuclide-btn-group {
+
+                                            // ボタン類
+                                            button.btn {
+
+                                                border : solid 1px @btn-disable-bdcolor;  // 枠線
+                                                background : @btn-disable-bgcolor;        // 背景色
+                                                color : @btn-disable-color;               // 文字色
+
+                                                // ボタンのアイコン類
+                                                div {
+
+                                                    // 停止ボタン
+                                                    &.debugger-stepping-playpause-button {
+
+                                                        // アイコン要素
+                                                        span.icon-playback-pause {
+
+                                                            // アイコン本体
+                                                            &::before {
+                                                            }
+                                                        }
+                                                    }
+
+                                                    // step over, step into, step outボタン
+                                                    svg {
+
+                                                        fill : currentColor;  // 文字色
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // debugger内容
+                                div.debugger-pane-content {
+
+                                    color : @rightPane-color;              // 文字色
+                                    font-family : @rightPane-font-family;  // 文字フォント
+
+                                    // デバッガ状態通知部
+                                    div.debugger-state-notice {
+
+                                        // 状態
+                                        span {
+
+                                            color : @rightPane-color;              // 文字色
+                                            font-family : @rightPane-font-family;  // 文字フォント
+                                        }
+                                    }
+                                }
+
+                                // ボタン類表示領域
+                                div.padded {
+
+                                    // 各ボタン要素
+                                    button.btn.nuclide-ui-truncated-button {
+
+                                        border : solid 1px @btn-enable-bdcolor;  // 枠線色
+                                        background : @btn-enable-bgcolor;        // 背景色
+                                        color : @btn-enable-color;               // 文字色
+
+                                        // アイコン付き
+                                        &.icon {
+
+                                            // デバッガアイコン付き
+                                            &.icon-nuclicon-debugger {
+
+                                                // アイコン本体
+                                                &::before {
+
+                                                    color : @btn-enable-color;  // アイコン色
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // ブレークポイントペイン
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

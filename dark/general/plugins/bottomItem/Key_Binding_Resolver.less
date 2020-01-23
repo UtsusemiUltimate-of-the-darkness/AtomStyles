@@ -1,0 +1,159 @@
+// key binding resolver画面
+div.key-binding-resolver {
+
+    // ヘッダ
+    div.panel-heading {
+
+        border : none;             // 分割線
+        background : transparent;  // 背景
+
+        // 押下キー
+        span.keystroke {
+
+            // ハイライト
+            &.highlight-info {
+
+                border : solid 1px @keyBindingResolver-keystroke-bdcolor;  // 枠線
+                background-color : @keyBindingResolver-keystroke-bgcolor;  // 背景
+                color : @keyBindingResolver-keystroke-color;               // 文字色
+            }
+        }
+    }
+
+    // 本体
+    div.panel-body {
+
+        // 表
+        table.table-condensed {
+
+            border : solid 1px @keyBindingResolver-table-bdcolor;  // 枠線
+            background-color : @keyBindingResolver-table-bgcolor;  // 背景
+
+            // 表の行
+            tr {
+
+                border : solid 1px @keyBindingResolver-table-bdcolor;  // 枠線
+
+                // 使用
+                &.used {
+
+                    color : @keyBindingResolver-used-color;  // 文字色
+
+                    // 各セル
+                    td {
+
+                        // コピーアイコン表示セル
+                        &.copy {
+
+                            // コピーアイコン表示要素
+                            span.icon.icon-clippy {
+
+                                // アイコン
+                                &::before {
+
+                                    color : @keyBindingResolver-copyIcon-color;  // アイコン色
+                                }
+                            }
+                        }
+
+                        // コマンドセル
+                        &.command {
+
+                            // アイコン
+                            &::before {
+                            }
+                        }
+
+                        // csonファイルセレクタ
+                        &.selector {
+                        }
+
+                        // csonファイルソール
+                        &.source {
+                        }
+                    }
+                }
+
+                // 非使用
+                &.unused {
+
+                    color : @keyBindingResolver-unused-color;  // 文字色
+
+                    // 各セル
+                    td {
+
+                        // コピーアイコン表示セル
+                        &.copy {
+
+                            // コピーアイコン表示要素
+                            span.icon.icon-clippy {
+
+                                // アイコン
+                                &::before {
+
+                                    color : @keyBindingResolver-copyIcon-color;  // アイコン色
+                                }
+                            }
+                        }
+
+                        // コマンドセル
+                        &.command {
+
+                            // アイコン
+                            &::before {
+                            }
+                        }
+
+                        // csonファイルセレクタ
+                        &.selector {
+                        }
+
+                        // csonファイルソール
+                        &.source {
+                        }
+                    }
+                }
+
+                // 不一致
+                &.unmatched {
+
+                    color : @keyBindingResolver-unmatched-color;  // 文字色
+
+                    // 各セル
+                    td {
+
+                        // コピーアイコン表示セル
+                        &.copy {
+
+                            // コピーアイコン表示要素
+                            span.icon.icon-clippy {
+
+                                // アイコン
+                                &::before {
+
+                                    color : @keyBindingResolver-copyIcon-color;  // アイコン色
+                                }
+                            }
+                        }
+
+                        // コマンドセル
+                        &.command {
+
+                            // アイコン
+                            &::before {
+                            }
+                        }
+
+                        // csonファイルセレクタ
+                        &.selector {
+                        }
+
+                        // csonファイルソール
+                        &.source {
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

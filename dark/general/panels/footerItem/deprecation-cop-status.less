@@ -1,0 +1,24 @@
+// アラート
+div.deprecation-cop-status.inline-block.text-warning {
+
+    background-color : @status-bar-elem-bgcolor;  // 背景色
+
+    // マウスオン
+    &:hover {
+
+        background-color : @statusBar-hoverIcon-bgcolor;  // 背景色
+    }
+
+    // アイコン
+    span.icon.icon-alert::before {
+
+        color : @warning-icon-color;  // アイコン色
+    }
+
+    // 注意数
+    span.deprecation-number {
+
+        color : @status-bar-color;                  // 文字色
+        font-family : @status-bar-font-family;  // 文字フォント
+    }
+}

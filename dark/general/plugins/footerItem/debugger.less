@@ -1,0 +1,30 @@
+// デバッガ
+div.inline-block {
+
+    background-color : @statusBar-elem-bgcolor;  // アイコン背景色
+
+    // マウスオン
+    &:hover {
+
+        background-color : @statusBar-hoverIcon-bgcolor !important;
+    }
+
+    // アイコン類
+    span a.diagnostics-status-bar-highlight {
+
+        color : @statusBar-color;  // 文字色
+        font-family : @statusBar-font-family;  // 文字フォント
+
+        // エラー
+        span.icon.icon-nuclicon-error::before {
+
+            color : @statusBar-icon-error-color;  // アイコン色
+        }
+
+        // 注意
+        span.icon.icon-nuclicon-warning::before {
+
+            color : @statusBar-icon-warning-color;  // アイコン色
+        }
+    }
+}

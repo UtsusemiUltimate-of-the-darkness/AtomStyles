@@ -1,0 +1,262 @@
+// Diagnostics画面
+&.diagnostics-ui {
+
+    // Diagnostics表示領域
+    div {
+
+        // 上部ツールバー
+        div.nuclide-ui-toolbar.nuclide-ui-toolbar--top {
+
+            border-bottom : solid 1px @bottomPane-separate-color;
+
+            // 左部
+            div.nuclide-ui-toolbar__left {
+
+                // ボタングループ表示領域
+                div.inline-block.btn-group.nuclide-btn-group {
+
+                    // 各ボタン
+                    button.btn.icon {
+
+                        border : solid 1px @diagnostics-btn-enable-bdcolor;  // 枠線
+                        background : @diagnostics-btn-enable-bgcolor;        // 背景色
+                        color : @diagnostics-btn-enable-color;               // 文字色
+
+                        // 選択中
+                        &.selected {
+
+                            background : @diagnostics-btn-selected-bgcolor;  // 背景色
+                            color : @diagnostics-btn-selected-color;         // 文字色
+                        }
+
+                        // エラーアイコン
+                        &.icon-nuclicon-error {
+
+                            color : @diagnostics-icon-error-color;  // アイコン色
+                        }
+
+                        // 注意アイコン
+                        &.icon-nuclicon-warning {
+
+                            color : @diagnostics-icon-warning-color;  // アイコン色
+                        }
+
+                        // 情報アイコン
+                        &.icon-info {
+
+                            color : @diagnostics-icon-info-color;  // アイコン色
+                        }
+
+                        // 電球アイコン
+                        &.icon-nuclicon-lightbulb-filled {
+
+                            color : @diagnostics-icon-light-color;  // アイコン色
+                        }
+                    }
+
+                    // テキストボックス
+                    atom-text-editor.nuclide-ui-regexp-filter-input.atom-text-editor-sm.editor.mini {
+
+                        border : solid 1px @diagnostics-textBox-bdcolor;  // 枠線
+                        background-color : @diagnostics-textBox-bgcolor;  // 背景色
+                        color : @diagnostics-textBox-color;               // 文字色
+                        padding : 0;                                      // 内側からの余白
+                        font-family : @diagnostics-textBox-font-family;   // 文字フォント
+
+                        // スクロール可能部分ラッパー
+                        div {
+
+                            border : none;  // 枠線なし
+
+                            // スクロール可能部分
+                            div.scroll-view {
+
+                                // テキストボックス部分
+                                div div.lines {
+
+                                    // ハイライト全般
+                                    div.highlights {
+
+                                        // ハイライト部分
+                                        div.highlight.selection {
+
+                                            // テキスト選択部分
+                                            div.region.selection {
+
+                                                background-color : @diagnostics-textBox-selection-bgcolor;  // 背景色
+                                            }
+                                        }
+                                    }
+
+                                    // 入力行
+                                    div div.line {
+
+                                        // 入力されている文字列
+                                        span span.syntax--text.syntax--plain.syntax--null-grammar {
+                                        }
+                                    }
+
+                                    // プレスホルダー
+                                    div.placeholder-text {
+
+                                        color : @diagnostics-textBox-placeholder-color;  // プレスホルダー文字色
+                                        font-family : @font-family;           // 文字フォント
+                                    }
+
+                                    // カーソル
+                                    div.cursors {
+
+                                        // カーソル本体
+                                        div.cursor {
+
+                                            border : none;
+                                            border-left : solid 2px @diagnostics-textBox-cursor-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // フォーカス中
+                        &.is-forcused {
+
+                            // スクロール可能部分
+                            div div.scroll-view {
+
+                                // 入力行
+                                div.div.lines {
+
+                                    // ハイライト全般
+                                    div.highlights {
+
+                                        // 各ハイライト
+                                        div.highlight {
+
+                                            // テキスト選択部分のハイライト
+                                            &.selection {
+
+                                                // ハイライト中のテキスト部分
+                                                div.region.selection {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // 正規表現ボタン
+                    button.nuclide-ui-regexp-filter-button.btn.btn-sm {
+
+                        border : solid 1px @diagnostics-btn-enable-bdcolor;  // 枠線
+                        background : @diagnostics-btn-enable-bgcolor;        // 背景色
+                        color : @diagnostics-btn-enable-color;               // 文字色
+
+                        // 選択中
+                        &.selected {
+
+                            background : @diagnostics-btn-selected-bgcolor;  // 背景色
+                            color : @diagnostics-btn-selected-color;         // 文字色
+                        }
+                    }
+                }
+
+                // トグルボタンと項目名
+                label.inline-block.nuclide-ui-toggle-label {
+
+                    // トグルボタン本体
+                    input.input-toggle {
+
+                        background-color: @diagnostics-btn-enable-bgcolor;  // 背景色
+
+                        // ハンドル
+                        &::before {
+
+                            background-color: @diagnostics-btn-enable-color;  // ハンドル色
+                        }
+
+                        // 選択時
+                        &:checked {
+
+                            background-color: @diagnostics-btn-selected-bgcolor;  // 背景色
+
+                            // ハンドル
+                            &::before {
+
+                                background-color: @diagnostics-btn-selected-color;  // ハンドル色
+                            }
+                        }
+                    }
+
+                    // 項目名
+                    span.nuclide-ui-toggle-label-text {
+
+                        color : @diagnostics-color;  // 文字色
+                    }
+                }
+            }
+
+            // 右部
+            div.nuclide-ui-toolbar__right {
+
+                // ボタン類
+                button.btn {
+
+                    border : solid 1px @diagnostics-btn-enable-bdcolor;  // 枠線
+                    background : @diagnostics-btn-enable-bgcolor;        // 背景色
+                    color : @diagnostics-btn-enable-color;               // 文字色
+
+                    // Open Allボタン
+                    &.inline-block.btn-sm {
+                    }
+
+                    // 設定ボタン
+                    &.icon.icon-gear.btn-sm {
+
+                        color : @diagnostics-icon-gear-color;  // アイコン色
+                    }
+                }
+            }
+        }
+
+        // Diagnostics本体領域
+        div.atom-ide-filterable {
+
+            // Diagnostics表表示領域
+            div.diagnostics-ui-table-container {
+
+                // 表全体
+                div {
+
+                    background-color : transparent;  // 背景
+
+                    // 表ラッパー
+                    div.nuclide-ui-table {
+
+                        background-color : @diagnostics-table-bgcolor;  // 表背景
+                        color : @diagnostics-table-color;  // 文字色
+
+                        // 表ヘッダ
+                        div.nuclide-ui-table-header {
+
+                            border : none;  // 枠線
+
+                            // ヘッダセル
+                            div.nuclide-ui-table-header-cell {
+
+                                border : solid 1px @diagnostics-table-bdcolor;  // 枠線
+                            }
+                        }
+
+                        // 表項目(tbody)
+                        &.nuclide-ui-table-body {
+
+                            border : solid 1px @diagnostics-table-bdcolor;  // 枠線
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

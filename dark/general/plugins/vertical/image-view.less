@@ -1,0 +1,44 @@
+// イメージビュー
+div.image-view {
+
+    background-color : @imageView-bgcolor;  // 背景色
+
+    // コントロールバー
+    div.image-controls {
+
+        border-bottom : solid 1px @separate-color;  // 境界線
+        background-color : transparent;             // 背景色
+
+        // コントロールボタン類
+        div.image-controls-group {
+
+            // 背景色選択ボタン
+            a {
+
+                // 白
+                &.image-controls-color-white {
+                }
+
+                // 黒
+                &.image-controls-color-black {
+                }
+
+                // 透明
+                &.image-controls-color-transparent {
+                }
+            }
+
+            // ボタン類
+            &.btn-group {
+
+                // ボタン要素
+                button.btn {
+
+                    border : solid 1px @imageView-btn-bdcolor;  // 枠線
+                    background : @imageView-btn-bgcolor;        // 背景色
+                    color : @imageView-btn-color;               // 文字色
+                }
+            }
+        }
+    }
+}

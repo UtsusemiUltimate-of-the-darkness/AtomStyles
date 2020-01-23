@@ -1,0 +1,30 @@
+// ターミナル追加プラグイン
+div.platformio-ide-terminal {
+
+    // ステータスバー部分
+    &.status-bar {
+
+        border : none;
+        background : none;                           // 背景リセット
+        background-color : @statusBar-elem-bgcolor;  // 背景色
+        color : @statusBar-color;                    // 文字色
+
+        // "+"と"x"ボタン
+        i.icon{
+
+            // "+"ボタン
+            &.icon-plus {
+            }
+
+            // "x"ボタン
+            &.icon-x {
+
+                color : @statusBar-color;  // 文字色
+            }
+        }
+
+        // bash切り替えボタン
+        ul.list-inline.status-container {
+        }
+    }
+}

@@ -1,0 +1,26 @@
+// atom clockプラグイン
+div.atom-clock.inline-block {
+
+    background-color : @statusBar-elem-bgcolor;  // 背景色
+
+    // 表示部分
+    span {
+
+        // アイコン
+        &.atom-clock-icon {
+
+            // アイコン本体
+            &::before {
+
+                color : @statusBar-color;  // アイコン色
+            }
+        }
+
+        // 時計部分
+        &.atom-clock-time {
+
+            color : @statusBar-color;                      // 文字色
+            font-family : @statusBar-counter-font-family;  // 文字フォント
+        }
+    }
+}

@@ -1,0 +1,198 @@
+// キーバインド設定
+section.section {
+
+    // キーバインド設定パネル
+    &.keybinding-panel {
+
+        // タイトル
+        div.section-heading {
+
+            // キーバインド設定
+            &.icon.icon-keyboard {
+
+                color : @settingsView-title-color;  // 文字色
+
+                // アイコン
+                &::before {
+
+                    color : @settingsView-icon-keyboard-color;  // アイコン色
+                }
+            }
+        }
+
+        // 概要
+        div.text.native-key-bindings {
+
+            color : @settingsView-color;  // 文字色
+
+            // アイコン類
+            span.icon {
+
+                // はてな
+                &.icon-question {
+
+                    // アイコン
+                    &::before {
+
+                        color : @settingsView-icon-question-color;  // 文字色
+                    }
+                }
+
+                // クリップボード
+                &.icon-clippy {
+
+                    // アイコン
+                    &::before {
+
+                        color : @settingsView-link-color;  // 文字色
+                    }
+                }
+            }
+
+            // リンク
+            a.link {
+
+                color : @settingsView-link-color;  // 文字色
+            }
+        }
+
+        // 検索文字入力要素ラッパー
+        div.editor-container {
+
+            // 検索文字入力要素
+            atom-text-editor.editor {
+
+                border : solid 1px @settingsView-textBox-bdcolor;  // 枠線
+                background-color : @settingsView-textBox-bgcolor;  // 背景色
+                font-family : @settingsView-textBox-font-family;   // 文字フォント
+                color : @settingsView-textBox-color;               // 文字色
+
+                // スクロール可能部分ラッパー
+                div {
+
+                    border : none;
+
+                    // スクロール可能部分
+                    div.scroll-view {
+
+                        // 入力行
+                        div div.lines {
+
+                            // ハイライト全般
+                            div.highlights {
+
+                                // 各ハイライト
+                                div.highlight {
+
+                                    // テキスト選択部分のハイライト
+                                    &.selection {
+
+                                        // ハイライト中のテキスト部分
+                                        div.region.selection {
+
+                                            background-color : @settingsView-textBox-selection-bgcolor;  // 背景色
+                                        }
+                                    }
+                                }
+                            }
+
+                            // 行
+                            div div.line {
+
+                                // 各行
+                                span {
+
+                                    // 入力中の行
+                                    span.syntax--text.syntax--plain.syntax--null-grammar {
+                                    }
+                                }
+                            }
+
+                            // プレスホルダー
+                            div.placeholder-text {
+
+                                color : @settingsView-textBox-placeholder-color;  // 文字色
+                            }
+
+                            // カーソル類
+                            div.cursors {
+
+                                // カーソル本体
+                                div.cursor {
+
+                                    border : none;                                               // カーソルスタイルリセット
+                                    border-left : solid 1px @settingsView-textBox-cursor-color;  // カーソルの形と色
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // フォーカス中
+                &.is-forcused {
+
+                    // スクロール可能部分
+                    div div.scroll-view {
+
+                        // 入力行
+                        div div.lines {
+
+                            // ハイライト全般
+                            div.highlights {
+
+                                // 各ハイライト
+                                div.highlight {
+
+                                    // テキスト選択部分のハイライト
+                                    &.selection {
+
+                                        // ハイライト中のテキスト部分
+                                        div.region.selection {
+                                        }
+                                    }
+                                }
+                            }
+
+                            // 行
+                            div div.line {
+
+                                // 各行
+                                span {
+
+                                    // 入力中の行
+                                    span.syntax--text.syntax--plain.syntax--null-grammar {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // 表
+        table tr th,
+        table tr td {
+
+            border : solid 1px @settingsView-table-bdcolor;  // 枠線
+            background-color : @settingsView-table-bgcolor;  // 背景色
+            border-collapse : collapse;                      // 枠線間の隙間なし
+            color : @settingsView-table-color;               // 文字色
+            font-family : @settingsView-table-font-family;   // 文字色
+
+            // キーストローク
+            &.keystroke {
+
+                // アイコン要素
+                span.icon.icon-clippy.copy-icon {
+
+                    // アイコン
+                    &::before {
+
+                        color : @settingsView-link-color;  // 文字色
+                    }
+                }
+            }
+        }
+    }
+}

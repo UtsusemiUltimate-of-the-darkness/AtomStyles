@@ -1,0 +1,22 @@
+// パッケージアップデート数
+div.package-updates-status-view.inline-block {
+
+    background-color : @statusBar-elem-bgcolor;  // 背景色
+
+    // アイコン
+    span.icon.icon-package {
+
+        // アイコン本体
+        &::before {
+
+            color : @statusBar-color;  // アイコン色
+        }
+    }
+
+    // テキスト
+    span.available-updates-status {
+
+        color : @statusBar-color;              // 文字色
+        font-family : @statusBar-font-family;  // 文字フォント
+    }
+}

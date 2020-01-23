@@ -1,0 +1,406 @@
+// エディタ設定
+section.section {
+
+    border-top : solid 1px @settingsView-separate-color;  // 境界線
+
+    // 要素ラッパー
+    div.section-container {
+
+        // エディタ設定タイトル
+        div.section-heading {
+
+            background-color : @settingsView-title-bgcolor; // 背景色
+            color : @settingsView-title-color;              // 文字色
+            font-family : @settingsView-title-font-family;  // 文字フォント
+
+            // エディタ設定
+            &.icon-code {
+
+                // アイコン
+                &::before {
+
+                    color : @settingsView-icon-code-color;  // アイコン色
+                }
+            }
+        }
+
+        // エディタ設定概要
+        div.text.icon.icon-question {
+
+            color : @settingsView-color;  // 文字色
+
+            // アイコン
+            &::before {
+
+                color : @settingsView-icon-question-color;  // アイコン色
+            }
+
+            // ハイパーリンク
+            a.link {
+
+                color : @settingsView-link-color;  // 文字色
+            }
+        }
+
+        // エディタ設定設定内容
+        div.section-body {
+
+            // 単一項目
+            div.control-group {
+
+                // 中身
+                div.controls {
+
+                    // チェックボックス
+                    div.checkbox {
+
+                        // チェックボックスと項目名
+                        label {
+
+                            color : @settingsView-color;  // 文字色
+
+                            // チェックボックス
+                            input[type="checkbox"] {
+
+                                background-color : @settingsView-checkbox-bgcolor;  // 背景
+                                border : solid 1px @settingsView-checkbox-bdcolor;  // 枠線
+
+                                // チェックマーク左側右下がり斜め棒
+                                &::before {
+
+                                    background-color : @settingsView-checkbox-color;  // 背景
+                                }
+
+                                // チェックマーク右側右上がり斜め棒
+                                &::after {
+
+                                    background-color : @settingsView-checkbox-color;  // 背景
+                                }
+                            }
+
+                            // 設定する項目のタイトル
+                            div.setting-title {
+                            }
+                        }
+
+                        // 説明文
+                        div.setting-description {
+
+                            color : @settingsView-color;  // 文字色
+                        }
+                    }
+
+                    // 各設定説明要素
+                    label.control-label {
+
+                        // 設定項目
+                        div.setting-title {
+
+                            color : @settingsView-color;  // 文字色
+                        }
+
+                        // 説明文
+                        div.setting-description {
+
+                            color : @settingsView-color;  // 文字色
+
+                            // 強調，コード
+                            code {
+
+                                background-color : @settingsView-highlight-bgcolor;  // 背景色
+                                color : @settingsView-highlight-color;               // 文字色
+                            }
+                        }
+                    }
+
+                    // 選択項目
+                    select.form-control {
+
+                        border : solid 1px @settingsView-pullDownMenu-bdcolor;  // 枠線
+                        background-color : @settingsView-pullDownMenu-bgcolor;  // 背景色
+                        color : @settingsView-pullDownMenu-color;               // 文字色
+                    }
+
+                    // エディタ設定サブセクション
+                    section.sub-section {
+
+                        // セクションタイトル
+                        h3.sub-section-heading.has-items {
+
+                            background-color : @settingsView-subtitle-bgcolor;  // 背景色
+                            color : @settingsView-subtitle-color;               // 文字色
+
+                            // 要素開閉アイコン
+                            &::before {
+
+                                color : @settingsView-toggleBtn-color;  // アイコン色
+                            }
+                        }
+
+                        // 設定概要
+                        div.setting-description {
+
+                            color : @settingsView-color;  // 文字色
+                        }
+
+                        // サブセクション本体
+                        div.sub-section-body {
+
+                            // 各項目
+                            div.control-group {
+
+                                // 単項目
+                                div.controls {
+
+                                    // 設定ラベル
+                                    label.control-label {
+
+                                        // 設定タイトル
+                                        div.setting-title {
+                                        }
+
+                                        // 設定説明文
+                                        div.setting-description {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // テキストボックス
+                    div.controls {
+
+                        // エディタラッパー
+                        div.editor-container {
+
+                            // エディタ部分
+                            atom-text-editor.editor.mini {
+
+                                border : solid 1px @settingsView-textBox-bdcolor;  // 枠線
+                                background-color : @settingsView-textBox-bgcolor;  // 背景色
+                                font-family : @settingsView-textBox-font-family;   // 文字フォント
+                                color : @settingsView-textBox-color;               // 文字色
+
+                                // スクロール可能部分ラッパー
+                                div {
+
+                                    border : none;
+
+                                    // スクロール可能部分
+                                    div.scroll-view {
+
+                                        // 入力行
+                                        div div.lines {
+
+                                            // ハイライト全般
+                                            div.highlights {
+
+                                                // 各ハイライト
+                                                div.highlight {
+
+                                                    // テキスト選択部分のハイライト
+                                                    &.selection {
+
+                                                        // ハイライト中のテキスト部分
+                                                        div.region.selection {
+
+                                                            background-color : @settingsView-textBox-selection-bgcolor;  // 背景色
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            // 行
+                                            div div.line {
+
+                                                // 各行
+                                                span {
+
+                                                    // 入力中の行
+                                                    span.syntax--text.syntax--plain.syntax--null-grammar {
+                                                    }
+                                                }
+                                            }
+
+                                            // プレスホルダー
+                                            div.placeholder-text {
+
+                                                color : @settingsView-textBox-placeholder-color;  // 文字色
+                                            }
+
+                                            // カーソル類
+                                            div.cursors {
+
+                                                // カーソル本体
+                                                div.cursor {
+
+                                                    border : none;
+                                                    border-left : solid 1px @settingsView-textBox-cursor-color;  // カーソルの形と色
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // フォーカス中
+                                &.is-forcused {
+
+                                    // スクロール可能部分
+                                    div div.scroll-view {
+
+                                        // 入力行
+                                        div div.lines {
+
+                                            // ハイライト全般
+                                            div.highlights {
+
+                                                // 各ハイライト
+                                                div.highlight {
+
+                                                    // テキスト選択部分のハイライト
+                                                    &.selection {
+
+                                                        // ハイライト中のテキスト部分
+                                                        div.region.selection {
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            // 行
+                                            div div.line {
+
+                                                // 各行
+                                                span {
+
+                                                    // 入力中の行
+                                                    span.syntax--text.syntax--plain.syntax--null-grammar {
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // テキストボックス部分
+                div.editor-container {
+
+                    // エディタ部分
+                    atom-text-editor.editor.mini {
+
+                        border : solid 1px @settingsView-textBox-bdcolor;  // 枠線
+                        background-color : @settingsView-textBox-bgcolor;  // 背景色
+                        font-family : @settingsView-textBox-font-family;   // 文字フォント
+                        color : @settingsView-textBox-color;               // 文字色
+
+                        // スクロール可能部分ラッパー
+                        div {
+
+                            border : none;
+
+                            // スクロール可能部分
+                            div.scroll-view {
+
+                                // 入力行
+                                div div.lines {
+
+                                    // ハイライト全般
+                                    div.highlights {
+
+                                        // 各ハイライト
+                                        div.highlight {
+
+                                            // テキスト選択部分のハイライト
+                                            &.selection {
+
+                                                // ハイライト中のテキスト部分
+                                                div.region.selection {
+
+                                                    background-color : @settingsView-textBox-selection-bgcolor;  // 背景色
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // 行
+                                    div div.line {
+
+                                        // 各行
+                                        span {
+
+                                            // 入力中の行
+                                            span.syntax--text.syntax--plain.syntax--null-grammar {
+                                            }
+                                        }
+                                    }
+
+                                    // プレスホルダー
+                                    div.placeholder-text {
+
+                                        color : @settingsView-textBox-placeholder-color;  // 文字色
+                                    }
+
+                                    // カーソル類
+                                    div.cursors {
+
+                                        // カーソル本体
+                                        div.cursor {
+
+                                            border : none;
+                                            border-left : solid 1px @settingsView-textBox-cursor-color;  // カーソルの形と色
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // フォーカス中
+                        &.is-forcused {
+
+                            // スクロール可能部分
+                            div div.scroll-view {
+
+                                // 入力行
+                                div div.lines {
+
+                                    // ハイライト全般
+                                    div.highlights {
+
+                                        // 各ハイライト
+                                        div.highlight {
+
+                                            // テキスト選択部分のハイライト
+                                            &.selection {
+
+                                                // ハイライト中のテキスト部分
+                                                div.region.selection {
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // 行
+                                    div div.line {
+
+                                        // 各行
+                                        span {
+
+                                            // 入力中の行
+                                            span.syntax--text.syntax--plain.syntax--null-grammar {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

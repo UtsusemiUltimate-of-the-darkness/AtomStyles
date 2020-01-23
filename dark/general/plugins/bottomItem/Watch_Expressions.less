@@ -1,0 +1,176 @@
+// Watch Expressions画面
+&.debugger-container {
+
+    // デバッガラッパー
+    div.debugger-container-new {
+
+        // デバッガ全体
+        div.debugger-pane-content {
+
+            // デバッガ結果リストとテキストボックス表示領域
+            div.debugger-expression-value-list {
+
+                // 各結果領域
+                div.debugger-expression-value-row.debugger-watch-expression-row {
+
+                    border : solid 1px @watchExpressions-listItem-separate-color;  // 枠線
+                    background-color : @watchExpressions-listItem-bgcolor;         // 背景色
+
+                    // 入力した文字列と結果表示領域
+                    div.debugger-expression-value-content.debugger-watch-expression-value-content {
+
+                        // 入力した文字列と結果表示要素
+                        span.nuclide-ui-highlight-on-render {
+
+                            // 結果表示要素ラッパー
+                            span.nuclide-ui-lazy-nested-value {
+
+                                // 表示領域
+                                div.nuclide-ui-lazy-nested-value-container {
+
+                                    color : @watchExpressions-color;  // 文字色
+
+                                    // 入力した文字列
+                                    span.syntax--variable {
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // コントロールボタン表示領域
+                    div.debugger-watch-expression-controls {
+
+                        // ボタンアイコン表示要素
+                        span.debugger-watch-expression-control.icon {
+
+                            // 鉛筆アイコン
+                            &.icon-pencil::before {
+
+                                background-color : @watchExpressions-btn-enable-bgcolor;  // 背景色
+                                color : @watchExpressions-btn-enable-color;               // アイコン色
+                            }
+
+                            // 閉じるアイコン
+                            &.icon-x::before {
+
+                                background-color : @watchExpressions-btn-enable-bgcolor;  // 背景色
+                                color : @watchExpressions-btn-enable-color;               // アイコン色
+                            }
+                        }
+                    }
+                }
+
+                // テキストボックス
+                atom-text-editor.debugger-watch-expression-input.debugger-watch-expression-add-new-input.atom-text-editor-sm.editor.mini {
+
+                    border : solid 1px @watchExpressions-textBox-bdcolor;  // 枠線
+                    background-color : @watchExpressions-textBox-bgcolor;  // 背景色
+                    font-family : @watchExpressions-textBox-font-family;   // 文字フォント
+                    color : @watchExpressions-textBox-color;               // 文字色
+
+                    // スクロール可能部分ラッパー
+                    div {
+
+                        border : none;
+
+                        // スクロール可能部分
+                        div.scroll-view {
+
+                            // 入力行
+                            div div.lines {
+
+                                // ハイライト全般
+                                div.highlights {
+
+                                    // 各ハイライト
+                                    div.highlight {
+
+                                        // テキスト選択部分のハイライト
+                                        &.selection {
+
+                                            // ハイライト中のテキスト部分
+                                            div.region.selection {
+
+                                                background-color : @watchExpressions-textBox-selection-bgcolor;  // 背景色
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // 行
+                                div div.line {
+
+                                    // 各行
+                                    span {
+
+                                        // 入力中の行
+                                        span.syntax--text.syntax--plain.syntax--null-grammar {
+                                        }
+                                    }
+                                }
+
+                                // プレスホルダー
+                                div.placeholder-text {
+
+                                    color : @watchExpressions-textBox-placeholder-color;  // 文字色
+                                }
+
+                                // カーソル類
+                                div.cursors {
+
+                                    // カーソル本体
+                                    div.cursor {
+
+                                        border : none;
+                                        border-left : solid 1px @watchExpressions-textBox-cursor-color;  // カーソルの形と色
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // フォーカス中
+                    &.is-forcused {
+
+                        // スクロール可能部分
+                        div div.scroll-view {
+
+                            // 入力行
+                            div div.lines {
+
+                                // ハイライト全般
+                                div.highlights {
+
+                                    // 各ハイライト
+                                    div.highlight {
+
+                                        // テキスト選択部分のハイライト
+                                        &.selection {
+
+                                            // ハイライト中のテキスト部分
+                                            div.region.selection {
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // 行
+                                div div.line {
+
+                                    // 各行
+                                    span {
+
+                                        // 入力中の行
+                                        span.syntax--text.syntax--plain.syntax--null-grammar {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

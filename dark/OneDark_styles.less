@@ -1,0 +1,466 @@
+@import "OneDark_styles/panels/left-panel.less";  // 左パネル
+@import "general/panels/settings-view.less";      // 設定パネル
+@import "general/panels/bottom-panel.less";       // 画面下部
+@import "general/panels/right-panel.less";        // 右パネル
+@import "general/panels/status-bar.less";         // フッター
+@import "general/plugins/plugins.less";           // プラグインまとめ
+
+
+// メイン作業スペースの設定
+atom-workspace {
+
+    // OneDarkテーマ使用時
+    &.theme-one-dark-ui {
+
+        // 画面上部タブとタブの間(ウィンドウタブとエディタタブの間)
+        atom-panel-container.header {
+        }
+
+        // 画面下部ステータスバー以外のエディタ部分
+        atom-workspace-axis.horizontal {
+
+            background : @workspace-background;     // 背景
+            background-repeat : no-repeat;          // 背景のリピート
+            background-size : cover;                // 背景画像の大きさ
+            background-position : right top;        // 背景画像の位置
+            margin : 0 0 0 0;                       // 上右下左の外側の余白
+            padding : 0 0 0 0;                      // 上右下左の内側の余白
+            background-color : @workspace-bgcolor;  // 背景色
+
+            // 画面左要素
+
+            // 画面中央作業スペース
+            atom-workspace-axis.vertical {
+
+                background : @mainPane-background;  // 背景(左右パネル除く)
+                background-repeat : no-repeat;      // 背景のリピート
+                background-size : cover;            // 背景画像の大きさ
+                background-position : right top;    // 背景画像の位置
+                margin : 0 0 0 0;                   // 上右下左の外側の余白
+                padding : 0 0 0 0;                  // 上右下左の内側の余白
+
+                // ウィンドウタブとエディタタブの間
+                atom-panel-container.top {
+                }
+
+                // メイン作業スペース
+                atom-pane-container.panes {
+
+                    // 各ペイン本体
+                    atom-pane.pane {
+
+                        border-top : solid 1px @pane-bdcolor;    // 上枠線
+                        border-right : solid 1px @pane-bdcolor;  // 右枠線
+                        border-collapse : collapse;              // 枠線間の隙間なし
+                        background : @pane-background;           // 背景画像(各ペインごと)
+                        background-color : @pane-bgcolor;        // 背景色
+
+                        // タブバー
+                        ul.list-inline.tab-bar.inset-panel {
+
+                            background-color : @tabBar-bgcolor;         // 背景
+                            border-bottom : solid 1px @separate-color;  // エディタ部分との境界線
+
+                            // タブ
+                            li.tab.sortable {
+
+                                border-left : solid 1px @tab-bdcolor;   // 境界線
+                                border-right : solid 1px @tab-bdcolor;  // 境界線
+                                background-color : @tab-bgcolor;        // 背景
+                                color : @tab-color;                     // 文字色
+                                font-size : @tab-font-size;             // 文字サイズ
+                                font-family : @tab-font-family;         // 文字フォント
+
+                                // アイコン表示要素
+                                &::before {
+
+                                    background-color : @tab-bgcolor;  // 背景
+                                }
+
+                                // アイコンとタイトル
+                                div.title.icon {
+
+                                    // アイコン
+                                    &::before {
+                                    }
+                                }
+
+                                // 閉じるアイコン
+                                div.close-icon {
+
+                                    background-color : @tab-bgcolor;  // 背景色
+                                    color : @tab-color;               // 文字色
+                                }
+
+                                // 閉じるアイコン表示要素
+                                &::after {
+
+                                    background-color : @tab-bgcolor;  // 背景
+                                }
+
+                                // アクティブタブ
+                                &.active {
+
+                                    border-left : solid 1px @activeTab-bdcolor;            // アクティブタブ左境界線
+                                    border-right : solid 1px @activeTab-bdcolor;           // アクティブタブ右境界線
+                                    background-color : @activeTab-bgcolor;                 // アクティブタブ背景色
+                                    border-bottom : solid 2px @activeTab-indicator-color;  // アクティブタブ下線色
+                                    color : @activeTab-color;                              // 文字色
+                                    font-size : @activeTab-font-size;                      // 文字サイズ
+                                    font-family : @activeTab-font-family;                  // 文字フォント
+                                    font-style : italic;                                   // フォントスタイル
+
+                                    // アイコン表示要素
+                                    &::before {
+
+                                        border-bottom : solid 2px @activeTab-indicator-color;   // アクティブタブ下線色
+                                    }
+
+                                    // アイコンとタイトル
+                                    div.title.icon {
+
+                                        // アイコン
+                                        &::before {
+                                        }
+                                    }
+
+                                    // 閉じるアイコン
+                                    div.close-icon {
+                                    }
+
+                                    // 閉じるアイコン表示要素
+                                    &::after {
+
+                                        border-bottom : solid 2px @activeTab-indicator-color;   // アクティブタブ下線色
+                                    }
+
+                                    // 未保存状態
+                                    &.modified {
+
+                                        // タイトル
+                                        div.title {
+                                        }
+
+                                        // 閉じるボタン
+                                        div.close-icon {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // アクティブペイン
+                        &.active {
+
+                            // タブバー
+                            ul.list-inline.tab-bar.inset-panel {
+
+                                background-color : @activePane-tabBar-bgcolor;  // 背景色
+                                border-bottom : solid 1px @separate-color;      // エディタ部分との境界線
+
+                                // タブ
+                                li.tab.sortable {
+
+                                    border-left : solid 1px @activePane-tab-bdcolor;   // アクティブペインタブ左境界線
+                                    border-right : solid 1px @activePane-tab-bdcolor;  // アクティブペインタブ右境界線
+                                    background : @activePane-tab-bgcolor;              // 背景
+                                    color : @activePane-tab-color;                     // 文字色
+                                    font-size : @activePane-tab-font-size;             // 文字サイズ
+                                    font-family : @activePane-tab-font-family;         // 文字フォント
+
+                                    // アイコン表示要素
+                                    &::before {
+
+                                        background-color : @activePane-tab-bgcolor;  // 背景色
+                                    }
+
+                                    // アイコンとタイトル
+                                    div.title.icon {
+
+                                        // アイコン
+                                        &::before {
+                                        }
+                                    }
+
+                                    // 閉じるアイコン
+                                    div.close-icon {
+
+                                        background-color : @activePane-tab-bgcolor;  // 背景色
+                                        color : @activePane-tab-color;               // 文字色
+                                    }
+
+                                    // 閉じるアイコン表示要素
+                                    &::after {
+
+                                        background-color : @activePane-tab-bgcolor;  // 背景色
+                                    }
+
+                                    // アクティブタブ
+                                    &.active {
+
+                                        border-left : solid 1px @activePane-activeTab-bdcolor;            // アクティブペインアクティブタブ左境界線
+                                        border-right : solid 1px @activePane-activeTab-bdcolor;           // アクティブペインアクティブタブ右境界線
+                                        background-color : @activePane-activeTab-bgcolor;                 // アクティブタブの背景
+                                        border-bottom : solid 2px @activePane-activeTab-indicator-color;  // アクティブタブの下部にアンダーライン
+                                        color : @activePane-activeTab-color;                              // 文字色
+                                        font-size : @activePane-activeTab-font-size;                      // 文字サイズ
+                                        font-family : @activePane-activeTab-font-family;                  // 文字フォント
+                                        font-style : italic;                                              // フォントスタイル
+                                        // font-weight : bold;                                               // 太字
+                                        // text-align : center;                                              // 中央揃え
+
+                                        // アイコン表示要素
+                                        &::before {
+
+                                            border-bottom : solid 2px @activePane-activeTab-indicator-color;  // アクティブタブの下部にアンダーライン
+                                        }
+
+                                        // アイコンとタイトル
+                                        div.title.icon {
+
+                                            // アイコン
+                                            &::before {
+                                            }
+                                        }
+
+                                        // 閉じるアイコン
+                                        div.close-icon {
+                                        }
+
+                                        // 閉じるアイコン表示要素
+                                        &::after {
+
+                                            background-color : @activePane-activeTab-bgcolor;                 // 背景色
+                                            border-bottom : solid 2px @activePane-activeTab-indicator-color;  // アクティブタブの下部にアンダーライン
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // エディタ部分
+                        div.item-views {
+
+                            // メイン作業スペース
+                            atom-text-editor.editor {
+
+                                background : @editor-background;    // 背景
+                                background-color: @editor-bgcolor;  // 背景色
+
+                                // 行番号，エディタ部分
+                                div.gutter-container {
+
+                                    border-right : solid 1px @pane-bdcolor;  // 行番号とエディタ部分の境界
+
+                                    // 行番号
+                                    div.gutter {
+
+                                        background-color : @gutter-bgcolor;  // 背景色
+                                        color : @lineNumber-color;           // 文字色
+                                        width : auto;                        // 横幅
+                                        text-align : center;                 // 中央揃え
+                                        font-family : @gutter-font-family;   // 文字フォント
+
+                                        // ブックマーク表示要素
+                                        .line-number.cursor-line {
+
+                                            background-color : transparent;  // 背景色
+                                        }
+
+                                        // 行番号部分
+                                        &.line-numbers {
+
+                                            border-right : solid 1px @gutter-separate-color;  // 行番号要素とデバッガ要素の境界線
+                                            color : @lineNumber-color;                        // 文字色
+
+                                            // 行番号ラッパー
+                                            div div.line-number {
+
+                                                // カーソルがある行番号
+                                                &.cursor-line {
+
+                                                    background-color : @lineNumber-selected-bgcolor !important;  // 背景色
+                                                    color : @lineNumber-selected-color !important;               // 文字色
+                                                    font-size : @lineNumber-selected-font-size;                  // 文字サイズ
+                                                    font-family : @lineNumber-selected-font-family;              // 文字フォント
+
+                                                    // 範囲選択していない
+                                                    &.cursor-line-no-selection {
+
+                                                        background-color : @cursorLineNumber-bgcolor !important;  // 背景色
+                                                        color : @cursorLineNumber-color !important;               // 文字色
+                                                        font-size : @cursorLineNumber-font-size;                  // 文字サイズ
+                                                        font-family :@gutter-font-family;                         // 文字フォント
+                                                    }
+                                                }
+
+                                                // 非表示(折ってある)部分
+                                                &.folded {
+
+                                                    font-weight : bold;         // 文字の太さ
+                                                    color : @lineNumber-color;  // 文字色
+                                                }
+
+                                                // ブックマーク付き
+                                                &.bookmarked {
+
+                                                    // アイコン要素
+                                                    div.icon-right {
+
+                                                        // アイコン
+                                                        &::before {
+
+                                                            color : @bookmarkIcon-color;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        // デバッガ表示部分
+                                        div.custom-decorations div.decoration.linter-row {
+
+                                            // 入力中の行番号
+                                            span.line-number.cursor-line.linter-cursor-line {
+
+                                                border : none;  // 行番号との境界線削除
+
+                                                // 範囲選択していない
+                                                &.cursor-line-no-selection {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // エディタ部分
+                                div.scroll-view {
+
+                                    padding : 0 0 0 2px;  // 行番号部分とエディタ部分の境界の隙間
+
+                                    div div.lines {
+
+                                        // ハイライト
+                                        div.highlights {
+
+                                            // 全体
+                                            div.highlight {
+
+                                                // 選択されている奴ら
+                                                &.selection {
+
+                                                    // 選択部分
+                                                    div.region.selection {
+
+                                                        background-color : @selection-bgcolor !important;  // 背景色
+                                                    }
+                                                }
+
+                                                // マッチング検索
+                                                &.bracket-matcher {
+
+                                                    // 該当文字列
+                                                    .region {
+
+                                                        border : dotted 1px @highlight-pair-bdcolor;  // 枠線
+                                                        background-color : transparent;               // 背景色
+                                                    }
+                                                }
+
+                                                // "highlight-selected"プラグイン
+                                            }
+
+                                            // 全角スペースの見た目
+                                            div.ideographic-space {
+
+                                                // 選択した要素の後ろに擬似要素を追加
+                                                div.region:after {
+
+                                                    background-color : @ideographic-space-bgcolor;  // 背景色
+                                                    color : @ideographic-space-color;               // 文字色
+                                                    content : "全";                                 // 追加する文字列
+                                                }
+                                            }
+
+                                            // 検索結果の設定
+                                            div.find-result {
+
+                                                // 見つけた文字列
+                                                div.region {
+
+                                                    border : solid 2px @find-string-bdcolor;  // 枠線
+                                                }
+                                            }
+                                        }
+
+                                        // カーソルのある行
+                                        div div.line.cursor-line {
+
+                                            border-bottom : solid 1px @cursor-horaizontalLine-color;  // 水平線
+                                        }
+
+                                        // カーソル
+                                        div.cursors {
+
+                                            // 点滅している部分
+                                            div.cursor {
+
+                                                border-left : solid 1px @cursor-color;  // カーソルの形と色
+                                            }
+                                        }
+
+                                        // 垂直線
+                                        div.highlight-column {
+
+                                            background-color : @cursor-columnLine-color;  // 背景色
+                                        }
+
+                                        // コメント
+                                        span.syntax--comment {
+
+                                            color : @comment-color;  // 文字色
+                                        }
+                                    }
+                                }
+
+                                // アクティブタブ，入力中の画面
+                                &.is-focused {
+                                }
+
+                                // 文字が選択されている
+                                &.has-selection {
+                                }
+
+                                // アクティブタブ，文字選択中
+                                &.is-focused.has-selection {
+                                }
+                            }
+
+                            // ブラウザープラスプラグイン
+                            // イメージビュー
+                            // 設定画面
+                        }
+                    }
+                }
+
+                // 画面下部(ステータスバー以外)
+            }
+
+            // 画面右側
+        }
+
+        // 画面下部ステータスバー部分(フッター)
+        atom-panel-container.footer {
+
+            // フッター
+            atom-panel.footer.tool-panel.panel-footer {
+
+                // ステータスバー全体
+            }
+        }
+
+        // 画面最下部ステータスバーより下の部分
+        atom-panel-container.modal {
+        }
+    }
+}

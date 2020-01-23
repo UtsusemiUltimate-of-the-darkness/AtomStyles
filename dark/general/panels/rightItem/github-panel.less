@@ -1,0 +1,196 @@
+// GitHubタブ
+div.github-GitHub-root {
+
+    // 内容ラッパー
+    div.github-GitHub {
+
+        // GitHub内容
+        div.github-GitHub-content {
+
+            // ログイン画面
+            div.github-GithubLoginView {
+
+                // ログインサブ画面
+                div.github-GithubLoginView-Subview {
+
+                    // 概要文
+                    p {
+
+                        color : @rightPane-color;  // 文字色
+                    }
+
+                    // ログインボタン
+                    button.btn {
+
+                        border : solid 1px @btn-disable-bdcolor;  // 枠線
+                        background : @btn-disable-bgcolor;         // 背景色
+                        color : @btn-disable-color;               // 文字色
+                        font-family : @btn-font-family;           // 文字フォント
+
+                        // アイコン
+                        &::before {
+
+                            color : @btn-disable-color;  // アイコン色
+                        }
+
+                        // 有効ボタン
+                        &:enabled {
+
+                            border : solid 1px @btn-enable-bdcolor;  // 枠線
+                            background : @btn-enable-bgcolor;        // 背景色
+                            color : @btn-enable-color;               // 文字色
+
+                            // アイコン
+                            &::before {
+
+                                color : @btn-enable-color;  // アイコン色
+                            }
+                        }
+                    }
+                }
+
+                // ログインフォーム
+                form.github-GithubLoginView-Subview {
+
+                    // テキストボックス
+                    .input-text.native-key-bindings {
+
+                        border : solid 1px @githubPanel-textBox-bdcolor;  // 枠線
+                        background-color : @githubPanel-textBox-bgcolor;  // 背景色
+                        color : @githubPanel-textBox-color;               // 文字色
+
+                        // プレスホルダー
+                        &::placeholder {
+
+                            color : @githubPanel-textBox-placeholder-color;  // 文字色
+                        }
+                    }
+
+                    // ボタン表示要素
+                    div {
+
+                        // キャンセルボタン
+                        button.btn.icon.inline-block-tight {
+
+                            border : solid 1px @btn-disable-bdcolor;  // 枠線
+                            background : @btn-disable-bgcolor;        // 背景色
+                            color : @btn-disable-color;               // 文字色
+                            font-family : @btn-font-family;           // 文字フォント
+
+                            // アイコン
+                            &::before {
+
+                                color : @btn-disable-color;  // アイコン色
+                            }
+
+                            // 有効ボタン
+                            &:enabled {
+
+                                border : solid 1px @btn-enable-bdcolor;  // 枠線
+                                background : @btn-enable-bgcolor;        // 背景色
+                                color : @btn-enable-color;               // 文字色
+
+                                // アイコン
+                                &::before {
+
+                                    color : @btn-enable-color;  // アイコン色
+                                }
+                            }
+                        }
+
+                        // ログインボタン
+                        .btn.btn-primary.icon.icon-check.inline-block-tight {
+
+                            border : solid 1px @btn-disable-bdcolor;  // 枠線
+                            background : @btn-disable-bgcolor;        // 背景色
+                            color : @btn-disable-color;               // 文字色
+                            font-family : @btn-font-family;           // 文字フォント
+
+                            // アイコン
+                            &::before {
+
+                                color : @btn-disable-color;  // アイコン色
+                            }
+
+                            // 有効ボタン
+                            &:enabled {
+
+                                border : solid 1px @btn-enable-bdcolor;  // 枠線
+                                background : @btn-enable-bgcolor;        // 背景色
+                                color : @btn-enable-color;               // 文字色
+
+                                // アイコン
+                                &::before {
+
+                                    color : @btn-enable-color;  // アイコン色
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // ログイン後
+            div.github-IssueishSearch {
+
+                // プルリクエスト類
+                details.github-Accordion {
+
+                    // 概要
+                    summary.github-Accordion-header {
+
+                        border-bottom : solid 1px @separate-color;  // 境界線
+                        color : @rightPane-color;                  // 文字色
+                    }
+
+                    // 内容
+                    main.github-Accordion-content {
+
+                        border-bottom : solid 1px @separate-color;  // 境界線
+                        background-color : transparent;             // 背景色
+                        color : @rightPane-color;                  // 文字色
+
+                        // ボタン表示要素
+                        div div.github-CreatePullRequestTile-controls {
+
+                            // プルリクエストを開くボタン
+                            button.btn.btn-primary.github-CreatePullRequestTile-createPr {
+
+                                border : solid 1px @btn-disable-bdcolor;  // 枠線
+                                background : @btn-disable-bgcolor;        // 背景色
+                                color : @btn-disable-color;               // 文字色
+                                font-family : @btn-font-family;           // 文字フォント
+
+                                // アイコン
+                                &::before {
+
+                                    color : @btn-disable-color;  // アイコン色
+                                }
+
+                                // 有効ボタン
+                                &:enabled {
+
+                                    border : solid 1px @btn-enable-bdcolor;  // 枠線
+                                    background : @btn-enable-bgcolor;        // 背景色
+                                    color : @btn-enable-color;               // 文字色
+
+                                    // アイコン
+                                    &::before {
+
+                                        color : @btn-enable-color;  // アイコン色
+                                    }
+                                }
+                            }
+                        }
+
+                        // 空表示
+                        &::before {
+
+                            color : @rightPane-color;  // 文字色
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

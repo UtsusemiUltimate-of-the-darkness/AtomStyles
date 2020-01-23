@@ -1,0 +1,88 @@
+// ステータスカウント
+div.inline-block.linter-status-count {
+
+    // 各カウント
+    a {
+
+        color : @statusBar-color;  // 文字色
+
+        // エラーアイコン
+        &.icon-stop {
+
+            font-family : @statusBar-counter-font-family;  // 文字フォント
+
+            // アイコン
+            &::before {
+
+                color : @statusBar-icon-error-color !important;  // 文字色
+            }
+        }
+
+        // アラートアイコン
+        &.icon-alert {
+
+            font-family : @statusBar-counter-font-family;  // 文字フォント
+
+            // アイコン
+            &::before {
+
+                color : @statusBar-icon-warning-color;  // 文字色
+            }
+        }
+
+        // インフォメーションアイコン
+        &.icon-info {
+
+            font-family : @statusBar-counter-font-family;  // 文字フォント
+
+            // アイコン
+            &::before {
+
+                color : @statusBar-icon-info-color;  // 文字色
+            }
+        }
+
+        // 以下バージョン違い
+        span.icon {
+
+            // エラーアイコン
+            &.icon-stop {
+
+                color : @statusBar-color;                      // 文字色
+                font-family : @statusBar-counter-font-family;  // 文字フォント
+
+                // アイコン
+                &::before {
+
+                    color : @statusBar-icon-error-color !important;  // 文字色
+                }
+            }
+
+            // アラートアイコン
+            &.icon-alert {
+
+                color : @statusBar-color;                          // 文字色
+                font-family : @statusBar-counter-font-family;  // 文字フォント
+
+                // アイコン
+                &::before {
+
+                    color : @statusBar-icon-warning-color;  // 文字色
+                }
+            }
+
+            // インフォメーションアイコン
+            &.icon-info {
+
+                color : @statusBar-color;                          // 文字色
+                font-family : @statusBar-counter-font-family;  // 文字フォント
+
+                // アイコン
+                &::before {
+
+                    color : @statusBar-icon-info-color;  // 文字色
+                }
+            }
+        }
+    }
+}

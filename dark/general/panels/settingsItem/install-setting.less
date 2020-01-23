@@ -1,0 +1,485 @@
+// インストール
+div.section.packages {
+
+    border-top : solid 1px @settingsView-separate-color;  // 境界線
+
+    // 要素ラッパー
+    div.section-container {
+
+        // インストール-パッケージのインストール
+        div.section-heading.icon {
+
+            color : @settingsView-title-color;  // 文字色
+
+            // アイコン
+            &::before {
+
+                color : @settingsView-icon-color;  // アイコン色
+            }
+
+            // インストール-おすすめパッケージ
+            &.icon-star {
+
+                &::before {
+
+                    color : @settingsView-icon-star-color;  // アイコン色
+                }
+            }
+        }
+
+        // エラー表示領域
+        div {
+
+            // エラーメッセージ表示領域
+            div.error-message {
+
+                // エラーメッセージ要素
+                div.alert.alert-danger.alert-dismissable.native-key-bindings {
+
+                    border : solid 2px @settingsView-alert-error-bdcolor;  // 枠線
+                    background-color : @settingsView-alert-error-bgcolor;  // 背景色
+                    color : @settingsView-alert-error-color;               // 文字色
+
+                    // 閉じるボタン
+                    button.close.icon.icon-x {
+
+                        // アイコン本体
+                        &::before {
+
+                            color : @settingsView-alert-error-color;  // アイコン色
+                        }
+                    }
+
+                    // エラーメッセージ
+                    span.native-key-bindings {
+                    }
+
+                    // エラー内容表示リンク
+                    a.alert-link.error-link {
+
+                        color : @settingsView-alert-error-color;  // 文字色
+                    }
+
+                    // エラー内容表示要素
+                    div.padded {
+
+                        // エラー内容
+                        pre.error-details.text {
+
+                            background-color : transparent;  // 背景色
+                            color : @settingsView-alert-error-color;    // 文字色
+                        }
+                    }
+                }
+            }
+        }
+
+        // インストールパネルタイトル
+        h1.section-heading.icon {
+
+            color : @settingsView-title-color;  // 文字色
+
+            // +アイコン付き
+            &.icon-plus {
+
+                // アイコン本体
+                &::before {
+
+                    color : @settingsView-icon-plus-color;  // アイコン色
+                }
+            }
+        }
+
+        // インストール-おすすめパッケージ概要
+        div.text.native-key-bindings {
+
+            color : @settingsView-color;  // 文字色
+
+            // 説明文
+            span {
+
+                // はてなマークからリンクまで
+                &.icon.icon-question {
+
+                    // アイコン
+                    &::before {
+
+                        color : @settingsView-icon-question-color;  // アイコン色
+                    }
+                }
+            }
+
+            // リンク
+            a.link {
+
+                color : @settingsView-link-color;  // 文字色
+            }
+        }
+
+        // インストール検索欄
+        div.search-container.clearfix {
+
+            // エディタラッパー
+            div.editor-container {
+
+                // テキストエディタ部分
+                atom-text-editor.editor.mini {
+
+                    border : solid 1px @settingsView-textBox-bdcolor;  // 枠線
+                    background-color : @settingsView-textBox-bgcolor;  // 背景色
+                    color : @settingsView-textBox-color;               // 文字色
+                    font-family : @settingsView-textBox-font-family;   // 文字フォント
+
+                    // スクロール可能部分ラッパー
+                    div {
+
+                        border : none;
+
+                        // スクロール可能部分
+                        div.scroll-view {
+
+                            // 入力行
+                            div div.lines {
+
+                                // ハイライト全般
+                                div.highlights {
+
+                                    // 各ハイライト
+                                    div.highlight {
+
+                                        // テキスト選択部分のハイライト
+                                        &.selection {
+
+                                            // ハイライト中のテキスト部分
+                                            div.region.selection {
+
+                                                background-color : @settingsView-textBox-selection-bgcolor;  // 背景色
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // 行
+                                div div.line {
+
+                                    // 各行
+                                    span {
+
+                                        // 入力中の行
+                                        span.syntax--text.syntax--plain.syntax--null-grammar {
+                                        }
+                                    }
+                                }
+
+                                // プレスホルダー
+                                div.placeholder-text {
+
+                                    color : @settingsView-textBox-placeholder-color;  // 文字色
+                                }
+
+                                // カーソル類
+                                div.cursors {
+
+                                    // カーソル本体
+                                    div.cursor {
+
+                                        border : none;                                               // カーソルスタイルリセット
+                                        border-left : solid 1px @settingsView-textBox-cursor-color;  // カーソルの形と色
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // フォーカス中
+                    &.is-forcused {
+
+                        // スクロール可能部分
+                        div div.scroll-view {
+
+                            // 入力行
+                            div div.lines {
+
+                                // ハイライト全般
+                                div.highlights {
+
+                                    // 各ハイライト
+                                    div.highlight {
+
+                                        // テキスト選択部分のハイライト
+                                        &.selection {
+
+                                            // ハイライト中のテキスト部分
+                                            div.region.selection {
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // 行
+                                div div.line {
+
+                                    // 各行
+                                    span {
+
+                                        // 入力中の行
+                                        span.syntax--text.syntax--plain.syntax--null-grammar {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // ボタン類
+            div.btn-group {
+
+                // 全ボタン
+                button {
+
+                    border : solid 1px @settingsView-btn-enable-bdcolor;  // 枠線
+                    background : @settingsView-btn-enable-bgcolor;        // 背景
+                    color : @settingsView-btn-enable-color;               // 文字色
+                    font-family : @settingsView-btn-enable-font-family;   // 文字フォント
+
+                    // 各ボタン
+                    &.btn.btn-default {
+
+                        // 選択中のボタン
+                        &.selected {
+
+                            background : @settingsView-btn-selected-bgcolor;  // 背景色
+                            color : @settingsView-btn-selected-color;         // 文字色
+                        }
+                    }
+                }
+            }
+        }
+
+        // インストール検索処理実行中のアラート
+        div.alert.alert-info.search-message.icon.icon-search {
+
+            border : solid 1px @settingsView-alert-info-bdcolor;  // 枠線
+            background-color : @settingsView-alert-info-bgcolor;  // 背景色
+            color : @settingsView-alert-info-color;               // 文字色
+        }
+
+        // インストールパッケージ要素ラッパー
+        div.container.package-container {
+
+            // 各パッケージカード
+            div.row {
+
+                // パッケージカード
+                div.package-card.col-lg-8 {
+
+                    background-color : @settingsView-packageCard-bgcolor;  // 背景色
+                    border : solid 1px @settingsView-packageCard-bdcolor;  // 枠線
+
+                    // お気に入り登録数とインストール数表示要素
+                    div.stats.pull-right {
+
+                        // お気に入り登録数とインストール数
+                        span.stats-item {
+
+                            // アイコン要素
+                            span.icon {
+
+                                // お気に入りアイコン要素
+                                &.icon-star {
+
+                                    // アイコン
+                                    &::before {
+
+                                        color : @settingsView-icon-star-color;  // 文字色
+                                    }
+                                }
+
+                                // クラウドアイコン
+                                &.icon-cloud-download {
+
+                                    // アイコン
+                                    &::before {
+
+                                        color : @settingsView-icon-cloud-color;  // 文字色
+                                    }
+                                }
+                            }
+
+                            // 登録数
+                            span.value {
+
+                                font-family : @settingsView-counter-font-family;  // 文字フォント
+                                color : @settingsView-counter-color;              // 文字色
+                            }
+                        }
+                    }
+
+                    // 各パッケージ項目本体
+                    div.body {
+
+                        // パッケージ名とバージョン表示要素
+                        h4.card-name {
+
+                            // パッケージ名
+                            a.package-name {
+
+                                font-family : @settingsView-packageCard-font-family;  // 文字フォント
+                                color : @settingsView-packageCard-title-color;        // 文字色
+                            }
+
+                            // バージョン
+                            span.package-version {
+
+                                font-family : @settingsView-packageCard-font-family;  // 文字フォント
+                                color : @settingsView-packageCard-title-color;        // 文字色
+                            }
+                        }
+
+                        // パッケージ説明
+                        span.package-description {
+
+                            font-family : @settingsView-packageCard-font-family;  // 文字フォント
+                            color : @settingsView-packageCard-color;              // 文字色
+                        }
+
+                        // メッセージ
+                        div.package-message {
+
+                            font-family : @settingsView-packageCard-font-family;  // 文字フォント
+                            color : @settingsView-packageCard-color;              // 文字色
+                        }
+                    }
+
+                    // 作成者情報とコントロールボタン
+                    div.meta {
+
+                        // 作成者
+                        div.meta-user {
+
+                            // アイコンリンク
+                            a {
+
+                                // アイコン
+                                img.avatar {
+                                }
+
+                                // 作成者名
+                                &.author {
+
+                                    font-family : @settingsView-packageCard-font-family;   // 文字フォント
+                                    color : @settingsView-link-color;                      // 文字色
+                                }
+                            }
+                        }
+
+                        // コントロールボタン類表示要素
+                        div.meta-controls {
+
+                            // ボタンツールバー
+                            div.btn-toolbar {
+
+                                // 各ボタン要素
+                                div.btn-group {
+
+                                    // ボタン全て
+                                    button {
+
+                                        border : solid 1px @settingsView-btn-enable-bdcolor;  // 枠線
+                                        background : @settingsView-btn-enable-bgcolor;        // 背景色
+                                        color : @settingsView-btn-enable-color;               // 文字色
+                                        font-family : @settingsView-btn-enable-font-family;   // 文字フォント
+
+                                        // ボタン類
+                                        &.btn {
+
+                                            // アイコンがあるボタン類
+                                            &.icon {
+
+                                                border : solid 1px @settingsView-btn-enable-bdcolor;  // 枠線
+
+                                                // インストール，アップデートなどの元の背景が青いボタン
+                                                &.btn-info {
+
+                                                    border : solid 1px @settingsView-btn-info-enable-bdcolor;  // 枠線
+
+                                                    // インストールボタン
+                                                    &.icon-cloud-download.install-button {
+
+                                                        // アイコン
+                                                        &::before {
+
+                                                            color : @settingsView-icon-cloud-color;  // アイコン色
+                                                        }
+                                                    }
+                                                }
+
+                                                // 設定ボタン
+                                                &.icon-gear.settings {
+
+                                                    // アイコン
+                                                    &::before {
+
+                                                        color : @settingsView-icon-gear-color;  // アイコン色
+                                                    }
+                                                }
+
+                                                // アンインストールボタン
+                                                &.icon-trashcan.uninstall-button {
+
+                                                    // アイコン
+                                                    &::before {
+
+                                                        color : @settingsView-icon-trash-color;  // アイコン色
+                                                    }
+                                                }
+
+                                                // 無効有効切り替えボタン
+                                                &.enablement {
+
+                                                    // 「無効にする」表示の時
+                                                    &.icon-playback-pause {
+
+                                                        // アイコン
+                                                        &::before {
+
+                                                            color : @settingsView-icon-pause-color;  // アイコン色
+                                                        }
+                                                    }
+
+                                                    // 「有効にする」表示の時
+                                                    &.icon-playback-play {
+
+                                                        // アイコン
+                                                        &::before {
+
+                                                            color : @settingsView-icon-play-color;  // アイコン色
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            // インジケーター
+                                            &.status-indicator {
+
+                                                background-color : @settingsView-enablePackage-indicator-color;  // 背景色
+
+                                                // 無効時
+                                                &.is-disabled {
+
+                                                    background-color : @settingsView-disablePackage-indicator-color;  // 背景色
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

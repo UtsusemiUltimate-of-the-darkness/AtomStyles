@@ -1,0 +1,153 @@
+// ブラウザープラスプラグイン
+div.browser-plus {
+
+    // ナビゲーションバー
+    div.url.native-key-bindings {
+
+        border-bottom : solid 1px @browserPlus-toolBar-separate-color;  // ツールバー境界線
+
+        // アドレスバーより左の操作ボタン
+        div.nav-btns-left {
+
+            background-color : @browserPlus-toolBar-bgcolor;  // 背景色
+
+            // 全ボタン
+            span {
+
+                border-right : solid 1px @browserPlus-btn-bdcolor;  // ボタン間の境界線
+                background-color : @browserPlus-btn-bgcolor;        //背景色
+                color : @browserPlus-btn-disable-color;             // アイコン色
+
+                // 標準サイズのボタン
+                &.mega-octicon {
+
+                    // 戻るボタン
+                    &.octicon-arrow-left {
+
+                        // 有効
+                        &.active {
+
+                            color : @browserPlus-btn-enable-color;  // アイコン色
+                        }
+                    }
+
+                    // 進むボタン
+                    &.octicon-arrow-right {
+
+                        // 有効
+                        &.active {
+
+                            color : @browserPlus-btn-enable-color;  // アイコン色
+                        }
+                    }
+
+                    // 再読み込みボタン
+                    &.octicon-sync {
+
+                        color : @browserPlus-btn-enable-color;  // アイコン色
+                    }
+
+                    // 履歴ボタン
+                    &.octicon-book {
+
+                        color : @browserPlus-btn-enable-color;  // アイコン色
+                    }
+
+                    // お気に入りボタン
+                    &.octicon-star {
+
+                        color : @browserPlus-btn-enable-color;  // アイコン色
+                    }
+                }
+
+                // お気に入り一覧表示ボタン
+                &.octicon.octicon-arrow-down {
+
+                    // border : none;       // 枠線なし
+                    margin : 0 0 0 5px;  // 上右下左
+
+                    // アイコン
+                    &::before {
+
+                        color : @browserPlus-btn-enable-color;  // アイコン色
+                    }
+                }
+            }
+        }
+
+        // アドレスバーと機能ボタン
+        div.nav-btns {
+
+            // 機能ボタン
+            div.nav-btns-right {
+
+                background-color : @browserPlus-toolBar-bgcolor;  // 背景色
+
+                // ボタン類
+                span {
+
+                    border-right : solid 1px @browserPlus-btn-bdcolor;  // ボタン間の境界線
+                    background-color : @browserPlus-btn-bgcolor;        // 背景色
+                    color : @browserPlus-btn-enable-color;              // アイコン色
+
+                    // 新規タブボタン
+                    &#newTab.octicon {
+
+                        font-size : @browserPlus-toolBar-btn-newTab-font-size;  // アイコンサイズ
+                        padding : 0 0 0 0;                                      // 上右下左 要素内側の余白
+                    }
+
+                    // 印刷ボタン
+                    &#print.icon-browser-pluss.icon-print {
+
+                        font-size : @browserPlus-toolBar-btn-print-font-size;   // アイコンサイズ
+                        width : 25px;                                           // 横幅
+                        padding : 0 4px 0 0;                                    // 上右下左 要素内側の余白
+
+                        // アイコン
+                        &::before {
+                        }
+                    }
+
+                    // タブのピン留ボタン
+                    &#remember {
+
+                        margin : 0 0 0 0;     // 外側の余白
+                        padding : 0 2px 0 0;  // 内側からの余白
+
+                        // アイコン
+                        &::before {
+                        }
+                    }
+
+                    // ライブボタン
+                    &#live {
+
+                        margin : auto;  // 外側の余白
+
+                        // アイコン
+                        &::before {
+                        }
+                    }
+
+                    // ツールボタン(要素の検証)
+                    &#devtool {
+
+                        border : none;  // ボタン間の枠線削除
+                    }
+                }
+            }
+
+            // アドレスバー
+            div.input-url #url{
+
+                border : none;                                          // 枠線削除
+                border-left : solid 1px @browserPlus-textBox-bdcolor;   // アドレスバーの左枠線
+                border-right : solid 1px @browserPlus-textBox-bdcolor;  // アドレスバーの右枠線
+                background-color : @browserPlus-textBox-bgcolor;        // 背景色
+                color : @browserPlus-textBox-color;                     // 文字色
+                font-family : @browserPlus-toolBar-font-family;         // 文字フォント
+            }
+        }
+    }
+}

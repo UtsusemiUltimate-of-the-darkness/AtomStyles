@@ -1,0 +1,144 @@
+// console画面
+div.console {
+
+    // ツールバー上部
+    div.nuclide-ui-toolbar.nuclide-ui-toolbar--top {
+
+        border-bottom : solid 1px @bottomPane-separate-color;  // 境界線
+
+        // ツールバー左部
+        div.nuclide-ui-toolbar__left {
+
+            // 検索用テキストボックスとボタン
+            div.inline-block.btn-group.nuclide-btn-group {
+
+                // テキストボックス
+                atom-text-editor.nuclide-ui-regexp-filter-input.atom-text-editor-sm.editor.mini {
+
+                    border : solid 1px @console-textBox-bdcolor;  // 枠線
+                    background-color : @console-textBox-bgcolor;  // 背景色
+                    color : @console-textBox-color;               // 文字色
+                    padding : 0;                                  // 内側からの余白
+                    font-family : @console-textBox-font-family;   // 文字フォント
+
+                    // スクロール可能部分
+                    div div.scroll-view {
+
+                        // テキストボックス部分
+                        div div.lines {
+
+                            // ハイライト全般
+                            div.highlights {
+
+                                // ハイライト部分
+                                div.highlight.selection {
+
+                                    // テキスト選択部分
+                                    div.region.selection {
+
+                                        background-color : @console-textBox-selection-bgcolor;  // 背景色
+                                    }
+                                }
+                            }
+
+                            // 入力行
+                            div div.line {
+
+                                // 入力されている文字列
+                                span span.syntax--text.syntax--plain.syntax--null-grammar {
+                                }
+                            }
+
+                            // プレスホルダー
+                            div.placeholder-text {
+
+                                color : @console-textBox-placeholder-color;  // プレスホルダー文字色
+                                font-family : @console-textBox-font-family;           // 文字フォント
+                            }
+
+                            // カーソル
+                            div.cursors {
+
+                                // カーソル本体
+                                div.cursor {
+
+                                    border : none;
+                                    border-left : solid 2px @console-textBox-cursor-color;  // カーソルの形と色
+                                }
+                            }
+                        }
+                    }
+
+                    // フォーカス中
+                    &.is-forcused {
+
+                        // スクロール可能部分
+                        div div.scroll-view {
+
+                            // 入力行
+                            div.div.lines {
+
+                                // ハイライト全般
+                                div.highlights {
+
+                                    // 各ハイライト
+                                    div.highlight {
+
+                                        // テキスト選択部分のハイライト
+                                        &.selection {
+
+                                            // ハイライト中のテキスト部分
+                                            div.region.selection {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // 正規表現ボタン
+                button.nuclide-ui-regexp-filter-button.btn.btn-sm {
+
+                    border : solid 1px @console-btn-enable-bdcolor;  // 枠線
+                    background : @console-btn-enable-bgcolor;        // 背景
+                    color : @console-btn-enable-color;               // 文字色
+                }
+            }
+        }
+
+        // ツールバー右部
+        div.nuclide-ui-toolbar__right {
+
+            // クリアボタン
+            button.btn.btn-sm {
+
+                border : solid 1px @console-btn-enable-bdcolor;  // 枠線
+                background : @console-btn-enable-bgcolor;        // 背景
+                color : @console-btn-enable-color;               // 文字色
+                font-family : @console-btn-font-family;          // 文字フォント
+            }
+        }
+    }
+
+    // 本体要素領域
+    div.console-body {
+
+        background: transparent;  // 背景
+
+        // 要素ラッパー
+        div.console-scroll-pane-wrapper.atom-ide-filterable {
+
+            // 表表示要素ラッパー
+            div.console-table-wrapper.native-key-bindings {
+
+                background: transparent;  // 背景
+
+                // 表表示領域
+                div {
+                }
+            }
+        }
+    }
+}

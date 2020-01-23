@@ -1,0 +1,29 @@
+// Linterパネル
+div div#linter-panel {
+
+    // 表
+    table {
+
+        // 表ヘッダ
+        thead {
+
+            background : @linter-table-bgcolor;  // 背景色
+
+            // 行
+            tr {
+
+                border : solid 1px @linter-table-bdcolor;  // 枠線
+                background-color : @linter-table-bgcolor;     // 背景色
+
+                // 各セル
+                th , td {
+
+                    border : solid 1px @linter-table-bdcolor;  // 罫線
+                    background-color : @linter-table-bgcolor;  // 背景色
+                    color : @linter-table-color;               // 文字色
+                    font-family : @linter-table-font-family;   // 文字フォント
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+// 行，列番号表示要素
+.cursor-position.inline-block {
+
+    background-color : @statusBar-elem-bgcolor;  // 背景色
+
+    // マウスオン
+    &:hover {
+
+        background-color : @statusBar-hoverIcon-bgcolor;  // 背景色
+    }
+
+    // 表示部分
+    a.inline-block {
+
+        background-color : transparent;                // 背景色
+        color : @statusBar-color;                      // 文字色
+        font-family : @statusBar-counter-font-family;  // 文字フォント
+    }
+}

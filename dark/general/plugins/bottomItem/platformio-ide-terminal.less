@@ -1,0 +1,120 @@
+// ターミナル追加プラグイン"platformio-ide-terminal terminal-view"
+div.platformio-ide-terminal.terminal-view {
+
+    background : @terminal-background;  // 背景
+    background-repeat : no-repeat;      // 背景のリピート
+    background-size : cover;            // 背景画像の大きさ
+
+    // ターミナル上部の操作ボタン類
+    section.input-block {
+
+        border-bottom : solid 1px @terminal-separate-color;  // ターミナルのボタン類と入力欄の境界線
+        padding : 0;                                         // 内側からの余白
+        background-color : @terminal-bgcolor;                // 背景色
+
+        // ボタン類
+        div.btn-toolbar {
+
+            padding : auto;  // 内側からの余白
+
+            // ボタングループ
+            div.btn-group {
+
+                // キーボードボタン
+                button.btn.icon.icon-keyboard {
+
+                    border : solid 1px @terminal-btn-enable-bdcolor;  // 枠線
+                    background : @terminal-btn-enable-bgcolor;        // 背景
+                    color : @terminal-btn-enable-color;               // 文字色
+
+                    // アイコン
+                    &::before {
+                        margin : 4px 0 0 1px;                        // 外側からの余白
+                    }
+                }
+
+                // 右側のボタングループ
+                &.right {
+
+                    // ボタン類
+                    button.btn.icon {
+
+                        // 最小化ボタン
+                        &.icon-chevron-down {
+
+                            border : solid 1px @terminal-btn-enable-bdcolor;  // 枠線
+                            background : @terminal-btn-enable-bgcolor;        // 背景
+                            color : @terminal-btn-enable-color;               // 文字色
+
+                            // アイコン
+                            &::before {
+
+                                margin : 4px 1px 0 0;  // 上右下左の余白
+                            }
+                        }
+
+                        // 最大化ボタン
+                        &.icon-screen-full {
+
+                            border : solid 1px @terminal-btn-enable-bdcolor;  // 枠線
+                            background : @terminal-btn-enable-bgcolor;        // 背景
+                            color : @terminal-btn-enable-color;               // 文字色
+
+                            // アイコン
+                            &::before {
+
+                                margin : 4px 0 0 0;                        // 外側の余白
+                            }
+                        }
+
+                        // 閉じるボタン
+                        &.icon-x {
+
+                            border : solid 1px @terminal-btn-enable-bdcolor;  // 枠線
+                            background : @terminal-btn-enable-bgcolor;        // 背景
+                            color : @terminal-btn-enable-color;               // 文字色
+
+                            // アイコン
+                            &::before {
+
+                                margin : 3px 0 0 0;                        // 外側の余白
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // ターミナル部分
+    div.xterm {
+
+        background-color : @terminal-bgcolor;  // 背景色
+        color : @terminal-color;               // 文字色
+        font-family : @terminal-font-family;   // 文字フォント
+
+        // 入力部分
+        div.terminal {
+
+            padding : 0;  // 余白なし(行が隠れてしまうのを防ぐ)
+
+            div {
+
+                // 選択部分
+                &::selection {
+
+                    background-color : @terminal-btn-selected-bgcolor;  // 背景色
+                    color : @terminal-btn-selected-color;               // 文字色
+                }
+
+                // カーソル
+                .terminal-cursor {
+
+                    background-color : @terminal-cursor-bgcolor;       // 背景色
+                    // border-bottom : solid 3px @terminal-cursor-color;  // カーソルをアンダーバーにする
+                    border-left : solid 2px @terminal-cursor-color;    // カーソルを縦棒にする
+                }
+            }
+        }
+    }
+}

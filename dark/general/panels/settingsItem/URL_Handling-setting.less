@@ -1,0 +1,117 @@
+// URL Handling設定項目
+form.general-panel.section {
+
+    // 設定画面
+    div.settings-panel {
+
+        // 設定内容ラッパー
+        div.section-container {
+
+            // 設定タイトル
+            div.block.section-heading {
+
+                font-family : @settingsView-title-font-family;  // 文字フォント
+                color : @settingsView-title-color;              // 文字色
+
+                // アイコン
+                &::before {
+
+                    color : @settingsView-icon-monitor-color;  // アイコン色
+                }
+            }
+
+            // 設定概要
+            div.text.icon.icon-question {
+
+                font-family : @settingsView-font-family;  // 文字フォント
+                color : @settingsView-color;              // 文字色
+
+                // アイコン
+                &::before {
+
+                    color : @settingsView-color;  // アイコン色
+                }
+            }
+
+            // 設定本体
+            div.section-body {
+
+                font-family : @settingsView-font-family;  // 文字フォント
+                color : @settingsView-color;              // 文字色
+
+                // 各項目
+                div.control-group {
+
+                    // 単一項目
+                    div.controls {
+
+                        // 設定タイトルと説明
+                        label.control-label {
+
+                            // タイトル
+                            div.setting-title {
+
+                                font-family : @settingsView-subtitle-font-family;  // 文字フォント
+                                color : @settingsView-subtitle-color;              // 文字色
+                            }
+
+                            // 説明文
+                            div.setting-description {
+
+                                font-family : @settingsView-font-family;  // 文字フォント
+                                color : @settingsView-color;              // 文字色
+                            }
+                        }
+
+                        // ボタン
+                        button.btn.btn-primary {
+
+                            border : solid 1px @settingsView-btn-disable-bdcolor;  // 枠線
+                            background : @settingsView-btn-disable-bgcolor;        // 背景
+                            color : @settingsView-btn-disable-color;               // 文字色
+                            font-family : @settingsView-btn-disable-font-family;   // 文字フォント
+
+                            // 有効時
+                            &:enabled {
+
+                                border : solid 1px @settingsView-btn-enable-bdcolor;  // 枠線
+                                background : @settingsView-btn-enable-bgcolor;        // 背景
+                                color : @settingsView-btn-enable-color;               // 文字色
+                                font-family : @settingsView-btn-enable-font-family;   // 文字フォント
+                            }
+                        }
+
+                        // 選択項目
+                        select.form-control {
+
+                            border : solid 1px @settingsView-pullDownMenu-bdcolor;  // 枠線
+                            background-color : @settingsView-pullDownMenu-bgcolor;  // 背景色
+                            color : @settingsView-pullDownMenu-color;               // 文字色
+                        }
+
+                        // 設定タイトル要素
+                        label.controls-label {
+
+                            // 設定タイトル
+                            div.setting-title {
+
+                                color : @settingsView-subtitle-color;  // 文字色
+                            }
+                        }
+
+                        // 表
+                        table tr th,
+                        table tr td {
+
+                            border : solid 1px @settingsView-table-bdcolor;  // 枠線
+                            border-collapse : collapse;                      // 要素間の隙間なし
+                            background-color : @settingsView-table-bgcolor;  // 背景色
+                            color : @settingsView-table-color;               // 文字色
+                            font-family : @settingsView-table-font-family;   // 文字フォント
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
