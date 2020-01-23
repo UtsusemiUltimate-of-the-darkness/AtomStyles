@@ -73,7 +73,6 @@ Windows非対応．Mac使用者で，ダークテーマを使用している方�
         「styles.less」ファイルの「atom-workspace」前に
         <pre><code>@import "(解凍後のフォルダ名)/AtomStyles.less"</code></pre>
         を記述する．
-
         例1）解凍後のフォルダ名が「AtomStyles-master」の場合，
             <pre><code>@import "AtomStyles-master/AtomStyles.less"</code></pre>
             を記述する．
