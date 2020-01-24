@@ -5,6 +5,12 @@ battery-status.battery-status.inline-block {
     color : @statusBar-color;                      // 文字色
     font-family : @statusBar-counter-font-family;  // 文字フォント
 
+    // マウスオン
+    &:hover {
+
+        background-color : @statusBar-hoverIcon-bgcolor;
+    }
+
     // バッテリーアイコン領域
     div.status {
 

@@ -4,6 +4,20 @@ div.github-GitHub-root {
     // 内容ラッパー
     div.github-GitHub {
 
+        // ヘッダ
+        header.github-Project {
+
+            border-bottom : solid 1px @rightPane-separate-color;  // 境界線
+
+            select.github-Project-path.input-select {
+
+                border : solid 1px @githubPanel-pullDownMenu-bdcolor;  // 枠線
+                background-color : @githubPanel-pullDownMenu-bgcolor;  // 背景色
+                color : @githubPanel-pullDownMenu-color;               // 文字色
+                font-family : @githubPanel-font-family;                // 文字フォント
+            }
+        }
+
         // GitHub内容
         div.github-GitHub-content {
 

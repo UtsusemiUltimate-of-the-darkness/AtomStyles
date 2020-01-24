@@ -7,16 +7,55 @@ div.react-atom-status-bar.github-StatusBarTileController {
         background-color : @statusBar-hoverIcon-bgcolor;  // 背景色
     }
 
-    // ブランチ表示
-    div.github-branch.inline-block {
+    div {
 
-        background-color : @statusBar-elem-bgcolor;  // 背景色
-    }
+        // ブランチ表示
+        &.github-branch.inline-block {
 
-    // プルリクエスト数
-    div.github-PushPull.inline-block {
+            background-color : @statusBar-elem-bgcolor;  // 背景色
 
-        background-color : @statusBar-elem-bgcolor;  // 背景色
+            // アイコン，ブランチ表示要素
+            span {
+
+                // アイコン要素
+                &.icon.icon-git-branch {
+
+                    // アイコン本体
+                    &::before {
+
+                        color : @statusBar-activeIcon-color;  // アイコン色
+                    }
+                }
+
+                // ブランチ
+                &.branch-label {
+
+                    color : @statusBar-color;  // 文字色
+                }
+            }
+        }
+
+        // プルリクエスト数
+        &.github-PushPull.inline-block {
+
+            background-color : @statusBar-elem-bgcolor;  // 背景色
+
+            // アイコン，プルリクエスト数
+            span {
+
+                color : @statusBar-color;  // 文字色
+
+                // アイコン要素
+                span.github-PushPull-icon.icon.icon-stop {
+
+                    // アイコン本体
+                    &::before {
+
+                        color : @statusBar-icon-error-color;  // アイコン色
+                    }
+                }
+            }
+        }
     }
 
     // github関連ボタン

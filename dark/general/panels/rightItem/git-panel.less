@@ -37,39 +37,104 @@ div.github-Git-root {
                     // 概要文
                     span {
 
-                        font-family : @rightPane-font-family;  // 文字フォント
-                        color : @rightPane-color;              // 文字色
+                        font-family : @gitPanel-font-family;  // 文字フォント
+                        color : @gitPanel-color;              // 文字色
                     }
                 }
 
                 // リポジトリ作成ボタン
                 button.btn {
 
-                    border : solid 1px @btn-disable-bdcolor;  // 枠線
-                    background : @btn-disable-bgcolor;        // 背景色
-                    color : @btn-disable-color;               // 文字色
-                    font-family : @btn-font-family;           // 文字フォント
+                    border : solid 1px @gitPanel-btn-disable-bdcolor;  // 枠線
+                    background : @gitPanel-btn-disable-bgcolor;        // 背景色
+                    color : @gitPanel-btn-disable-color;               // 文字色
+                    font-family : @gitPanel-btn-disable-font-family;   // 文字フォント
 
                     // アイコン
                     &::before {
 
-                        color : @btn-disable-color;  // アイコン色
+                        color : @gitPanel-btn-disable-color;  // アイコン色
                     }
 
                     // 有効ボタン
                     &:enabled {
 
-                        border : solid 1px @btn-enable-bdcolor;  // 枠線
-                        background : @btn-enable-bgcolor;        // 背景色
-                        color : @btn-enable-color;               // 文字色
+                        border : solid 1px @gitPanel-btn-enable-bdcolor;  // 枠線
+                        background : @gitPanel-btn-enable-bgcolor;        // 背景色
+                        color : @gitPanel-btn-enable-color;               // 文字色
 
                         // アイコン
                         &::before {
 
-                            color : @btn-enable-color;  // アイコン色
+                            color : @gitPanel-btn-enable-color;  // アイコン色
                         }
                     }
                 }
+            }
+
+            // ヘッダ
+            header.github-Project {
+
+                border-bottom : solid 1px @rightPane-separate-color;  // 境界線
+
+                // プルダウンメニュー
+                select.github-Project-path.input-select {
+
+                    border : solid 1px @gitPanel-pullDownMenu-bdcolor;  // 枠線
+                    background-color : @gitPanel-pullDownMenu-bgcolor;  // 背景色
+                    color : @gitPanel-pullDownMenu-color;               // 文字色
+                    font-family : @gitPanel-font-family;                // 文字フォント
+                }
+            }
+
+            // 変更過多
+            div.github-Git.too-many-changes {
+
+                // アイコン領域
+                div.github-Git-LargeIcon.icon.icon-diff {
+
+                    // アイコン本体
+                    &::before {
+
+                        color : @gitPanel-icon-diff-color;  // アイコン色
+                    }
+                }
+
+                // タイトル
+                h1 {
+
+                    color : @gitPanel-title-color;       // 文字色
+                    font-family: @gitPanel-font-family;  // 文字フォント
+                }
+
+                // 初期化説明
+                div.initialize-repo-description {
+
+                    color : @gitPanel-color;              // 文字色
+                    font-family : @gitPanel-font-family;  // 文字フォント
+
+                    // 整形済みテキスト
+                    code {
+
+                        background-color : @code-bgcolor;  // 整形済みテキスト背景色
+                        color : @code-color;               // 整形済みテキスト文字色
+                    }
+                }
+            }
+        }
+
+        // ヘッダ
+        header.github-Project {
+
+            border-bottom : solid 1px @rightPane-separate-color;  // 境界線
+
+            // プルダウンメニュー
+            select.github-Project-path.input-select {
+
+                border : solid 1px @gitPanel-pullDownMenu-bdcolor;  // 枠線
+                background-color : @gitPanel-pullDownMenu-bgcolor;  // 背景色
+                color : @gitPanel-pullDownMenu-color;               // 文字色
+                font-family : @gitPanel-font-family;                // 文字フォント
             }
         }
 
@@ -86,9 +151,9 @@ div.github-Git-root {
                 header.github-StagingView-header {
 
                     border : none;                                 // 枠線
-                    // border : solid 1px @btn-enable-bdcolor;
+                    // border : solid 1px @gitPanel-btn-enable-bdcolor;
                     background-color : @gitPanel-title-bgcolor;  // 背景色
-                    color : @rightPane-color;                      // 文字色
+                    color : @gitPanel-color;                      // 文字色
 
                     // タイトルアイコン
                     span.icon {
@@ -121,28 +186,150 @@ div.github-Git-root {
                     // ボタン要素
                     button.github-StagingView-headerButton {
 
-                        border : solid 1px @btn-disable-bdcolor;  // 枠線
-                        background : @btn-disable-bgcolor;        // 背景色
-                        color : @btn-disable-color;               // 文字色
-                        font-family : @btn-font-family;           // 文字フォント
+                        border : solid 1px @gitPanel-btn-disable-bdcolor;  // 枠線
+                        background : @gitPanel-btn-disable-bgcolor;        // 背景色
+                        color : @gitPanel-btn-disable-color;               // 文字色
+                        font-family : @gitPanel-btn-disable-font-family;           // 文字フォント
 
                         // アイコン
                         &::before {
 
-                            color : @btn-disable-color;  // アイコン色
+                            color : @gitPanel-btn-disable-color;  // アイコン色
                         }
 
                         // 有効ボタン
                         &:enabled {
 
-                            border : solid 1px @btn-enable-bdcolor;  // 枠線
-                            background : @btn-enable-bgcolor;        // 背景色
-                            color : @btn-enable-color;               // 文字色
+                            border : solid 1px @gitPanel-btn-enable-bdcolor;  // 枠線
+                            background : @gitPanel-btn-enable-bgcolor;        // 背景色
+                            color : @gitPanel-btn-enable-color;               // 文字色
 
                             // アイコン
                             &::before {
 
-                                color : @btn-enable-color;  // アイコン色
+                                color : @gitPanel-btn-enable-color;  // アイコン色
+                            }
+                        }
+                    }
+                }
+
+                // ファイルフォルダリスト
+                div.github-StagingView-list.github-FilePatchListView {
+
+                    // Unstaged Changes
+                    &.github-StagingView-unstaged {
+
+                        // No changes要素
+                        &::before {
+
+                            color : @gitPanel-color;  // 文字色
+                        }
+
+                        // 各ファイルフォルダリスト項目
+                        div.github-FilePatchListView-item {
+
+                            border : solid 1px @gitPanel-list-item-separate-color;  // 境界線
+                            color : @gitPanel-color;                                // 文字色
+
+                            // アイコン，ファイルフォルダ名
+                            span {
+
+                                // アイコン要素
+                                &.github-FilePatchListView-icon.icon {
+
+                                    // +アイコン要素
+                                    &.icon-diff-added.status-added {
+
+                                        // アイコン本体
+                                        &::before {
+                                        }
+                                    }
+                                }
+
+                                // ファイルフォルダ名
+                                &.github-FilePatchListView-path {
+                                }
+                            }
+
+                            // 選択されている
+                            &.is-selected {
+
+                                background : @gitPanel-list-item-bgcolor;  // 背景色
+
+                                // アイコン要素
+                                &.github-FilePatchListView-icon.icon {
+
+                                    // +アイコン要素
+                                    &.icon-diff-added.status-added {
+
+                                        // アイコン本体
+                                        &::before {
+                                        }
+                                    }
+                                }
+
+                                // ファイルフォルダ名
+                                &.github-FilePatchListView-path {
+                                }
+                            }
+                        }
+                    }
+
+                    // Staged Changes
+                    &.github-StagingView-staged {
+
+                        // No changes要素
+                        &::before {
+
+                            color : @gitPanel-color;  // 文字色
+                        }
+
+                        // 各ファイルフォルダリスト項目
+                        div.github-FilePatchListView-item {
+
+                            border : solid 1px @gitPanel-list-item-separate-color;  // 境界線
+                            color : @gitPanel-color;                                // 文字色
+
+                            // アイコン，ファイルフォルダ名
+                            span {
+
+                                // アイコン要素
+                                &.github-FilePatchListView-icon.icon {
+
+                                    // +アイコン要素
+                                    &.icon-diff-added.status-added {
+
+                                        // アイコン本体
+                                        &::before {
+                                        }
+                                    }
+                                }
+
+                                // ファイルフォルダ名
+                                &.github-FilePatchListView-path {
+                                }
+                            }
+
+                            // 選択されている
+                            &.is-selected {
+
+                                background : @gitPanel-list-item-bgcolor;  // 背景色
+
+                                // アイコン要素
+                                &.github-FilePatchListView-icon.icon {
+
+                                    // +アイコン要素
+                                    &.icon-diff-added.status-added {
+
+                                        // アイコン本体
+                                        &::before {
+                                        }
+                                    }
+                                }
+
+                                // ファイルフォルダ名
+                                &.github-FilePatchListView-path {
+                                }
                             }
                         }
                     }
@@ -163,28 +350,28 @@ div.github-Git-root {
                 // 全ての変更閲覧ボタン
                 button.btn.github-CommitView-button.github-CommitView-commitPreview {
 
-                    border : solid 1px @btn-disable-bdcolor;  // 枠線
-                    background : @btn-disable-bgcolor;        // 背景色
-                    color : @btn-disable-color;               // 文字色
-                    font-family : @btn-font-family;           // 文字フォント
+                    border : solid 1px @gitPanel-btn-disable-bdcolor;  // 枠線
+                    background : @gitPanel-btn-disable-bgcolor;        // 背景色
+                    color : @gitPanel-btn-disable-color;               // 文字色
+                    font-family : @gitPanel-btn-disable-font-family;           // 文字フォント
 
                     // アイコン
                     &::before {
 
-                        color : @btn-disable-color;  // アイコン色
+                        color : @gitPanel-btn-disable-color;  // アイコン色
                     }
 
                     // 有効ボタン
                     &:enabled {
 
-                        border : solid 1px @btn-enable-bdcolor;  // 枠線
-                        background : @btn-enable-bgcolor;        // 背景色
-                        color : @btn-enable-color;               // 文字色
+                        border : solid 1px @gitPanel-btn-enable-bdcolor;  // 枠線
+                        background : @gitPanel-btn-enable-bgcolor;        // 背景色
+                        color : @gitPanel-btn-enable-color;               // 文字色
 
                         // アイコン
                         &::before {
 
-                            color : @btn-enable-color;  // アイコン色
+                            color : @gitPanel-btn-enable-color;  // アイコン色
                         }
                     }
                 }
@@ -203,7 +390,7 @@ div.github-Git-root {
                     atom-text-editor.editor {
 
                         // border : solid 1px @gitPanel-textBox-bdcolor;  // 枠線
-                        // background-color : @gitPanel-textBox-bgcolor;  // 背景色
+                        background-color : transparent;  // 背景色
                         font-family : @textBox-font-family;   // 文字フォント
                         color : @gitPanel-textBox-color;               // 文字色
 
@@ -230,7 +417,7 @@ div.github-Git-root {
                                                 // ハイライト中のテキスト部分
                                                 div.region.selection {
 
-                                                    background-color : @selection-bgcolor;  // 背景色
+                                                    background : @selection-bgcolor !important;  // 背景色
                                                 }
                                             }
                                         }
@@ -313,40 +500,40 @@ div.github-Git-root {
                 // ボタン類
                 button {
 
-                    border : solid 1px @btn-disable-bdcolor;  // 枠線
-                    background : @btn-disable-bgcolor;        // 背景色
-                    color : @btn-disable-color;               // 文字色
-                    font-family : @btn-font-family;           // 文字フォント
+                    border : solid 1px @gitPanel-btn-disable-bdcolor;  // 枠線
+                    background : @gitPanel-btn-disable-bgcolor;        // 背景色
+                    color : @gitPanel-btn-disable-color;               // 文字色
+                    font-family : @gitPanel-btn-disable-font-family;           // 文字フォント
 
                     // アイコン
                     &::before {
 
-                        color : @btn-disable-color;  // アイコン色
+                        color : @gitPanel-btn-disable-color;  // アイコン色
                     }
 
                     // svgアイコン
                     svg.github-CommitView-coAuthorToggleIcon {
 
-                        fill : @btn-disable-color;  // アイコン色
+                        fill : @gitPanel-btn-disable-color;  // アイコン色
                     }
 
                     // 有効ボタン
                     &:enabled {
 
-                        border : solid 1px @btn-enable-bdcolor;  // 枠線
-                        background : @btn-enable-bgcolor;        // 背景色
-                        color : @btn-enable-color;               // 文字色
+                        border : solid 1px @gitPanel-btn-enable-bdcolor;  // 枠線
+                        background : @gitPanel-btn-enable-bgcolor;        // 背景色
+                        color : @gitPanel-btn-enable-color;               // 文字色
 
                         // アイコン
                         &::before {
 
-                            color : @btn-enable-color;  // アイコン色
+                            color : @gitPanel-btn-enable-color;  // アイコン色
                         }
 
                         // svgアイコン
                         svg.github-CommitView-coAuthorToggleIcon {
 
-                            fill : @btn-enable-color;  // アイコン色
+                            fill : @gitPanel-btn-enable-color;  // アイコン色
                         }
                     }
                 }
@@ -358,28 +545,28 @@ div.github-Git-root {
                 // コミットボタン
                 button.btn.btn-primary.github-CommitView-button {
 
-                    border : solid 1px @btn-disable-bdcolor;  // 枠線
-                    background : @btn-disable-bgcolor;        // 背景色
-                    color : @btn-disable-color;               // 文字色
-                    font-family : @btn-font-family;           // 文字フォント
+                    border : solid 1px @gitPanel-btn-disable-bdcolor;  // 枠線
+                    background : @gitPanel-btn-disable-bgcolor;        // 背景色
+                    color : @gitPanel-btn-disable-color;               // 文字色
+                    font-family : @gitPanel-btn-disable-font-family;           // 文字フォント
 
                     // アイコン
                     &::before {
 
-                        color : @btn-disable-color;  // アイコン色
+                        color : @gitPanel-btn-disable-color;  // アイコン色
                     }
 
                     // 有効ボタン
                     &:enabled {
 
-                        border : solid 1px @btn-enable-bdcolor;  // 枠線
-                        background : @btn-enable-bgcolor;        // 背景色
-                        color : @btn-enable-color;               // 文字色
+                        border : solid 1px @gitPanel-btn-enable-bdcolor;  // 枠線
+                        background : @gitPanel-btn-enable-bgcolor;        // 背景色
+                        color : @gitPanel-btn-enable-color;               // 文字色
 
                         // アイコン
                         &::before {
 
-                            color : @btn-enable-color;  // アイコン色
+                            color : @gitPanel-btn-enable-color;  // アイコン色
                         }
                     }
                 }
@@ -388,15 +575,16 @@ div.github-Git-root {
                 div.github-CommitView-remaining-characters {
 
                     font-family : @gitPanel-counter-font-family;  // 文字フォント
-                    color : @rightPane-color;                     // 文字色
+                    color : @gitPanel-color;                     // 文字色
                 }
             }
         }
 
         // 最近のコミット
-        div.github-RecentCommits {
+        div.github-RecentCommits-message {
 
             border-top : solid 1px @separate-color;  // 境界線
+            color : @gitPanel-color;                 // 文字色
 
             // コミットリスト
             ul.github-RecentCommits-list {
@@ -404,15 +592,15 @@ div.github-Git-root {
                 // 各リスト要素
                 li.github-RecentCommit {
 
-                    // border-top : solid 1px @list-item-separate-color;     // 上枠線
-                    border-bottom : solid 1px @list-item-separate-color;  // 下枠線
-                    background-color : @list-item-bgcolor;                // 背景色
-                    color : @rightPane-color;                             // 文字色
+                    // border-top : solid 1px @gitPanel-list-item-separate-color;     // 上枠線
+                    border-bottom : solid 1px @gitPanel-list-item-separate-color;  // 下枠線
+                    background-color : @gitPanel-list-item-bgcolor;                // 背景色
+                    color : @gitPanel-color;                                       // 文字色
 
                     // 直近のコミット
                     &.most-recent {
 
-                        border-top : solid 1px @list-item-separate-color;  // 上枠線
+                        border-top : solid 1px @gitPanel-list-item-separate-color;  // 上枠線
                     }
                 }
 
@@ -428,34 +616,34 @@ div.github-Git-root {
                 span.github-RecentCommit-message {
 
                     font-family : @gitPanel-commitMassage-font-family;  // 文字フォント
-                    color : @rightPane-color;                           // 文字色
+                    color : @gitPanel-color;                            // 文字色
                 }
 
                 // Undoボタン
                 button.btn.github-RecentCommit-undoButton {
 
-                    border : solid 1px @btn-disable-bdcolor;  // 枠線
-                    background : @btn-disable-bgcolor;        // 背景色
-                    color : @btn-disable-color;               // 文字色
-                    font-family : @btn-font-family;           // 文字フォント
+                    border : solid 1px @gitPanel-btn-disable-bdcolor;  // 枠線
+                    background : @gitPanel-btn-disable-bgcolor;        // 背景色
+                    color : @gitPanel-btn-disable-color;               // 文字色
+                    font-family : @gitPanel-btn-disable-font-family;   // 文字フォント
 
                     // アイコン
                     &::before {
 
-                        color : @btn-disable-color;  // アイコン色
+                        color : @gitPanel-btn-disable-color;  // アイコン色
                     }
 
                     // 有効ボタン
                     &:enabled {
 
-                        border : solid 1px @btn-enable-bdcolor;  // 枠線
-                        background : @btn-enable-bgcolor;        // 背景色
-                        color : @btn-enable-color;               // 文字色
+                        border : solid 1px @gitPanel-btn-enable-bdcolor;  // 枠線
+                        background : @gitPanel-btn-enable-bgcolor;        // 背景色
+                        color : @gitPanel-btn-enable-color;               // 文字色
 
                         // アイコン
                         &::before {
 
-                            color : @btn-enable-color;  // アイコン色
+                            color : @gitPanel-btn-enable-color;  // アイコン色
                         }
                     }
                 }
@@ -463,7 +651,7 @@ div.github-Git-root {
                 // コミット時間
                 time.timeago.github-RecentCommit-time {
 
-                    color : @rightPane-color;                     // 文字色
+                    color : @gitPanel-color;                      // 文字色
                     font-family : @gitPanel-counter-font-family;  // 文字フォント
                 }
             }

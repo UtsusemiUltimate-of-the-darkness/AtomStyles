@@ -88,7 +88,8 @@
 @list-item-bgcolor :                            rgba( 02, 17, 80, 0.4 );                     // リストアイテム背景色
 // その他
 @pane-resize-handle-color :                     @lazurite;                                   // 画面リサイズハンドル色
-
+@code-bgcolor :                                 rgba( 02 , 17 , 60 , 0.7 );                  // 整形済みテキスト背景色
+@code-color :                                   @nagisa;                                     // 整形済みテキスト文字色
 // 各ペインごとの設定
 /**
  * 左ペイン
@@ -318,6 +319,10 @@
 @rightPane-textBox-placeholder-color :          @textBox-placeholder-color;                  // テキストボックスプレスホルダー文字色
 @rightPane-textBox-cursor-color :               @textBox-cursor-color;                       // カーソル色
 @rightPane-textBox-selection-bgcolor :          @textBox-selection-bgcolor;                  // 選択文字列背景色
+// プルダウンメニュー
+@rightPane-pullDownMenu-bdcolor :               @gold;                                       // プルダウンメニュー枠線色
+@rightPane-pullDownMenu-bgcolor :               rgba( 02 , 17 , 50 , 0.40 );                 // プルダウンメニュー背景色
+@rightPane-pullDownMenu-color :                 @gold;                                       // プルダウンメニュー文字色
 // デバッガペイン
 @debuggerPane-tabBar-bgcolor :                  @rightPane-tabBar-bgcolor;                   // タブバー背景色
 @debuggerPane-tab-bdcolor :                     @rightPane-tab-bdcolor;                      // タブ境界線
@@ -332,7 +337,6 @@
 @debuggerActivePane-activeTab-bgcolor :         @rightActivePane-activeTab-bgcolor;          // debuggerアクティブペインアクティブタブ背景色
 @debuggerActivePane-activeTab-color :           @rightActivePane-activeTab-color;            // debuggerアクティブペインアクティブタブ文字色
 @debuggerActivePane-activeTab-indicator-color : @rightActivePane-activeTab-indicator-color;  // debuggerアクティブペインアクティブタブ下線色
-
 // ブレークポイントペイン
 @breakpointsPane-color :                        @rightPane-color;                            // 文字色
 @breakpointsPane-toggleBtn-color :              @rightPane-color;                            // 展開ボタン
@@ -350,15 +354,32 @@
 @breakpointsPane-btn-selected-bgcolor :         @rightPane-btn-selected-bgcolor;             // 選択中ボタン背景色
 @breakpointsPane-btn-selected-color :           @rightPane-btn-selected-color;               // 選択中ボタン文字色
 // gitパネル
-@git-icon-color :                               @rightPane-color;                            // gitアイコン色
-@gitPanel-title-bgcolor :                       @rightPane-bgcolor;                          // gitパネルタイトル背景色
-@gitPanel-title-icon-color :                    @rightPane-color;                            // gitパネルタイトルアイコン色
+@gitPanel-bgcolor :                             @rightPane-bgcolor;                          // gitパネル背景色
+@gitPanel-color :                               @rightPane-color;                            // gitパネル文字色
+@git-icon-color :                               @gitPanel-color;                             // gitアイコン色
+@gitPanel-btn-enable-bdcolor :                  @btn-enable-bdcolor;                         // 有効ボタン枠線
+@gitPanel-btn-enable-bgcolor :                  @btn-enable-bgcolor;                         // 有効ボタン背景色
+@gitPanel-btn-enable-color :                    @btn-enable-color;                           // 有効ボタン文字色
+@gitPanel-btn-disable-bdcolor :                 @btn-disable-bdcolor;                        // 無効ボタン枠線
+@gitPanel-btn-disable-bgcolor :                 @btn-disable-bgcolor;                        // 無効ボタン背景色
+@gitPanel-btn-disable-color :                   @btn-disable-color;                          // 無効ボタン文字色
+@gitPanel-btn-selected-bgcolor :                @btn-selected-bgcolor;                       // 選択中ボタン背景色
+@gitPanel-btn-selected-color :                  @btn-selected-color;                         // 選択中ボタン文字色
+@gitPanel-title-bgcolor :                       @gitPanel-bgcolor;                           // gitパネルタイトル背景色
+@gitPanel-title-icon-color :                    @gitPanel-color;                             // gitパネルタイトルアイコン色
+@gitPanel-title-color :                         @gitPanel-color;                             // gitパネルタイトル文字色
 @gitPanel-textBox-bdcolor :                     @rightPane-textBox-bdcolor;                  // テキストボックス枠線色
 @gitPanel-textBox-bgcolor :                     @rightPane-textBox-bgcolor;                  // テキストボックス背景色
 @gitPanel-textBox-color :                       @rightPane-textBox-color;                    // テキストボックス文字色
 @gitPanel-textBox-placeholder-color :           @rightPane-textBox-placeholder-color;        // テキストボックスプレスホルダー文字色
 @gitPanel-textBox-cursor-color :                @rightPane-textBox-cursor-color;             // カーソル色
 @gitPanel-textBox-selection-bgcolor :           @rightPane-textBox-selection-bgcolor;        // 選択文字列背景色
+@gitPanel-pullDownMenu-bdcolor :                @rightPane-pullDownMenu-bdcolor;             // プルダウンメニュー枠線色
+@gitPanel-pullDownMenu-bgcolor :                @rightPane-pullDownMenu-bgcolor;             // プルダウンメニュー背景色
+@gitPanel-pullDownMenu-color :                  @rightPane-pullDownMenu-color;               // プルダウンメニュー文字色
+@gitPanel-icon-diff-color :                     @gitPanel-color;                             // diffアイコン色
+@gitPanel-list-item-separate-color :            @list-item-separate-color;                   // リスト項目境界線
+@gitPanel-list-item-bgcolor :                   @list-item-bgcolor;                          // リスト項目背景色
 // githubパネル
 @githubPanel-textBox-bdcolor :                  @rightPane-textBox-bdcolor;                  // テキストボックス枠線色
 @githubPanel-textBox-bgcolor :                  @rightPane-textBox-bgcolor;                  // テキストボックス背景色
@@ -366,6 +387,10 @@
 @githubPanel-textBox-placeholder-color :        @rightPane-textBox-placeholder-color;        // テキストボックスプレスホルダー文字色
 @githubPanel-textBox-cursor-color :             @rightPane-textBox-cursor-color;             // カーソル色
 @githubPanel-textBox-selection-bgcolor :        @rightPane-textBox-selection-bgcolor;        // 選択文字列背景色
+@githubPanel-pullDownMenu-bdcolor :             @rightPane-pullDownMenu-bdcolor;             // プルダウンメニュー枠線色
+@githubPanel-pullDownMenu-bgcolor :             @rightPane-pullDownMenu-bgcolor;             // プルダウンメニュー背景色
+@githubPanel-pullDownMenu-color :               @rightPane-pullDownMenu-color;               // プルダウンメニュー文字色
+
 // ツールパネル
 @toolPanel-bgcolor :                            transparent;                                 // ツールパネル背景色
 @toolPanel-btn-enable-bdcolor :                 @rightPane-btn-enable-bdcolor;               // 有効ボタン枠線
