@@ -188,7 +188,7 @@ div.settings-view.pane-item {
         div.package-detail {
 
             // 階層表示パス要素
-            ol {
+            ol.native-key-bindings.breadcrumb {
 
                 background-color : @settingsView-bgcolor;  // 背景色
                 border-bottom : solid 1px @settingsView-separate-color;     // 文字色
@@ -211,6 +211,8 @@ div.settings-view.pane-item {
 
                 // パッケージカード表示領域
                 section.section {
+
+                    border-bottom : solid 1px @settingsView-separate-color;  // 境界線
 
                     // パッケージカードと各ボタン
                     form.section-container.package-detail-view {
