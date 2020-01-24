@@ -611,12 +611,45 @@ div.settings-view.pane-item {
                             }
 
                             // 表
-                            table,th,td {
+                            table {
 
                                 border : solid 1px @settingsView-table-bdcolor;  // 表の枠線と罫線色
                                 background-color : @settingsView-table-bgcolor;  // 表背景色
                                 color : @settingsView-table-color;               // 文字色
 
+                                // 行
+                                tr {
+
+                                    // ヘッダセル
+                                    th {
+
+                                        border : solid 1px @settingsView-table-bdcolor;  // 表の枠線と罫線色
+                                    }
+
+                                    // セル
+                                    td {
+
+                                        border : solid 1px @settingsView-table-bdcolor;  // 表の枠線と罫線色
+
+                                        // アイコンとテキスト要素
+                                        span {
+
+                                            // アイコン要素
+                                            &.icon {
+
+                                                // コピーアイコン
+                                                &.icon-clippy.copy-icon {
+
+                                                    // アイコン本体
+                                                    &::before {
+
+                                                        color : @settingsView-icon-copy-color;  // アイコン色
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
 
                             // 項目ラッパー
@@ -669,6 +702,273 @@ div.settings-view.pane-item {
                                         border-collapse : collapse;                      // 枠線間の隙間削除
                                         background-color : @settingsView-table-bgcolor;  // 背景色
                                         color : @settingsView-table-color;               // 文字色
+                                    }
+                                }
+                            }
+                        }
+
+                        // パッケージ分法
+                        &.package-grammars {
+
+                            // 項目ラッパー
+                            div {
+
+                                // 各種設定部分
+                                section.section.settings-panel {
+
+                                    // 項目ラッパー
+                                    div.section-container {
+
+                                        // ヘッダ，キーバインド，各種設定項目
+                                        div {
+
+                                            // ヘッダ
+                                            &.block.section-heading.icon.icon-puzzle {
+
+                                                // アイコン本体
+                                                &::before {
+                                                }
+                                            }
+
+                                            // キーバインド
+                                            &.native-key-bindings.text {
+
+                                                color : @settingsView-color;  // 文字色
+
+                                                // スコープ，ファイルタイプ
+                                                div {
+
+                                                    // スコープ
+                                                    &.grammar-scope {
+
+                                                        // タイトル
+                                                        strong {
+                                                        }
+                                                        // テキスト
+                                                        span {
+                                                        }
+                                                    }
+
+                                                    // ファイルタイプ
+                                                    &.grammar-filetypes {
+
+                                                        // タイトル
+                                                        strong {
+                                                        }
+                                                        // テキスト
+                                                        span {
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            // 各種設定項目
+                                            &.section-body {
+
+                                                // 単一項目
+                                                div.control-group {
+
+                                                    // 各設定項目要素
+                                                    div.controls {
+
+                                                        // チェックボックス
+                                                        div.checkbox {
+
+                                                            // チェックボックスと項目名
+                                                            label {
+
+                                                                color : @settingsView-color;  // 文字色
+
+                                                                // チェックボックス
+                                                                input[type="checkbox"] {
+
+                                                                    background-color : @settingsView-checkbox-bgcolor;  // 背景
+                                                                    border : solid 1px @settingsView-checkbox-bdcolor;  // 枠線
+
+                                                                    // チェックマーク左側右下がり斜め棒
+                                                                    &::before {
+
+                                                                        background-color : @settingsView-checkbox-color;  // 背景
+                                                                    }
+
+                                                                    // チェックマーク右側右上がり斜め棒
+                                                                    &::after {
+
+                                                                        background-color : @settingsView-checkbox-color;  // 背景
+                                                                    }
+                                                                }
+
+                                                                // 設定する項目のタイトル
+                                                                div.setting-title {
+                                                                }
+                                                            }
+
+                                                            // 説明文
+                                                            div.setting-description {
+
+                                                                color : @settingsView-color;  // 文字色
+
+                                                                // 整形済みテキスト
+                                                                code {
+
+                                                                    background-color : @settingsView-code-bgcolor;  // 背景色
+                                                                    color : @settingsView-code-color;               // 文字色
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // 各設定説明要素
+                                                        label.control-label {
+
+                                                            // 設定項目
+                                                            div.setting-title {
+
+                                                                color : @settingsView-color;  // 文字色
+                                                            }
+
+                                                            // 説明文
+                                                            div.setting-description {
+
+                                                                color : @settingsView-color;  // 文字色
+
+                                                                // 強調，コード
+                                                                code {
+
+                                                                    background-color : @settingsView-highlight-bgcolor;  // 背景色
+                                                                    color : @settingsView-highlight-color;               // 文字色
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // テキストボックス
+                                                        div.controls {
+
+                                                            // エディタラッパー
+                                                            div.editor-container {
+
+                                                                // エディタ部分
+                                                                atom-text-editor.editor.mini {
+
+                                                                    border : solid 1px @settingsView-textBox-bdcolor;  // 枠線
+                                                                    background-color : @settingsView-textBox-bgcolor;  // 背景色
+                                                                    font-family : @settingsView-textBox-font-family;   // 文字フォント
+                                                                    color : @settingsView-textBox-color;               // 文字色
+
+                                                                    // スクロール可能部分ラッパー
+                                                                    div {
+
+                                                                        border : none;
+
+                                                                        // スクロール可能部分
+                                                                        div.scroll-view {
+
+                                                                            // 入力行
+                                                                            div div.lines {
+
+                                                                                // ハイライト全般
+                                                                                div.highlights {
+
+                                                                                    // 各ハイライト
+                                                                                    div.highlight {
+
+                                                                                        // テキスト選択部分のハイライト
+                                                                                        &.selection {
+
+                                                                                            // ハイライト中のテキスト部分
+                                                                                            div.region.selection {
+
+                                                                                                background-color : @settingsView-textBox-selection-bgcolor;  // 背景色
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+
+                                                                                // 行
+                                                                                div div.line {
+
+                                                                                    // 各行
+                                                                                    span {
+
+                                                                                        // 入力中の行
+                                                                                        span.syntax--text.syntax--plain.syntax--null-grammar {
+                                                                                        }
+                                                                                    }
+                                                                                }
+
+                                                                                // プレスホルダー
+                                                                                div.placeholder-text {
+
+                                                                                    color : @settingsView-textBox-placeholder-color;  // 文字色
+                                                                                }
+
+                                                                                // カーソル類
+                                                                                div.cursors {
+
+                                                                                    // カーソル本体
+                                                                                    div.cursor {
+
+                                                                                        border : none;
+                                                                                        border-left : solid 1px @settingsView-textBox-cursor-color;  // カーソルの形と色
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+
+                                                                    // フォーカス中
+                                                                    &.is-forcused {
+
+                                                                        // スクロール可能部分
+                                                                        div div.scroll-view {
+
+                                                                            // 入力行
+                                                                            div div.lines {
+
+                                                                                // ハイライト全般
+                                                                                div.highlights {
+
+                                                                                    // 各ハイライト
+                                                                                    div.highlight {
+
+                                                                                        // テキスト選択部分のハイライト
+                                                                                        &.selection {
+
+                                                                                            // ハイライト中のテキスト部分
+                                                                                            div.region.selection {
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+
+                                                                                // 行
+                                                                                div div.line {
+
+                                                                                    // 各行
+                                                                                    span {
+
+                                                                                        // 入力中の行
+                                                                                        span.syntax--text.syntax--plain.syntax--null-grammar {
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        // 選択項目
+                                                        select.form-control {
+
+                                                            border : solid 1px @settingsView-pullDownMenu-bdcolor;  // 枠線
+                                                            background-color : @settingsView-pullDownMenu-bgcolor;  // 背景色
+                                                            color : @settingsView-pullDownMenu-color;               // 文字色
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
